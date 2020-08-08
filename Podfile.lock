@@ -1,0 +1,20 @@
+PODS:
+  - ReachabilitySwift (5.0.0)
+  - SwiftKeychainWrapper (3.4.0)
+
+DEPENDENCIES:
+  - ReachabilitySwift (~> 5.0)
+  - SwiftKeychainWrapper (~> 3.4)
+
+SPEC REPOS:
+  trunk:
+    - ReachabilitySwift
+    - SwiftKeychainWrapper
+
+SPEC CHECKSUMS:
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
+
+PODFILE CHECKSUM: ef4d08e86e0d791b126d454675f710ca4a7ef4ae
+
+COCOAPODS: 1.9.3
