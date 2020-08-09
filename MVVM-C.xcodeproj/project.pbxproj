@@ -68,6 +68,7 @@
 		A25C0EF024DE6F5400E13292 /* WindowMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EEF24DE6F5400E13292 /* WindowMock.swift */; };
 		A25C0EF224DEC63200E13292 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EF124DEC63200E13292 /* HomeDetailsViewController.swift */; };
 		A25C0EF424DED62100E13292 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EF324DED62100E13292 /* ForgotPasswordViewController.swift */; };
+		A2AF841E24DFE64700BA174F /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */; };
 		FF4331B0A250246448C494A7 /* Pods_MVVM_CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F581B42A9313ED0609FD1B3E /* Pods_MVVM_CTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +153,7 @@
 		A25C0EEF24DE6F5400E13292 /* WindowMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMock.swift; sourceTree = "<group>"; };
 		A25C0EF124DEC63200E13292 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
 		A25C0EF324DED62100E13292 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		A44BF0B004CAF8BB8A7B142D /* Pods-MVVM-C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-C.release.xcconfig"; path = "Target Support Files/Pods-MVVM-C/Pods-MVVM-C.release.xcconfig"; sourceTree = "<group>"; };
 		CCD8ACB46A907F9118D1DB56 /* Pods_MVVM_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE72787014134C5EFB5D1DE9 /* Pods-MVVM-CTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-CTests.release.xcconfig"; path = "Target Support Files/Pods-MVVM-CTests/Pods-MVVM-CTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 		5537C179248CBE9B00367F0C /* MVVM-C */ = {
 			isa = PBXGroup;
 			children = (
+				A2AF841C24DFE62F00BA174F /* HelperClasses */,
 				5514FAED24A795D800AF78B2 /* Extensions */,
 				5514FA8F2495F9DF00AF78B2 /* Storyboards */,
 				55D3D92C248F7E2300A20926 /* Designables */,
@@ -448,6 +451,14 @@
 				DE72787014134C5EFB5D1DE9 /* Pods-MVVM-CTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A2AF841C24DFE62F00BA174F /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */,
+			);
+			path = HelperClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -664,6 +675,7 @@
 				5548F86524D7C747009BFCFB /* ViewControllerExtensions.swift in Sources */,
 				55D3D929248F7B3200A20926 /* LoadingIndicator.swift in Sources */,
 				5548F86924D7C7D5009BFCFB /* UILabelExtensions.swift in Sources */,
+				A2AF841E24DFE64700BA174F /* UserDefaultsHelper.swift in Sources */,
 				5548F86724D7C77E009BFCFB /* UIWindowExtensions.swift in Sources */,
 				55A5B48C24D3460E00F10070 /* CoordinatorStoryBoardProtocol.swift in Sources */,
 				5514FA8A24948CFB00AF78B2 /* SignupViewController.swift in Sources */,

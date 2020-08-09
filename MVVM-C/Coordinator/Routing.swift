@@ -6,7 +6,8 @@ final class Routing {
     private var navigation: CoordinatorNavigationProtocol?
     private var viewController : CoordinatorViewControllerProtocol?
     private var storyBoard: CoordinatorStoryBoardProtocol?
-    
+    private var userDefaults: UserDefaultsHelperProtocol = UserDefaultsHelper()
+
     init(navigation: CoordinatorNavigationProtocol?, viewController : CoordinatorViewControllerProtocol?, storyBoard: CoordinatorStoryBoardProtocol?) {
         self.navigation = navigation
         self.storyBoard = storyBoard
@@ -188,8 +189,8 @@ extension Routing: CoordinatorRoutingProtcol {
     func pop(toRootController: Bool, animated: Bool, modelTransistionStyle: UIModalTransitionStyle) {
         if let navigationController = self.navigation {
             if toRootController {
-                if let presentedViewController = self.viewController?.presentedViewController {
-                    presentedViewController.dismiss(animated: animated, completion: nil)
+                if (self.viewController?.presentedViewController != nil) {
+                  dismiss(modelTransistionStyle: modelTransistionStyle, animated: animated)
                 } else {
                     navigationController.popToRootViewController(animated: animated)
                 }
