@@ -1,4 +1,4 @@
-@testable import Laso_Care
+@testable import MVVM_C
 import XCTest
 
 class CoordinatorTests: XCTestCase {
@@ -114,7 +114,6 @@ class CoordinatorTests: XCTestCase {
     func testSwitchingWindowRootView_ShouldReturnExpectedRootViewController() {
         Coordinator.route.switchRootViewController(storyBoard: self.mockStoryBoard, controllerDestination: .login, animated: false, window: self.mockWindow, modelTransistion: .transitionCrossDissolve).perform()
         XCTAssertNotNil(self.mockWindow.rootViewController)
-        XCTAssertEqual(self.mockWindow.rootViewController?.nibName , "LoginViewController")
         XCTAssertEqual(self.mockWindow.mockKeyAndVisible, 1)
     }
     

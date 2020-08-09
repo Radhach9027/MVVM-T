@@ -2,11 +2,11 @@
 
 import UIKit
 
-final class Routing {
+final class Routing: NSObject, UIAdaptivePresentationControllerDelegate {
     private var navigation: CoordinatorNavigationProtocol?
     private var viewController : CoordinatorViewControllerProtocol?
     private var storyBoard: CoordinatorStoryBoardProtocol?
-    private var userDefaults: UserDefaultsHelperProtocol = UserDefaultsHelper()
+    private var storage: [Any] = []
 
     init(navigation: CoordinatorNavigationProtocol?, viewController : CoordinatorViewControllerProtocol?, storyBoard: CoordinatorStoryBoardProtocol?) {
         self.navigation = navigation
@@ -104,8 +104,10 @@ extension Routing: CoordinatorRoutingProtcol {
     func present<T>(to destination: ControllerDestination, storyDestination: StoryDestination, modelPresentationStyle: UIModalPresentationStyle, modelTransistionStyle: UIModalTransitionStyle, animated: Bool, configure: ((T) -> Void)?) -> T? where T : UIViewController {
         if let viewController = self.viewController?.makeViewController(for: destination, storyBoardName: storyDestination, storyBoard: self.storyBoard, modelPresentationStyle: modelPresentationStyle, modelTransistionStyle: modelTransistionStyle) as? T, let navigation = self.navigation?.makeRootNavigation(to: viewController, isNavigationHidden: false), let topViewController = self.viewController {
             configure?(viewController)
+            self.stackStorage()
             self.switchRouting(navigation: navigation, viewController: viewController, storyBoard: self.storyBoard)
             topViewController.present(navigation, animated: animated, completion: nil)
+            navigation.presentationController?.delegate = self
             return viewController
         }
         return nil
@@ -230,7 +232,33 @@ extension Routing: CoordinatorRoutingProtcol {
     func dismiss(modelTransistionStyle: UIModalTransitionStyle, animated: Bool) {
         if let topViewController = self.viewController{
             topViewController.modalTransitionStyle = modelTransistionStyle
-            topViewController.dismiss(animated: true, completion: nil)
+            topViewController.dismiss(animated: animated) { [weak self] in
+                self?.checkStorageAndReassignRoutingWhenControllerIsDismissed()
+            }
+        }
+    }
+}
+
+extension Routing {
+    public func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        self.checkStorageAndReassignRoutingWhenControllerIsDismissed()
+    }
+}
+
+private extension Routing {
+    func stackStorage() {
+        guard let navigation = self.navigation, let controller = self.viewController, let storyBoard = self.storyBoard else { return }
+        storage.removeAll()
+        storage.append(storyBoard)
+        storage.append(navigation)
+        storage.append(controller)
+    }
+    
+    func checkStorageAndReassignRoutingWhenControllerIsDismissed() {
+        if storage.count > 0{
+            self.storyBoard = storage[0] as? CoordinatorStoryBoardProtocol
+            self.navigation = storage[1] as? CoordinatorNavigationProtocol
+            self.viewController = storage[2] as? CoordinatorViewControllerProtocol
         }
     }
 }
