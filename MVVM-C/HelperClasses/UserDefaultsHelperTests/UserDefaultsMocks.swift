@@ -8,11 +8,16 @@ class UserDefaultsMock: UserDefaultsProtocol{
     var mockRemoveObject: Int = 0
 
     func set(_ value: Any?, forKey defaultName: String) {
-        mockVaue = value
+         let json = try? JSONSerialization.jsonObject(with: value as! Data, options: .mutableLeaves) as Any
+         mockVaue = json
     }
     
     func object(forKey defaultName: String) -> Any? {
         mockDefaultName = defaultName
+        if let data = mockVaue {
+            let jsonData = try? JSONSerialization.data(withJSONObject: data, options: .fragmentsAllowed)
+            return jsonData
+        }
         return nil
     }
     
@@ -22,18 +27,25 @@ class UserDefaultsMock: UserDefaultsProtocol{
     }
     
     func removeObject(forKey defaultName: String) {
+        mockDefaultName = defaultName
         mockRemoveObject += 1
     }
 }
 
 class PropertListEncoderMock: PropertListEncoderProtocol {
     func encode<Value>(_ value: Value) throws -> Data where Value : Encodable {
+        if let jsonData = try? JSONSerialization.data(withJSONObject:value) {
+            return jsonData
+        }
         return Data()
     }
 }
 
 class PropertyListDecoderMock: PropertyListDecoderProtocol {
     func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable {
-        return type as! T
+        if let jsonData = try? JSONDecoder().decode(type, from: data) {
+            return jsonData
+        }
+        return Data() as! T
     }
 }
