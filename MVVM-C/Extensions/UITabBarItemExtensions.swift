@@ -8,6 +8,11 @@ extension UITabBarItem {
     }
 }
 
+enum BarButtonImageType: String {
+    case notification
+    case settings
+}
+
 enum BarButtonItemPosition {
     case right, left
 }
@@ -17,7 +22,7 @@ enum BarButtonItemType {
 }
 
 protocol BarButtonItemConfiguration: class {
-    func addBarButtonItem(ofType type: BarButtonItemType)
+    func addBarButtonItem(ofType type: BarButtonItemType, imageType: BarButtonImageType)
 }
 
 @objc protocol BarButtonActions {
@@ -25,7 +30,7 @@ protocol BarButtonItemConfiguration: class {
 }
 
 extension BarButtonItemConfiguration where Self: UIViewController, Self: BarButtonActions {
-    func addBarButtonItem(ofType type: BarButtonItemType) {
+    func addBarButtonItem(ofType type: BarButtonItemType, imageType: BarButtonImageType) {
         func newButton(imageName: String, position: BarButtonItemPosition, action: Selector?) {
             let button = UIBarButtonItem(image: UIImage(named: imageName), style: .plain, target: self, action: action)
             switch position {
@@ -35,7 +40,7 @@ extension BarButtonItemConfiguration where Self: UIViewController, Self: BarButt
         }
         
         switch type {
-        case .notification(let p): newButton(imageName: "Notifications", position: p, action: #selector(Self.showNotification(_:)))
+        case .notification(let p): newButton(imageName: imageType.rawValue, position: p, action: #selector(Self.showNotification(_:)))
         }
     }
 }

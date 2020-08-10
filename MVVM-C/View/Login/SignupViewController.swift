@@ -12,6 +12,8 @@ extension SignupViewController {
     }
     
     @IBAction func pushDetailButtonPressed(_ sender: UIButton) {
-        Coordinator.route.push(story: .login, controller: .forgotPassword, animated: true, modelTransistion: .coverVertical, modelPresentation: .none).perform()
+        Coordinator.route.push(story: .login, controller: .forgotPassword, animated: true, modelTransistion: .coverVertical, modelPresentation: .none).perform { (controller) in
+            controller.title = "Details"
+        }
     }
 }
