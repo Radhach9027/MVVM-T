@@ -64,6 +64,8 @@
 		55D3D92E248F7E4D00A20926 /* Designables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D3D92D248F7E4D00A20926 /* Designables.swift */; };
 		55D3D9302492762A00A20926 /* CustomPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D3D92F2492762A00A20926 /* CustomPopup.swift */; };
 		55D3D9322492765200A20926 /* CustomPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D3D9312492765200A20926 /* CustomPopup.xib */; };
+		A246E61024E161D800D4289F /* UserDefaultHelperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E60F24E161D800D4289F /* UserDefaultHelperProtocols.swift */; };
+		A246E61324E1627700D4289F /* UserDefaultsHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E61224E1627700D4289F /* UserDefaultsHelperTests.swift */; };
 		A25C0EEE24DC747F00E13292 /* ViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EED24DC747F00E13292 /* ViewControllerMock.swift */; };
 		A25C0EF024DE6F5400E13292 /* WindowMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EEF24DE6F5400E13292 /* WindowMock.swift */; };
 		A25C0EF224DEC63200E13292 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EF124DEC63200E13292 /* HomeDetailsViewController.swift */; };
@@ -149,6 +151,8 @@
 		55D3D92F2492762A00A20926 /* CustomPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopup.swift; sourceTree = "<group>"; };
 		55D3D9312492765200A20926 /* CustomPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPopup.xib; sourceTree = "<group>"; };
 		57480A2BC63AC930D9FAB0B6 /* Pods-MVVM-C.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-C.debug.xcconfig"; path = "Target Support Files/Pods-MVVM-C/Pods-MVVM-C.debug.xcconfig"; sourceTree = "<group>"; };
+		A246E60F24E161D800D4289F /* UserDefaultHelperProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelperProtocols.swift; sourceTree = "<group>"; };
+		A246E61224E1627700D4289F /* UserDefaultsHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelperTests.swift; sourceTree = "<group>"; };
 		A25C0EED24DC747F00E13292 /* ViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMock.swift; sourceTree = "<group>"; };
 		A25C0EEF24DE6F5400E13292 /* WindowMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMock.swift; sourceTree = "<group>"; };
 		A25C0EF124DEC63200E13292 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
@@ -453,10 +457,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A246E61124E1624F00D4289F /* UserDefaultsHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				A246E61224E1627700D4289F /* UserDefaultsHelperTests.swift */,
+			);
+			path = UserDefaultsHelperTests;
+			sourceTree = "<group>";
+		};
 		A2AF841C24DFE62F00BA174F /* HelperClasses */ = {
 			isa = PBXGroup;
 			children = (
+				A246E61124E1624F00D4289F /* UserDefaultsHelperTests */,
 				A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */,
+				A246E60F24E161D800D4289F /* UserDefaultHelperProtocols.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -667,6 +681,7 @@
 				55D3D925248E885200A20926 /* AppFont.swift in Sources */,
 				5537C1A4248D092A00367F0C /* Environment.swift in Sources */,
 				5514FAFA24A860BF00AF78B2 /* ProfileViewController.swift in Sources */,
+				A246E61024E161D800D4289F /* UserDefaultHelperProtocols.swift in Sources */,
 				55D3D9302492762A00A20926 /* CustomPopup.swift in Sources */,
 				5533483824A9B42100DFD13E /* LaunchViewController.swift in Sources */,
 				5514FAF524A8599800AF78B2 /* TabBarController.swift in Sources */,
@@ -691,6 +706,7 @@
 				55A5B4A324D67CCD00F10070 /* CoordinatorTests.swift in Sources */,
 				55A5B49824D67C9400F10070 /* MVVM_CTests.swift in Sources */,
 				55A5B4A524D67D2B00F10070 /* NavigationControllerMock.swift in Sources */,
+				A246E61324E1627700D4289F /* UserDefaultsHelperTests.swift in Sources */,
 				A25C0EEE24DC747F00E13292 /* ViewControllerMock.swift in Sources */,
 				55A7F22124D7244A0058629E /* StoryBoardMock.swift in Sources */,
 				A25C0EF024DE6F5400E13292 /* WindowMock.swift in Sources */,
