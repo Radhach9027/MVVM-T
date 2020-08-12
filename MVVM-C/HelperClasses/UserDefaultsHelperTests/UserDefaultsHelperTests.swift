@@ -35,7 +35,7 @@ class UserDefaultsHelperTests: XCTestCase {
     
     func testUserDefaultsClearValue_shouldReturn_expectedValue() {
         userDefaultsHelper?.clear(forKey: .storeStack)
-        XCTAssertEqual(mockUserDefaults.mockDefaultName, "storeStack")
+        XCTAssertEqual(mockUserDefaults.mockDefaultName, UserDefaultsKeys.storeStack.rawValue)
         XCTAssertEqual(mockUserDefaults.mockRemoveObject, 1)
     }
 }
