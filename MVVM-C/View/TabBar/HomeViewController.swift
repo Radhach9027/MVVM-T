@@ -22,7 +22,7 @@ extension HomeViewController {
     }
     
     @IBAction func slideViewButtonPressed(_ sender: UIButton) {
-        _ = AnimatedView(message: .internet, postion: .top, bgColor: UIColor().appColor())
+        _ = AnimatedView(message: .internet, postion: .top, bgColor: UIColor.appColor())
     }
     
     @IBAction func loadingButtonPressed(_ sender: UIButton) {

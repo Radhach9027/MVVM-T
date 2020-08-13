@@ -16,43 +16,43 @@ enum AppFontSize: CGFloat {
 
 extension UIFont {
     
-    class func tabs() -> UIFont {
+    static func tabs() -> UIFont {
         return UIFont(name: AppFontName.regular, size: AppFontSize.tabs.rawValue)!
     }
     
-    class func tabsSelected() -> UIFont {
+    static func tabsSelected() -> UIFont {
            return UIFont(name: AppFontName.bold, size: AppFontSize.tabs.rawValue)!
     }
     
-    class func small() -> UIFont {
+    static func small() -> UIFont {
         return UIFont(name: AppFontName.regular, size: AppFontSize.small.rawValue)!
     }
     
-    class func regularFont() -> UIFont {
+    static func regularFont() -> UIFont {
         return UIFont(name: AppFontName.regular, size: AppFontSize.regular.rawValue)!
     }
     
-    class func mediumFont() -> UIFont {
+    static func mediumFont() -> UIFont {
           return UIFont(name: AppFontName.medium, size: AppFontSize.regular.rawValue)!
     }
     
-    class func mediumLargeFont() -> UIFont {
+    static func mediumLargeFont() -> UIFont {
           return UIFont(name: AppFontName.medium, size: AppFontSize.heavy.rawValue)!
     }
     
-    class func boldFont() -> UIFont {
+    static func boldFont() -> UIFont {
           return UIFont(name: AppFontName.bold, size: AppFontSize.regular.rawValue)!
     }
     
-    class func boldLargeFont() -> UIFont {
+    static func boldLargeFont() -> UIFont {
           return UIFont(name: AppFontName.bold, size: AppFontSize.heavy.rawValue)!
     }
     
-    class func lightFont() -> UIFont {
+    static func lightFont() -> UIFont {
           return UIFont(name: AppFontName.light, size: AppFontSize.regular.rawValue)!
     }
 
-    class func lightLarge() -> UIFont {
+    static func lightLarge() -> UIFont {
           return UIFont(name: AppFontName.light, size: AppFontSize.heavy.rawValue)!
     }
 }
