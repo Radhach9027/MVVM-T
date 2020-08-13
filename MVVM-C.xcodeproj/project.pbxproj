@@ -242,8 +242,8 @@
 				5548F86A24D7C821009BFCFB /* StringExtensions.swift */,
 				5548F86C24D7C856009BFCFB /* UISegmentControlExtensions.swift */,
 				5548F86E24D7C88A009BFCFB /* UITabBarExtensions.swift */,
-				55D3D91E248D4C2B00A20926 /* Alert.swift */,
 				55D3D924248E885200A20926 /* AppFont.swift */,
+				55D3D926248E90CE00A20926 /* AppColors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -440,7 +440,7 @@
 		55D3D91D248D4B3900A20926 /* GlobalComponents */ = {
 			isa = PBXGroup;
 			children = (
-				55D3D926248E90CE00A20926 /* AppColors.swift */,
+				55D3D91E248D4C2B00A20926 /* Alert.swift */,
 				5514FA8B2494980E00AF78B2 /* Nib.swift */,
 				55D3D922248D5C5B00A20926 /* AnimateView.swift */,
 				55D3D928248F7B3200A20926 /* LoadingIndicator.swift */,
