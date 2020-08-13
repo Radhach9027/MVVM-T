@@ -73,6 +73,8 @@
 		A25C0EF024DE6F5400E13292 /* WindowMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EEF24DE6F5400E13292 /* WindowMock.swift */; };
 		A25C0EF224DEC63200E13292 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EF124DEC63200E13292 /* HomeDetailsViewController.swift */; };
 		A25C0EF424DED62100E13292 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EF324DED62100E13292 /* ForgotPasswordViewController.swift */; };
+		A2604DCA24E58A5300945435 /* BioMetricAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2604DC924E58A5300945435 /* BioMetricAuthentication.swift */; };
+		A2604DCC24E58A7200945435 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2604DCB24E58A7200945435 /* LocalAuthentication.framework */; };
 		A2AF841E24DFE64700BA174F /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */; };
 		FF4331B0A250246448C494A7 /* Pods_MVVM_CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F581B42A9313ED0609FD1B3E /* Pods_MVVM_CTests.framework */; };
 /* End PBXBuildFile section */
@@ -163,6 +165,8 @@
 		A25C0EEF24DE6F5400E13292 /* WindowMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMock.swift; sourceTree = "<group>"; };
 		A25C0EF124DEC63200E13292 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
 		A25C0EF324DED62100E13292 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		A2604DC924E58A5300945435 /* BioMetricAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioMetricAuthentication.swift; sourceTree = "<group>"; };
+		A2604DCB24E58A7200945435 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		A44BF0B004CAF8BB8A7B142D /* Pods-MVVM-C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-C.release.xcconfig"; path = "Target Support Files/Pods-MVVM-C/Pods-MVVM-C.release.xcconfig"; sourceTree = "<group>"; };
 		CCD8ACB46A907F9118D1DB56 /* Pods_MVVM_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2604DCC24E58A7200945435 /* LocalAuthentication.framework in Frameworks */,
 				4EAA109FC289B82DB9AB6BF4 /* Pods_MVVM_C.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +198,7 @@
 		42519FE7D64D4AFAE49E2580 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2604DCB24E58A7200945435 /* LocalAuthentication.framework */,
 				55BE9A1824B2DBCB00B4FB3E /* JitsiMeet.framework */,
 				55BE9A1924B2DBCB00B4FB3E /* WebRTC.framework */,
 				CCD8ACB46A907F9118D1DB56 /* Pods_MVVM_C.framework */,
@@ -478,6 +484,7 @@
 			children = (
 				A246E61724E1BC3800D4289F /* Authentication.swift */,
 				A246E61924E1BC5400D4289F /* AutoLogin.swift */,
+				A2604DC924E58A5300945435 /* BioMetricAuthentication.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -706,6 +713,7 @@
 				5514FAF524A8599800AF78B2 /* TabBarController.swift in Sources */,
 				A25C0EF224DEC63200E13292 /* HomeDetailsViewController.swift in Sources */,
 				55D3D91A248D2D7E00A20926 /* GenericTableViewController.swift in Sources */,
+				A2604DCA24E58A5300945435 /* BioMetricAuthentication.swift in Sources */,
 				5548F86524D7C747009BFCFB /* ViewControllerExtensions.swift in Sources */,
 				55D3D929248F7B3200A20926 /* LoadingIndicator.swift in Sources */,
 				5548F86924D7C7D5009BFCFB /* UILabelExtensions.swift in Sources */,
