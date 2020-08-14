@@ -49,22 +49,26 @@ extension NetworkClient {
                 completion(nil, .requestFailed)
                 return
             }
-            if httpResponse.statusCode == 200 {
-                if let data = data {
-                    do {
-                        let genericModel = try JSONDecoder().decode(decodingType, from: data)
-                        completion(genericModel, nil)
-                    } catch {
-                        self.responseStatus(error: .jsonConversionFailure)
-                        completion(nil, .jsonConversionFailure)
+            
+            NetworkError.performHttpUrlResponseStatus(httpResponse) { (success, error) in
+                if success && error == nil {
+                    if let data = data {
+                        do {
+                            let genericModel = try JSONDecoder().decode(decodingType, from: data)
+                            completion(genericModel, nil)
+                        } catch {
+                            self.responseStatus(error: .jsonConversionFailure)
+                            completion(nil, .jsonConversionFailure)
+                        }
+                    } else {
+                        self.responseStatus(error: .invalidData)
+                        completion(nil, .invalidData)
                     }
+                } else if (!success && error == NetworkErrorCode.accessTokenExpired) {
+                   
                 } else {
-                    self.responseStatus(error: .invalidData)
-                    completion(nil, .invalidData)
+                    
                 }
-            } else {
-                self.responseStatus(error: .responseUnsuccessful)
-                completion(nil, .responseUnsuccessful)
             }
         }
         return task

@@ -8,7 +8,6 @@ enum AnimatedMessages: String {
     case internet = "Hey Seems to have good internet connectivity..Let's ride the app..😃"
     case noInternet = "As it seems there is no network connection available on the device, please check and try again..😟"
     case error = "Oops...Something went wrong, Please try again."
-    
     func AnimatedIcons () -> UIImage {
         switch self {
         case .noInternet:
