@@ -1,7 +1,7 @@
 import Foundation
 
 class LoginViewModel: NetworkClient {
-    var session: URLSession
+    var session: UrlSessionProtocol
        init(configuration: URLSessionConfiguration) {
            self.session = URLSession(configuration: configuration, delegate: SSLPinning(), delegateQueue: nil)
        }

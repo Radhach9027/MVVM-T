@@ -22,17 +22,27 @@ enum Result<T, U> where U: Error  {
     case failure(U)
 }
 
+protocol UrlSessionProtocol: class {
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+    func getAllTasks(completionHandler: @escaping ([URLSessionTask]) -> Void)
+    func invalidateAndCancel()
+}
+
+extension URLSession: UrlSessionProtocol {}
+
 protocol NetworkClient {
-    var session: URLSession { get }
+    var session: UrlSessionProtocol { get }
     func fetch<T: Decodable>(with request: URLRequest, decode: @escaping (Decodable) -> T?, completion: @escaping (Result<T, NetworkClientError>) -> Void)
     func responseStatus(error: NetworkClientError)
     func networkError()
+    func killAllServices()
 }
 
 extension NetworkClient {
     typealias JSONTaskCompletionHandler = (Decodable?, NetworkClientError?) -> Void
+    
     func decodingTask<T: Decodable>(with request: URLRequest, decodingType: T.Type, completionHandler completion: @escaping JSONTaskCompletionHandler) -> URLSessionDataTask {
-       
+        
         let task = session.dataTask(with: request) { data, response, error in
             guard let httpResponse = response as? HTTPURLResponse else {
                 self.responseStatus(error: .requestFailed)
@@ -43,7 +53,7 @@ extension NetworkClient {
                 if let data = data {
                     do {
                         let genericModel = try JSONDecoder().decode(decodingType, from: data)
-                         completion(genericModel, nil)
+                        completion(genericModel, nil)
                     } catch {
                         self.responseStatus(error: .jsonConversionFailure)
                         completion(nil, .jsonConversionFailure)
@@ -88,6 +98,12 @@ extension NetworkClient {
         }
     }
     
+    func killAllServices() {
+        self.session.getAllTasks { (tasks) in
+            tasks.first(where: {$0.state == .running})?.cancel()
+        }
+    }
+    
     func responseStatus(error: NetworkClientError) {
         DispatchQueue.main.async {
             CustomPopup().present(message: error.localizedDescription, animate: .affineIn)
@@ -96,7 +112,7 @@ extension NetworkClient {
     
     func networkError(){
         DispatchQueue.main.async {
-        _ = AnimatedView(message: .noInternet, postion: .top, bgColor: .systemRed)
+            _ = AnimatedView(message: .noInternet, postion: .top, bgColor: .systemRed)
         }
     }
 }
