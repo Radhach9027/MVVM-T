@@ -1,42 +1,33 @@
 import UIKit
 
-protocol Endpoint {
-    var base: String { get }
-    var path: String { get }
+protocol RequestProvidingProtocol {
+    var urlRequest: URLRequest { get }
+    var cachePolicy: URLRequest.CachePolicy {get set}
+    var timeoutInterval: TimeInterval {get set}
+    var httpMethod: String? {get set}
+    var httpBody: Data? {get set}
+}
+
+
+enum Endpoint: String {
+    case login = "/users"
+    case signUp = "/SignUp"
+    case forgotPassword = "/ForgotPassword"
+    case accessToken = "/AccessToken"
+}
+
+enum API {
+    static func getUrl(point: Endpoint) -> URL? {
+        guard let urlString = try? Configuration.value(for: .baseUrl) + point.rawValue, let url = URL(string: urlString) else {return nil}
+        return url
+    }
 }
 
 extension Endpoint {
-    var apiKey: String {
-        return "api_key=34a92f7d77a168fdcd9a46ee1863edf1"
-    }
-    
-    var urlComponents: URLComponents {
-        var components = URLComponents(string: base)!
-        components.path = path
-        components.query = apiKey
-        return components
-    }
-    
-    var request: URLRequest {
-        let url = urlComponents.url!
+    var urlRequest: URLRequest {
+        guard let url = API.getUrl(point: .login) else {fatalError("Cannot construct url")}
         return URLRequest(url: url)
     }
 }
 
-enum UserFeed {
-    case login
-}
-
-extension UserFeed: Endpoint {
-    
-    var base: String {
-        return "API"
-    }
-
-    var path: String {
-        switch self {
-        case .login: return "Append end point"
-        }
-    }
-}
 

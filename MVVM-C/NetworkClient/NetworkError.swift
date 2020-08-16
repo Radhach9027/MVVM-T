@@ -2,37 +2,48 @@ import Foundation
 
 enum NetworkErrorCode: Error {
     case success
-    case accessTokenExpired
+    case requestFailed
+    case jsonConversionFailure
+    case invalidData
+    case responseUnsuccessful
+    case jsonParsingFailure
+    case authenticationError
+    case badRequest
+    case outdated
     case unknownError
-    case connectionError
-    case invalidCredentials
-    case invalidRequest
-    case notFound
-    case invalidResponse
-    case serverError
-    case serverUnavailable
-    case timeOut
-    case unsuppotedURL
+
+    var localizedDescription: String {
+        switch self {
+        case .requestFailed: return "Request Failed."
+        case .invalidData: return "Invalid Data."
+        case .responseUnsuccessful: return "Response Unsuccessful."
+        case .jsonParsingFailure: return "JSON Parsing Failure."
+        case .jsonConversionFailure: return "JSON Conversion Failure."
+        case .success: return "Success"
+        case .authenticationError: return "Authentication Failed."
+        case .badRequest: return "Bad Request"
+        case .outdated: return "The URL requested is outdated."
+        case .unknownError: return "Some Unknow error occured."
+        }
+    }
     
     static func getHTTStatus(response: HTTPURLResponse) -> NetworkErrorCode {
         switch response.statusCode {
-        case 200...300:
+        case 200...299:
             return .success
-        case 400:
-            return .invalidRequest
-        case 401:
-            return .invalidCredentials
-        case 403:
-            return .accessTokenExpired
-        case 404:
-            return .notFound
+        case 401...500:
+            return .authenticationError
+        case 501...599:
+            return .badRequest
+        case 600:
+            return .outdated
         default:
             return .unknownError
         }
     }
 }
 
-struct NetworkError {
+struct NetworkStatus {
     typealias authCompletionHandler = ((_ success: Bool, _ error: NetworkErrorCode?) -> Void)
     
     static func performHttpUrlResponseStatus(_ response: HTTPURLResponse, completionHandler: @escaping authCompletionHandler) {
@@ -40,10 +51,12 @@ struct NetworkError {
         switch getStatus {
         case .success:
             completionHandler(true, nil)
-        case .accessTokenExpired:
-            completionHandler(false, .accessTokenExpired)
+        case .authenticationError:
+            completionHandler(false, .authenticationError)
         default:
             break
         }
     }
 }
+
+

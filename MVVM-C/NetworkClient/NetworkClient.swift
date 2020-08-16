@@ -1,71 +1,41 @@
 import Foundation
 
-enum NetworkClientError: Error {
-    case requestFailed
-    case jsonConversionFailure
-    case invalidData
-    case responseUnsuccessful
-    case jsonParsingFailure
-    var localizedDescription: String {
-        switch self {
-        case .requestFailed: return "Request Failed"
-        case .invalidData: return "Invalid Data"
-        case .responseUnsuccessful: return "Response Unsuccessful"
-        case .jsonParsingFailure: return "JSON Parsing Failure"
-        case .jsonConversionFailure: return "JSON Conversion Failure"
-        }
-    }
-}
-
 enum Result<T, U> where U: Error  {
     case success(T)
     case failure(U)
 }
 
-protocol UrlSessionProtocol: class {
-    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
-    func getAllTasks(completionHandler: @escaping ([URLSessionTask]) -> Void)
-    func invalidateAndCancel()
-}
-
-extension URLSession: UrlSessionProtocol {}
-
-protocol NetworkClient {
-    var session: UrlSessionProtocol { get }
-    func fetch<T: Decodable>(with request: URLRequest, decode: @escaping (Decodable) -> T?, completion: @escaping (Result<T, NetworkClientError>) -> Void)
-    func responseStatus(error: NetworkClientError)
-    func networkError()
-    func killAllServices()
+enum NetworkRequestType {
+    case dataTask
+    case uploadTask
+    case downloadTask
 }
 
 extension NetworkClient {
-    typealias JSONTaskCompletionHandler = (Decodable?, NetworkClientError?) -> Void
+    typealias JSONTaskCompletionHandler = (Decodable?, NetworkErrorCode?) -> Void
     
-    func decodingTask<T: Decodable>(with request: URLRequest, decodingType: T.Type, completionHandler completion: @escaping JSONTaskCompletionHandler) -> URLSessionDataTask {
+    func decodingTask<T: Decodable>(with request: URLRequest, networkType: NetworkRequestType,  decodingType: T.Type, completionHandler completion: @escaping JSONTaskCompletionHandler) -> URLSessionDataTask {
         
         let task = session.dataTask(with: request) { data, response, error in
             guard let httpResponse = response as? HTTPURLResponse else {
-                self.responseStatus(error: .requestFailed)
                 completion(nil, .requestFailed)
                 return
             }
             
-            NetworkError.performHttpUrlResponseStatus(httpResponse) { (success, error) in
+            NetworkStatus.performHttpUrlResponseStatus(httpResponse) { (success, error) in
                 if success && error == nil {
                     if let data = data {
                         do {
                             let genericModel = try JSONDecoder().decode(decodingType, from: data)
                             completion(genericModel, nil)
                         } catch {
-                            self.responseStatus(error: .jsonConversionFailure)
                             completion(nil, .jsonConversionFailure)
                         }
                     } else {
-                        self.responseStatus(error: .invalidData)
                         completion(nil, .invalidData)
                     }
-                } else if (!success && error == NetworkErrorCode.accessTokenExpired) {
-                   
+                } else if (!success && error == NetworkErrorCode.authenticationError) {
+                    
                 } else {
                     
                 }
@@ -74,9 +44,9 @@ extension NetworkClient {
         return task
     }
     
-    func fetch<T: Decodable>(with request: URLRequest, decode: @escaping (Decodable) -> T?, completion: @escaping (Result<T, NetworkClientError>) -> Void) {
+    func fetch<T: Decodable>(with request: URLRequest, networkType: NetworkRequestType,  decode: @escaping (Decodable) -> T?, completion: @escaping (Result<T, NetworkErrorCode>) -> Void) {
         if NetworkReachability.shared.isReachable {
-            let task = decodingTask(with: request, decodingType: T.self) { (json , error) in
+            let task = decodingTask(with: request, networkType: networkType, decodingType: T.self) { (json , error) in
                 DispatchQueue.main.async {
                     guard let json = json else {
                         if let error = error {
@@ -108,7 +78,7 @@ extension NetworkClient {
         }
     }
     
-    func responseStatus(error: NetworkClientError) {
+    func responseStatus(error: NetworkErrorCode) {
         DispatchQueue.main.async {
             CustomPopup().present(message: error.localizedDescription, animate: .affineIn)
         }

@@ -1,6 +1,8 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    var viewModel = LoginViewModel()
+    
     deinit {
      print("LoginViewController de-init")
     }
@@ -8,7 +10,9 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController {
     @IBAction func popBackButtonPressed(_ sender: UIButton) {
-        Coordinator.route.pop(toRootController: false, animated: true, modelTransistionStyle: .crossDissolve).perform()
+        viewModel.loginUser { (result) in
+            print(result)
+        }
     }
 }
 
