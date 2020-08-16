@@ -74,6 +74,7 @@
 		A25C0EF224DEC63200E13292 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EF124DEC63200E13292 /* HomeDetailsViewController.swift */; };
 		A25C0EF424DED62100E13292 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EF324DED62100E13292 /* ForgotPasswordViewController.swift */; };
 		A25E2C2724E844BA003A8942 /* NetworkClientProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E2C2624E844BA003A8942 /* NetworkClientProtocols.swift */; };
+		A25E2C3324E90C19003A8942 /* UIDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E2C3224E90C19003A8942 /* UIDateExtensions.swift */; };
 		A2604DCA24E58A5300945435 /* BioMetricAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2604DC924E58A5300945435 /* BioMetricAuthentication.swift */; };
 		A2604DCC24E58A7200945435 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2604DCB24E58A7200945435 /* LocalAuthentication.framework */; };
 		A2604DCE24E59D3D00945435 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2604DCD24E59D3D00945435 /* NetworkError.swift */; };
@@ -168,6 +169,7 @@
 		A25C0EF124DEC63200E13292 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
 		A25C0EF324DED62100E13292 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		A25E2C2624E844BA003A8942 /* NetworkClientProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientProtocols.swift; sourceTree = "<group>"; };
+		A25E2C3224E90C19003A8942 /* UIDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDateExtensions.swift; sourceTree = "<group>"; };
 		A2604DC924E58A5300945435 /* BioMetricAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioMetricAuthentication.swift; sourceTree = "<group>"; };
 		A2604DCB24E58A7200945435 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		A2604DCD24E59D3D00945435 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				5548F86224D7C6FE009BFCFB /* UITabBarItemExtensions.swift */,
 				5548F86424D7C747009BFCFB /* ViewControllerExtensions.swift */,
 				5548F86624D7C77E009BFCFB /* UIWindowExtensions.swift */,
+				A25E2C3224E90C19003A8942 /* UIDateExtensions.swift */,
 				5548F86824D7C7D5009BFCFB /* UILabelExtensions.swift */,
 				5548F86A24D7C821009BFCFB /* StringExtensions.swift */,
 				5548F86C24D7C856009BFCFB /* UISegmentControlExtensions.swift */,
@@ -695,6 +698,7 @@
 				A246E61824E1BC3800D4289F /* Authentication.swift in Sources */,
 				5537C19A248D06E600367F0C /* SSLPinning.swift in Sources */,
 				55B69F2724BEDCAF00E99014 /* Destinations.swift in Sources */,
+				A25E2C3324E90C19003A8942 /* UIDateExtensions.swift in Sources */,
 				5548F86B24D7C821009BFCFB /* StringExtensions.swift in Sources */,
 				5537C17B248CBE9B00367F0C /* AppDelegate.swift in Sources */,
 				5537C19B248D06E600367F0C /* NetworkEndPoint.swift in Sources */,
