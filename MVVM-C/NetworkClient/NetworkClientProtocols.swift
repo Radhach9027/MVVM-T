@@ -18,3 +18,8 @@ protocol NetworkClient {
     func networkError()
     func killAllServices()
 }
+
+
+protocol RequestProvidingProtocol {
+    var urlRequest: URLRequest { get }
+}

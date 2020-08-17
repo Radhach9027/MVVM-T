@@ -1,14 +1,5 @@
 import UIKit
 
-protocol RequestProvidingProtocol {
-    var urlRequest: URLRequest { get }
-    var cachePolicy: URLRequest.CachePolicy {get set}
-    var timeoutInterval: TimeInterval {get set}
-    var httpMethod: String? {get set}
-    var httpBody: Data? {get set}
-}
-
-
 enum Endpoint: String {
     case login = "/users"
     case signUp = "/SignUp"
@@ -23,9 +14,9 @@ enum API {
     }
 }
 
-extension Endpoint {
+extension Endpoint: RequestProvidingProtocol {
     var urlRequest: URLRequest {
-        guard let url = API.getUrl(point: .login) else {fatalError("Cannot construct url")}
+        guard let url = API.getUrl(point: self) else {fatalError("Cannot construct url")}
         return URLRequest(url: url)
     }
 }

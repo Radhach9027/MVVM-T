@@ -51,9 +51,8 @@ struct NetworkStatus {
         switch getStatus {
         case .success:
             completionHandler(true, nil)
-        case .authenticationError:
-            completionHandler(false, .authenticationError)
         default:
+            completionHandler(false, getStatus)
             break
         }
     }
