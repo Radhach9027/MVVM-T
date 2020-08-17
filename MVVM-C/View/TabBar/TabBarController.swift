@@ -24,7 +24,8 @@ extension TabBarController {
 extension TabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if let navigation = tabBarController.selectedViewController as? UINavigationController {
-            Coordinator.route.switchRouting(navigation: navigation, viewController: navigation.topViewController, storyBoard: tabBarController.storyboard).perform()
+            let routing = Routing(navigation: navigation, viewController: navigation.topViewController, storyBoard: tabBarController.storyboard)
+              Coordinator.shared.config(routing: routing)
         }
     }
 }

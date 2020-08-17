@@ -9,6 +9,7 @@ import UIKit
 class Coordinator {
     private static var sharedInstance: Coordinator?
     private var routing: CoordinatorRoutingProtcol?
+    var storage: [Any] = [] // To store current stack when config is about to change the router.
     
     class var shared : Coordinator {
         guard let sharedInstance = self.sharedInstance else {
@@ -119,11 +120,6 @@ extension Coordinator {
         case dismiss(modelTransistionStyle: UIModalTransitionStyle, animated: Bool)
         
 
-        /**
-          !* @discussion:  This function will help to switch routing.
-          */
-        case switchRouting(navigation: CoordinatorNavigationProtocol?, viewController: CoordinatorViewControllerProtocol?, storyBoard: CoordinatorStoryBoardProtocol?)
-        
         @discardableResult
         func perform<T>(_ configure: ((T) -> Void)? = nil) -> T? where T: UIViewController {
             switch self {
@@ -147,8 +143,6 @@ extension Coordinator {
                 Coordinator.shared.routing?.dismiss(modelTransistionStyle: modelTransistionStyle, animated: animated)
             case let .unwind(destination, storyDestination, modelTransistionStyle, storyBoardSegue):
                 return Coordinator.shared.routing?.unwind(to: destination, storyDestination: storyDestination, modelTransistionStyle: modelTransistionStyle, storyBoardSegue: storyBoardSegue, configure: configure)
-            case let .switchRouting(navigation, viewController, storyBoard):
-                Coordinator.shared.routing?.switchRouting(navigation: navigation, viewController: viewController, storyBoard: storyBoard)
             }
             return nil
         }

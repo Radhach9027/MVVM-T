@@ -6,7 +6,6 @@ final class Routing: NSObject, UIAdaptivePresentationControllerDelegate {
     private var navigation: CoordinatorNavigationProtocol?
     private var viewController : CoordinatorViewControllerProtocol?
     private var storyBoard: CoordinatorStoryBoardProtocol?
-    private var storage: [Any] = []
 
     init(navigation: CoordinatorNavigationProtocol?, viewController : CoordinatorViewControllerProtocol?, storyBoard: CoordinatorStoryBoardProtocol?) {
         self.navigation = navigation
@@ -46,34 +45,18 @@ extension Routing: CoordinatorRoutingProtcol {
             window?.rootViewController = storyBoard
         }
         window?.makeKeyAndVisible()
+        
+        var routing: Routing?
         if let tabBarController = window?.rootViewController as? UITabBarController, let navigationController = tabBarController.selectedViewController as? UINavigationController {
-            switchRouting(navigation: navigationController, viewController: navigationController.topViewController, storyBoard: window?.rootViewController?.storyboard)
+            routing = Routing(navigation: navigationController, viewController: navigationController.topViewController, storyBoard: window?.rootViewController?.storyboard)
         } else {
             guard let navigation = window?.rootViewController as? UINavigationController, let viewController = navigation.topViewController, let storyBoard = navigation.storyboard else {return}
-            switchRouting(navigation: navigation, viewController: viewController, storyBoard: storyBoard)
+            routing = Routing(navigation: navigation, viewController: viewController, storyBoard: storyBoard)
         }
+        
+        Coordinator.shared.config(routing: routing)
     }
-    
-    
-    /**
-     !* @discussion: This function takes cares of routingConfi when ever it's required.
-     !* @param: navigation, viewController , storyBoard
-     1. When ever if there is a change in the navigation stack, we have to use this function. In-order to main the stack.
-      
-     Note: If you'r using tabbar controller in your application, call this function in you'r TabBarController delegate method didSelect. In-order to manage navigation stack in tabbar controller.
-     */
-    
-    func switchRouting(navigation: CoordinatorNavigationProtocol?, viewController: CoordinatorViewControllerProtocol?, storyBoard: CoordinatorStoryBoardProtocol?) {
-        if let nav = navigation {
-            self.navigation = nav
-        }
-        if let controller = viewController {
-            self.viewController = controller
-        }
-        if let story = storyBoard {
-            self.storyBoard = story
-        }
-    }
+
     
     /**
      !* @discussion: This function takes cares of pushing viewcontroller over navigation controller.
@@ -105,7 +88,8 @@ extension Routing: CoordinatorRoutingProtcol {
         if let viewController = self.viewController?.makeViewController(for: destination, storyBoardName: storyDestination, storyBoard: self.storyBoard, modelPresentationStyle: modelPresentationStyle, modelTransistionStyle: modelTransistionStyle) as? T, let navigation = self.navigation?.makeRootNavigation(to: viewController, isNavigationHidden: false), let topViewController = self.viewController {
             configure?(viewController)
             self.stackStorage()
-            self.switchRouting(navigation: navigation, viewController: viewController, storyBoard: self.storyBoard)
+            let routing = Routing(navigation: navigation, viewController: viewController, storyBoard: self.storyBoard)
+            Coordinator.shared.config(routing: routing)
             topViewController.present(navigation, animated: animated, completion: nil)
             navigation.presentationController?.delegate = self
             return viewController
@@ -145,7 +129,8 @@ extension Routing: CoordinatorRoutingProtcol {
     func addChild<T>(to childController: ControllerDestination, storyDestination: StoryDestination, modelTransistionStyle: UIModalTransitionStyle, configure: ((T) -> Void)?) -> T? where T : UIViewController {
         if let viewController = self.viewController?.makeViewController(for: childController, storyBoardName: storyDestination, storyBoard: self.storyBoard , modelPresentationStyle: nil, modelTransistionStyle: modelTransistionStyle) as? T, let topController = self.viewController {
             configure?(viewController)
-            switchRouting(navigation: self.navigation, viewController: viewController, storyBoard: self.storyBoard)
+            let routing = Routing(navigation: self.navigation, viewController: viewController, storyBoard: self.storyBoard)
+            Coordinator.shared.config(routing: routing)
             topController.add(viewController)
             return viewController
         }
@@ -248,17 +233,17 @@ extension Routing {
 private extension Routing {
     func stackStorage() {
         guard let navigation = self.navigation, let controller = self.viewController, let storyBoard = self.storyBoard else { return }
-        storage.removeAll()
-        storage.append(storyBoard)
-        storage.append(navigation)
-        storage.append(controller)
+        Coordinator.shared.storage.removeAll()
+        Coordinator.shared.storage.append(storyBoard)
+        Coordinator.shared.storage.append(navigation)
+        Coordinator.shared.storage.append(controller)
     }
     
     func checkStorageAndReassignRoutingWhenControllerIsDismissed() {
-        if storage.count > 0{
-            self.storyBoard = storage[0] as? CoordinatorStoryBoardProtocol
-            self.navigation = storage[1] as? CoordinatorNavigationProtocol
-            self.viewController = storage[2] as? CoordinatorViewControllerProtocol
+        if Coordinator.shared.storage.count > 0{
+            self.storyBoard = Coordinator.shared.storage[0] as? CoordinatorStoryBoardProtocol
+            self.navigation = Coordinator.shared.storage[1] as? CoordinatorNavigationProtocol
+            self.viewController = Coordinator.shared.storage[2] as? CoordinatorViewControllerProtocol
         }
     }
 }

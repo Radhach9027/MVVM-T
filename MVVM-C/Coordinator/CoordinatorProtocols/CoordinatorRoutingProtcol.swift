@@ -14,5 +14,4 @@ import UIKit
     func pop(toRootController: Bool, animated: Bool, modelTransistionStyle: UIModalTransitionStyle)
     func popToViewController<T>(destination: AnyClass, animated: Bool, modelTransistionStyle: UIModalTransitionStyle, configure: ((T) -> Void)?) -> T? where T : UIViewController
     func dismiss(modelTransistionStyle: UIModalTransitionStyle, animated: Bool)
-    func switchRouting(navigation: CoordinatorNavigationProtocol?, viewController: CoordinatorViewControllerProtocol?, storyBoard: CoordinatorStoryBoardProtocol?)
 }
