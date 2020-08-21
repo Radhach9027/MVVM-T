@@ -19,8 +19,7 @@ class LoadingIndicator: UIView, Nib {
     private var duration: Double = 0.25
 
     
-   private init(title: String? = "Loading...") {
-        self.title = title
+    private init() {
         super.init(frame: .zero)
         loadNibFile()
     }
@@ -33,7 +32,8 @@ class LoadingIndicator: UIView, Nib {
        registerNib()
     }
     
-    func loading(step: LC_LoadingSteps) {
+    func loading(step: LC_LoadingSteps, title: String? = "Loading...") {
+        self.title = title
         switch step {
         case .start(let animated):
         startAnimating(animated: animated)
