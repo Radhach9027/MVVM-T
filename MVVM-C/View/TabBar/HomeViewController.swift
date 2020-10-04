@@ -18,11 +18,11 @@ extension HomeViewController {
     }
     
     @IBAction func popUpButtonPressed(_ sender: UIButton) {
-        CustomPopup().present(message: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", animate: .affineIn)
+        CustomPopup.shared.present(message: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", animate: .affineIn)
     }
     
     @IBAction func slideViewButtonPressed(_ sender: UIButton) {
-        _ = AnimatedView(message: .internet, postion: .top, bgColor: UIColor.appColor())
+        AnimatedView.shared.present(message: .internet, postion: .top, bgColor: .appButtonColor())
     }
     
     @IBAction func loadingButtonPressed(_ sender: UIButton) {

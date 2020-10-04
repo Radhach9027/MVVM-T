@@ -25,9 +25,10 @@ extension AppDelegate {
         NetworkReachability.shared.reachabilityObserver = { status in
             switch status {
             case .connected:
-                _ = AnimatedView(message: .internet, postion: .top, bgColor: UIColor.appColor())
+                 print("Internet Connected")
+                //AnimatedView.shared.present(message: .internet, postion: .top, bgColor: .appButtonColor())
             case .disconnected:
-                _ = AnimatedView(message: .noInternet, postion: .top, bgColor: .orange)
+                AnimatedView.shared.present(message: .noInternet, postion: .top, bgColor: .appButtonColor())
             }
         }
     }

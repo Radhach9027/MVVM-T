@@ -5,13 +5,7 @@ struct AppFontName {
     static let medium = "KohinoorTelugu-Medium"
     static let bold = "KohinoorGujarati-Bold"
     static let light = "KohinoorTelugu-Light"
-}
-
-enum AppFontSize: CGFloat {
-    case tabs = 11.0
-    case small = 12.0
-    case regular  = 15.0
-    case heavy = 17.0
+    static let semiBold = "KohinoorGujarati-SemiBold"
 }
 
 extension UIFont {
@@ -32,6 +26,10 @@ extension UIFont {
         return UIFont(name: AppFontName.regular, size: AppFontSize.regular.rawValue)!
     }
     
+    static func regularLightFont() -> UIFont {
+        return UIFont(name: AppFontName.light, size: AppFontSize.regular.rawValue)!
+    }
+    
     static func mediumFont() -> UIFont {
           return UIFont(name: AppFontName.medium, size: AppFontSize.regular.rawValue)!
     }
@@ -49,10 +47,18 @@ extension UIFont {
     }
     
     static func lightFont() -> UIFont {
-          return UIFont(name: AppFontName.light, size: AppFontSize.regular.rawValue)!
+          return UIFont(name: AppFontName.light, size: AppFontSize.light.rawValue)!
     }
 
     static func lightLarge() -> UIFont {
           return UIFont(name: AppFontName.light, size: AppFontSize.heavy.rawValue)!
+    }
+    
+    static func navigationTitle() -> UIFont {
+           return UIFont(name: AppFontName.regular, size: AppFontSize.navTitle.rawValue)!
+    }
+    
+    static func regularSemiBold() -> UIFont {
+            return UIFont(name: AppFontName.semiBold, size: AppFontSize.regular.rawValue)!
     }
 }

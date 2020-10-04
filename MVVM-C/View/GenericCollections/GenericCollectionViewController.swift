@@ -43,7 +43,7 @@ extension GenericCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let configureCustomCell = items[(indexPath as NSIndexPath).row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: configureCustomCell.reuseIdentifier, for: indexPath)
-        configureCustomCell.update(cell: cell)
+        configureCustomCell.update(cell: cell, indexPath: indexPath)
         cellHandler(cell, indexPath)
         return cell
     }
@@ -102,3 +102,4 @@ extension UICollectionViewFlowLayout {
         return flowLayout
     }()
 }
+

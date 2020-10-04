@@ -31,10 +31,10 @@ extension Routing: CoordinatorRoutingProtcol {
      Note: Check if you'r using tabbar controller or general navigation.
      */
     
-    func switchRootViewController(destination: ControllerDestination, storyBoard: CoordinatorStoryBoardProtocol , animated: Bool, window: CoordinatorWindowProtocol?, animations: UIView.AnimationOptions) {
+    func switchRootViewController<T>(destination: ControllerDestination, storyBoard: CoordinatorStoryBoardProtocol , animated: Bool, window: CoordinatorWindowProtocol?, animations: UIView.AnimationOptions,  configure: ((T) -> Void)?) -> T? where T : UIViewController {
         let storyBoard = storyBoard.instantiateInitialViewController()
         if animated {
-            guard let window = window else { return }
+            guard let window = window else { return nil }
             UIView.transition(with: window as! UIView, duration: 0.5, options: animations, animations: {
                 let oldState: Bool = UIView.areAnimationsEnabled
                 UIView.setAnimationsEnabled(false)
@@ -50,11 +50,13 @@ extension Routing: CoordinatorRoutingProtcol {
         if let tabBarController = window?.rootViewController as? UITabBarController, let navigationController = tabBarController.selectedViewController as? UINavigationController {
             routing = Routing(navigation: navigationController, viewController: navigationController.topViewController, storyBoard: window?.rootViewController?.storyboard)
         } else {
-            guard let navigation = window?.rootViewController as? UINavigationController, let viewController = navigation.topViewController, let storyBoard = navigation.storyboard else {return}
+            guard let navigation = window?.rootViewController as? UINavigationController, let viewController = navigation.topViewController, let storyBoard = navigation.storyboard else { return nil }
             routing = Routing(navigation: navigation, viewController: viewController, storyBoard: storyBoard)
         }
         
         Coordinator.shared.config(routing: routing)
+        configure?(routing?.navigation?.topViewController as! T)
+        return routing?.navigation?.topViewController as? T
     }
 
     
@@ -247,3 +249,5 @@ private extension Routing {
         }
     }
 }
+
+

@@ -5,6 +5,7 @@ protocol Nib {
 }
 
 extension Nib where Self : UIView {
+    
     func registerNib() {
         guard let nibName = type(of: self).description().components(separatedBy: ".").last else { return }
         #if !TARGET_INTERFACE_BUILDER

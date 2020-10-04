@@ -1,9 +1,5 @@
 import Foundation
 
-enum UserDefaultsKeys: String {
-    case storeStack
-}
-
 class UserDefaultsHelper: NSObject, UserDefaultsHelperProtocol {
     var userDefaults: UserDefaultsProtocol?
     var encoder: PropertListEncoderProtocol?

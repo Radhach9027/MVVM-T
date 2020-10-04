@@ -1,26 +1,16 @@
 import UIKit
 
-enum AnimatePosition {
-    case top, bottom, middle
-}
-
-enum AnimatedMessages: String {
-    case internet = "Hey Seems to have good internet connectivity..Let's ride the app..😃"
-    case noInternet = "As it seems there is no network connection available on the device, please check and try again..😟"
-    case error = "Oops...Something went wrong, Please try again."
-    func AnimatedIcons () -> UIImage {
-        switch self {
-        case .noInternet:
-            return UIImage(named: "NoInternet")!
-        case .internet:
-            return UIImage(named: "Internet")!
-        case .error:
-            return UIImage(named: "error")!
-        }
-    }
+extension AnimatedMessages {
     
-    func apiError(message: Error)-> String{
-        return message.localizedDescription
+    enum ApiError {
+        case api(Error)
+        
+        func errorMessages() -> String {
+            switch self {
+            case let .api(error):
+                return error.localizedDescription
+            }
+        }
     }
 }
 
@@ -30,6 +20,26 @@ enum Transform {
 }
 
 class AnimatedView: UIView {
+    
+    private static var sharedInstance: AnimatedView?
+    
+    class var shared : AnimatedView {
+        guard let instance = self.sharedInstance else {
+            let strongInstance = AnimatedView()
+            self.sharedInstance = strongInstance
+            return strongInstance
+        }
+        return instance
+    }
+    
+    class func destroy() {
+        sharedInstance = nil
+    }
+    
+    private init() {
+        super.init(frame: .zero)
+    }
+    
     let actualHeight: CGFloat = 60
     lazy var titleLabel: (UIColor, String) -> UILabel = { (textColor, title) in
         let label = UILabel()
@@ -56,8 +66,7 @@ class AnimatedView: UIView {
         return size.height < self.actualHeight ? self.actualHeight : size.height + self.actualHeight
     }
     
-    init(message: AnimatedMessages, postion: AnimatePosition, bgColor: UIColor) {
-        super.init(frame: .zero)
+    func present(message: AnimatedMessages, postion: AnimatePosition, bgColor: UIColor) {
         self.backgroundColor = bgColor
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
@@ -90,13 +99,13 @@ private extension AnimatedView {
         
         switch postion {
         case .top:
-            self.topAnchor.constraint(equalTo: rootView.layoutMarginsGuide.topAnchor, constant: 10).isActive = true
+            self.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor).isActive = true
             break
         case .bottom:
-            self.topAnchor.constraint(equalTo: rootView.layoutMarginsGuide.bottomAnchor, constant: -self.viewHeight(message)).isActive = true
+            self.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.bottomAnchor, constant: -self.viewHeight(message)).isActive = true
             break
         case .middle:
-            self.topAnchor.constraint(equalTo: rootView.layoutMarginsGuide.topAnchor, constant: rootView.frame.size.height / 2 - self.viewHeight(message)).isActive = true
+            self.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor, constant: rootView.frame.size.height / 2 - self.viewHeight(message)).isActive = true
             break
         }
         
@@ -118,19 +127,20 @@ private extension AnimatedView {
     func transfrom(with transform: Transform) {
         switch transform {
         case .show:
-         show(hide: false)
-         UIView.animate(withDuration: 0.8) { [weak self] in
-           self?.alpha = 1
-           DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
-            self?.transfrom(with: .hide)
-           }
-         }
+            show(hide: false)
+            UIView.animate(withDuration: 0.8) { [weak self] in
+                self?.alpha = 1
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+                    self?.transfrom(with: .hide)
+                }
+            }
         case .hide:
-        UIView.animate(withDuration: 0.5,
+            UIView.animate(withDuration: 0.5,
                            animations: { [weak self] in
-            self?.alpha = 0
-            },completion: { _ in
-            self.removeFromSuperview()
+                            self?.alpha = 0
+                },completion: { [weak self] (true)  in
+                    AnimatedView.destroy()
+                    self?.removeFromSuperview()
             })
         }
     }

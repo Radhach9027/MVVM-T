@@ -3,6 +3,7 @@ import Reachability
 
 extension Notification.Name {
     static let ReachabilityStatusChanged = Notification.Name("ReachabilityStatusChangedNotification")
+    static let textFieldRightViewPressed = Notification.Name("TextFieldRightViewPressed")
 }
 
 final class NetworkReachability {

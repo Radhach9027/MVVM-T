@@ -1,11 +1,15 @@
 import UIKit
 
+
 extension Date {
     
-     enum DateFormats: String {
+    enum DateFormats: String {
         case yyyyMMdd = "yyyy-MM-dd"
+        case yyyyMMddHHmmssZ = "yyyy-MM-dd HH:mm:ssZ"
         case yyyyMMddHHmm = "yyyy-MM-dd HH:mm"
-        case MMMddyyyy = "MMM dd,yyyy"
+        case yyyyMMddHHmmss = "yyyy-MM-dd HH:mm:ss"
+        case MMMddyyyy = "MMMM dd, yyyy"
+        case EdMMMyyyyHHmmssZ = "E, d MMM yyyy HH:mm:ss Z"
     }
     
     func toString(format: DateFormats) -> String {
@@ -65,19 +69,22 @@ extension Date {
         return endDate ?? Date()
     }
     
-    func getHumanReadableDayString() -> String {
-        let weekdays = [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-        ]
-        
-        let calendar = Calendar.current.component(.weekday, from: self)
-        return weekdays[calendar - 1]
+    func getHumanReadableDayString(toDate: String, format: DateFormats) -> String? {
+        if let date = toDate.fromStringToDate(format: format, dateValue: toDate) {
+            let weekdays = [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            ]
+            
+            let calendar = Calendar.current.component(.weekday, from: date)
+            return weekdays[calendar - 1]
+        }
+        return nil
     }
     
     static func time(since fromDate: Date) -> String {
@@ -86,15 +93,15 @@ extension Date {
         let allComponents: Set<Calendar.Component> = [.second, .minute, .hour, .day, .weekOfYear, .month, .year]
         let components:DateComponents = Calendar.current.dateComponents(allComponents, from: fromDate, to: Date())
         
-        for (period, timeAgo) in [
-            ("year", components.year ?? 0),
-            ("month", components.month ?? 0),
-            ("week", components.weekOfYear ?? 0),
-            ("day", components.day ?? 0),
-            ("hour", components.hour ?? 0),
-            ("minute", components.minute ?? 0),
-            ("second", components.second ?? 0),
-            ] {
+        let componentsArray = [("year", components.year ?? 0),
+                    ("month", components.month ?? 0),
+                    ("week", components.weekOfYear ?? 0),
+                    ("day", components.day ?? 0),
+                    ("hour", components.hour ?? 0),
+                    ("minute", components.minute ?? 0),
+                    ("second", components.second ?? 0)]
+        
+        for (period, timeAgo) in  componentsArray{
                 if timeAgo > 0 {
                     return "\(timeAgo.of(period)) ago"
                 }

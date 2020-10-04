@@ -4,7 +4,7 @@ import UIKit
 
 // Mark: Routing Attributes
  protocol CoordinatorRoutingProtcol {
-    func switchRootViewController(destination: ControllerDestination, storyBoard: CoordinatorStoryBoardProtocol , animated: Bool, window: CoordinatorWindowProtocol?, animations: UIView.AnimationOptions)
+    func switchRootViewController<T>(destination: ControllerDestination, storyBoard: CoordinatorStoryBoardProtocol , animated: Bool, window: CoordinatorWindowProtocol?, animations: UIView.AnimationOptions,  configure: ((T) -> Void)?) -> T? where T : UIViewController
     func push<T>(to destination: ControllerDestination, storyDestination: StoryDestination, modelPresentationStyle: UIModalPresentationStyle, modelTransistionStyle: UIModalTransitionStyle, animated: Bool, configure: ((T) -> Void)?) -> T? where T: UIViewController
     func present<T>(to destination: ControllerDestination, storyDestination: StoryDestination, modelPresentationStyle: UIModalPresentationStyle, modelTransistionStyle: UIModalTransitionStyle, animated: Bool, configure: ((T) -> Void)?) -> T? where T : UIViewController
     func performSegue<T>(to destination: ControllerDestination , storyDestination: StoryDestination, storyBoardProtocol: CoordinatorStoryBoardProtocol, modelTransistionStyle: UIModalTransitionStyle, configure: ((T) -> Void)?) -> T? where T : UIViewController
@@ -15,3 +15,4 @@ import UIKit
     func popToViewController<T>(destination: AnyClass, animated: Bool, modelTransistionStyle: UIModalTransitionStyle, configure: ((T) -> Void)?) -> T? where T : UIViewController
     func dismiss(modelTransistionStyle: UIModalTransitionStyle, animated: Bool)
 }
+

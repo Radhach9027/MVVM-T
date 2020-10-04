@@ -1,14 +1,23 @@
 import UIKit
 
-enum LC_LoadingSteps {
-    case start(animate: Bool)
-    case end
-    case success(animate: Bool)
-    case failure(animate: Bool)
-}
-
 class LoadingIndicator: UIView, Nib {
-    static let shared = LoadingIndicator()
+    
+    private static var sharedInstance: LoadingIndicator?
+
+    class var shared : LoadingIndicator {
+        
+        guard let instance = self.sharedInstance else {
+            let strongInstance = LoadingIndicator()
+            self.sharedInstance = strongInstance
+            return strongInstance
+        }
+        return instance
+    }
+    
+    class func destroy() {
+        sharedInstance = nil
+    }
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var loadingView: CustomView!
@@ -17,50 +26,52 @@ class LoadingIndicator: UIView, Nib {
     private var status: Bool = false
     private var title: String?
     private var duration: Double = 0.25
-
+    
     
     private init() {
         super.init(frame: .zero)
         loadNibFile()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
     func loadNibFile() {
-       registerNib()
+        registerNib()
+        self.statusImageView.tintColor = .white
     }
     
-    func loading(step: LC_LoadingSteps, title: String? = "Loading...") {
+    func loading(step: LoadingSteps, title: String? = "Loading...") {
         self.title = title
         switch step {
         case .start(let animated):
-        startAnimating(animated: animated)
+            startAnimating(animated: animated)
         case .end:
-        stopAnimating()
+            stopAnimating()
         case .success(let animated):
-        self.status = true
-        self.statusImageView.image = UIImage(named: "check")
-        success(animated: animated)
+            self.status = true
+            self.statusImageView.image = UIImage(named: "check")
+            success(animated: animated)
         case .failure(let animated):
-        self.status = true
-        self.statusImageView.image = UIImage(named: "close")
-        success(animated: animated)
-        print("failure")
-      }
+            self.status = true
+            self.statusImageView.image = UIImage(named: "close")
+            success(animated: animated)
+            print("failure")
+        }
     }
 }
 
 
 private extension LoadingIndicator {
+    
     func startAnimating(animated: Bool) {
         guard let title = self.title else {return}
         if !status {
             animate(show: true)
             if  animated {
                 self.titleLabel.animate(newText: title, characterDelay: duration)
-                self.perform(#selector(runTimedCode), with: self, afterDelay: 3, inModes: [.common])
+                self.perform(#selector(runTimedCode), with: self, afterDelay: 10, inModes: [.common])
             } else {
                 self.titleLabel.text = title
             }
@@ -72,8 +83,9 @@ private extension LoadingIndicator {
         self.spinner.stopAnimating()
         UIView.animate(withDuration: 0.6, animations: { [weak self] in
             self?.alpha = 0
-        }) { (true) in
-            self.removeFromSuperview()
+        }) { [weak self] (true)  in
+            LoadingIndicator.destroy()
+            self?.removeFromSuperview()
         }
     }
     
@@ -81,8 +93,9 @@ private extension LoadingIndicator {
         animate(show: false)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.34) { [weak self] in
             UIView.animate(withDuration: 0.6, animations: { [weak self] in
-                self?.loadingView.backgroundColor = UIColor(displayP3Red: 198/255, green: 198/255, blue: 198/255, alpha: 1)
-                self?.statusImageView.alpha = 0.5
+                self?.loadingView.backgroundColor = .appButtonColor()
+                self?.loadingView.alpha = 1
+                self?.statusImageView.alpha = 0.7
             }) { (true) in
                 self?.statusImageView.alpha = 1
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -110,3 +123,4 @@ private extension LoadingIndicator {
         self.startAnimating(animated: true)
     }
 }
+

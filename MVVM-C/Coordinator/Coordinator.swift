@@ -124,7 +124,7 @@ extension Coordinator {
         func perform<T>(_ configure: ((T) -> Void)? = nil) -> T? where T: UIViewController {
             switch self {
             case let .switchRootViewController(storyBoard, destination, animated, window, modelTransistion):
-                Coordinator.shared.routing?.switchRootViewController(destination: destination, storyBoard: storyBoard, animated: animated, window: window, animations: modelTransistion)
+                return Coordinator.shared.routing?.switchRootViewController(destination: destination, storyBoard: storyBoard, animated: animated, window: window, animations: modelTransistion, configure: configure)
             case let .present(story, controller, animated, modelTransistion, modelPresentation):
                 return Coordinator.shared.routing?.present(to: controller, storyDestination: story, modelPresentationStyle: modelPresentation, modelTransistionStyle: modelTransistion, animated: animated, configure: configure)
             case let .push(story, controller, animated, modelTransistion, modelPresentation):
@@ -159,3 +159,5 @@ extension Coordinator {
         }
     }
 }
+
+

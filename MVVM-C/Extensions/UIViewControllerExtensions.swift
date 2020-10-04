@@ -1,6 +1,7 @@
 import UIKit
 
 extension UIViewController {
+    
     func add(_ child: UIViewController) {
         addChild(child)
         view.addSubview(child.view)
@@ -14,7 +15,7 @@ extension UIViewController {
         removeFromParent()
     }
     
-    func makeViewController<T>(for controller: ControllerDestination, storyBoardName: StoryDestination, storyBoard: CoordinatorStoryBoardProtocol?,  modelPresentationStyle: UIModalPresentationStyle?, modelTransistionStyle: UIModalTransitionStyle?) -> T? where T: UIViewController
+    func makeViewController<T>(for controller: ControllerDestination, storyBoardName: StoryDestination, storyBoard: CoordinatorStoryBoardProtocol?,  modelPresentationStyle: UIModalPresentationStyle? = nil, modelTransistionStyle: UIModalTransitionStyle? = nil) -> T? where T: UIViewController
     {
         if let viewController = storyBoard?.instantiateViewController(withIdentifier: controller.rawValue) {
             if let presentation = modelPresentationStyle {
@@ -38,4 +39,31 @@ extension UIViewController {
         controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         return true
     }
+    
+    func startLoading(show: Bool, animate: Bool, message: String = "Loading..", success: Bool? = nil) {
+        if show {
+            LoadingIndicator.shared.loading(step: .start(animate: animate), title: message)
+        } else {
+            guard let success = success else { return LoadingIndicator.shared.loading(step: .end)}
+            LoadingIndicator.shared.loading(step: success ? .success(animate: animate): .failure(animate: animate))
+        }
+    }
+    
+    func presentAlert(_ message: String) {
+        Alert.presentAlert(withTitle: "Alert", message: message, controller: self)
+    }
+    
+    func endEditing() {
+        self.view.endEditing(true)
+    }
 }
+
+protocol TextFieldViewTouchabilityDelegates: class {
+    func rightViewTapped()
+}
+
+protocol KeyBoardListenerDelegates: class {
+    func keyBoardShow(_ notification: Notification)
+    func keyBoardHide(_ notification: Notification)
+}
+

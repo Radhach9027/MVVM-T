@@ -1,0 +1,132 @@
+import UIKit
+
+enum ProfileInfoKeys {
+    case patientInfo, patientAddress
+}
+
+enum CreatePasswordValidation: String {
+    
+    case noCode = "Please enter the code, which is sent to your gmail"
+    case password = "Please enter the password"
+    case confirmPassword = "Please confirm the password"
+}
+
+enum ValidationMessages: String {
+    
+    case noPassword = "Please enter a password"
+    case validPassword = "Password length should be greater than or equal to 8 charcters & should contain atleast one special char, numeric, uppercase, lowercase"
+    case noEmail = "Please enter email"
+    case validEmail = "Please enter a valid email address"
+    case noPhone = "Please enter phone number"
+    case validPhone = "Please enter a valid phone number"
+    case passwordNotMatch = "Please check the password you've entered, try again.."
+    case globalNoValue = "Please enter an email or phone or userName"
+}
+
+enum ProfileValidation: String {
+    
+    case noUser = "No User Exists"
+    case fullName = "Please enter full name"
+    case name = "Please enter name"
+    case email = "Please enter email"
+    case password = "Please enter password"
+    case unknown = "Something went wrong.."
+}
+
+enum UserDefaultsKeys: String {
+    case storeStack
+}
+
+enum BarButtonImageType: String {
+    case notification
+    case settings
+    case userImage
+}
+
+enum BarButtonItemPosition {
+    case right, left
+}
+
+enum BarButtonItemType {
+    case notification(BarButtonItemPosition)
+}
+
+public enum UIButtonBorderSide {
+    case Top, Bottom, Left, Right
+}
+
+enum AppFontSize: CGFloat {
+    case tabs = 11.0
+    case small = 12.0
+    case regular  = 16.0
+    case heavy = 17.0
+    case light = 14.0
+    case navTitle = 18.0
+}
+
+enum AnimatePosition {
+    case top, bottom, middle
+}
+
+enum AnimatedMessages: String {
+    
+    case internet = "Hey Seems to have good internet connectivity..Let's ride the app..😃"
+    case noInternet = "As it seems there is no network connection available on the device, please check and try again..😟"
+    case error = "Oops...Something went wrong, Please try again."
+    
+    func AnimatedIcons () -> UIImage {
+        switch self {
+        case .noInternet:
+            return UIImage(named: "NoInternet")!
+        case .internet:
+            return UIImage(named: "Internet")!
+        case .error:
+            return UIImage(named: "error")!
+        }
+    }
+}
+
+enum LoadingSteps {
+    case start(animate: Bool)
+    case end
+    case success(animate: Bool)
+    case failure(animate: Bool)
+}
+
+enum CustomPopupAnimateOptions {
+    case affineIn
+    case crossDisolve
+    case affineOut
+    case bounce
+}
+
+enum UIDeviceSize  {
+    case i3_5Inch
+    case i4Inch
+    case i4_7Inch
+    case i5_5Inch
+    case i5_8Inch
+    case i6_1Inch
+    case i6_5Inch
+    case i7_9Inch
+    case i9_7Inch
+    case i10_5Inch
+    case i12_9Inch
+    case unknown
+}
+
+enum PopupListTypes: String {
+    case City
+    case State
+}
+
+enum GenderSpecification: String {
+    case gender = "Gender Specifications"
+    case male = "Male"
+    case female = "Female"
+    case donotSpecify = "I prefer not to say"
+}
+
+enum ProfileServiceCases {
+    case create
+}

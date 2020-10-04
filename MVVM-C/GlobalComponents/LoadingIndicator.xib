@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingIndicator" customModule="MVVM_C" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingIndicator" customModule="Laso_Care" customModuleProvider="target">
             <connections>
                 <outlet property="loadingView" destination="bgC-fH-MuR" id="vyP-gD-0RY"/>
                 <outlet property="spinner" destination="lug-LS-B4r" id="OGP-dW-UE1"/>
@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgC-fH-MuR" customClass="CustomView" customModule="MVVM_C" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgC-fH-MuR" customClass="CustomView" customModule="Laso_Care" customModuleProvider="target">
                     <rect key="frame" x="132" y="388" width="150" height="120"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kq1-RA-eV2">
@@ -31,7 +31,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching data..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uT2-D6-NNs">
-                            <rect key="frame" x="2" y="77" width="146" height="21"/>
+                            <rect key="frame" x="2" y="72" width="146" height="43"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="T3e-WP-o0j"/>
                             </constraints>
@@ -40,12 +40,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.074451663624491363" green="0.074415702360392966" blue="0.082873239263969389" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="EGv-MM-hLe"/>
                         <constraint firstAttribute="trailing" secondItem="uT2-D6-NNs" secondAttribute="trailing" constant="2" id="FZI-Vl-DWy"/>
                         <constraint firstItem="Kq1-RA-eV2" firstAttribute="centerY" secondItem="bgC-fH-MuR" secondAttribute="centerY" id="NUv-x7-Q15"/>
                         <constraint firstAttribute="width" constant="150" id="OSj-YP-fcW"/>
+                        <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="uT2-D6-NNs" secondAttribute="bottom" constant="5" id="aH5-jh-sRx"/>
                         <constraint firstItem="Kq1-RA-eV2" firstAttribute="centerX" secondItem="bgC-fH-MuR" secondAttribute="centerX" id="iOG-Kb-rk3"/>
                         <constraint firstItem="uT2-D6-NNs" firstAttribute="leading" secondItem="bgC-fH-MuR" secondAttribute="leading" constant="2" id="tSF-kv-ImO"/>
                     </constraints>
@@ -77,7 +78,7 @@
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25387874119718312" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="uT2-D6-NNs" firstAttribute="top" secondItem="lug-LS-B4r" secondAttribute="bottom" constant="10" id="27o-Vc-eaC"/>
+                <constraint firstItem="uT2-D6-NNs" firstAttribute="top" relation="lessThanOrEqual" secondItem="lug-LS-B4r" secondAttribute="bottom" constant="5" id="27o-Vc-eaC"/>
                 <constraint firstItem="bgC-fH-MuR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6fW-Jr-kR4"/>
                 <constraint firstItem="bgC-fH-MuR" firstAttribute="top" secondItem="lug-LS-B4r" secondAttribute="bottom" constant="-67" id="AXu-8x-fAS"/>
                 <constraint firstItem="bgC-fH-MuR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="n8g-Ws-lw9"/>

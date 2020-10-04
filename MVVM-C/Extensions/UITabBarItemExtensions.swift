@@ -4,21 +4,8 @@ extension UITabBarItem {
     class func customTabBarItems() {
         self.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.tabsSelected()], for: .selected)
         self.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.tabs()], for: .normal)
-        UITabBar.appearance().tintColor = UIColor.appColor2()
+        UITabBar.appearance().tintColor = UIColor.appButtonColor()
     }
-}
-
-enum BarButtonImageType: String {
-    case notification
-    case settings
-}
-
-enum BarButtonItemPosition {
-    case right, left
-}
-
-enum BarButtonItemType {
-    case notification(BarButtonItemPosition)
 }
 
 protocol BarButtonItemConfiguration: class {
@@ -46,3 +33,4 @@ extension BarButtonItemConfiguration where Self: UIViewController, Self: BarButt
 }
 
 protocol BarButtonConfigarable: BarButtonItemConfiguration, BarButtonActions {}
+

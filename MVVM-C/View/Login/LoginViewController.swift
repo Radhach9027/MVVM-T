@@ -1,18 +1,21 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    var viewModel = LoginViewModel()
+    var viewModel: LoginViewModelProtocol?
     
+    func config(viewModel: LoginViewModelProtocol?) {
+        self.viewModel = viewModel
+    }
+
     deinit {
      print("LoginViewController de-init")
     }
 }
 
-extension LoginViewController {
+extension LoginViewController: LoginNavigationProtocol {
+    
     @IBAction func popBackButtonPressed(_ sender: UIButton) {
-        viewModel.loginUser { (result) in
-            print(result)
-        }
+        popToRoot(to: false)
     }
 }
 

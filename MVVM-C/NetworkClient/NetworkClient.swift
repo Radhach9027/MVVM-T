@@ -80,13 +80,13 @@ extension NetworkClient {
     
     func responseStatus(error: NetworkErrorCode) {
         DispatchQueue.main.async {
-            CustomPopup().present(message: error.localizedDescription, animate: .affineIn)
+            CustomPopup.shared.present(message: error.localizedDescription, animate: .crossDisolve)
         }
     }
     
     func networkError(){
         DispatchQueue.main.async {
-            _ = AnimatedView(message: .noInternet, postion: .top, bgColor: .systemRed)
+            AnimatedView.shared.present(message: .noInternet, postion: .top, bgColor: .appButtonColor())
         }
     }
 }
