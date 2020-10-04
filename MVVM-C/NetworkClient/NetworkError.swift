@@ -14,7 +14,7 @@ enum NetworkErrorCode: Error {
 
     var localizedDescription: String {
         switch self {
-        case .requestFailed: return "Request Failed."
+        case .requestFailed: return "Request Failed or Invalid URL"
         case .invalidData: return "Invalid Data."
         case .responseUnsuccessful: return "Response Unsuccessful."
         case .jsonParsingFailure: return "JSON Parsing Failure."
@@ -57,5 +57,4 @@ struct NetworkStatus {
         }
     }
 }
-
 

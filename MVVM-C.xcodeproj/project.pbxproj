@@ -122,6 +122,7 @@
 		A26519412529B0A90027A085 /* CoreDataBaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26519402529B0A90027A085 /* CoreDataBaseRepository.swift */; };
 		A26519562529B8A60027A085 /* HomeDetailsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26519542529B8A60027A085 /* HomeDetailsCustomCell.swift */; };
 		A26519572529B8A60027A085 /* HomeDetailsCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A26519552529B8A60027A085 /* HomeDetailsCustomCell.xib */; };
+		A265195B2529BB740027A085 /* NetworkHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A265195A2529BB740027A085 /* NetworkHTTP.swift */; };
 		A2AF841E24DFE64700BA174F /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */; };
 		FF4331B0A250246448C494A7 /* Pods_MVVM_CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F581B42A9313ED0609FD1B3E /* Pods_MVVM_CTests.framework */; };
 /* End PBXBuildFile section */
@@ -261,6 +262,7 @@
 		A26519402529B0A90027A085 /* CoreDataBaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataBaseRepository.swift; sourceTree = "<group>"; };
 		A26519542529B8A60027A085 /* HomeDetailsCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsCustomCell.swift; sourceTree = "<group>"; };
 		A26519552529B8A60027A085 /* HomeDetailsCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailsCustomCell.xib; sourceTree = "<group>"; };
+		A265195A2529BB740027A085 /* NetworkHTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHTTP.swift; sourceTree = "<group>"; };
 		A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		A44BF0B004CAF8BB8A7B142D /* Pods-MVVM-C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-C.release.xcconfig"; path = "Target Support Files/Pods-MVVM-C/Pods-MVVM-C.release.xcconfig"; sourceTree = "<group>"; };
 		CCD8ACB46A907F9118D1DB56 /* Pods_MVVM_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -475,6 +477,7 @@
 				5537C198248D06E600367F0C /* NetworkEndPoint.swift */,
 				55D3D920248D568500A20926 /* NetworkReachability.swift */,
 				A2604DCD24E59D3D00945435 /* NetworkError.swift */,
+				A265195A2529BB740027A085 /* NetworkHTTP.swift */,
 			);
 			path = NetworkClient;
 			sourceTree = "<group>";
@@ -654,8 +657,8 @@
 		A26518A325299ED90027A085 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				A265190F2529A9AC0027A085 /* SupportingClasses */,
-				A26518FF2529A4E50027A085 /* Repository */,
+				A265190F2529A9AC0027A085 /* ManagedClasses */,
+				A26518FF2529A4E50027A085 /* Repositories */,
 				A26518F82529A4C10027A085 /* Managers */,
 				A26519062529A5820027A085 /* PersistentStorage.swift */,
 				A265190A2529A8C60027A085 /* SomeX.xcdatamodeld */,
@@ -679,19 +682,19 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		A26518FF2529A4E50027A085 /* Repository */ = {
+		A26518FF2529A4E50027A085 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
 				A26519002529A5090027A085 /* UserRepository.swift */,
 			);
-			path = Repository;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
-		A265190F2529A9AC0027A085 /* SupportingClasses */ = {
+		A265190F2529A9AC0027A085 /* ManagedClasses */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = SupportingClasses;
+			path = ManagedClasses;
 			sourceTree = "<group>";
 		};
 		A2AF841C24DFE62F00BA174F /* HelperClasses */ = {
@@ -966,6 +969,7 @@
 				5548F86924D7C7D5009BFCFB /* UILabelExtensions.swift in Sources */,
 				A26518DA2529A0A00027A085 /* UINavigationItemExtensions.swift in Sources */,
 				A26518DC2529A0A00027A085 /* UIResponderExtensions.swift in Sources */,
+				A265195B2529BB740027A085 /* NetworkHTTP.swift in Sources */,
 				A2AF841E24DFE64700BA174F /* UserDefaultsHelper.swift in Sources */,
 				5548F86724D7C77E009BFCFB /* UIWindowExtensions.swift in Sources */,
 				55A5B48C24D3460E00F10070 /* CoordinatorStoryBoardProtocol.swift in Sources */,

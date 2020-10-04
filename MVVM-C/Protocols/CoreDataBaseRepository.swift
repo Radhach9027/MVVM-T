@@ -5,4 +5,3 @@ protocol BaseRepository {
     func update(record: T) -> Bool
     func delete(byIdentifier id: Int64) -> Bool
 }
-

@@ -35,9 +35,9 @@ extension NetworkClient {
                         completion(nil, .invalidData)
                     }
                 } else if (!success && error == NetworkErrorCode.authenticationError) {
-                    
+                    self.responseStatus(error: .authenticationError)
                 } else {
-                    
+                    completion(nil, error)
                 }
             }
         }
@@ -80,13 +80,15 @@ extension NetworkClient {
     
     func responseStatus(error: NetworkErrorCode) {
         DispatchQueue.main.async {
-            CustomPopup.shared.present(message: error.localizedDescription, animate: .crossDisolve)
+            Alert.presentAlert(withTitle: "ERROR", message: error.localizedDescription, controller: nil)
         }
     }
     
     func networkError(){
         DispatchQueue.main.async {
-            AnimatedView.shared.present(message: .noInternet, postion: .top, bgColor: .appButtonColor())
+            AnimatedView.shared.present(message: .noInternet, postion: .top, bgColor: .systemGreen)
         }
     }
 }
+
+

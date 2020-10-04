@@ -14,10 +14,16 @@ enum API {
     }
 }
 
+
 extension Endpoint: RequestProvidingProtocol {
+    
     var urlRequest: URLRequest {
         guard let url = API.getUrl(point: self) else {fatalError("Cannot construct url")}
-        return URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.setValue(HTTPHeaderType.json.rawValue, forHTTPHeaderField: HTTPHeaderType.headerContentType.rawValue)
+        request.setValue(HTTPHeaderType.json.rawValue, forHTTPHeaderField: HTTPHeaderType.headerAccept.rawValue)
+        request.httpMethod = HTTPMethod.post.rawValue
+        return request
     }
 }
 

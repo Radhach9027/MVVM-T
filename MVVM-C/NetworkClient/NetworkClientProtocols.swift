@@ -19,7 +19,7 @@ protocol NetworkClient {
     func killAllServices()
 }
 
-
 protocol RequestProvidingProtocol {
     var urlRequest: URLRequest { get }
 }
+
