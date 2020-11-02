@@ -42,12 +42,12 @@ class AnimatedView: UIView {
         return imageView
     }
     
-    lazy var viewHeight:(AnimatedMessages) -> CGFloat = { (message) in
+    lazy var viewHeight:(NetworkMessages) -> CGFloat = { (message) in
         let size = message.rawValue.sizeOfString(string: message.rawValue, constrainedToWidth: Double(UIScreen.main.bounds.size.width - self.actualHeight))
         return size.height < self.actualHeight ? self.actualHeight : size.height + self.actualHeight
     }
     
-    func present(message: AnimatedMessages, postion: AnimatePosition, bgColor: UIColor) {
+    func present(message: NetworkMessages, postion: AnimatePosition, bgColor: UIColor) {
         self.backgroundColor = bgColor
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
@@ -62,14 +62,14 @@ class AnimatedView: UIView {
 
 private extension AnimatedView {
     
-    func addConstrints(postion: AnimatePosition, message: AnimatedMessages) {
+    func addConstrints(postion: AnimatePosition, message: NetworkMessages) {
         defer {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
                 self?.transfrom(with: .show)
             }
         }
         guard let rootView = UIWindow.getTopViewController()?.view else { return }
-        let icon: UIImageView = self.iconType(AnimatedMessages.AnimatedIcons(message)())
+        let icon: UIImageView = self.iconType(NetworkMessages.AnimatedIcons(message)())
         let titleLabel: UILabel = self.titleLabel(.white, message.rawValue)
         
         self.translatesAutoresizingMaskIntoConstraints = false

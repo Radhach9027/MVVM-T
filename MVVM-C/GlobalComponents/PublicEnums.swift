@@ -68,7 +68,7 @@ enum AnimatePosition {
     case top, bottom, middle
 }
 
-enum AnimatedMessages: String {
+enum NetworkMessages: String {
     
     case internet = "Hey Seems to have good internet connectivity..Let's ride the app..😃"
     case noInternet = "As it seems there is no network connection available on the device, please check and try again..😟"

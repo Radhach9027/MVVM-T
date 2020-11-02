@@ -242,7 +242,7 @@ private extension Routing {
     }
     
     func checkStorageAndReassignRoutingWhenControllerIsDismissed() {
-        if Coordinator.shared.storage.count > 0{
+        if Coordinator.shared.storage.count > 0 {
             self.storyBoard = Coordinator.shared.storage[0] as? CoordinatorStoryBoardProtocol
             self.navigation = Coordinator.shared.storage[1] as? CoordinatorNavigationProtocol
             self.viewController = Coordinator.shared.storage[2] as? CoordinatorViewControllerProtocol
