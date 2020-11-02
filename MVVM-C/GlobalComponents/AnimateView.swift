@@ -1,24 +1,5 @@
 import UIKit
 
-extension AnimatedMessages {
-    
-    enum ApiError {
-        case api(Error)
-        
-        func errorMessages() -> String {
-            switch self {
-            case let .api(error):
-                return error.localizedDescription
-            }
-        }
-    }
-}
-
-enum Transform {
-    case show
-    case hide
-}
-
 class AnimatedView: UIView {
     
     private static var sharedInstance: AnimatedView?

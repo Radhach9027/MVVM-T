@@ -84,6 +84,22 @@ enum AnimatedMessages: String {
             return UIImage(named: "error")!
         }
     }
+    
+    enum ApiError {
+        case api(Error)
+
+        func errorMessages() -> String {
+            switch self {
+            case let .api(error):
+                return error.localizedDescription
+            }
+        }
+    }
+}
+
+enum Transform {
+    case show
+    case hide
 }
 
 enum LoadingSteps {

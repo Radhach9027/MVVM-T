@@ -1,23 +1,30 @@
 import Foundation
 
 protocol LoginViewModelProtocol {
-    func loginUser(loginType: LoginType, completion: @escaping (Result<LoginModel?, NetworkErrorCode>)-> Void)
+    func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?)-> Void)
 }
 
-class LoginViewModel: LoginViewModelProtocol {
+class LoginViewModel {
     
-    var loginService: LoginServiceProtocol?
-    init(loginService: LoginServiceProtocol? = LoginService()) {
-        self.loginService = loginService
+    private var userService: UserServiceProtocol?
+    private var userManager: UserManagerProtocol?
+    
+    init(userService: UserServiceProtocol? = UserService(),  userManager:UserManagerProtocol? = UserManager()) {
+        self.userService = userService
+        self.userManager = userManager
     }
+}
+
+extension LoginViewModel: LoginViewModelProtocol {
     
-    func loginUser(loginType: LoginType, completion: @escaping (Result<LoginModel?, NetworkErrorCode>)-> Void) {
-        
-        switch loginType {
-        case .phone:
-            self.loginService?.loginUserWithPhone(completion: completion)
-        default:
-            break
-        }
+    func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?)-> Void) {
+        self.userService?.fetchUser(requestType: requestType, completion: { [weak self] (success, error, model) in
+            
+            if let userModel = model as? Users {
+                self?.userManager?.createUser(endUser: userModel)
+            }
+            print("Modify the data accordingly")
+            completion(true, nil)
+        })
     }
 }

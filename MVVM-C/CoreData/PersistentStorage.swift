@@ -2,8 +2,24 @@ import Foundation
 import CoreData
 
 final class PersistentStorage {
-    static let shared = PersistentStorage()
     private init(){}
+    
+    private static var sharedInstance: PersistentStorage?
+
+    class var shared : PersistentStorage {
+        guard let instance = self.sharedInstance else {
+            let strongInstance = PersistentStorage()
+            self.sharedInstance = strongInstance
+            return strongInstance
+        }
+        return instance
+    }
+    
+    class func destroy() {
+        sharedInstance = nil
+    }
+    
+    lazy var context = persistentContainer.viewContext
     
     lazy var persistentContainer: NSPersistentContainer = {
         
@@ -17,8 +33,6 @@ final class PersistentStorage {
         return container
     }()
     
-    lazy var context = persistentContainer.viewContext
-    
     func saveContext() {
         if context.hasChanges {
             do {
@@ -30,8 +44,7 @@ final class PersistentStorage {
         }
     }
     
-    func fetchManagedObject<T: NSManagedObject>(managedObject: T.Type) -> [T]?
-    {
+    func fetchManagedObject<T: NSManagedObject>(managedObject: T.Type) -> [T]? {
         do {
             guard let result = try PersistentStorage.shared.context.fetch(managedObject.fetchRequest()) as? [T] else {return nil}
             

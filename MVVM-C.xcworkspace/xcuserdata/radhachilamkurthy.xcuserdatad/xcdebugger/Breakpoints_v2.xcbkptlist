@@ -3,4 +3,54 @@
    uuid = "F7E76642-E596-4339-9D3A-13BF7DF90B9E"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C1F5670-CFB1-42F3-8346-9DDA4D535D3F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM-C/Services/LoginService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "getUsers(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7C1F5670-CFB1-42F3-8346-9DDA4D535D3F - 4eb16648a15b1ed0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVVM_C.LoginService.getUsers(completion: (MVVM_C.Result&lt;Swift.Optional&lt;MVVM_C.LoginModel&gt;, MVVM_C.NetworkErrorCode&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MVVM-C"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/radhachilamkurthy/Desktop/MVVM-C/MVVM-C/Services/LoginService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "230">
+               </Location>
+               <Location
+                  uuid = "7C1F5670-CFB1-42F3-8346-9DDA4D535D3F - c08acffa0d76fa55"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Decodable) -&gt; Swift.Optional&lt;MVVM_C.LoginModel&gt; in MVVM_C.LoginService.getUsers(completion: (MVVM_C.Result&lt;Swift.Optional&lt;MVVM_C.LoginModel&gt;, MVVM_C.NetworkErrorCode&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MVVM-C"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/radhachilamkurthy/Desktop/MVVM-C/MVVM-C/Services/LoginService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "73">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

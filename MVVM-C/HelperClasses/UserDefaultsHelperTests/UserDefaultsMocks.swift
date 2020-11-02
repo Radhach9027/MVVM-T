@@ -1,7 +1,7 @@
 @testable import MVVM_C
 import UIKit
 
-class UserDefaultsMock: UserDefaultsProtocol{
+class UserDefaultsMock: UserDefaultsProtocol {
     var mockVaue: Any?
     var mockDefaultName: String?
     var mockSynchronize: Int = 0
