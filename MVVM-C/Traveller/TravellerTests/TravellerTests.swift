@@ -7,12 +7,12 @@ class TravellerTests: XCTestCase {
     var mockStoryBoard = StroyBoardMock()
     var mockViewController = ViewControllerMock()
     var mockWindow = WindowMock()
-    var mockRouting: Routing?
+    var mockWayFinding: WayFinding?
     
     override func setUp() {
         super.setUp()
-        let mockRouting = Routing(navigation: mockNavigation, viewController: mockViewController, storyBoard: mockStoryBoard)
-        Traveller.shared.config(routing: mockRouting)
+        let mockWayFinding = WayFinding(navigation: mockNavigation, viewController: mockViewController, storyBoard: mockStoryBoard)
+        Traveller.shared.config(WayFinding: mockWayFinding)
     }
     
     override class func tearDown() {

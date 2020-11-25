@@ -2,7 +2,7 @@
 
 import UIKit
 
-final class Routing: NSObject, UIAdaptivePresentationControllerDelegate {
+final class WayFinding: NSObject, UIAdaptivePresentationControllerDelegate {
     private var navigation: TravellerNavigationProtocol?
     private var viewController : TravellerViewControllerProtocol?
     private var storyBoard: TravellerStoryBoardProtocol?
@@ -11,15 +11,15 @@ final class Routing: NSObject, UIAdaptivePresentationControllerDelegate {
         self.navigation = navigation
         self.storyBoard = storyBoard
         self.viewController = viewController
-        print("Routing init")
+        print("WayFinding init")
     }
     
     deinit {
-        print("Routing deinit")
+        print("WayFinding deinit")
     }
 }
 
-extension Routing: TravellerRoutingProtcol {
+extension WayFinding: TravellerWayFindingProtcol {
     
     /**
      !* @discussion: This function takes cares of switching root viewcontroller from one to other.
@@ -27,7 +27,7 @@ extension Routing: TravellerRoutingProtcol {
      1. Intially we are loading controller from stroyboard by using  storyBoard.instantiateViewController via TravellerStoryBoardProtocol.
      2. Once fetching the controller from storyboard, we are getting the window object by TravellerWindowProtocol.
      3. Then applying animation using animations via UIView.AnimationOptions, finally setting the rootView to window object.
-     4. Finally apply new routing config to old routing config.
+     4. Finally apply new WayFinding config to old WayFinding config.
      Note: Check if you'r using tabbar controller or general navigation.
      */
     
@@ -46,17 +46,17 @@ extension Routing: TravellerRoutingProtcol {
         }
         window?.makeKeyAndVisible()
         
-        var routing: Routing?
+        var wayFinding: WayFinding?
         if let tabBarController = window?.rootViewController as? UITabBarController, let navigationController = tabBarController.selectedViewController as? UINavigationController {
-            routing = Routing(navigation: navigationController, viewController: navigationController.topViewController, storyBoard: window?.rootViewController?.storyboard)
+            wayFinding = WayFinding(navigation: navigationController, viewController: navigationController.topViewController, storyBoard: window?.rootViewController?.storyboard)
         } else {
             guard let navigation = window?.rootViewController as? UINavigationController, let viewController = navigation.topViewController, let storyBoard = navigation.storyboard else { return nil }
-            routing = Routing(navigation: navigation, viewController: viewController, storyBoard: storyBoard)
+            wayFinding = WayFinding(navigation: navigation, viewController: viewController, storyBoard: storyBoard)
         }
         
-        Traveller.shared.config(routing: routing)
-        configure?(routing?.navigation?.topViewController as! T)
-        return routing?.navigation?.topViewController as? T
+        Traveller.shared.config(WayFinding: wayFinding)
+        configure?(wayFinding?.navigation?.topViewController as! T)
+        return wayFinding?.navigation?.topViewController as? T
     }
 
     
@@ -90,8 +90,8 @@ extension Routing: TravellerRoutingProtcol {
         if let viewController = self.viewController?.makeViewController(for: destination, storyBoardName: storyDestination, storyBoard: self.storyBoard, modelPresentationStyle: modelPresentationStyle, modelTransistionStyle: modelTransistionStyle) as? T, let navigation = self.navigation?.makeRootNavigation(to: viewController, isNavigationHidden: false), let topViewController = self.viewController {
             configure?(viewController)
             self.stackStorage()
-            let routing = Routing(navigation: navigation, viewController: viewController, storyBoard: self.storyBoard)
-            Traveller.shared.config(routing: routing)
+            let wayFinding = WayFinding(navigation: navigation, viewController: viewController, storyBoard: self.storyBoard)
+            Traveller.shared.config(WayFinding: wayFinding)
             topViewController.present(navigation, animated: animated, completion: nil)
             navigation.presentationController?.delegate = self
             return viewController
@@ -101,7 +101,7 @@ extension Routing: TravellerRoutingProtcol {
     
     
     /**
-     !* @discussion: This function takes cares of routingConfi when ever it's required.
+     !* @discussion: This function takes cares of WayFindingConfi when ever it's required.
      !* @param: navigation, viewController , storyBoard
      1. When ever if there is a change in the navigation stack, we have to use this function. In-order to main the stack.
       
@@ -131,8 +131,8 @@ extension Routing: TravellerRoutingProtcol {
     func addChild<T>(to childController: ControllerDestination, storyDestination: StoryDestination, modelTransistionStyle: UIModalTransitionStyle, configure: ((T) -> Void)?) -> T? where T : UIViewController {
         if let viewController = self.viewController?.makeViewController(for: childController, storyBoardName: storyDestination, storyBoard: self.storyBoard , modelPresentationStyle: nil, modelTransistionStyle: modelTransistionStyle) as? T, let topController = self.viewController {
             configure?(viewController)
-            let routing = Routing(navigation: self.navigation, viewController: viewController, storyBoard: self.storyBoard)
-            Traveller.shared.config(routing: routing)
+            let wayFinding = WayFinding(navigation: self.navigation, viewController: viewController, storyBoard: self.storyBoard)
+            Traveller.shared.config(WayFinding: wayFinding)
             topController.add(viewController)
             return viewController
         }
@@ -141,7 +141,7 @@ extension Routing: TravellerRoutingProtcol {
     
     
     /**
-     !* @discussion: This function takes cares of routingConfi when ever it's required.
+     !* @discussion: This function takes cares of WayFindingConfi when ever it's required.
      !* @param: navigation, viewController , storyBoard
      1. When ever if there is a change in the navigation stack, we have to use this function. In-order to main the stack.
       
@@ -220,19 +220,19 @@ extension Routing: TravellerRoutingProtcol {
         if let topViewController = self.viewController{
             topViewController.modalTransitionStyle = modelTransistionStyle
             topViewController.dismiss(animated: animated) { [weak self] in
-                self?.checkStorageAndReassignRoutingWhenControllerIsDismissed()
+                self?.checkStorageAndReassignWayFindingWhenControllerIsDismissed()
             }
         }
     }
 }
 
-extension Routing {
+extension WayFinding {
     public func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
-        self.checkStorageAndReassignRoutingWhenControllerIsDismissed()
+        self.checkStorageAndReassignWayFindingWhenControllerIsDismissed()
     }
 }
 
-private extension Routing {
+private extension WayFinding {
     func stackStorage() {
         guard let navigation = self.navigation, let controller = self.viewController, let storyBoard = self.storyBoard else { return }
         Traveller.shared.storage.removeAll()
@@ -241,7 +241,7 @@ private extension Routing {
         Traveller.shared.storage.append(controller)
     }
     
-    func checkStorageAndReassignRoutingWhenControllerIsDismissed() {
+    func checkStorageAndReassignWayFindingWhenControllerIsDismissed() {
         if Traveller.shared.storage.count > 0 {
             self.storyBoard = Traveller.shared.storage[0] as? TravellerStoryBoardProtocol
             self.navigation = Traveller.shared.storage[1] as? TravellerNavigationProtocol

@@ -35,13 +35,13 @@
 		5548F86B24D7C821009BFCFB /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548F86A24D7C821009BFCFB /* StringExtensions.swift */; };
 		5548F86D24D7C856009BFCFB /* UISegmentControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548F86C24D7C856009BFCFB /* UISegmentControlExtensions.swift */; };
 		5548F86F24D7C88A009BFCFB /* UITabBarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548F86E24D7C88A009BFCFB /* UITabBarExtensions.swift */; };
-		5548F87224D7C977009BFCFB /* CoordinatorNavigationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548F87124D7C977009BFCFB /* CoordinatorNavigationProtocol.swift */; };
-		5548F87424D7C9B3009BFCFB /* CoordinatorViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548F87324D7C9B3009BFCFB /* CoordinatorViewControllerProtocol.swift */; };
-		5548F87624D7C9FA009BFCFB /* CoordinatorStoryBoardSegueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548F87524D7C9FA009BFCFB /* CoordinatorStoryBoardSegueProtocol.swift */; };
-		5548F87824D7CA3D009BFCFB /* CoordinatorWindowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548F87724D7CA3D009BFCFB /* CoordinatorWindowProtocol.swift */; };
-		55A5B48C24D3460E00F10070 /* CoordinatorStoryBoardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B48B24D3460E00F10070 /* CoordinatorStoryBoardProtocol.swift */; };
-		55A5B48E24D3463000F10070 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B48D24D3462F00F10070 /* Routing.swift */; };
-		55A5B49024D5A05B00F10070 /* CoordinatorRoutingProtcol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B48F24D5A05B00F10070 /* CoordinatorRoutingProtcol.swift */; };
+		5548F87224D7C977009BFCFB /* TravellerNavigationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548F87124D7C977009BFCFB /* TravellerNavigationProtocol.swift */; };
+		5548F87424D7C9B3009BFCFB /* TravellerViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548F87324D7C9B3009BFCFB /* TravellerViewControllerProtocol.swift */; };
+		5548F87624D7C9FA009BFCFB /* TravellerStoryBoardSegueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548F87524D7C9FA009BFCFB /* TravellerStoryBoardSegueProtocol.swift */; };
+		5548F87824D7CA3D009BFCFB /* TravellerWindowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548F87724D7CA3D009BFCFB /* TravellerWindowProtocol.swift */; };
+		55A5B48C24D3460E00F10070 /* TravellerStoryBoardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B48B24D3460E00F10070 /* TravellerStoryBoardProtocol.swift */; };
+		55A5B48E24D3463000F10070 /* WayFinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B48D24D3462F00F10070 /* WayFinding.swift */; };
+		55A5B49024D5A05B00F10070 /* TravellerWayFindingProtcol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B48F24D5A05B00F10070 /* TravellerWayFindingProtcol.swift */; };
 		55A5B4A324D67CCD00F10070 /* TravellerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B4A224D67CCD00F10070 /* TravellerTests.swift */; };
 		55A5B4A524D67D2B00F10070 /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B4A424D67D2B00F10070 /* NavigationControllerMock.swift */; };
 		55A7F22124D7244A0058629E /* StoryBoardMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7F22024D7244A0058629E /* StoryBoardMock.swift */; };
@@ -186,13 +186,13 @@
 		5548F86A24D7C821009BFCFB /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		5548F86C24D7C856009BFCFB /* UISegmentControlExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentControlExtensions.swift; sourceTree = "<group>"; };
 		5548F86E24D7C88A009BFCFB /* UITabBarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarExtensions.swift; sourceTree = "<group>"; };
-		5548F87124D7C977009BFCFB /* CoordinatorNavigationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorNavigationProtocol.swift; sourceTree = "<group>"; };
-		5548F87324D7C9B3009BFCFB /* CoordinatorViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorViewControllerProtocol.swift; sourceTree = "<group>"; };
-		5548F87524D7C9FA009BFCFB /* CoordinatorStoryBoardSegueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorStoryBoardSegueProtocol.swift; sourceTree = "<group>"; };
-		5548F87724D7CA3D009BFCFB /* CoordinatorWindowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorWindowProtocol.swift; sourceTree = "<group>"; };
-		55A5B48B24D3460E00F10070 /* CoordinatorStoryBoardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorStoryBoardProtocol.swift; sourceTree = "<group>"; };
-		55A5B48D24D3462F00F10070 /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
-		55A5B48F24D5A05B00F10070 /* CoordinatorRoutingProtcol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorRoutingProtcol.swift; sourceTree = "<group>"; };
+		5548F87124D7C977009BFCFB /* TravellerNavigationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerNavigationProtocol.swift; sourceTree = "<group>"; };
+		5548F87324D7C9B3009BFCFB /* TravellerViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerViewControllerProtocol.swift; sourceTree = "<group>"; };
+		5548F87524D7C9FA009BFCFB /* TravellerStoryBoardSegueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerStoryBoardSegueProtocol.swift; sourceTree = "<group>"; };
+		5548F87724D7CA3D009BFCFB /* TravellerWindowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerWindowProtocol.swift; sourceTree = "<group>"; };
+		55A5B48B24D3460E00F10070 /* TravellerStoryBoardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerStoryBoardProtocol.swift; sourceTree = "<group>"; };
+		55A5B48D24D3462F00F10070 /* WayFinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayFinding.swift; sourceTree = "<group>"; };
+		55A5B48F24D5A05B00F10070 /* TravellerWayFindingProtcol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerWayFindingProtcol.swift; sourceTree = "<group>"; };
 		55A5B49524D67C9400F10070 /* MVVM-CTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVVM-CTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A5B49924D67C9400F10070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A5B4A224D67CCD00F10070 /* TravellerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerTests.swift; sourceTree = "<group>"; };
@@ -530,7 +530,7 @@
 				55A5B49F24D67CA000F10070 /* TravellerTests */,
 				5537C19D248D07D000367F0C /* Traveller.swift */,
 				55B69F2624BEDCAF00E99014 /* Destinations.swift */,
-				55A5B48D24D3462F00F10070 /* Routing.swift */,
+				55A5B48D24D3462F00F10070 /* WayFinding.swift */,
 			);
 			path = Traveller;
 			sourceTree = "<group>";
@@ -558,12 +558,12 @@
 		5548F87024D7C944009BFCFB /* TravellerProtocols */ = {
 			isa = PBXGroup;
 			children = (
-				5548F87124D7C977009BFCFB /* CoordinatorNavigationProtocol.swift */,
-				5548F87324D7C9B3009BFCFB /* CoordinatorViewControllerProtocol.swift */,
-				55A5B48B24D3460E00F10070 /* CoordinatorStoryBoardProtocol.swift */,
-				5548F87524D7C9FA009BFCFB /* CoordinatorStoryBoardSegueProtocol.swift */,
-				5548F87724D7CA3D009BFCFB /* CoordinatorWindowProtocol.swift */,
-				55A5B48F24D5A05B00F10070 /* CoordinatorRoutingProtcol.swift */,
+				5548F87124D7C977009BFCFB /* TravellerNavigationProtocol.swift */,
+				5548F87324D7C9B3009BFCFB /* TravellerViewControllerProtocol.swift */,
+				55A5B48B24D3460E00F10070 /* TravellerStoryBoardProtocol.swift */,
+				5548F87524D7C9FA009BFCFB /* TravellerStoryBoardSegueProtocol.swift */,
+				5548F87724D7CA3D009BFCFB /* TravellerWindowProtocol.swift */,
+				55A5B48F24D5A05B00F10070 /* TravellerWayFindingProtcol.swift */,
 			);
 			path = TravellerProtocols;
 			sourceTree = "<group>";
@@ -1003,18 +1003,18 @@
 				A25C0EF424DED62100E13292 /* ForgotPasswordViewController.swift in Sources */,
 				A26518B325299FA10027A085 /* CustomButton.swift in Sources */,
 				A2651884252997E20027A085 /* TabledCollectionView.swift in Sources */,
-				55A5B49024D5A05B00F10070 /* CoordinatorRoutingProtcol.swift in Sources */,
-				5548F87224D7C977009BFCFB /* CoordinatorNavigationProtocol.swift in Sources */,
-				55A5B48E24D3463000F10070 /* Routing.swift in Sources */,
+				55A5B49024D5A05B00F10070 /* TravellerWayFindingProtcol.swift in Sources */,
+				5548F87224D7C977009BFCFB /* TravellerNavigationProtocol.swift in Sources */,
+				55A5B48E24D3463000F10070 /* WayFinding.swift in Sources */,
 				A231C404254FC26C008CBED9 /* NetworkRequestDispatcher.swift in Sources */,
 				5548F86324D7C6FE009BFCFB /* UITabBarItemExtensions.swift in Sources */,
 				554482A924AEF96F0032E210 /* SectionHeaderView.swift in Sources */,
 				A231C3F2254FC1DD008CBED9 /* NetworkOperationResult.swift in Sources */,
-				5548F87424D7C9B3009BFCFB /* CoordinatorViewControllerProtocol.swift in Sources */,
+				5548F87424D7C9B3009BFCFB /* TravellerViewControllerProtocol.swift in Sources */,
 				A26518E32529A0A00027A085 /* UINavigationControllerExtensions.swift in Sources */,
 				A26518AD25299FA10027A085 /* CustomPageControl.swift in Sources */,
 				A26518C02529A0340027A085 /* DeviceHelper.swift in Sources */,
-				5548F87624D7C9FA009BFCFB /* CoordinatorStoryBoardSegueProtocol.swift in Sources */,
+				5548F87624D7C9FA009BFCFB /* TravellerStoryBoardSegueProtocol.swift in Sources */,
 				A26518FA2529A4D60027A085 /* UserManager.swift in Sources */,
 				5514FAF824A8609E00AF78B2 /* HomeViewController.swift in Sources */,
 				A265190C2529A8C60027A085 /* SomeX.xcdatamodeld in Sources */,
@@ -1042,7 +1042,7 @@
 				5514FA8824948CE000AF78B2 /* LoginViewController.swift in Sources */,
 				A265187A252996DC0027A085 /* GenericModelProtocol.swift in Sources */,
 				A26518E12529A0A00027A085 /* UIButtonExtensions.swift in Sources */,
-				5548F87824D7CA3D009BFCFB /* CoordinatorWindowProtocol.swift in Sources */,
+				5548F87824D7CA3D009BFCFB /* TravellerWindowProtocol.swift in Sources */,
 				A26518E02529A0A00027A085 /* UIColorExtensions.swift in Sources */,
 				55D3D921248D568500A20926 /* NetworkReachability.swift in Sources */,
 				5514FA912495FBC100AF78B2 /* LoginViewModel.swift in Sources */,
@@ -1095,7 +1095,7 @@
 				A231C3F1254FC1DD008CBED9 /* NetworkRequestMethod.swift in Sources */,
 				A2AF841E24DFE64700BA174F /* UserDefaultsHelper.swift in Sources */,
 				5548F86724D7C77E009BFCFB /* UIWindowExtensions.swift in Sources */,
-				55A5B48C24D3460E00F10070 /* CoordinatorStoryBoardProtocol.swift in Sources */,
+				55A5B48C24D3460E00F10070 /* TravellerStoryBoardProtocol.swift in Sources */,
 				A231C3E7254FC1BE008CBED9 /* NetworkOperationProtocol.swift in Sources */,
 				A26518AF25299FA10027A085 /* LayoutHelper.swift in Sources */,
 				A2651889252998330027A085 /* TabeledCollectionCustomCell.swift in Sources */,
