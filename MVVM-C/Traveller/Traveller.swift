@@ -8,7 +8,7 @@ import UIKit
 
 class Traveller {
     private static var sharedInstance: Traveller?
-    private var WayFinding: TravellerWayFindingProtcol?
+    private var WayFinding: TravellerWayFindingProtocol?
     var storage: [Any] = [] // To store current stack when config is about to change the router.
     
     class var shared : Traveller {
@@ -26,9 +26,9 @@ class Traveller {
     
     /**
      !* @discussion: Configuration part for entire Navigation WayFinding.
-     !* @param: TravellerWayFindingProtcol ---> This controls entire WayFinding of the app with the help of WayFinding class which conforms to TravellerWayFindingProtcol & internally this has control over UINavigationController, UIViewController, UIStoryboard, UIStoryboardSegue, UIWindow. Please refere inside logic for more understanding.
+     !* @param: TravellerWayFindingProtocol ---> This controls entire WayFinding of the app with the help of WayFinding class which conforms to TravellerWayFindingProtocol & internally this has control over UINavigationController, UIViewController, UIStoryboard, UIStoryboardSegue, UIWindow. Please refere inside logic for more understanding.
      */
-    func config(WayFinding: TravellerWayFindingProtcol?) {
+    func config(WayFinding: TravellerWayFindingProtocol?) {
         guard let WayFinding = WayFinding else { fatalError("Traveller config failed to assign router") }
         self.WayFinding = WayFinding
     }

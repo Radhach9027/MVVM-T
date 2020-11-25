@@ -19,7 +19,7 @@ final class WayFinding: NSObject, UIAdaptivePresentationControllerDelegate {
     }
 }
 
-extension WayFinding: TravellerWayFindingProtcol {
+extension WayFinding: TravellerWayFindingProtocol {
     
     /**
      !* @discussion: This function takes cares of switching root viewcontroller from one to other.
