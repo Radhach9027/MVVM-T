@@ -1,7 +1,7 @@
 @testable import MVVM_C
 import UIKit
 
-class NavigationControllerMock: CoordinatorNavigationProtocol {    
+class NavigationControllerMock: TravellerNavigationProtocol {    
 
     var topViewController: UIViewController? {
         get {

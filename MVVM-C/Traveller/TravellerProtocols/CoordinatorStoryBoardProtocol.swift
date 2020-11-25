@@ -2,10 +2,10 @@
 
 import UIKit
 
-protocol CoordinatorStoryBoardProtocol {
+protocol TravellerStoryBoardProtocol {
     func instantiateViewController(withIdentifier identifier: String) -> UIViewController
     func instantiateInitialViewController() -> UIViewController?
 }
 
-extension UIStoryboard: CoordinatorStoryBoardProtocol {}
+extension UIStoryboard: TravellerStoryBoardProtocol {}
 

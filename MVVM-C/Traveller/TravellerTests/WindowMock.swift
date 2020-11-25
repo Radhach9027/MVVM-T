@@ -1,7 +1,7 @@
 @testable import MVVM_C
 import UIKit
 
-class WindowMock: CoordinatorWindowProtocol {
+class WindowMock: TravellerWindowProtocol {
     var mockKeyAndVisible: Int = 0
     var rootViewController: UIViewController?
     

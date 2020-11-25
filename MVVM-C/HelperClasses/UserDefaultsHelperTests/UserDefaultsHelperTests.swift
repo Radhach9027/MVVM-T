@@ -1,4 +1,4 @@
-@testable import Laso_Care
+@testable import MVVM_C
 import XCTest
 
 class UserDefaultsHelperTests: XCTestCase {

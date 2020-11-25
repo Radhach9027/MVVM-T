@@ -37,7 +37,7 @@ class NetworkClientTests: XCTestCase {
                         XCTAssertEqual(modelObj, URLSessionDataTaskMock.fakeUser)
                     }
                     break
-                case let .error(error, _):
+                case let .error(error, _, _):
                     XCTAssertThrowsError(error?.localizedDescription)
                     break
                 default:

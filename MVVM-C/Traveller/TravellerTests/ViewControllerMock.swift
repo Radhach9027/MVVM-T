@@ -1,7 +1,7 @@
 @testable import MVVM_C
 import UIKit
 
-class ViewControllerMock: CoordinatorViewControllerProtocol {
+class ViewControllerMock: TravellerViewControllerProtocol {
     var presentedViewController: UIViewController?
     var mockPresentedViewController: UIViewController?
     var mockViewController: UIViewController?
@@ -17,7 +17,7 @@ class ViewControllerMock: CoordinatorViewControllerProtocol {
         }
     }
     
-    func makeViewController<T>(for controller: ControllerDestination, storyBoardName: StoryDestination, storyBoard: CoordinatorStoryBoardProtocol?, modelPresentationStyle: UIModalPresentationStyle?, modelTransistionStyle: UIModalTransitionStyle?) -> T? where T : UIViewController {
+    func makeViewController<T>(for controller: ControllerDestination, storyBoardName: StoryDestination, storyBoard: TravellerStoryBoardProtocol?, modelPresentationStyle: UIModalPresentationStyle?, modelTransistionStyle: UIModalTransitionStyle?) -> T? where T : UIViewController {
         mockViewController = UIViewController(nibName: controller.rawValue, bundle: nil)
         if let presentation = modelPresentationStyle {
             mockViewController?.modalPresentationStyle = presentation

@@ -10,7 +10,7 @@ class ProfileViewController: UIViewController, BarButtonItemConfiguration {
 
 extension ProfileViewController: BarButtonActions {
     func showNotification(_ sender: AnyObject) {
-        Coordinator.route.present(story: .tab, controller: .detail, animated: true, modelTransistion: .crossDissolve, modelPresentation: .fullScreen).perform { (controller) in
+        Traveller.route.present(story: .tab, controller: .detail, animated: true, modelTransistion: .crossDissolve, modelPresentation: .fullScreen).perform { (controller) in
             controller.title = "Settings"
         }
     }
@@ -19,6 +19,6 @@ extension ProfileViewController: BarButtonActions {
 extension ProfileViewController {
     @IBAction func logOutBackButtonPressed(_ sender: UIButton) {
         let rootChange = UIStoryboard(name: "Login", bundle: Bundle.main)
-        Coordinator.route.switchRootViewController(storyBoard: rootChange, controllerDestination: .launch, animated: true, window: UIWindow.key, modelTransistion: .transitionCrossDissolve).perform()
+        Traveller.route.switchRootViewController(storyBoard: rootChange, controllerDestination: .launch, animated: true, window: UIWindow.key, modelTransistion: .transitionCrossDissolve).perform()
     }
 }

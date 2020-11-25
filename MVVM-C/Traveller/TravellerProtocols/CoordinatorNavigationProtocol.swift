@@ -2,7 +2,7 @@
 
 import UIKit
 
-protocol CoordinatorNavigationProtocol: class {
+protocol TravellerNavigationProtocol: class {
     func pushViewController(_ viewController: UIViewController, animated: Bool)
     @discardableResult
     func popViewController(animated: Bool) -> UIViewController?
@@ -19,7 +19,7 @@ protocol CoordinatorNavigationProtocol: class {
     func makeRootNavigation(to rootViewController: UIViewController?, isNavigationHidden: Bool) -> UINavigationController?
 }
 
-extension UINavigationController: CoordinatorNavigationProtocol {
+extension UINavigationController: TravellerNavigationProtocol {
     func makeRootNavigation(to rootViewController: UIViewController?, isNavigationHidden: Bool) -> UINavigationController? {
          guard let rootVc = rootViewController else { return nil }
          let navController = UINavigationController(rootViewController: rootVc)

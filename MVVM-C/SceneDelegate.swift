@@ -9,7 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let window = window, let naviagtionController = window.rootViewController as? UINavigationController else {return}
         if !SceneDelegate.isUnitTestsLaunched {
             let routing = Routing(navigation: naviagtionController, viewController: naviagtionController.topViewController, storyBoard: naviagtionController.storyboard)
-            Coordinator.shared.config(routing: routing)
+            Traveller.shared.config(routing: routing)
         }
         guard let _ = (scene as? UIWindowScene) else { return }
     }

@@ -1,7 +1,7 @@
 @testable import MVVM_C
 import XCTest
 
-class CoordinatorTests: XCTestCase {
+class TravellerTests: XCTestCase {
 
     var mockNavigation = NavigationControllerMock(navigation: UINavigationController(rootViewController: UIViewController()))
     var mockStoryBoard = StroyBoardMock()
@@ -12,7 +12,7 @@ class CoordinatorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         let mockRouting = Routing(navigation: mockNavigation, viewController: mockViewController, storyBoard: mockStoryBoard)
-        Coordinator.shared.config(routing: mockRouting)
+        Traveller.shared.config(routing: mockRouting)
     }
     
     override class func tearDown() {
@@ -27,7 +27,7 @@ class CoordinatorTests: XCTestCase {
     
     func testPush_ShouldReutrnExpectedViewController() {
         let expectation = XCTestExpectation(description: "W8 for controller to get pushed")
-        let controller = Coordinator.route.push(story: .login, controller: .login, animated: true, modelTransistion: .crossDissolve, modelPresentation: .none).perform { _ in
+        let controller = Traveller.route.push(story: .login, controller: .login, animated: true, modelTransistion: .crossDissolve, modelPresentation: .none).perform { _ in
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1.0)
@@ -39,7 +39,7 @@ class CoordinatorTests: XCTestCase {
     
     func testPresent_ShouldReutrnExpectedViewController() {
         let expectation = XCTestExpectation(description: "W8 for controller to get presented")
-        let controller = Coordinator.route.present(story: .login, controller: .login, animated: true, modelTransistion: .crossDissolve, modelPresentation: .overCurrentContext).perform { _ in
+        let controller = Traveller.route.present(story: .login, controller: .login, animated: true, modelTransistion: .crossDissolve, modelPresentation: .overCurrentContext).perform { _ in
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1.0)
@@ -51,7 +51,7 @@ class CoordinatorTests: XCTestCase {
     
     func testAddChildViewController_ShouldRetrunExpectedViewController() {
         let expectation = XCTestExpectation(description: "W8 for controller to get added as child")
-        let controller = Coordinator.route.addChild(childController: .login, storyDestination: .login, modelTransistionStyle: .crossDissolve).perform { _ in
+        let controller = Traveller.route.addChild(childController: .login, storyDestination: .login, modelTransistionStyle: .crossDissolve).perform { _ in
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1.0)
@@ -63,12 +63,12 @@ class CoordinatorTests: XCTestCase {
     }
     
     func testPopViewController_ShouldRetrunIncrementValue() {
-        Coordinator.route.pop(toRootController: false, animated: true, modelTransistionStyle: .crossDissolve).perform()
+        Traveller.route.pop(toRootController: false, animated: true, modelTransistionStyle: .crossDissolve).perform()
         XCTAssertEqual(mockNavigation.mockPopViewControllerTriggered, 1)
     }
 
     func testPopToRootViewController_ShouldRetrunIncrementValue() {
-        Coordinator.route.pop(toRootController: true, animated: true, modelTransistionStyle: .crossDissolve).perform()
+        Traveller.route.pop(toRootController: true, animated: true, modelTransistionStyle: .crossDissolve).perform()
         XCTAssertEqual(mockNavigation.mockPopToRootViewControllerTriggered, 1)
     }
     
@@ -81,7 +81,7 @@ class CoordinatorTests: XCTestCase {
         let mockChildControllers = [controllerOne, controllerTwo]
         self.mockNavigation.setViewControllers(mockChildControllers, animated: false)
         XCTAssertEqual(mockChildControllers, self.mockNavigation.viewControllers)
-        let controller = Coordinator.route.popToViewController(destination: UIViewController.self, animated: false, modelTransistionStyle: .crossDissolve).perform { _ in
+        let controller = Traveller.route.popToViewController(destination: UIViewController.self, animated: false, modelTransistionStyle: .crossDissolve).perform { _ in
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1.0)
@@ -91,13 +91,13 @@ class CoordinatorTests: XCTestCase {
     }
     
     func testDismissViewController_ShouldRetrunExpectedViewController() {
-        Coordinator.route.dismiss(modelTransistionStyle: .crossDissolve, animated: true).perform()
+        Traveller.route.dismiss(modelTransistionStyle: .crossDissolve, animated: true).perform()
         XCTAssertEqual(mockViewController.mockDismissTriggered, 1)
         XCTAssertEqual(UIModalTransitionStyle.crossDissolve, mockViewController.modalTransitionStyle)
     }
     
     func testRemoveChildViewController_ShouldRemoveExpectedViewController() {
-        Coordinator.route.removeChild.perform()
+        Traveller.route.removeChild.perform()
         XCTAssertEqual(mockViewController.mockRemoveChildTriggered, 1)
     }
     
@@ -112,7 +112,7 @@ class CoordinatorTests: XCTestCase {
     }
     
     func testSwitchingWindowRootView_ShouldReturnExpectedRootViewController() {
-        Coordinator.route.switchRootViewController(storyBoard: self.mockStoryBoard, controllerDestination: .login, animated: false, window: self.mockWindow, modelTransistion: .transitionCrossDissolve).perform()
+        Traveller.route.switchRootViewController(storyBoard: self.mockStoryBoard, controllerDestination: .login, animated: false, window: self.mockWindow, modelTransistion: .transitionCrossDissolve).perform()
         XCTAssertNotNil(self.mockWindow.rootViewController)
         XCTAssertEqual(self.mockWindow.mockKeyAndVisible, 1)
     }

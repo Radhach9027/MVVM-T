@@ -3,11 +3,11 @@
 import UIKit
 
 final class Routing: NSObject, UIAdaptivePresentationControllerDelegate {
-    private var navigation: CoordinatorNavigationProtocol?
-    private var viewController : CoordinatorViewControllerProtocol?
-    private var storyBoard: CoordinatorStoryBoardProtocol?
+    private var navigation: TravellerNavigationProtocol?
+    private var viewController : TravellerViewControllerProtocol?
+    private var storyBoard: TravellerStoryBoardProtocol?
 
-    init(navigation: CoordinatorNavigationProtocol?, viewController : CoordinatorViewControllerProtocol?, storyBoard: CoordinatorStoryBoardProtocol?) {
+    init(navigation: TravellerNavigationProtocol?, viewController : TravellerViewControllerProtocol?, storyBoard: TravellerStoryBoardProtocol?) {
         self.navigation = navigation
         self.storyBoard = storyBoard
         self.viewController = viewController
@@ -19,19 +19,19 @@ final class Routing: NSObject, UIAdaptivePresentationControllerDelegate {
     }
 }
 
-extension Routing: CoordinatorRoutingProtcol {
+extension Routing: TravellerRoutingProtcol {
     
     /**
      !* @discussion: This function takes cares of switching root viewcontroller from one to other.
      !* @param: ControllerDestination, storyBoard , animated, window, animations
-     1. Intially we are loading controller from stroyboard by using  storyBoard.instantiateViewController via CoordinatorStoryBoardProtocol.
-     2. Once fetching the controller from storyboard, we are getting the window object by CoordinatorWindowProtocol.
+     1. Intially we are loading controller from stroyboard by using  storyBoard.instantiateViewController via TravellerStoryBoardProtocol.
+     2. Once fetching the controller from storyboard, we are getting the window object by TravellerWindowProtocol.
      3. Then applying animation using animations via UIView.AnimationOptions, finally setting the rootView to window object.
      4. Finally apply new routing config to old routing config.
      Note: Check if you'r using tabbar controller or general navigation.
      */
     
-    func switchRootViewController<T>(destination: ControllerDestination, storyBoard: CoordinatorStoryBoardProtocol , animated: Bool, window: CoordinatorWindowProtocol?, animations: UIView.AnimationOptions,  configure: ((T) -> Void)?) -> T? where T : UIViewController {
+    func switchRootViewController<T>(destination: ControllerDestination, storyBoard: TravellerStoryBoardProtocol , animated: Bool, window: TravellerWindowProtocol?, animations: UIView.AnimationOptions,  configure: ((T) -> Void)?) -> T? where T : UIViewController {
         let storyBoard = storyBoard.instantiateInitialViewController()
         if animated {
             guard let window = window else { return nil }
@@ -54,7 +54,7 @@ extension Routing: CoordinatorRoutingProtcol {
             routing = Routing(navigation: navigation, viewController: viewController, storyBoard: storyBoard)
         }
         
-        Coordinator.shared.config(routing: routing)
+        Traveller.shared.config(routing: routing)
         configure?(routing?.navigation?.topViewController as! T)
         return routing?.navigation?.topViewController as? T
     }
@@ -63,9 +63,9 @@ extension Routing: CoordinatorRoutingProtcol {
     /**
      !* @discussion: This function takes cares of pushing viewcontroller over navigation controller.
      !* @param: ControllerDestination, storyDestination , modelPresentationStyle, modelTransistionStyle
-     1. We are trying to prepare a view controller with the help of ControllerDestination & storyDestination and then adding presenting style, transistion style by using modelPresentationStyle & modelTransistionStyle to self.viewController?.makeViewController via CoordinatorViewControllerProtocol.
+     1. We are trying to prepare a view controller with the help of ControllerDestination & storyDestination and then adding presenting style, transistion style by using modelPresentationStyle & modelTransistionStyle to self.viewController?.makeViewController via TravellerViewControllerProtocol.
      2. Then assigning the current root navigation,viewcontroller, storyboard  to main navigation,viewcontroller, storyboard in order to maintain the stack. (This will help us to push on presented view controller)
-     3. Then we are fetching navigation via CoordinatorNavigationProtocol and finally pushing & returning the controller.
+     3. Then we are fetching navigation via TravellerNavigationProtocol and finally pushing & returning the controller.
      */
     
     func push<T>(to destination: ControllerDestination, storyDestination: StoryDestination, modelPresentationStyle: UIModalPresentationStyle, modelTransistionStyle: UIModalTransitionStyle, animated: Bool, configure: ((T) -> Void)?) -> T? where T: UIViewController {
@@ -80,8 +80,8 @@ extension Routing: CoordinatorRoutingProtcol {
     /**
      !* @discussion: This function takes cares of presenting viewcontroller on navigation controller as a root navigation.
      !* @param: ControllerDestination, storyDestination , modelPresentationStyle, modelTransistionStyle
-     1. We are trying to prepare a view controller with the help of ControllerDestination & storyDestination and then adding presenting style, transistion style by using modelPresentationStyle & modelTransistionStyle to self.viewController?.makeViewController via CoordinatorViewControllerProtocol.
-     2. Then we are fetching root navigation by self.navigation?.makeRootNavigation via CoordinatorNavigationProtocol and passing current controller as root to it.
+     1. We are trying to prepare a view controller with the help of ControllerDestination & storyDestination and then adding presenting style, transistion style by using modelPresentationStyle & modelTransistionStyle to self.viewController?.makeViewController via TravellerViewControllerProtocol.
+     2. Then we are fetching root navigation by self.navigation?.makeRootNavigation via TravellerNavigationProtocol and passing current controller as root to it.
      3. Then assigning the current root navigation,viewcontroller, storyboard  to main navigation,viewcontroller, storyboard in order to maintain the stack. (This will help us to push on presented view controller)
      4. Finally we are presenting the controller & returning it.
      */
@@ -91,7 +91,7 @@ extension Routing: CoordinatorRoutingProtcol {
             configure?(viewController)
             self.stackStorage()
             let routing = Routing(navigation: navigation, viewController: viewController, storyBoard: self.storyBoard)
-            Coordinator.shared.config(routing: routing)
+            Traveller.shared.config(routing: routing)
             topViewController.present(navigation, animated: animated, completion: nil)
             navigation.presentationController?.delegate = self
             return viewController
@@ -108,8 +108,8 @@ extension Routing: CoordinatorRoutingProtcol {
      Note: If you'r using tabbar controller in your application, call this function in you'r TabBarController delegate method didSelect. In-order to manage navigation stack in tabbar controller.
      */
     
-    func performSegue<T>(to destination: ControllerDestination , storyDestination: StoryDestination, storyBoardProtocol: CoordinatorStoryBoardProtocol, modelTransistionStyle: UIModalTransitionStyle, configure: ((T) -> Void)?) -> T? where T : UIViewController {
-        if let viewController = self.viewController?.makeViewController(for: destination, storyBoardName: storyDestination, storyBoard: storyBoardProtocol, modelPresentationStyle: nil, modelTransistionStyle: modelTransistionStyle) as? T, let topViewController: CoordinatorViewControllerProtocol = self.viewController {
+    func performSegue<T>(to destination: ControllerDestination , storyDestination: StoryDestination, storyBoardProtocol: TravellerStoryBoardProtocol, modelTransistionStyle: UIModalTransitionStyle, configure: ((T) -> Void)?) -> T? where T : UIViewController {
+        if let viewController = self.viewController?.makeViewController(for: destination, storyBoardName: storyDestination, storyBoard: storyBoardProtocol, modelPresentationStyle: nil, modelTransistionStyle: modelTransistionStyle) as? T, let topViewController: TravellerViewControllerProtocol = self.viewController {
             configure?(viewController)
             topViewController.performSegue(withIdentifier: destination.rawValue, sender: viewController)
             return viewController
@@ -121,8 +121,8 @@ extension Routing: CoordinatorRoutingProtcol {
     /**
      !* @discussion: This function takes cares of adding child viewcontroller on current controller.
      !* @param: ControllerDestination, storyDestination , modelTransistionStyle
-     1. We are trying to prepare a view controller with the help of ControllerDestination & storyDestination and then adding transistion style by using modelTransistionStyle to self.viewController?.makeViewController via CoordinatorViewControllerProtocol.
-     2. Then we are fetching current controller which is visible on the screen by using self.viewController via CoordinatorViewControllerProtocol.
+     1. We are trying to prepare a view controller with the help of ControllerDestination & storyDestination and then adding transistion style by using modelTransistionStyle to self.viewController?.makeViewController via TravellerViewControllerProtocol.
+     2. Then we are fetching current controller which is visible on the screen by using self.viewController via TravellerViewControllerProtocol.
      3. Then assigning the current root navigation,viewcontroller, storyboard  to main navigation,viewcontroller, storyboard in order to maintain the stack. (This will help us to push on presented view controller)
      4. Finally we are adding the controller as child & returning it.
      Note: If you dont want present something from child, then avoid point 3. That will remain same.
@@ -132,7 +132,7 @@ extension Routing: CoordinatorRoutingProtcol {
         if let viewController = self.viewController?.makeViewController(for: childController, storyBoardName: storyDestination, storyBoard: self.storyBoard , modelPresentationStyle: nil, modelTransistionStyle: modelTransistionStyle) as? T, let topController = self.viewController {
             configure?(viewController)
             let routing = Routing(navigation: self.navigation, viewController: viewController, storyBoard: self.storyBoard)
-            Coordinator.shared.config(routing: routing)
+            Traveller.shared.config(routing: routing)
             topController.add(viewController)
             return viewController
         }
@@ -148,7 +148,7 @@ extension Routing: CoordinatorRoutingProtcol {
      Note: If you'r using tabbar controller in your application, call this function in you'r TabBarController delegate method didSelect. In-order to manage navigation stack in tabbar controller.
      */
     
-    func unwind<T>(to destination: ControllerDestination, storyDestination: StoryDestination, modelTransistionStyle: UIModalTransitionStyle, storyBoardSegue: CoordinatorStoryBoardSegueProtocol, configure: ((T) -> Void)?) -> T? where T : UIViewController {
+    func unwind<T>(to destination: ControllerDestination, storyDestination: StoryDestination, modelTransistionStyle: UIModalTransitionStyle, storyBoardSegue: TravellerStoryBoardSegueProtocol, configure: ((T) -> Void)?) -> T? where T : UIViewController {
         if let topViewController = self.viewController as? T , let destinationVc = self.viewController?.makeViewController(for: destination, storyBoardName: storyDestination, storyBoard: self.storyBoard, modelPresentationStyle: nil, modelTransistionStyle: modelTransistionStyle) as? T{
             configure?(topViewController)
             topViewController.unwind(for: UIStoryboardSegue(identifier: storyBoardSegue.identifier, source: storyBoardSegue.source, destination: storyBoardSegue.destination), towards: destinationVc)
@@ -235,17 +235,17 @@ extension Routing {
 private extension Routing {
     func stackStorage() {
         guard let navigation = self.navigation, let controller = self.viewController, let storyBoard = self.storyBoard else { return }
-        Coordinator.shared.storage.removeAll()
-        Coordinator.shared.storage.append(storyBoard)
-        Coordinator.shared.storage.append(navigation)
-        Coordinator.shared.storage.append(controller)
+        Traveller.shared.storage.removeAll()
+        Traveller.shared.storage.append(storyBoard)
+        Traveller.shared.storage.append(navigation)
+        Traveller.shared.storage.append(controller)
     }
     
     func checkStorageAndReassignRoutingWhenControllerIsDismissed() {
-        if Coordinator.shared.storage.count > 0 {
-            self.storyBoard = Coordinator.shared.storage[0] as? CoordinatorStoryBoardProtocol
-            self.navigation = Coordinator.shared.storage[1] as? CoordinatorNavigationProtocol
-            self.viewController = Coordinator.shared.storage[2] as? CoordinatorViewControllerProtocol
+        if Traveller.shared.storage.count > 0 {
+            self.storyBoard = Traveller.shared.storage[0] as? TravellerStoryBoardProtocol
+            self.navigation = Traveller.shared.storage[1] as? TravellerNavigationProtocol
+            self.viewController = Traveller.shared.storage[2] as? TravellerViewControllerProtocol
         }
     }
 }

@@ -2,11 +2,11 @@
 
 import UIKit
 
-protocol CoordinatorWindowProtocol: class {
+protocol TravellerWindowProtocol: class {
     var rootViewController: UIViewController? {get set}
     func makeKeyAndVisible()
 }
 
-extension UIWindow: CoordinatorWindowProtocol {}
+extension UIWindow: TravellerWindowProtocol {}
 
 
