@@ -1,6 +1,6 @@
 import Foundation
 
-protocol LoginNavigationProtocol {
+protocol LaunchNavigationProtocol {
     func pushToLogin(viewModel: LoginViewModelProtocol?)
     func presentSignUp()
     func pushToForgotpassword()
@@ -8,18 +8,19 @@ protocol LoginNavigationProtocol {
     func popToRoot(to root: Bool)
 }
 
-extension LoginNavigationProtocol {
+struct LaunchNavigation: LaunchNavigationProtocol {
     
     func pushToLogin(viewModel: LoginViewModelProtocol?) {
         
         Traveller.route.push(story: .login, controller: .login, animated: true, modelTransistion: .crossDissolve, modelPresentation: .none).perform { (controller: LoginViewController) in
-            controller.config(viewModel: viewModel)
+            controller.config(viewModel: viewModel, navigation: self)
         }
     }
     
     func presentSignUp() {
         
-        Traveller.route.present(story: .login, controller: .signup, animated: true, modelTransistion: .crossDissolve, modelPresentation: .fullScreen).perform { controller in
+        Traveller.route.present(story: .login, controller: .signup, animated: true, modelTransistion: .crossDissolve, modelPresentation: .fullScreen).perform { (controller: SignupViewController) in
+            controller.config(navigation: self)
             controller.title = "Sign Up"
         }
     }

@@ -115,7 +115,7 @@ extension GenericTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return grouped?.rows[section == 0 ? 0 : section - 1] ?? 0
+        return grouped?.rows[section] ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

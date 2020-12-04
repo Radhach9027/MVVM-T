@@ -1,10 +1,12 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    var viewModel: LoginViewModelProtocol?
+    private var viewModel: LoginViewModelProtocol?
+    private var navigation: LaunchNavigationProtocol?
     
-    func config(viewModel: LoginViewModelProtocol?) {
+    func config(viewModel: LoginViewModelProtocol?, navigation: LaunchNavigationProtocol?) {
         self.viewModel = viewModel
+        self.navigation = navigation
     }
     
     deinit {
@@ -12,10 +14,10 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController: LoginNavigationProtocol, StorySwitchProtocol {
+extension LoginViewController: StorySwitchProtocol {
     
     @IBAction func popBackButtonPressed(_ sender: UIButton) {
-        popToRoot(to: false)
+        self.navigation?.popToRoot(to: false)
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {

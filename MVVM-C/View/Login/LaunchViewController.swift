@@ -1,19 +1,21 @@
 import UIKit
 
 class LaunchViewController: UIViewController {
+    private var navigation: LaunchNavigationProtocol = LaunchNavigation()
+ 
     deinit {
         print("LaunchViewController de-init")
     }
 }
 
-extension LaunchViewController: LoginNavigationProtocol, StorySwitchProtocol {
+extension LaunchViewController: StorySwitchProtocol {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        pushToLogin(viewModel: LoginViewModel())
+        self.navigation.pushToLogin(viewModel: LoginViewModel())
     }
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
-        presentSignUp()
+        self.navigation.presentSignUp()
     }
     
     @IBAction func homeButtonPressed(_ sender: UIButton) {
