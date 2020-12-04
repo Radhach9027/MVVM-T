@@ -41,7 +41,7 @@
 		5548F87824D7CA3D009BFCFB /* TravellerWindowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548F87724D7CA3D009BFCFB /* TravellerWindowProtocol.swift */; };
 		55A5B48C24D3460E00F10070 /* TravellerStoryBoardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B48B24D3460E00F10070 /* TravellerStoryBoardProtocol.swift */; };
 		55A5B48E24D3463000F10070 /* WayFinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B48D24D3462F00F10070 /* WayFinding.swift */; };
-		55A5B49024D5A05B00F10070 /* TravellerWayFindingProtcol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B48F24D5A05B00F10070 /* TravellerWayFindingProtcol.swift */; };
+		55A5B49024D5A05B00F10070 /* TravellerWayFindingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B48F24D5A05B00F10070 /* TravellerWayFindingProtocol.swift */; };
 		55A5B4A324D67CCD00F10070 /* TravellerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B4A224D67CCD00F10070 /* TravellerTests.swift */; };
 		55A5B4A524D67D2B00F10070 /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B4A424D67D2B00F10070 /* NavigationControllerMock.swift */; };
 		55A7F22124D7244A0058629E /* StoryBoardMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7F22024D7244A0058629E /* StoryBoardMock.swift */; };
@@ -192,7 +192,7 @@
 		5548F87724D7CA3D009BFCFB /* TravellerWindowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerWindowProtocol.swift; sourceTree = "<group>"; };
 		55A5B48B24D3460E00F10070 /* TravellerStoryBoardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerStoryBoardProtocol.swift; sourceTree = "<group>"; };
 		55A5B48D24D3462F00F10070 /* WayFinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayFinding.swift; sourceTree = "<group>"; };
-		55A5B48F24D5A05B00F10070 /* TravellerWayFindingProtcol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerWayFindingProtcol.swift; sourceTree = "<group>"; };
+		55A5B48F24D5A05B00F10070 /* TravellerWayFindingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerWayFindingProtocol.swift; sourceTree = "<group>"; };
 		55A5B49524D67C9400F10070 /* MVVM-CTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVVM-CTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A5B49924D67C9400F10070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A5B4A224D67CCD00F10070 /* TravellerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerTests.swift; sourceTree = "<group>"; };
@@ -563,7 +563,7 @@
 				55A5B48B24D3460E00F10070 /* TravellerStoryBoardProtocol.swift */,
 				5548F87524D7C9FA009BFCFB /* TravellerStoryBoardSegueProtocol.swift */,
 				5548F87724D7CA3D009BFCFB /* TravellerWindowProtocol.swift */,
-				55A5B48F24D5A05B00F10070 /* TravellerWayFindingProtcol.swift */,
+				55A5B48F24D5A05B00F10070 /* TravellerWayFindingProtocol.swift */,
 			);
 			path = TravellerProtocols;
 			sourceTree = "<group>";
@@ -1003,7 +1003,7 @@
 				A25C0EF424DED62100E13292 /* ForgotPasswordViewController.swift in Sources */,
 				A26518B325299FA10027A085 /* CustomButton.swift in Sources */,
 				A2651884252997E20027A085 /* TabledCollectionView.swift in Sources */,
-				55A5B49024D5A05B00F10070 /* TravellerWayFindingProtcol.swift in Sources */,
+				55A5B49024D5A05B00F10070 /* TravellerWayFindingProtocol.swift in Sources */,
 				5548F87224D7C977009BFCFB /* TravellerNavigationProtocol.swift in Sources */,
 				55A5B48E24D3463000F10070 /* WayFinding.swift in Sources */,
 				A231C404254FC26C008CBED9 /* NetworkRequestDispatcher.swift in Sources */,

@@ -165,12 +165,12 @@ extension UIView {
     
     @objc func keyboardWillShow(_ notification: Notification) {
         let topController = self.getViewController()
-        print("Set the selected delegate in controller and call from here = \(topController)")
+        print("Set the selected delegate in controller and call from here = \(String(describing: topController))")
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
         let topController = self.getViewController()
-        print("Set the selected delegate in controller and call from here = \(topController)")
+        print("Set the selected delegate in controller and call from here = \(String(describing: topController))")
     }
     
     @objc func showPasswordhint() {

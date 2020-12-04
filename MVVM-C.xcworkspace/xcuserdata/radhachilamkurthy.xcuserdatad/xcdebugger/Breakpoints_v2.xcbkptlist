@@ -3,4 +3,86 @@
    uuid = "F7E76642-E596-4339-9D3A-13BF7DF90B9E"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BDA7CE41-B589-44B1-8C57-6D34622A392E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM-C/View/TabBar/HomeDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "addTableView()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BDA7CE41-B589-44B1-8C57-6D34622A392E - 71180d0c496c0074"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVVM_C.HomeDetailsViewController.addTableView() -&gt; ()"
+                  moduleName = "MVVM-C"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/radhachilamkurthy/Desktop/MVVM-C/MVVM-C/View/TabBar/HomeDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "447">
+               </Location>
+               <Location
+                  uuid = "BDA7CE41-B589-44B1-8C57-6D34622A392E - b5289e9479693577"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UITableViewCell, Foundation.IndexPath) -&gt; () in MVVM_C.HomeDetailsViewController.addTableView() -&gt; ()"
+                  moduleName = "MVVM-C"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/radhachilamkurthy/Desktop/MVVM-C/MVVM-C/View/TabBar/HomeDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F9C1926E-D390-4D9D-A41F-F155A1DE6F2B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM-C/View/GenericCollections/GenericTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F9D50B08-CE5F-49A7-A352-FCE41752A923"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM-C/View/GenericCollections/GenericTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

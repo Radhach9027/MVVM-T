@@ -115,7 +115,7 @@ extension GenericTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return grouped?.rows[section] ?? 0
+        return grouped?.rows[section == 0 ? 0 : section - 1] ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -135,16 +135,14 @@ extension GenericTableViewController {
         cellTapHandler(item, indexPath)
     }
     
-    override func tableView(_ tableView: UITableView,
-                            viewForHeaderInSection section: Int) -> UIView? {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = self.headerView, let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: header.reuseIdentifier) else {return nil}
         header.update(view: view, section: section)
         view.contentView.backgroundColor = .clear
         return view
     }
     
-    override func tableView(_ tableView: UITableView,
-                            viewForFooterInSection section: Int) -> UIView? {
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard let footer = self.footerView, let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: footer.reuseIdentifier) else {return nil}
         footer.update(view: view, section: section)
         view.contentView.backgroundColor = .clear
