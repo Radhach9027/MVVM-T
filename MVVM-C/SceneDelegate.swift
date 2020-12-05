@@ -8,8 +8,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let window = window, let naviagtionController = window.rootViewController as? UINavigationController else {return}
         if !SceneDelegate.isUnitTestsLaunched {
-            let wayFinding = WayFinding(navigation: naviagtionController, viewController: naviagtionController.topViewController, storyBoard: naviagtionController.storyboard)
-            Traveller.shared.config(WayFinding: wayFinding)
+            if let topViewController = naviagtionController.topViewController as? LaunchViewController {
+                let wayFinding = WayFinding(navigation: naviagtionController, viewController: naviagtionController.topViewController, storyBoard: naviagtionController.storyboard)
+                Traveller.shared.config(wayFinding: wayFinding)
+            }
         }
         guard let _ = (scene as? UIWindowScene) else { return }
     }

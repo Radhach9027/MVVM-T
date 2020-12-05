@@ -2,11 +2,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
     private var viewModel: LoginViewModelProtocol?
-    private var navigation: LaunchNavigationProtocol?
     
-    func config(viewModel: LoginViewModelProtocol?, navigation: LaunchNavigationProtocol?) {
+    func config(viewModel: LoginViewModelProtocol?) {
         self.viewModel = viewModel
-        self.navigation = navigation
     }
     
     deinit {
@@ -14,14 +12,14 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController: StorySwitchProtocol {
+extension LoginViewController: StorySwitchProtocol, LaunchScreenNavigationProtocol {
     
     @IBAction func popBackButtonPressed(_ sender: UIButton) {
-        self.navigation?.popToRoot(to: false)
+       popToRoot(to: false)
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        self.startLoading(show: true, animate: true, message: "Fetching...")
+        /*self.startLoading(show: true, animate: true, message: "Fetching...")
         
         self.viewModel?.fetchUser(requestType: .all, completion: { [weak self] (status, error) in
             
@@ -33,7 +31,9 @@ extension LoginViewController: StorySwitchProtocol {
                 guard let errorMessage = error?.localizedDescription else { return }
                 self?.presentAlert(errorMessage)
             }
-        })
+        })*/
+        
+        switchToHome()
     }
 }
 

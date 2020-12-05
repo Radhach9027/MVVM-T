@@ -25,7 +25,7 @@ extension TabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if let navigation = tabBarController.selectedViewController as? UINavigationController {
             let wayFinding = WayFinding(navigation: navigation, viewController: navigation.topViewController, storyBoard: tabBarController.storyboard)
-              Traveller.shared.config(WayFinding: wayFinding)
+              Traveller.shared.config(wayFinding: wayFinding)
         }
     }
 }

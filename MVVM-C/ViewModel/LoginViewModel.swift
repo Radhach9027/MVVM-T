@@ -2,6 +2,7 @@ import Foundation
 
 protocol LoginViewModelProtocol {
     func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?)-> Void)
+    func dispose()
 }
 
 class LoginViewModel {
@@ -10,8 +11,14 @@ class LoginViewModel {
     private var userManager: UserManagerProtocol?
     
     init(userService: UserServiceProtocol? = UserService(),  userManager:UserManagerProtocol? = UserManager()) {
+        print("LoginViewModel init")
         self.userService = userService
         self.userManager = userManager
+    }
+    
+    deinit {
+        print("LoginViewModel de-init")
+        dispose()
     }
 }
 
@@ -32,5 +39,10 @@ extension LoginViewModel: LoginViewModelProtocol {
                 completion(true, nil)
             }
         })
+    }
+    
+    func dispose() {
+        self.userService = nil
+        self.userManager = nil
     }
 }

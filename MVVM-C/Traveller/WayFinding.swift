@@ -54,7 +54,7 @@ extension WayFinding: TravellerWayFindingProtocol {
             wayFinding = WayFinding(navigation: navigation, viewController: viewController, storyBoard: storyBoard)
         }
         
-        Traveller.shared.config(WayFinding: wayFinding)
+        Traveller.shared.config(wayFinding: wayFinding)
         configure?(wayFinding?.navigation?.topViewController as! T)
         return wayFinding?.navigation?.topViewController as? T
     }
@@ -91,7 +91,7 @@ extension WayFinding: TravellerWayFindingProtocol {
             configure?(viewController)
             self.stackStorage()
             let wayFinding = WayFinding(navigation: navigation, viewController: viewController, storyBoard: self.storyBoard)
-            Traveller.shared.config(WayFinding: wayFinding)
+            Traveller.shared.config(wayFinding: wayFinding)
             topViewController.present(navigation, animated: animated, completion: nil)
             navigation.presentationController?.delegate = self
             return viewController
@@ -132,7 +132,7 @@ extension WayFinding: TravellerWayFindingProtocol {
         if let viewController = self.viewController?.makeViewController(for: childController, storyBoardName: storyDestination, storyBoard: self.storyBoard , modelPresentationStyle: nil, modelTransistionStyle: modelTransistionStyle) as? T, let topController = self.viewController {
             configure?(viewController)
             let wayFinding = WayFinding(navigation: self.navigation, viewController: viewController, storyBoard: self.storyBoard)
-            Traveller.shared.config(WayFinding: wayFinding)
+            Traveller.shared.config(wayFinding: wayFinding)
             topController.add(viewController)
             return viewController
         }
