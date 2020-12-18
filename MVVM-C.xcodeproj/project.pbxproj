@@ -138,7 +138,7 @@
 		A265190C2529A8C60027A085 /* SomeX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A265190A2529A8C60027A085 /* SomeX.xcdatamodeld */; };
 		A26519412529B0A90027A085 /* CoreDataBaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26519402529B0A90027A085 /* CoreDataBaseRepository.swift */; };
 		A26519562529B8A60027A085 /* UsersCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26519542529B8A60027A085 /* UsersCustomCell.swift */; };
-		A26519572529B8A60027A085 /* UsersCustomCell.swift.xib in Resources */ = {isa = PBXBuildFile; fileRef = A26519552529B8A60027A085 /* UsersCustomCell.swift.xib */; };
+		A26519572529B8A60027A085 /* UsersCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A26519552529B8A60027A085 /* UsersCustomCell.xib */; };
 		A2AF841E24DFE64700BA174F /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */; };
 		FF4331B0A250246448C494A7 /* Pods_MVVM_CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F581B42A9313ED0609FD1B3E /* Pods_MVVM_CTests.framework */; };
 /* End PBXBuildFile section */
@@ -294,7 +294,7 @@
 		A265190B2529A8C60027A085 /* SomeX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SomeX.xcdatamodel; sourceTree = "<group>"; };
 		A26519402529B0A90027A085 /* CoreDataBaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataBaseRepository.swift; sourceTree = "<group>"; };
 		A26519542529B8A60027A085 /* UsersCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCustomCell.swift; sourceTree = "<group>"; };
-		A26519552529B8A60027A085 /* UsersCustomCell.swift.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersCustomCell.swift.xib; sourceTree = "<group>"; };
+		A26519552529B8A60027A085 /* UsersCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersCustomCell.xib; sourceTree = "<group>"; };
 		A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		A44BF0B004CAF8BB8A7B142D /* Pods-MVVM-C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-C.release.xcconfig"; path = "Target Support Files/Pods-MVVM-C/Pods-MVVM-C.release.xcconfig"; sourceTree = "<group>"; };
 		CCD8ACB46A907F9118D1DB56 /* Pods_MVVM_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -351,7 +351,7 @@
 				A2651887252998330027A085 /* TabeledCollectionCustomCell.swift */,
 				A2651888252998330027A085 /* TabeledCollectionCustomCell.xib */,
 				A26519542529B8A60027A085 /* UsersCustomCell.swift */,
-				A26519552529B8A60027A085 /* UsersCustomCell.swift.xib */,
+				A26519552529B8A60027A085 /* UsersCustomCell.xib */,
 			);
 			path = TableViewCustomCells;
 			sourceTree = "<group>";
@@ -905,7 +905,7 @@
 			files = (
 				A265188A252998330027A085 /* TabeledCollectionCustomCell.xib in Resources */,
 				554482AB24AEF9880032E210 /* SectionHeaderView.xib in Resources */,
-				A26519572529B8A60027A085 /* UsersCustomCell.swift.xib in Resources */,
+				A26519572529B8A60027A085 /* UsersCustomCell.xib in Resources */,
 				A26518C12529A0340027A085 /* PopupList.xib in Resources */,
 				55D3D9322492765200A20926 /* CustomPopup.xib in Resources */,
 				55D3D92B248F7BFB00A20926 /* LoadingIndicator.xib in Resources */,
@@ -1269,7 +1269,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5537C1A6248D09A300367F0C /* Debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "${APP_ICON}";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1291,7 +1291,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5537C1A5248D096300367F0C /* Release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "${APP_ICON}";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

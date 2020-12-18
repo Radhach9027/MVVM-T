@@ -68,9 +68,11 @@ extension WayFinding: TravellerWayFindingProtocol {
      3. Then we are fetching navigation via TravellerNavigationProtocol and finally pushing & returning the controller.
      */
     
-    func push<T>(to destination: ControllerDestination, storyDestination: StoryDestination, modelPresentationStyle: UIModalPresentationStyle, modelTransistionStyle: UIModalTransitionStyle, animated: Bool, configure: ((T) -> Void)?) -> T? where T: UIViewController {
+    func push<T>(to destination: ControllerDestination, storyDestination: StoryDestination, hidesBottomBar: Bool, modelPresentationStyle: UIModalPresentationStyle, modelTransistionStyle: UIModalTransitionStyle, animated: Bool, configure: ((T) -> Void)?) -> T? where T: UIViewController {
         if let viewController = self.viewController?.makeViewController(for: destination, storyBoardName: storyDestination, storyBoard: self.storyBoard , modelPresentationStyle: modelPresentationStyle, modelTransistionStyle: modelTransistionStyle) as? T, let navigation = self.navigation {
             configure?(viewController)
+            viewController.hidesBottomBarWhenPushed = hidesBottomBar
+            viewController.endEditing()
             navigation.pushViewController(viewController, animated: animated)
             return viewController
         }
@@ -92,6 +94,7 @@ extension WayFinding: TravellerWayFindingProtocol {
             self.stackStorage()
             let wayFinding = WayFinding(navigation: navigation, viewController: viewController, storyBoard: self.storyBoard)
             Traveller.shared.config(wayFinding: wayFinding)
+            viewController.endEditing()
             topViewController.present(navigation, animated: animated, completion: nil)
             navigation.presentationController?.delegate = self
             return viewController
@@ -111,6 +114,7 @@ extension WayFinding: TravellerWayFindingProtocol {
     func performSegue<T>(to destination: ControllerDestination , storyDestination: StoryDestination, storyBoardProtocol: TravellerStoryBoardProtocol, modelTransistionStyle: UIModalTransitionStyle, configure: ((T) -> Void)?) -> T? where T : UIViewController {
         if let viewController = self.viewController?.makeViewController(for: destination, storyBoardName: storyDestination, storyBoard: storyBoardProtocol, modelPresentationStyle: nil, modelTransistionStyle: modelTransistionStyle) as? T, let topViewController: TravellerViewControllerProtocol = self.viewController {
             configure?(viewController)
+            viewController.endEditing()
             topViewController.performSegue(withIdentifier: destination.rawValue, sender: viewController)
             return viewController
         }
@@ -151,6 +155,7 @@ extension WayFinding: TravellerWayFindingProtocol {
     func unwind<T>(to destination: ControllerDestination, storyDestination: StoryDestination, modelTransistionStyle: UIModalTransitionStyle, storyBoardSegue: TravellerStoryBoardSegueProtocol, configure: ((T) -> Void)?) -> T? where T : UIViewController {
         if let topViewController = self.viewController as? T , let destinationVc = self.viewController?.makeViewController(for: destination, storyBoardName: storyDestination, storyBoard: self.storyBoard, modelPresentationStyle: nil, modelTransistionStyle: modelTransistionStyle) as? T{
             configure?(topViewController)
+            topViewController.endEditing()
             topViewController.unwind(for: UIStoryboardSegue(identifier: storyBoardSegue.identifier, source: storyBoardSegue.source, destination: storyBoardSegue.destination), towards: destinationVc)
             return topViewController
         }
@@ -202,6 +207,7 @@ extension WayFinding: TravellerWayFindingProtocol {
             for controller in navigationController.viewControllers where controller.isKind(of: destination) {
                 if let controller = controller as? T {
                     configure?(controller)
+                    controller.endEditing()
                     navigationController.popToViewController(controller, animated: animated)
                     return controller
                 }

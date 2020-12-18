@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,10 +24,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7oy-9f-p9H" customClass="CustomView" customModule="Laso_Care" customModuleProvider="target">
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7oy-9f-p9H" customClass="CustomView" customModule="MVVM_C" customModuleProvider="target">
                     <rect key="frame" x="31" y="367" width="352" height="162"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample" translatesAutoresizingMaskIntoConstraints="NO" id="C3Y-Vk-Xrb" customClass="CustomImageView" customModule="Laso_Care" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample" translatesAutoresizingMaskIntoConstraints="NO" id="C3Y-Vk-Xrb" customClass="CustomImageView" customModule="MVVM_C" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="352" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="1z0-F7-4LK"/>
@@ -36,10 +38,10 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSS-ay-rXg" customClass="CustomView" customModule="Laso_Care" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSS-ay-rXg" customClass="CustomView" customModule="MVVM_C" customModuleProvider="target">
                             <rect key="frame" x="126" y="-50" width="100" height="100"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample" translatesAutoresizingMaskIntoConstraints="NO" id="yKi-pK-N35" customClass="CustomImageView" customModule="Laso_Care" customModuleProvider="target">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample" translatesAutoresizingMaskIntoConstraints="NO" id="yKi-pK-N35" customClass="CustomImageView" customModule="MVVM_C" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -82,9 +84,9 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h0r-s7-Bwt" customClass="CustomButton" customModule="Laso_Care" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h0r-s7-Bwt" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
                             <rect key="frame" x="116" y="140" width="120" height="40"/>
-                            <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" systemColor="systemIndigoColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="1rp-nz-Lwe"/>
                                 <constraint firstAttribute="height" constant="40" id="6K9-se-ZcL"/>
@@ -142,6 +144,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="7oy-9f-p9H" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7N1-r2-xQo"/>
@@ -150,11 +153,24 @@
                 <constraint firstItem="7oy-9f-p9H" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="lgR-1B-UpD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </view>
     </objects>
+    <designables>
+        <designable name="C3Y-Vk-Xrb">
+            <size key="intrinsicContentSize" width="1024" height="683"/>
+        </designable>
+        <designable name="h0r-s7-Bwt">
+            <size key="intrinsicContentSize" width="40" height="35"/>
+        </designable>
+        <designable name="yKi-pK-N35">
+            <size key="intrinsicContentSize" width="1024" height="683"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Sample" width="1024" height="683"/>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

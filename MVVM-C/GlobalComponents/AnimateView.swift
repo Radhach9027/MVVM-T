@@ -21,7 +21,17 @@ class AnimatedView: UIView {
         super.init(frame: .zero)
     }
     
-    let actualHeight: CGFloat = 60
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        AnimatedView.destroy()
+        print("AnimatedView de-init")
+    }
+    
+    static let actualHeight: CGFloat = 60
+    
     lazy var titleLabel: (UIColor, String) -> UILabel = { (textColor, title) in
         let label = UILabel()
         label.textColor = textColor
@@ -43,8 +53,8 @@ class AnimatedView: UIView {
     }
     
     lazy var viewHeight:(NetworkMessages) -> CGFloat = { (message) in
-        let size = message.rawValue.sizeOfString(string: message.rawValue, constrainedToWidth: Double(UIScreen.main.bounds.size.width - self.actualHeight))
-        return size.height < self.actualHeight ? self.actualHeight : size.height + self.actualHeight
+        let size = message.rawValue.sizeOfString(string: message.rawValue, constrainedToWidth: Double(UIScreen.main.bounds.size.width - AnimatedView.actualHeight))
+        return size.height < AnimatedView.actualHeight ? AnimatedView.actualHeight : size.height + AnimatedView.actualHeight
     }
     
     func present(message: NetworkMessages, postion: AnimatePosition, bgColor: UIColor) {
@@ -53,10 +63,6 @@ class AnimatedView: UIView {
         self.clipsToBounds = true
         self.show(hide: true)
         addConstrints(postion: postion, message: message)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -80,7 +86,7 @@ private extension AnimatedView {
         
         switch postion {
         case .top:
-            self.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor).isActive = true
+            self.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
             break
         case .bottom:
             self.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.bottomAnchor, constant: -self.viewHeight(message)).isActive = true

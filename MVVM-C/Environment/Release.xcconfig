@@ -10,3 +10,6 @@ API_KEY = 783u9djd8a_hkzos7jd803001nd
 APP_NAME = MVVM_C
 APP_BUNDLE_ID = RCGroup.MVVM-C
 APP_VERSION = 1.0.0
+APP_ICON = AppIconRelease
+
+//Google FireBase

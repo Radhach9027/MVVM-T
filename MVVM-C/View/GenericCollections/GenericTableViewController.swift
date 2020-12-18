@@ -139,6 +139,7 @@ extension GenericTableViewController {
         guard let header = self.headerView, let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: header.reuseIdentifier) else {return nil}
         header.update(view: view, section: section)
         view.contentView.backgroundColor = .clear
+        view.backgroundColor = .clear
         return view
     }
     

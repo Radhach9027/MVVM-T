@@ -3,8 +3,8 @@ import UIKit
 class CustomPopup: UIView, Nib {
     
     private static var sharedInstance: CustomPopup?
+    
     class var shared : CustomPopup {
-        
         guard let instance = self.sharedInstance else {
             let strongInstance = CustomPopup()
             self.sharedInstance = strongInstance
@@ -19,6 +19,7 @@ class CustomPopup: UIView, Nib {
     
     private init() {
         super.init(frame: .zero)
+        print("CustomPopup init")
         loadNibFile()
         headerBgView.clipsToBounds = true
         headerBgView.layer.cornerRadius = 10
@@ -29,6 +30,10 @@ class CustomPopup: UIView, Nib {
         super.init(coder: aDecoder)
     }
     
+    deinit {
+        CustomPopup.destroy()
+        print("CustomPopup de-init")
+    }
     
     @IBOutlet weak var customPopView: CustomView!
     @IBOutlet weak var headerBgView: CustomImageView!
@@ -56,6 +61,7 @@ extension CustomPopup {
 private extension CustomPopup {
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        self.customPopView.dismiss(animate: currentState)
+        self.dismiss(animate: currentState)
+        CustomPopup.destroy()
     }
 }

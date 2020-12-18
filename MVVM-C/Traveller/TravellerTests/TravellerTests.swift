@@ -12,7 +12,7 @@ class TravellerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         let mockWayFinding = WayFinding(navigation: mockNavigation, viewController: mockViewController, storyBoard: mockStoryBoard)
-        Traveller.shared.config(WayFinding: mockWayFinding)
+        Traveller.shared.config(wayFinding: mockWayFinding)
     }
     
     override class func tearDown() {

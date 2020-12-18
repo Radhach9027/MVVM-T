@@ -76,7 +76,7 @@ extension Traveller {
         /**
          !* @discussion:  This function will help to push the ViewController from curren ViewController navigation.
          */
-        case push(story: StoryDestination, controller: ControllerDestination, animated: Bool, modelTransistion: UIModalTransitionStyle, modelPresentation: UIModalPresentationStyle)
+        case push(story: StoryDestination, controller: ControllerDestination, animated: Bool, hidesBottomBar: Bool, modelTransistion: UIModalTransitionStyle, modelPresentation: UIModalPresentationStyle)
         
         /**
          !* @discussion:  This function will help to performSegue to respective  ViewController using UIStoryBoardSegue.
@@ -127,8 +127,8 @@ extension Traveller {
                 return Traveller.shared.wayFinding?.switchRootViewController(destination: destination, storyBoard: storyBoard, animated: animated, window: window, animations: modelTransistion, configure: configure)
             case let .present(story, controller, animated, modelTransistion, modelPresentation):
                 return Traveller.shared.wayFinding?.present(to: controller, storyDestination: story, modelPresentationStyle: modelPresentation, modelTransistionStyle: modelTransistion, animated: animated, configure: configure)
-            case let .push(story, controller, animated, modelTransistion, modelPresentation):
-                return Traveller.shared.wayFinding?.push(to: controller, storyDestination: story, modelPresentationStyle: modelPresentation, modelTransistionStyle: modelTransistion, animated: animated, configure: configure)
+                case let .push(story, controller, animated, hidesBottomBar, modelTransistion, modelPresentation):
+                return Traveller.shared.wayFinding?.push(to: controller, storyDestination: story, hidesBottomBar: hidesBottomBar, modelPresentationStyle: modelPresentation, modelTransistionStyle: modelTransistion, animated: animated, configure: configure)
             case let .performSegue(segue, story, stroyPorotocol, modelTransistion):
                 return Traveller.shared.wayFinding?.performSegue(to: segue, storyDestination: story, storyBoardProtocol: stroyPorotocol, modelTransistionStyle: modelTransistion, configure: configure)
             case let .addChild(childController, storyDestination, modelTransistionStyle):

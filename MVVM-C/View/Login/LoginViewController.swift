@@ -15,11 +15,11 @@ class LoginViewController: UIViewController {
 extension LoginViewController: StorySwitchProtocol, LaunchScreenNavigationProtocol {
     
     @IBAction func popBackButtonPressed(_ sender: UIButton) {
-       popToRoot(to: false)
+        popToRoot(to: false)
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        /*self.startLoading(show: true, animate: true, message: "Fetching...")
+        self.startLoading(show: true, animate: true, message: "Fetching...")
         
         self.viewModel?.fetchUser(requestType: .all, completion: { [weak self] (status, error) in
             
@@ -31,9 +31,7 @@ extension LoginViewController: StorySwitchProtocol, LaunchScreenNavigationProtoc
                 guard let errorMessage = error?.localizedDescription else { return }
                 self?.presentAlert(errorMessage)
             }
-        })*/
-        
-        switchToHome()
+        })
     }
 }
 

@@ -83,38 +83,30 @@ extension UIView {
                        }, completion: {
                         (value: Bool) in
                         UIView.transition(with: view, duration: 0.2, options: .curveEaseOut, animations: {
-                            view.transform = .identity
-                        }
-                        )
-                       })
+                            view.transform = .identity }) })
     }
     
     func dismissTransfromAffineOut(view: UIView) {
         view.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
         UIView.animateKeyframes(withDuration: 1.5, delay: 0.2, options: .allowUserInteraction, animations: {
             view.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
-            view.alpha = 0.5
         }) { (true) in
-            view.alpha = 1
             self.removeFromSuperview()
         }
     }
     
     func dismissTransfromAffine(view: UIView) {
+        view.alpha = 0
         UIView.animateKeyframes(withDuration: 1.5, delay: 0.2, options: .allowUserInteraction, animations: {
             view.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-            view.alpha = 0.5
         }) { (true) in
-            view.alpha = 0
             self.removeFromSuperview()
         }
     }
     
     func dismissCrossDisolve(view: UIView) {
         UIView.transition(with: view, duration:1.5, options: .transitionCrossDissolve, animations: {
-            view.alpha = 0
         }){ (true) in
-            view.alpha = 1
             self.removeFromSuperview()
         }
     }
@@ -127,16 +119,11 @@ extension UIView {
                        options: [],
                        animations: {
                         view.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-                        view.alpha = 1
                        }, completion: {
                         (value: Bool) in
                         view.transform = .identity
                         UIView.transition(with: view, duration: 0.2, options: .curveEaseOut, animations: {
-                            view.alpha = 1
-                            self.removeFromSuperview()
-                        }
-                        )
-                       })
+                            self.removeFromSuperview() }) })
     }
 }
 

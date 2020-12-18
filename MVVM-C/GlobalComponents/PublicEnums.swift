@@ -1,18 +1,6 @@
 import UIKit
 
-enum ProfileInfoKeys {
-    case patientInfo, patientAddress
-}
-
-enum CreatePasswordValidation: String {
-    
-    case noCode = "Please enter the code, which is sent to your gmail"
-    case password = "Please enter the password"
-    case confirmPassword = "Please confirm the password"
-}
-
 enum ValidationMessages: String {
-    
     case noPassword = "Please enter a password"
     case validPassword = "Password length should be greater than or equal to 8 charcters & should contain atleast one special char, numeric, uppercase, lowercase"
     case noEmail = "Please enter email"
@@ -21,16 +9,6 @@ enum ValidationMessages: String {
     case validPhone = "Please enter a valid phone number"
     case passwordNotMatch = "Please check the password you've entered, try again.."
     case globalNoValue = "Please enter an email or phone or userName"
-}
-
-enum ProfileValidation: String {
-    
-    case noUser = "No User Exists"
-    case fullName = "Please enter full name"
-    case name = "Please enter name"
-    case email = "Please enter email"
-    case password = "Please enter password"
-    case unknown = "Something went wrong.."
 }
 
 enum UserDefaultsKeys: String {
