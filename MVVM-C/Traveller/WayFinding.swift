@@ -226,7 +226,7 @@ extension WayFinding: TravellerWayFindingProtocol {
         if let topViewController = self.viewController{
             topViewController.modalTransitionStyle = modelTransistionStyle
             topViewController.dismiss(animated: animated) { [weak self] in
-                self?.checkStorageAndReassignWayFindingWhenControllerIsDismissed()
+                self?.checkStorageAndReAssignWayFindingWhenControllerIsDismissed()
             }
         }
     }
@@ -234,7 +234,7 @@ extension WayFinding: TravellerWayFindingProtocol {
 
 extension WayFinding {
     public func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
-        self.checkStorageAndReassignWayFindingWhenControllerIsDismissed()
+        self.checkStorageAndReAssignWayFindingWhenControllerIsDismissed()
     }
 }
 
@@ -247,7 +247,7 @@ private extension WayFinding {
         Traveller.shared.storage.append(controller)
     }
     
-    func checkStorageAndReassignWayFindingWhenControllerIsDismissed() {
+    func checkStorageAndReAssignWayFindingWhenControllerIsDismissed() {
         if Traveller.shared.storage.count > 0 {
             self.storyBoard = Traveller.shared.storage[0] as? TravellerStoryBoardProtocol
             self.navigation = Traveller.shared.storage[1] as? TravellerNavigationProtocol

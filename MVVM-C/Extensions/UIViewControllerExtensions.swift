@@ -15,8 +15,7 @@ extension UIViewController {
         removeFromParent()
     }
     
-    func makeViewController<T>(for controller: ControllerDestination, storyBoardName: StoryDestination, storyBoard: TravellerStoryBoardProtocol?,  modelPresentationStyle: UIModalPresentationStyle? = nil, modelTransistionStyle: UIModalTransitionStyle? = nil) -> T? where T: UIViewController
-    {
+    func makeViewController<T>(for controller: ControllerDestination, storyBoardName: StoryDestination, storyBoard: TravellerStoryBoardProtocol?,  modelPresentationStyle: UIModalPresentationStyle? = nil, modelTransistionStyle: UIModalTransitionStyle? = nil) -> T? where T: UIViewController {
         if let viewController = storyBoard?.instantiateViewController(withIdentifier: controller.rawValue) {
             if let presentation = modelPresentationStyle {
                 viewController.modalPresentationStyle = presentation
@@ -30,7 +29,7 @@ extension UIViewController {
     }
     
     @discardableResult
-    func addConstraints(someController: UIViewController?) -> Bool{
+    func addConstraints(someController: UIViewController?) -> Bool {
         guard let controller = someController else {return false}
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         controller.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true

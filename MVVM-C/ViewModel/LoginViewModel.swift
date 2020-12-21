@@ -25,6 +25,7 @@ class LoginViewModel {
 extension LoginViewModel: LoginViewModelProtocol {
     
     func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?)-> Void) {
+        
         self.userService?.fetchUser(requestType: requestType, completion: { [weak self] (success, error, model) in
             
             if let error = error, model == nil {

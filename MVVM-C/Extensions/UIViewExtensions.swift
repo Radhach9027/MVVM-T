@@ -161,6 +161,5 @@ extension UIView {
     }
     
     @objc func showPasswordhint() {
-        print("Pass this delegate to respective controller")
     }
 }
