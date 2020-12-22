@@ -85,6 +85,10 @@
 		A246E61524E16C6B00D4289F /* UserDefaultsMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E61424E16C6B00D4289F /* UserDefaultsMocks.swift */; };
 		A246E61824E1BC3800D4289F /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E61724E1BC3800D4289F /* Authentication.swift */; };
 		A246E61A24E1BC5400D4289F /* AutoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E61924E1BC5400D4289F /* AutoLogin.swift */; };
+		A25745D82590E7700009C718 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25745D72590E7700009C718 /* SafariServices.framework */; };
+		A25745DA2590E77A0009C718 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25745D92590E77A0009C718 /* AuthenticationServices.framework */; };
+		A25745DC2590E7830009C718 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25745DB2590E7830009C718 /* SystemConfiguration.framework */; };
+		A25745E32591C1530009C718 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25745E22591C1530009C718 /* GoogleSignIn.swift */; };
 		A25C0EEE24DC747F00E13292 /* ViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EED24DC747F00E13292 /* ViewControllerMock.swift */; };
 		A25C0EF024DE6F5400E13292 /* WindowMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EEF24DE6F5400E13292 /* WindowMock.swift */; };
 		A25C0EF224DEC63200E13292 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EF124DEC63200E13292 /* HomeDetailsViewController.swift */; };
@@ -241,6 +245,10 @@
 		A246E61424E16C6B00D4289F /* UserDefaultsMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMocks.swift; sourceTree = "<group>"; };
 		A246E61724E1BC3800D4289F /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		A246E61924E1BC5400D4289F /* AutoLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLogin.swift; sourceTree = "<group>"; };
+		A25745D72590E7700009C718 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		A25745D92590E77A0009C718 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		A25745DB2590E7830009C718 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A25745E22591C1530009C718 /* GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 		A25C0EED24DC747F00E13292 /* ViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMock.swift; sourceTree = "<group>"; };
 		A25C0EEF24DE6F5400E13292 /* WindowMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMock.swift; sourceTree = "<group>"; };
 		A25C0EF124DEC63200E13292 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +315,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25745DC2590E7830009C718 /* SystemConfiguration.framework in Frameworks */,
+				A25745DA2590E77A0009C718 /* AuthenticationServices.framework in Frameworks */,
+				A25745D82590E7700009C718 /* SafariServices.framework in Frameworks */,
 				A2604DCC24E58A7200945435 /* LocalAuthentication.framework in Frameworks */,
 				4EAA109FC289B82DB9AB6BF4 /* Pods_MVVM_C.framework in Frameworks */,
 			);
@@ -326,6 +337,9 @@
 		42519FE7D64D4AFAE49E2580 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A25745DB2590E7830009C718 /* SystemConfiguration.framework */,
+				A25745D92590E77A0009C718 /* AuthenticationServices.framework */,
+				A25745D72590E7700009C718 /* SafariServices.framework */,
 				A2604DCB24E58A7200945435 /* LocalAuthentication.framework */,
 				55BE9A1824B2DBCB00B4FB3E /* JitsiMeet.framework */,
 				55BE9A1924B2DBCB00B4FB3E /* WebRTC.framework */,
@@ -434,6 +448,7 @@
 		5537C179248CBE9B00367F0C /* MVVM-C */ = {
 			isa = PBXGroup;
 			children = (
+				A25745E12591C12C0009C718 /* SocialProfilesSignIn */,
 				A26518EA2529A2D80027A085 /* Resources */,
 				A26518A325299ED90027A085 /* CoreData */,
 				A265189C25299D290027A085 /* Services */,
@@ -736,6 +751,14 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		A25745E12591C12C0009C718 /* SocialProfilesSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				A25745E22591C1530009C718 /* GoogleSignIn.swift */,
+			);
+			path = SocialProfilesSignIn;
+			sourceTree = "<group>";
+		};
 		A2651870252996820027A085 /* GenericModelCollections */ = {
 			isa = PBXGroup;
 			children = (
@@ -831,6 +854,7 @@
 				5537C174248CBE9B00367F0C /* Frameworks */,
 				5537C175248CBE9B00367F0C /* Resources */,
 				65392F31385850EB87D239DE /* [CP] Embed Pods Frameworks */,
+				C02B48B78A562F4C7B3FFE16 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -966,6 +990,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MVVM-C/Pods-MVVM-C-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C02B48B78A562F4C7B3FFE16 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVVM-C/Pods-MVVM-C-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVVM-C/Pods-MVVM-C-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MVVM-C/Pods-MVVM-C-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D0662E61E363BA951ED8B1A3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1004,6 +1045,7 @@
 				A26518B325299FA10027A085 /* CustomButton.swift in Sources */,
 				A2651884252997E20027A085 /* TabledCollectionView.swift in Sources */,
 				55A5B49024D5A05B00F10070 /* TravellerWayFindingProtocol.swift in Sources */,
+				A25745E32591C1530009C718 /* GoogleSignIn.swift in Sources */,
 				5548F87224D7C977009BFCFB /* TravellerNavigationProtocol.swift in Sources */,
 				55A5B48E24D3463000F10070 /* WayFinding.swift in Sources */,
 				A231C404254FC26C008CBED9 /* NetworkRequestDispatcher.swift in Sources */,

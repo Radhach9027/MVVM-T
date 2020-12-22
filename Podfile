@@ -8,6 +8,7 @@ target 'MVVM-C' do
   # Pods for MVVM-C
   pod 'ReachabilitySwift', '~> 5.0'
   pod 'SwiftKeychainWrapper', '~> 3.4'
+  pod 'GoogleSignIn'
 
   target 'MVVM-CTests' do
     inherit! :search_paths
