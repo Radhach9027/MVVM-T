@@ -547,7 +547,6 @@
 			isa = PBXGroup;
 			children = (
 				5548F87024D7C944009BFCFB /* TravellerProtocols */,
-				55A5B49F24D67CA000F10070 /* TravellerTests */,
 				5537C19D248D07D000367F0C /* Traveller.swift */,
 				55B69F2624BEDCAF00E99014 /* Destinations.swift */,
 				55A5B48D24D3462F00F10070 /* WayFinding.swift */,
@@ -591,6 +590,8 @@
 		55A5B49624D67C9400F10070 /* MVVM-CTests */ = {
 			isa = PBXGroup;
 			children = (
+				A246E61124E1624F00D4289F /* UserDefaultsHelperTests */,
+				55A5B49F24D67CA000F10070 /* TravellerTests */,
 				A231C407254FC2C6008CBED9 /* NetworkClientTests */,
 				55A5B49924D67C9400F10070 /* Info.plist */,
 			);
@@ -841,7 +842,6 @@
 		A2AF841C24DFE62F00BA174F /* HelperClasses */ = {
 			isa = PBXGroup;
 			children = (
-				A246E61124E1624F00D4289F /* UserDefaultsHelperTests */,
 				A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */,
 				A246E60F24E161D800D4289F /* UserDefaultHelperProtocols.swift */,
 			);
