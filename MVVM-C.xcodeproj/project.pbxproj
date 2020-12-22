@@ -473,8 +473,6 @@
 				5537C17A248CBE9B00367F0C /* AppDelegate.swift */,
 				5537C17C248CBE9B00367F0C /* SceneDelegate.swift */,
 				5537C183248CBE9C00367F0C /* Assets.xcassets */,
-				A25745F82591DB040009C718 /* GoogleService-Info.plist */,
-				5537C188248CBE9C00367F0C /* Info.plist */,
 			);
 			path = "MVVM-C";
 			sourceTree = "<group>";
@@ -811,6 +809,8 @@
 		A26518EA2529A2D80027A085 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A25745F82591DB040009C718 /* GoogleService-Info.plist */,
+				5537C188248CBE9C00367F0C /* Info.plist */,
 				A26518EC2529A3140027A085 /* CountryCode.json */,
 			);
 			path = Resources;
