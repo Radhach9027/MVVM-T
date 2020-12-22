@@ -2,7 +2,6 @@
 //  Copyright © 2020 RC_Private.com. All rights reserved.
 
 import UIKit
-import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             NetworkReachability.shared.startNotifier()
             reachabilityObserver()
-            GIDSignIn.sharedInstance().clientID = "1087973419992-vu9ilbvrm82gvba2b6ni8l9n0hcl42o1.apps.googleusercontent.com"
+            GoogleSingIn.setUp()
             return true
         }
     }
@@ -27,7 +26,7 @@ extension AppDelegate {
 
     @available(iOS 9.0, *)
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url)
+        return GoogleSingIn.handleUrl(url: url)
     }
 }
 
@@ -37,7 +36,7 @@ extension AppDelegate {
             switch status {
             case .connected:
                  print("Internet Connected")
-                //AnimatedView.shared.present(message: .internet, postion: .top, bgColor: .appButtonColor())
+                AnimatedView.shared.present(message: .internet, postion: .top, bgColor: .appButtonColor())
             case .disconnected:
                 AnimatedView.shared.present(message: .noInternet, postion: .top, bgColor: .appButtonColor())
             }

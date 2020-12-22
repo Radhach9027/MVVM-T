@@ -9,6 +9,8 @@ target 'MVVM-C' do
   pod 'ReachabilitySwift', '~> 5.0'
   pod 'SwiftKeychainWrapper', '~> 3.4'
   pod 'GoogleSignIn'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
 
   target 'MVVM-CTests' do
     inherit! :search_paths

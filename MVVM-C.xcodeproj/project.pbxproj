@@ -89,6 +89,8 @@
 		A25745DA2590E77A0009C718 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25745D92590E77A0009C718 /* AuthenticationServices.framework */; };
 		A25745DC2590E7830009C718 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25745DB2590E7830009C718 /* SystemConfiguration.framework */; };
 		A25745E32591C1530009C718 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25745E22591C1530009C718 /* GoogleSignIn.swift */; };
+		A25745F92591DB040009C718 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A25745F82591DB040009C718 /* GoogleService-Info.plist */; };
+		A2574614259260100009C718 /* FirebaseAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2574613259260100009C718 /* FirebaseAnalytics.swift */; };
 		A25C0EEE24DC747F00E13292 /* ViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EED24DC747F00E13292 /* ViewControllerMock.swift */; };
 		A25C0EF024DE6F5400E13292 /* WindowMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EEF24DE6F5400E13292 /* WindowMock.swift */; };
 		A25C0EF224DEC63200E13292 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EF124DEC63200E13292 /* HomeDetailsViewController.swift */; };
@@ -249,6 +251,8 @@
 		A25745D92590E77A0009C718 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		A25745DB2590E7830009C718 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A25745E22591C1530009C718 /* GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
+		A25745F82591DB040009C718 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A2574613259260100009C718 /* FirebaseAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalytics.swift; sourceTree = "<group>"; };
 		A25C0EED24DC747F00E13292 /* ViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMock.swift; sourceTree = "<group>"; };
 		A25C0EEF24DE6F5400E13292 /* WindowMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMock.swift; sourceTree = "<group>"; };
 		A25C0EF124DEC63200E13292 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
@@ -469,6 +473,7 @@
 				5537C17A248CBE9B00367F0C /* AppDelegate.swift */,
 				5537C17C248CBE9B00367F0C /* SceneDelegate.swift */,
 				5537C183248CBE9C00367F0C /* Assets.xcassets */,
+				A25745F82591DB040009C718 /* GoogleService-Info.plist */,
 				5537C188248CBE9C00367F0C /* Info.plist */,
 			);
 			path = "MVVM-C";
@@ -755,6 +760,7 @@
 			isa = PBXGroup;
 			children = (
 				A25745E22591C1530009C718 /* GoogleSignIn.swift */,
+				A2574613259260100009C718 /* FirebaseAnalytics.swift */,
 			);
 			path = SocialProfilesSignIn;
 			sourceTree = "<group>";
@@ -932,6 +938,7 @@
 				A26519572529B8A60027A085 /* UsersCustomCell.xib in Resources */,
 				A26518C12529A0340027A085 /* PopupList.xib in Resources */,
 				55D3D9322492765200A20926 /* CustomPopup.xib in Resources */,
+				A25745F92591DB040009C718 /* GoogleService-Info.plist in Resources */,
 				55D3D92B248F7BFB00A20926 /* LoadingIndicator.xib in Resources */,
 				A26518ED2529A3150027A085 /* CountryCode.json in Resources */,
 				5514FAF324A8425700AF78B2 /* Login.storyboard in Resources */,
@@ -1103,6 +1110,7 @@
 				5537C1A4248D092A00367F0C /* Configuration.swift in Sources */,
 				A26518DB2529A0A00027A085 /* UIImageExtensions.swift in Sources */,
 				5514FAFA24A860BF00AF78B2 /* ProfileViewController.swift in Sources */,
+				A2574614259260100009C718 /* FirebaseAnalytics.swift in Sources */,
 				A26518E22529A0A00027A085 /* UITextFieldExtensions.swift in Sources */,
 				A246E61024E161D800D4289F /* UserDefaultHelperProtocols.swift in Sources */,
 				A26518F12529A3420027A085 /* Countries.swift in Sources */,
