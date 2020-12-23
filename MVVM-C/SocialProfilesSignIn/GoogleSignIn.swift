@@ -13,12 +13,12 @@ protocol GoogleSignInProtocol: GoogleSignInBaseProtocol {
 }
 
 class GoogleSingIn: NSObject {
-    
     private var currentController: UIViewController?
     
     init(controller: UIViewController? = nil) {
         print("GoogleSingIn InIt")
         super.init()
+        currentController = controller
         config(controller)
     }
     
@@ -42,7 +42,6 @@ extension GoogleSingIn: GoogleSignInProtocol {
         GIDSignIn.sharedInstance()?.presentingViewController = controller
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         GIDSignIn.sharedInstance()?.delegate = self
-        currentController = controller
     }
     
     func signIn() {
