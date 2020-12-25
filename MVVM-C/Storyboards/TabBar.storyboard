@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0aG-iT-Obk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0aG-iT-Obk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,9 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yx0-D8-bbS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yx0-D8-bbS">
                                 <rect key="frame" x="157" y="425.5" width="100" height="45"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="X2T-Vq-aKK"/>
                                     <constraint firstAttribute="width" constant="100" id="ogV-mi-H1t"/>
@@ -31,12 +34,12 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fw1-Un-HJy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yx0-D8-bbS" firstAttribute="centerY" secondItem="Tvl-66-HmV" secondAttribute="centerY" id="ssP-YH-tQw"/>
                             <constraint firstItem="yx0-D8-bbS" firstAttribute="centerX" secondItem="Tvl-66-HmV" secondAttribute="centerX" id="x5w-8U-aXV"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fw1-Un-HJy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="RCD-FI-zLu"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -46,6 +49,23 @@
             </objects>
             <point key="canvasLocation" x="-109" y="169"/>
         </scene>
+        <!--Menu-->
+        <scene sceneID="bFp-QM-uDZ">
+            <objects>
+                <viewController id="nov-9R-Gi1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fMv-AL-3se">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Wwq-i6-twN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Menu" id="PLf-1Y-QQB"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RnU-O7-fAd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="906.69642857142856"/>
+        </scene>
         <!--Home Details View Controller-->
         <scene sceneID="RcM-HY-lk3">
             <objects>
@@ -53,8 +73,8 @@
                     <view key="view" contentMode="scaleToFill" id="sJc-te-Han">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="MeD-Kn-Iop"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
@@ -73,9 +93,9 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Bix-1c-9aK">
                                 <rect key="frame" x="147" y="328" width="120" height="240"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wei-Xa-Pok">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wei-Xa-Pok">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="37.5"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
                                         <state key="normal" title="Detail Screen">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,9 +104,9 @@
                                             <action selector="homeDetailsButtonPressed:" destination="YgY-94-YGC" eventType="touchUpInside" id="8fW-Fd-T38"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Es8-Vg-5Fi">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Es8-Vg-5Fi">
                                         <rect key="frame" x="0.0" y="50.5" width="120" height="37.5"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
                                         <state key="normal" title="Loading Start">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -95,9 +115,9 @@
                                             <action selector="loadingButtonPressed:" destination="YgY-94-YGC" eventType="touchUpInside" id="mII-UO-lrk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1F-FS-Zqp">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1F-FS-Zqp">
                                         <rect key="frame" x="0.0" y="101" width="120" height="38"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
                                         <state key="normal" title="Alert Show">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -106,9 +126,9 @@
                                             <action selector="alertButtonPressed:" destination="YgY-94-YGC" eventType="touchUpInside" id="Wlw-SQ-1en"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcT-rs-heq">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcT-rs-heq">
                                         <rect key="frame" x="0.0" y="152" width="120" height="37.5"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
                                         <state key="normal" title="Show Pop-up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,9 +137,9 @@
                                             <action selector="popUpButtonPressed:" destination="YgY-94-YGC" eventType="touchUpInside" id="cuC-Js-7S3"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMl-CM-jPo">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMl-CM-jPo">
                                         <rect key="frame" x="0.0" y="202.5" width="120" height="37.5"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
                                         <state key="normal" title="Slide View">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -135,12 +155,12 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="EEU-za-gGm"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Bix-1c-9aK" firstAttribute="centerX" secondItem="6i3-sV-B80" secondAttribute="centerX" id="eva-KZ-j3p"/>
                             <constraint firstItem="Bix-1c-9aK" firstAttribute="centerY" secondItem="6i3-sV-B80" secondAttribute="centerY" id="nzR-Lc-yWv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="EEU-za-gGm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="TlY-6R-ftM"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -157,14 +177,17 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2SM-3t-YRq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.43921568630000002" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.43921568630000002" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.57647058819999997" green="0.83529411760000005" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemIndigoColor"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="eg6-G3-PWw" kind="relationship" relationship="viewControllers" id="Y0S-T5-JlR"/>
+                        <segue destination="Llu-9x-3af" kind="relationship" relationship="viewControllers" id="eow-AS-ppe"/>
+                        <segue destination="Pa6-AU-O58" kind="relationship" relationship="viewControllers" id="PK7-i8-fcN"/>
                         <segue destination="cdQ-jR-eiE" kind="relationship" relationship="viewControllers" id="doc-hf-Lbm"/>
+                        <segue destination="1BI-Gr-xux" kind="relationship" relationship="viewControllers" id="TE9-nM-91K"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmT-3w-DeP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -175,7 +198,10 @@
         <scene sceneID="ete-5F-rQ0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cdQ-jR-eiE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person.fill" id="AYZ-6W-D9U"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="AYZ-6W-D9U">
+                        <imageReference key="image" image="person" catalog="system" renderingMode="template"/>
+                        <imageReference key="selectedImage" image="person.fill" catalog="system" renderingMode="template"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ajd-3y-DQp">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -194,7 +220,10 @@
         <scene sceneID="eie-7g-47C">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eg6-G3-PWw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="UmK-YF-gdt"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="UmK-YF-gdt">
+                        <imageReference key="image" image="house" catalog="system" renderingMode="template"/>
+                        <imageReference key="selectedImage" image="house.fill" catalog="system" renderingMode="template"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mfU-0j-RUr">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -209,11 +238,124 @@
             </objects>
             <point key="canvasLocation" x="-1471" y="918"/>
         </scene>
+        <!--Menu-->
+        <scene sceneID="xY8-Kf-EtG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Llu-9x-3af" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Menu" id="nuM-0b-TPE">
+                        <imageReference key="image" image="square.grid.2x2" catalog="system" renderingMode="template"/>
+                        <imageReference key="selectedImage" image="square.grid.2x2.fill" catalog="system" renderingMode="template"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tic-VF-ngb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nov-9R-Gi1" kind="relationship" relationship="rootViewController" id="BhB-ro-CQ5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jVW-1W-fHx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="906.69642857142856"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="QHJ-Rk-UFy">
+            <objects>
+                <viewController id="WhB-Qk-DRB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jvz-KD-L0a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6ri-He-Rbm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="v4J-F2-ywG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X2L-5e-5pb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839.1304347826087" y="1609.8214285714284"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="DPk-hb-ckV">
+            <objects>
+                <viewController id="rjO-FD-ECU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TJE-jP-DgI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="plU-fV-8zM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Feed" id="mZj-Ux-Jj0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vfm-S6-r5y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2749.275362318841" y="2359.1517857142858"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="q06-mm-zbk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1BI-Gr-xux" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="Xiu-nw-X86">
+                        <imageReference key="image" image="gearshape" catalog="system" renderingMode="template"/>
+                        <imageReference key="selectedImage" image="gearshape.fill" catalog="system" renderingMode="template"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Es-NZ-qty">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WhB-Qk-DRB" kind="relationship" relationship="rootViewController" id="s2O-Df-YPy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FOg-po-IBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="1609.8214285714284"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="jYx-6z-nrd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pa6-AU-O58" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Feed" id="TsE-dB-yDq">
+                        <imageReference key="image" image="video" catalog="system" renderingMode="template"/>
+                        <imageReference key="selectedImage" image="video.fill" catalog="system" renderingMode="template"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DrN-l3-Nhd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rjO-FD-ECU" kind="relationship" relationship="rootViewController" id="uyC-PP-ZY6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAd-h9-5K8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1837.68115942029" y="2358.4821428571427"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
+        <image name="square.grid.2x2.fill" catalog="system" width="128" height="114"/>
+        <image name="video" catalog="system" width="128" height="83"/>
+        <image name="video.fill" catalog="system" width="128" height="82"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

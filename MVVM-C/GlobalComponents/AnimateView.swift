@@ -14,7 +14,9 @@ class AnimatedView: UIView {
     }
     
     class func destroy() {
-        sharedInstance = nil
+        DispatchQueue.main.async() {
+            sharedInstance = nil
+        }
     }
     
     private init() {

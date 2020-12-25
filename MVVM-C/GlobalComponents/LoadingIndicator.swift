@@ -3,7 +3,7 @@ import UIKit
 class LoadingIndicator: UIView, Nib {
     
     private static var sharedInstance: LoadingIndicator?
-
+    
     class var shared : LoadingIndicator {
         
         guard let instance = self.sharedInstance else {
@@ -15,7 +15,9 @@ class LoadingIndicator: UIView, Nib {
     }
     
     class func destroy() {
-        sharedInstance = nil
+        DispatchQueue.main.async() {
+            sharedInstance = nil
+        }
     }
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -39,25 +41,26 @@ class LoadingIndicator: UIView, Nib {
     
     func loadNibFile() {
         registerNib()
+        self.statusImageView.image = self.statusImageView.image?.withRenderingMode(.alwaysTemplate)
         self.statusImageView.tintColor = .white
     }
     
     func loading(step: LoadingSteps, title: String? = "Loading...") {
         self.title = title
         switch step {
-        case .start(let animated):
-            startAnimating(animated: animated)
-        case .end:
-            stopAnimating()
-        case .success(let animated):
-            self.status = true
-            self.statusImageView.image = UIImage(named: "check")
-            success(animated: animated)
-        case .failure(let animated):
-            self.status = true
-            self.statusImageView.image = UIImage(named: "close")
-            success(animated: animated)
-            print("failure")
+            case .start(let animated):
+                startAnimating(animated: animated)
+            case .end:
+                stopAnimating()
+            case .success(let animated):
+                self.status = true
+                self.statusImageView.image = UIImage(named: "check")
+                success(animated: animated)
+            case .failure(let animated):
+                self.status = true
+                self.statusImageView.image = UIImage(named: "close")
+                success(animated: animated)
+                print("failure")
         }
     }
 }
@@ -93,7 +96,7 @@ private extension LoadingIndicator {
         animate(show: false)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.34) { [weak self] in
             UIView.animate(withDuration: 0.6, animations: { [weak self] in
-                self?.loadingView.backgroundColor = .appButtonColor()
+                self?.loadingView.backgroundColor = .indigoColor()
                 self?.loadingView.alpha = 1
                 self?.statusImageView.alpha = 0.7
             }) { (true) in

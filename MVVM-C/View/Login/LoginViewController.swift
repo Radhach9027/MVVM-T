@@ -2,6 +2,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     private var viewModel: LoginViewModelProtocol?
+    private var googleSignIn: GoogleSingIn?
     
     func config(viewModel: LoginViewModelProtocol?) {
         self.viewModel = viewModel
@@ -32,6 +33,22 @@ extension LoginViewController: StorySwitchProtocol, LaunchScreenNavigationProtoc
                 self?.presentAlert(errorMessage)
             }
         })
+    }
+    
+    @IBAction func singInWithGoogle(_ sender: UIButton) {
+        googleSignIn = GoogleSingIn(controller: self)
+        googleSignIn?.delegate = self
+        googleSignIn?.signIn()
+    }
+}
+extension LoginViewController: GoogleSignInDelegate {
+    
+    func signInSuccess() {
+        switchToHome()
+    }
+    
+    func signInFailure(_ error: String) {
+        presentAlert(error)
     }
 }
 

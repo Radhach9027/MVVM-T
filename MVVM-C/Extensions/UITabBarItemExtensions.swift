@@ -2,9 +2,8 @@ import UIKit
 
 extension UITabBarItem {
     class func customTabBarItems() {
-        self.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.tabsSelected()], for: .selected)
-        self.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.tabs()], for: .normal)
-        UITabBar.appearance().tintColor = UIColor.appButtonColor()
+        self.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.tabsSelected(), NSAttributedString.Key.font: UIFont.tabsSelected()], for: .selected)
+        self.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.tabsNormal(), NSAttributedString.Key.font: UIFont.tabs()], for: .normal)
     }
 }
 

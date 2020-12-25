@@ -3,20 +3,15 @@ import UIKit
 extension UINavigationBar {
     
     static func customNavigation() {
-        self.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.navigationTitle()]
-        self.appearance().tintColor = UIColor.appColor()
+        UINavigationBar.appearance().barTintColor = .indigoColor()
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.navigationTitle()]
+        UINavigationBar.appearance().isTranslucent = false
     }
     
     func transparentNavigationBar() {
         self.setBackgroundImage(UIImage(), for: .default)
         self.shadowImage = UIImage()
         self.isTranslucent = true
-    }
-}
-
-extension UIBarButtonItem {
-    
-    static func CustomBarButtonItems() {
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.navigationTitle()], for: .normal)
     }
 }

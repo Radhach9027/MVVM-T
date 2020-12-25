@@ -16,6 +16,8 @@ class LocationManager: NSObject {
     }
     
     class func destroy() {
-        sharedInstance = nil
+        DispatchQueue.main.async() {
+            sharedInstance = nil
+        }
     }
 }

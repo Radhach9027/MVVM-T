@@ -14,7 +14,9 @@ class CustomPopup: UIView, Nib {
     }
     
     class func destroy() {
-        sharedInstance = nil
+        DispatchQueue.main.async() {
+            sharedInstance = nil
+        }
     }
     
     private init() {

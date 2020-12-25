@@ -7,6 +7,7 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         googleSignIn = GoogleSingIn(controller: self)
+        googleSignIn?.delegate = self
     }
     
     deinit {
@@ -29,5 +30,17 @@ extension SignupViewController: LaunchScreenNavigationProtocol{
     }
     
     @IBAction func facebookSignInButtonPressed(_ sender: UIButton) {
+    }
+}
+
+extension SignupViewController: GoogleSignInDelegate, StorySwitchProtocol {
+    
+    func signInSuccess() {
+        dismissController(animated: true)
+        switchToHome()
+    }
+    
+    func signInFailure(_ error: String) {
+        presentAlert(error)
     }
 }

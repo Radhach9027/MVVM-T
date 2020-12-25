@@ -16,7 +16,9 @@ final class PersistentStorage {
     }
     
     class func destroy() {
-        sharedInstance = nil
+        DispatchQueue.main.async() {
+            sharedInstance = nil
+        }
     }
     
     lazy var context = persistentContainer.viewContext

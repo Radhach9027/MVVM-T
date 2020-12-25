@@ -117,12 +117,29 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXI-n0-JO1">
+                                <rect key="frame" x="0.0" y="806" width="414" height="90"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="7CS-0k-cwk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="30"/>
+                                <state key="normal" title="Login with Google">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="singInWithGoogle:" destination="lh6-tY-dhd" eventType="touchUpInside" id="Mde-mb-zVy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X3h-fL-7no"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="WXI-n0-JO1" firstAttribute="leading" secondItem="X3h-fL-7no" secondAttribute="leading" id="0Fs-1j-xoB"/>
                             <constraint firstItem="VyN-Va-b4k" firstAttribute="centerY" secondItem="STV-Yc-hhq" secondAttribute="centerY" id="D2J-HL-Kwu"/>
                             <constraint firstItem="VyN-Va-b4k" firstAttribute="centerX" secondItem="STV-Yc-hhq" secondAttribute="centerX" id="NFR-w0-G43"/>
+                            <constraint firstItem="WXI-n0-JO1" firstAttribute="trailing" secondItem="X3h-fL-7no" secondAttribute="trailing" id="qtJ-at-zEW"/>
+                            <constraint firstAttribute="bottom" secondItem="WXI-n0-JO1" secondAttribute="bottom" id="xRy-N8-pky"/>
                         </constraints>
                     </view>
                 </viewController>

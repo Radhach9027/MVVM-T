@@ -91,6 +91,8 @@
 		A25745E32591C1530009C718 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25745E22591C1530009C718 /* GoogleSignIn.swift */; };
 		A25745F92591DB040009C718 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A25745F82591DB040009C718 /* GoogleService-Info.plist */; };
 		A2574614259260100009C718 /* FirebaseAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2574613259260100009C718 /* FirebaseAnalytics.swift */; };
+		A257465C25946BF20009C718 /* TabTransistion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A257465B25946BF20009C718 /* TabTransistion.swift */; };
+		A2574662259473090009C718 /* TabFadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2574661259473090009C718 /* TabFadeAnimation.swift */; };
 		A25C0EEE24DC747F00E13292 /* ViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EED24DC747F00E13292 /* ViewControllerMock.swift */; };
 		A25C0EF024DE6F5400E13292 /* WindowMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EEF24DE6F5400E13292 /* WindowMock.swift */; };
 		A25C0EF224DEC63200E13292 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C0EF124DEC63200E13292 /* HomeDetailsViewController.swift */; };
@@ -253,6 +255,8 @@
 		A25745E22591C1530009C718 /* GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 		A25745F82591DB040009C718 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A2574613259260100009C718 /* FirebaseAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalytics.swift; sourceTree = "<group>"; };
+		A257465B25946BF20009C718 /* TabTransistion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTransistion.swift; sourceTree = "<group>"; };
+		A2574661259473090009C718 /* TabFadeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFadeAnimation.swift; sourceTree = "<group>"; };
 		A25C0EED24DC747F00E13292 /* ViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMock.swift; sourceTree = "<group>"; };
 		A25C0EEF24DE6F5400E13292 /* WindowMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMock.swift; sourceTree = "<group>"; };
 		A25C0EF124DEC63200E13292 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
@@ -411,6 +415,7 @@
 		5514FAF624A8607100AF78B2 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				A257465A25946BE50009C718 /* Animations */,
 				5514FAF424A8599800AF78B2 /* TabBarController.swift */,
 				5514FAF724A8609E00AF78B2 /* HomeViewController.swift */,
 				5514FAF924A860BF00AF78B2 /* ProfileViewController.swift */,
@@ -764,6 +769,15 @@
 			path = SocialProfilesSignIn;
 			sourceTree = "<group>";
 		};
+		A257465A25946BE50009C718 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				A257465B25946BF20009C718 /* TabTransistion.swift */,
+				A2574661259473090009C718 /* TabFadeAnimation.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		A2651870252996820027A085 /* GenericModelCollections */ = {
 			isa = PBXGroup;
 			children = (
@@ -1053,6 +1067,7 @@
 				A2651884252997E20027A085 /* TabledCollectionView.swift in Sources */,
 				55A5B49024D5A05B00F10070 /* TravellerWayFindingProtocol.swift in Sources */,
 				A25745E32591C1530009C718 /* GoogleSignIn.swift in Sources */,
+				A257465C25946BF20009C718 /* TabTransistion.swift in Sources */,
 				5548F87224D7C977009BFCFB /* TravellerNavigationProtocol.swift in Sources */,
 				55A5B48E24D3463000F10070 /* WayFinding.swift in Sources */,
 				A231C404254FC26C008CBED9 /* NetworkRequestDispatcher.swift in Sources */,
@@ -1130,6 +1145,7 @@
 				A231C3F5254FC1DD008CBED9 /* NetworkResponseType.swift in Sources */,
 				A231C3E5254FC1BE008CBED9 /* NetworkSessionTaskProtocol.swift in Sources */,
 				A231C3E2254FC1BE008CBED9 /* NetworkParserProtocol.swift in Sources */,
+				A2574662259473090009C718 /* TabFadeAnimation.swift in Sources */,
 				55D3D91A248D2D7E00A20926 /* GenericTableViewController.swift in Sources */,
 				A2651872252996A10027A085 /* TableViewGenericCustomCellModel.swift in Sources */,
 				A26518C62529A0340027A085 /* Validator.swift in Sources */,
@@ -1248,7 +1264,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1304,7 +1320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "MVVM-C";
@@ -1321,6 +1337,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "${APP_ICON}";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5D3F6TU62C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/JitsiMeetSDK/Frameworks",
@@ -1343,6 +1360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "${APP_ICON}";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5D3F6TU62C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/JitsiMeetSDK/Frameworks",
@@ -1364,7 +1382,9 @@
 			baseConfigurationReference = 546BDC8E42FE5EBF49108453 /* Pods-MVVM-CTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5D3F6TU62C;
 				INFOPLIST_FILE = "MVVM-C/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1385,7 +1405,9 @@
 			baseConfigurationReference = DE72787014134C5EFB5D1DE9 /* Pods-MVVM-CTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5D3F6TU62C;
 				INFOPLIST_FILE = "MVVM-C/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (

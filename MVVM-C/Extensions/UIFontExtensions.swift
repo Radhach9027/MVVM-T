@@ -5,7 +5,7 @@ struct AppFontName {
     static let medium = "KohinoorTelugu-Medium"
     static let bold = "KohinoorGujarati-Bold"
     static let light = "KohinoorTelugu-Light"
-    static let semiBold = "KohinoorGujarati-SemiBold"
+    static let semiBold = "KohinoorDevanagari-Semibold"
 }
 
 extension UIFont {
@@ -15,7 +15,7 @@ extension UIFont {
     }
     
     static func tabsSelected() -> UIFont {
-           return UIFont(name: AppFontName.bold, size: AppFontSize.tabs.rawValue)!
+           return UIFont(name: AppFontName.semiBold, size: AppFontSize.tabs.rawValue)!
     }
     
     static func small() -> UIFont {
@@ -60,5 +60,17 @@ extension UIFont {
     
     static func regularSemiBold() -> UIFont {
             return UIFont(name: AppFontName.semiBold, size: AppFontSize.regular.rawValue)!
+    }
+}
+
+extension UIFont {
+    
+    static func printFonts() {
+        for familyName in UIFont.familyNames {
+            print("Font Family = \(familyName)")
+            for fontName in UIFont.fontNames(forFamilyName: familyName) {
+                print(fontName)
+            }
+        }
     }
 }

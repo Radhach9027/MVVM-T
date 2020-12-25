@@ -7,19 +7,25 @@ protocol GoogleSignInBaseProtocol {
 }
 
 protocol GoogleSignInProtocol: GoogleSignInBaseProtocol {
-    func config(_ controller: UIViewController?)
+    func config()
     func signIn()
     func signOut()
 }
 
+protocol GoogleSignInDelegate: class {
+    func signInSuccess()
+    func signInFailure(_ error: String)
+}
+
 class GoogleSingIn: NSObject {
     private var currentController: UIViewController?
+    weak var delegate: GoogleSignInDelegate?
     
     init(controller: UIViewController? = nil) {
         print("GoogleSingIn InIt")
         super.init()
         currentController = controller
-        config(controller)
+        config()
     }
     
     deinit {
@@ -38,14 +44,16 @@ extension GoogleSingIn: GoogleSignInProtocol {
         return GIDSignIn.sharedInstance().handle(url)
     }
     
-    func config(_ controller: UIViewController?) {
-        GIDSignIn.sharedInstance()?.presentingViewController = controller
+    func config() {
+        GIDSignIn.sharedInstance()?.presentingViewController = currentController
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         GIDSignIn.sharedInstance()?.delegate = self
     }
     
     func signIn() {
-        GIDSignIn.sharedInstance()?.signIn()
+        if GIDSignIn.sharedInstance()?.hasPreviousSignIn() == false {
+            GIDSignIn.sharedInstance()?.signIn()
+        }
     }
     
     func signOut() {
@@ -61,10 +69,9 @@ extension GoogleSingIn: GIDSignInDelegate {
         //handle sign-in errors
         if let error = error {
             if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
-                
-                Alert.presentAlert(withTitle: "Google SignIn", message: "The user has not signed in before or they have since signed out.", controller: currentController)
+                delegate?.signInFailure("The user has not signed in before or they have since signed out.")
             } else {
-                Alert.presentAlert(withTitle: "Google SignIn", message: error.localizedDescription, controller: currentController)
+                delegate?.signInFailure(error.localizedDescription)
             }
             return
         }
@@ -78,11 +85,11 @@ extension GoogleSingIn: GIDSignInDelegate {
         LoadingIndicator.shared.loading(step: .start(animate: true))
         Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
             if let error = error {
-                print("authentication error \(error.localizedDescription)")
-                Alert.presentAlert(withTitle: "Google SignIn", message: error.localizedDescription, controller: self?.currentController)
+                self?.delegate?.signInFailure(error.localizedDescription)
             } else {
                 print(authResult?.user ?? "no user found")
                 LoadingIndicator.shared.loading(step: .end)
+                self?.delegate?.signInSuccess()
             }
         }
     }
@@ -90,6 +97,8 @@ extension GoogleSingIn: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
               withError error: Error!) {
         GIDSignIn.sharedInstance()?.disconnect()
+        guard let errorMsg = error else { return }
+        delegate?.signInFailure(errorMsg.localizedDescription)
     }
 }
 

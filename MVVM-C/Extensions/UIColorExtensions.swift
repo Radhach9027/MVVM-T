@@ -41,4 +41,20 @@ extension UIColor {
     static func detailContentColor() -> UIColor {
            return UIColor.init(red: 77/255, green: 102/255, blue: 106/255, alpha: 1)
     }
+    
+    static func tabsNormal() -> UIColor {
+        return .lightGray
+    }
+    
+    static func tabsSelected() -> UIColor {
+        return .white
+    }
+    
+    static func indigoColor() -> UIColor {
+        return .systemIndigo
+    }
+    
+    static func red() -> UIColor {
+        return .systemRed
+    }
 }

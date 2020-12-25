@@ -4,7 +4,7 @@ class ProfileViewController: UIViewController, BarButtonItemConfiguration {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBarButtonItem(ofType: .notification(.right), imageType: .settings)
+        addBarButtonItem(ofType: .notification(.right), imageType: .notification)
     }
 }
 
