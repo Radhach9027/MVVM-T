@@ -3,7 +3,8 @@ import UIKit
 class LoginViewController: UIViewController {
     private var viewModel: LoginViewModelProtocol?
     private var googleSignIn: GoogleSingIn?
-    
+    private var facebookSignIn: FacebookSignIn?
+
     func config(viewModel: LoginViewModelProtocol?) {
         self.viewModel = viewModel
     }
@@ -40,8 +41,15 @@ extension LoginViewController: StorySwitchProtocol, LaunchScreenNavigationProtoc
         googleSignIn?.delegate = self
         googleSignIn?.signIn()
     }
+    
+    @IBAction func facebookSignInButtonPressed(_ sender: UIButton) {
+        facebookSignIn = FacebookSignIn(controller: self)
+        facebookSignIn?.delegate = self
+        facebookSignIn?.singIn()
+    }
 }
-extension LoginViewController: GoogleSignInDelegate {
+
+extension LoginViewController: GoogleSignInDelegate, FacebookSignInDelegate {
     
     func signInSuccess() {
         switchToHome()

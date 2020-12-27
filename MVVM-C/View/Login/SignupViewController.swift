@@ -3,11 +3,10 @@ import UIKit
 class SignupViewController: UIViewController {
     
     private var googleSignIn: GoogleSingIn?
+    private var facebookSignIn: FacebookSignIn?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        googleSignIn = GoogleSingIn(controller: self)
-        googleSignIn?.delegate = self
     }
     
     deinit {
@@ -15,7 +14,7 @@ class SignupViewController: UIViewController {
     }
 }
 
-extension SignupViewController: LaunchScreenNavigationProtocol{
+extension SignupViewController: LaunchScreenNavigationProtocol, StorySwitchProtocol {
     
     @IBAction func popBackButtonPressed(_ sender: UIButton) {
         dismissController(animated: true)
@@ -26,14 +25,19 @@ extension SignupViewController: LaunchScreenNavigationProtocol{
     }
     
     @IBAction func googleSignInButtonPressed(_ sender: UIButton) {
+        googleSignIn = GoogleSingIn(controller: self)
+        googleSignIn?.delegate = self
         googleSignIn?.signIn()
     }
     
     @IBAction func facebookSignInButtonPressed(_ sender: UIButton) {
+        facebookSignIn = FacebookSignIn(controller: self)
+        facebookSignIn?.delegate = self
+        facebookSignIn?.singIn()
     }
 }
 
-extension SignupViewController: GoogleSignInDelegate, StorySwitchProtocol {
+extension SignupViewController: GoogleSignInDelegate, FacebookSignInDelegate {
     
     func signInSuccess() {
         dismissController(animated: true)

@@ -117,29 +117,74 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXI-n0-JO1">
-                                <rect key="frame" x="0.0" y="806" width="414" height="90"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="6OC-dt-nn5">
+                                <rect key="frame" x="10.5" y="544.5" width="393" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXI-n0-JO1" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="-9" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Login" image="Google">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="singInWithGoogle:" destination="lh6-tY-dhd" eventType="touchUpInside" id="Mde-mb-zVy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-wb-2Hl" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
+                                        <rect key="frame" x="133" y="0.0" width="127" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="-9" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Login" image="facebook">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="facebookSignInButtonPressed:" destination="lh6-tY-dhd" eventType="touchUpInside" id="9Jx-jD-gTt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0N3-vn-iJQ" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
+                                        <rect key="frame" x="266" y="0.0" width="127" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="-9" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Login" image="apple">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="7CS-0k-cwk"/>
+                                    <constraint firstAttribute="height" constant="50" id="IVt-lK-gDx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="30"/>
-                                <state key="normal" title="Login with Google">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="singInWithGoogle:" destination="lh6-tY-dhd" eventType="touchUpInside" id="Mde-mb-zVy"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X3h-fL-7no"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="WXI-n0-JO1" firstAttribute="leading" secondItem="X3h-fL-7no" secondAttribute="leading" id="0Fs-1j-xoB"/>
+                            <constraint firstItem="6OC-dt-nn5" firstAttribute="top" secondItem="aym-df-IzH" secondAttribute="bottom" constant="50" id="068-M8-RD1"/>
                             <constraint firstItem="VyN-Va-b4k" firstAttribute="centerY" secondItem="STV-Yc-hhq" secondAttribute="centerY" id="D2J-HL-Kwu"/>
                             <constraint firstItem="VyN-Va-b4k" firstAttribute="centerX" secondItem="STV-Yc-hhq" secondAttribute="centerX" id="NFR-w0-G43"/>
-                            <constraint firstItem="WXI-n0-JO1" firstAttribute="trailing" secondItem="X3h-fL-7no" secondAttribute="trailing" id="qtJ-at-zEW"/>
-                            <constraint firstAttribute="bottom" secondItem="WXI-n0-JO1" secondAttribute="bottom" id="xRy-N8-pky"/>
+                            <constraint firstItem="6OC-dt-nn5" firstAttribute="centerX" secondItem="STV-Yc-hhq" secondAttribute="centerX" id="Raa-Jx-9OH"/>
+                            <constraint firstItem="6OC-dt-nn5" firstAttribute="width" secondItem="STV-Yc-hhq" secondAttribute="width" multiplier="0.95" id="fjg-cx-Why"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -204,39 +249,74 @@
                                     <constraint firstAttribute="height" constant="100" id="XCG-6e-K0w"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VFK-6M-BHh">
-                                <rect key="frame" x="20" y="792" width="374" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="uQn-bB-JXp">
+                                <rect key="frame" x="10.5" y="548" width="393" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esu-yI-Amo">
-                                        <rect key="frame" x="0.0" y="0.0" width="177" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                        <state key="normal" title="Google"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbM-02-xJe" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="-9" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Login" image="Google">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="googleSignInButtonPressed:" destination="gx2-KC-2o0" eventType="touchUpInside" id="fUW-LW-g5t"/>
+                                            <action selector="googleSignInButtonPressed:" destination="gx2-KC-2o0" eventType="touchUpInside" id="7Ob-Dc-kks"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPX-ew-sDz">
-                                        <rect key="frame" x="197" y="0.0" width="177" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                        <state key="normal" title="Facebook"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6k-gT-LYj" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
+                                        <rect key="frame" x="133" y="0.0" width="127" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="-9" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Login" image="facebook">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="facebookSignInButtonPressed:" destination="gx2-KC-2o0" eventType="touchUpInside" id="HhR-F1-RaG"/>
+                                            <action selector="facebookSignInButtonPressed:" destination="gx2-KC-2o0" eventType="touchUpInside" id="9Ib-Hj-Tsg"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4q-RY-kfA" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
+                                        <rect key="frame" x="266" y="0.0" width="127" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="-9" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Login" image="apple">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="N9U-I2-ci5"/>
+                                    <constraint firstAttribute="height" constant="50" id="RZr-fD-6CL"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kX0-8O-KJk"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kX0-8O-KJk" firstAttribute="bottom" secondItem="VFK-6M-BHh" secondAttribute="bottom" constant="20" id="3yk-Ai-Hpa"/>
                             <constraint firstItem="izA-pN-AnR" firstAttribute="centerY" secondItem="MW2-Ik-tmy" secondAttribute="centerY" id="5ee-qM-PPI"/>
-                            <constraint firstItem="kX0-8O-KJk" firstAttribute="trailing" secondItem="VFK-6M-BHh" secondAttribute="trailing" constant="20" id="UYr-9e-rMK"/>
+                            <constraint firstItem="uQn-bB-JXp" firstAttribute="top" secondItem="jyC-KP-Ns3" secondAttribute="bottom" constant="50" id="OX9-QQ-oXb"/>
+                            <constraint firstItem="uQn-bB-JXp" firstAttribute="width" secondItem="MW2-Ik-tmy" secondAttribute="width" multiplier="0.95" id="WDd-xu-Cgb"/>
+                            <constraint firstItem="uQn-bB-JXp" firstAttribute="centerX" secondItem="kX0-8O-KJk" secondAttribute="centerX" id="aK9-xE-MP9"/>
                             <constraint firstItem="izA-pN-AnR" firstAttribute="centerX" secondItem="MW2-Ik-tmy" secondAttribute="centerX" id="f9w-Zd-k3i"/>
-                            <constraint firstItem="VFK-6M-BHh" firstAttribute="leading" secondItem="kX0-8O-KJk" secondAttribute="leading" constant="20" id="zrf-Nj-8mi"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -261,7 +341,30 @@
             <point key="canvasLocation" x="2932" y="119"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="0N3-vn-iJQ">
+            <size key="intrinsicContentSize" width="81" height="32"/>
+        </designable>
+        <designable name="LDt-wb-2Hl">
+            <size key="intrinsicContentSize" width="81" height="32"/>
+        </designable>
+        <designable name="WXI-n0-JO1">
+            <size key="intrinsicContentSize" width="81" height="32"/>
+        </designable>
+        <designable name="d4q-RY-kfA">
+            <size key="intrinsicContentSize" width="81" height="32"/>
+        </designable>
+        <designable name="wbM-02-xJe">
+            <size key="intrinsicContentSize" width="81" height="32"/>
+        </designable>
+        <designable name="y6k-gT-LYj">
+            <size key="intrinsicContentSize" width="81" height="32"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="Google" width="32" height="32"/>
+        <image name="apple" width="32" height="32"/>
+        <image name="facebook" width="32" height="32"/>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -124,3 +124,8 @@ enum GenderSpecification: String {
 enum ProfileServiceCases {
     case create
 }
+
+enum GoogleSignInMessages: String {
+    case noUserExists = "The user has not signed in before or they have since signed out."
+    case userFailure = "Authentication Success, but unable to fetch user..!"
+}

@@ -18,9 +18,10 @@ protocol GoogleSignInDelegate: class {
 }
 
 class GoogleSingIn: NSObject {
+    
     private var currentController: UIViewController?
     weak var delegate: GoogleSignInDelegate?
-    
+
     init(controller: UIViewController? = nil) {
         print("GoogleSingIn InIt")
         super.init()
@@ -57,7 +58,12 @@ extension GoogleSingIn: GoogleSignInProtocol {
     }
     
     func signOut() {
-        GIDSignIn.sharedInstance()?.signOut()
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
 }
 
@@ -69,7 +75,7 @@ extension GoogleSingIn: GIDSignInDelegate {
         //handle sign-in errors
         if let error = error {
             if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
-                delegate?.signInFailure("The user has not signed in before or they have since signed out.")
+                delegate?.signInFailure(GoogleSignInMessages.noUserExists.rawValue)
             } else {
                 delegate?.signInFailure(error.localizedDescription)
             }
@@ -87,7 +93,7 @@ extension GoogleSingIn: GIDSignInDelegate {
             if let error = error {
                 self?.delegate?.signInFailure(error.localizedDescription)
             } else {
-                print(authResult?.user ?? "no user found")
+                print(authResult?.user ?? GoogleSignInMessages.userFailure.rawValue)
                 LoadingIndicator.shared.loading(step: .end)
                 self?.delegate?.signInSuccess()
             }

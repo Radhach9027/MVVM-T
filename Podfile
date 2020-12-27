@@ -8,9 +8,19 @@ target 'MVVM-C' do
   # Pods for MVVM-C
   pod 'ReachabilitySwift', '~> 5.0'
   pod 'SwiftKeychainWrapper', '~> 3.4'
-  pod 'GoogleSignIn'
+  
+  # Pods for Firebase
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
+  
+  # Pods for Google
+  pod 'GoogleSignIn'
+
+  
+  # Pods for Facebook
+  pod 'Bolts'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
 
   target 'MVVM-CTests' do
     inherit! :search_paths

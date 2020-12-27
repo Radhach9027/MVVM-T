@@ -147,6 +147,7 @@
 		A26519412529B0A90027A085 /* CoreDataBaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26519402529B0A90027A085 /* CoreDataBaseRepository.swift */; };
 		A26519562529B8A60027A085 /* UsersCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26519542529B8A60027A085 /* UsersCustomCell.swift */; };
 		A26519572529B8A60027A085 /* UsersCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A26519552529B8A60027A085 /* UsersCustomCell.xib */; };
+		A26E19D125986BFD006A7D63 /* FacebookSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E19D025986BFD006A7D63 /* FacebookSignIn.swift */; };
 		A2AF841E24DFE64700BA174F /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */; };
 		FF4331B0A250246448C494A7 /* Pods_MVVM_CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F581B42A9313ED0609FD1B3E /* Pods_MVVM_CTests.framework */; };
 /* End PBXBuildFile section */
@@ -311,6 +312,7 @@
 		A26519402529B0A90027A085 /* CoreDataBaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataBaseRepository.swift; sourceTree = "<group>"; };
 		A26519542529B8A60027A085 /* UsersCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCustomCell.swift; sourceTree = "<group>"; };
 		A26519552529B8A60027A085 /* UsersCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersCustomCell.xib; sourceTree = "<group>"; };
+		A26E19D025986BFD006A7D63 /* FacebookSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookSignIn.swift; sourceTree = "<group>"; };
 		A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		A44BF0B004CAF8BB8A7B142D /* Pods-MVVM-C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-C.release.xcconfig"; path = "Target Support Files/Pods-MVVM-C/Pods-MVVM-C.release.xcconfig"; sourceTree = "<group>"; };
 		CCD8ACB46A907F9118D1DB56 /* Pods_MVVM_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -765,6 +767,7 @@
 			children = (
 				A25745E22591C1530009C718 /* GoogleSignIn.swift */,
 				A2574613259260100009C718 /* FirebaseAnalytics.swift */,
+				A26E19D025986BFD006A7D63 /* FacebookSignIn.swift */,
 			);
 			path = SocialProfilesSignIn;
 			sourceTree = "<group>";
@@ -1119,6 +1122,7 @@
 				A26518B125299FA10027A085 /* CustomLabel.swift in Sources */,
 				5537C19E248D07D000367F0C /* Traveller.swift in Sources */,
 				A26519012529A5090027A085 /* UserRepository.swift in Sources */,
+				A26E19D125986BFD006A7D63 /* FacebookSignIn.swift in Sources */,
 				A26518DE2529A0A00027A085 /* ArrayExtensions.swift in Sources */,
 				A231C422254FC3F1008CBED9 /* UserServiceEndPoint.swift in Sources */,
 				A26518D92529A0A00027A085 /* UIViewControllerExtensions.swift in Sources */,

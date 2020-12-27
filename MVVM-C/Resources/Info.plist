@@ -28,6 +28,14 @@
 				<string>com.googleusercontent.apps.1087973419992-vu9ilbvrm82gvba2b6ni8l9n0hcl42o1</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb227011512372047</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -85,5 +93,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>FacebookAppID</key>
+	<string>227011512372047</string>
+	<key>FacebookDisplayName</key>
+	<string>MVVMSwift</string>
 </dict>
 </plist>

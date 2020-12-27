@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NetworkReachability.shared.startNotifier()
             reachabilityObserver()
             GoogleSingIn.setUp()
+            FacebookSignIn.config(application: application, launchOptions: launchOptions)
             return true
         }
     }
