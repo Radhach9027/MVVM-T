@@ -148,6 +148,7 @@
 		A26519562529B8A60027A085 /* UsersCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26519542529B8A60027A085 /* UsersCustomCell.swift */; };
 		A26519572529B8A60027A085 /* UsersCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A26519552529B8A60027A085 /* UsersCustomCell.xib */; };
 		A26E19D125986BFD006A7D63 /* FacebookSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E19D025986BFD006A7D63 /* FacebookSignIn.swift */; };
+		A26E1A1D2598BE92006A7D63 /* AppleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E1A1C2598BE92006A7D63 /* AppleSignIn.swift */; };
 		A2AF841E24DFE64700BA174F /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */; };
 		FF4331B0A250246448C494A7 /* Pods_MVVM_CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F581B42A9313ED0609FD1B3E /* Pods_MVVM_CTests.framework */; };
 /* End PBXBuildFile section */
@@ -313,6 +314,8 @@
 		A26519542529B8A60027A085 /* UsersCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCustomCell.swift; sourceTree = "<group>"; };
 		A26519552529B8A60027A085 /* UsersCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersCustomCell.xib; sourceTree = "<group>"; };
 		A26E19D025986BFD006A7D63 /* FacebookSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookSignIn.swift; sourceTree = "<group>"; };
+		A26E1A1C2598BE92006A7D63 /* AppleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignIn.swift; sourceTree = "<group>"; };
+		A26E1A202598CB95006A7D63 /* MVVM-C.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MVVM-C.entitlements"; sourceTree = "<group>"; };
 		A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		A44BF0B004CAF8BB8A7B142D /* Pods-MVVM-C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-C.release.xcconfig"; path = "Target Support Files/Pods-MVVM-C/Pods-MVVM-C.release.xcconfig"; sourceTree = "<group>"; };
 		CCD8ACB46A907F9118D1DB56 /* Pods_MVVM_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -459,6 +462,7 @@
 		5537C179248CBE9B00367F0C /* MVVM-C */ = {
 			isa = PBXGroup;
 			children = (
+				A26E1A202598CB95006A7D63 /* MVVM-C.entitlements */,
 				A25745E12591C12C0009C718 /* SocialProfilesSignIn */,
 				A26518EA2529A2D80027A085 /* Resources */,
 				A26518A325299ED90027A085 /* CoreData */,
@@ -768,6 +772,7 @@
 				A25745E22591C1530009C718 /* GoogleSignIn.swift */,
 				A2574613259260100009C718 /* FirebaseAnalytics.swift */,
 				A26E19D025986BFD006A7D63 /* FacebookSignIn.swift */,
+				A26E1A1C2598BE92006A7D63 /* AppleSignIn.swift */,
 			);
 			path = SocialProfilesSignIn;
 			sourceTree = "<group>";
@@ -1060,6 +1065,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26E1A1D2598BE92006A7D63 /* AppleSignIn.swift in Sources */,
 				A231C3E3254FC1BE008CBED9 /* NetworkRequestDispatchProtocol.swift in Sources */,
 				5537C1A0248D085D00367F0C /* JailBrokeCheck.swift in Sources */,
 				5548F86D24D7C856009BFCFB /* UISegmentControlExtensions.swift in Sources */,
@@ -1340,6 +1346,7 @@
 			baseConfigurationReference = 5537C1A6248D09A300367F0C /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "${APP_ICON}";
+				CODE_SIGN_ENTITLEMENTS = "MVVM-C/MVVM-C.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5D3F6TU62C;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1363,6 +1370,7 @@
 			baseConfigurationReference = 5537C1A5248D096300367F0C /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "${APP_ICON}";
+				CODE_SIGN_ENTITLEMENTS = "MVVM-C/MVVM-C.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5D3F6TU62C;
 				FRAMEWORK_SEARCH_PATHS = (

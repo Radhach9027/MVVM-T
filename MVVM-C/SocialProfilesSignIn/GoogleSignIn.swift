@@ -12,7 +12,7 @@ protocol GoogleSignInProtocol: GoogleSignInBaseProtocol {
     func signOut()
 }
 
-protocol GoogleSignInDelegate: class {
+protocol SocialSignInDelegate: class {
     func signInSuccess()
     func signInFailure(_ error: String)
 }
@@ -20,7 +20,7 @@ protocol GoogleSignInDelegate: class {
 class GoogleSingIn: NSObject {
     
     private var currentController: UIViewController?
-    weak var delegate: GoogleSignInDelegate?
+    weak var delegate: SocialSignInDelegate?
 
     init(controller: UIViewController? = nil) {
         print("GoogleSingIn InIt")

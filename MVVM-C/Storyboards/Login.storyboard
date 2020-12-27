@@ -170,6 +170,9 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="appleSignInButtonPressed:" destination="lh6-tY-dhd" eventType="touchUpInside" id="qG7-MR-MNE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -302,6 +305,9 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="appleSignInButtonPressed:" destination="gx2-KC-2o0" eventType="touchUpInside" id="VnY-F4-j3q"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

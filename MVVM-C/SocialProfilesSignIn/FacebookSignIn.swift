@@ -9,11 +9,6 @@ protocol FacebookSignInBaseProtocol {
     static func handleUrl(app: UIApplication, url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool
 }
 
-protocol FacebookSignInDelegate: class {
-    func signInSuccess()
-    func signInFailure(_ error: String)
-}
-
 protocol FacebookSignInProtocol: FacebookSignInBaseProtocol {
     func singIn()
     static func signOut()
@@ -22,7 +17,7 @@ protocol FacebookSignInProtocol: FacebookSignInBaseProtocol {
 struct FacebookSignIn {
     
     private var currentController: UIViewController?
-    weak var delegate: FacebookSignInDelegate?
+    weak var delegate: SocialSignInDelegate?
     
     init(controller: UIViewController? = nil) {
         print("FacebookSignIn InIt")

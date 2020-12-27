@@ -4,6 +4,7 @@ class LoginViewController: UIViewController {
     private var viewModel: LoginViewModelProtocol?
     private var googleSignIn: GoogleSingIn?
     private var facebookSignIn: FacebookSignIn?
+    private var appleSignIn: AppleSignIn?
 
     func config(viewModel: LoginViewModelProtocol?) {
         self.viewModel = viewModel
@@ -22,9 +23,7 @@ extension LoginViewController: StorySwitchProtocol, LaunchScreenNavigationProtoc
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         self.startLoading(show: true, animate: true, message: "Fetching...")
-        
         self.viewModel?.fetchUser(requestType: .all, completion: { [weak self] (status, error) in
-            
             self?.startLoading(show: false, animate: false)
             
             if status == true {
@@ -47,9 +46,15 @@ extension LoginViewController: StorySwitchProtocol, LaunchScreenNavigationProtoc
         facebookSignIn?.delegate = self
         facebookSignIn?.singIn()
     }
+    
+    @IBAction func appleSignInButtonPressed(_ sender: UIButton) {
+        appleSignIn = AppleSignIn(controller: self)
+        appleSignIn?.delegate = self
+        appleSignIn?.signIn()
+    }
 }
 
-extension LoginViewController: GoogleSignInDelegate, FacebookSignInDelegate {
+extension LoginViewController: SocialSignInDelegate {
     
     func signInSuccess() {
         switchToHome()
