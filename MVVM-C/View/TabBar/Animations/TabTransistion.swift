@@ -1,6 +1,6 @@
 import UIKit
 
-class MyTransition: NSObject, UIViewControllerAnimatedTransitioning {
+class TabTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     private let viewControllers: [UIViewController]
     private let transitionDuration: Double = 0.2

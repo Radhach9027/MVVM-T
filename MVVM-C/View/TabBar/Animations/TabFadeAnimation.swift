@@ -1,6 +1,6 @@
 import UIKit
 
-class FadePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class TabFadeAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3

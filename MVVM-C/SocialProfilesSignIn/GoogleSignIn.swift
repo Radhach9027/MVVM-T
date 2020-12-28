@@ -40,6 +40,10 @@ extension GoogleSingIn: GoogleSignInProtocol {
             GIDSignIn.sharedInstance()?.signIn()
         }
     }
+    
+    static func signOut() {
+        GIDSignIn.sharedInstance()?.signOut()
+    }
 }
 
 extension GoogleSingIn: GIDSignInDelegate {
