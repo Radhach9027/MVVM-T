@@ -27,7 +27,7 @@ class TravellerTests: XCTestCase {
     
     func testPush_ShouldReutrnExpectedViewController() {
         let expectation = XCTestExpectation(description: "W8 for controller to get pushed")
-        let controller = Traveller.route.push(story: .login, controller: .login, animated: true, modelTransistion: .crossDissolve, modelPresentation: .none).perform { _ in
+        let controller = Traveller.route.push(story: .login, controller: .login, animated: true, hidesBottomBar: false, modelTransistion: .crossDissolve, modelPresentation: .none).perform { _ in
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1.0)

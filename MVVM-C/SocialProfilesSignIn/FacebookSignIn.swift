@@ -3,17 +3,6 @@ import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-
-protocol FacebookSignInBaseProtocol {
-    static func config(application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
-    static func handleUrl(app: UIApplication, url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool
-}
-
-protocol FacebookSignInProtocol: FacebookSignInBaseProtocol {
-    func singIn()
-    static func signOut()
-}
-
 struct FacebookSignIn {
     
     private var currentController: UIViewController?
@@ -26,7 +15,7 @@ struct FacebookSignIn {
 }
 
 extension FacebookSignIn: FacebookSignInProtocol {
-    
+
     static func config(application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
@@ -35,21 +24,11 @@ extension FacebookSignIn: FacebookSignInProtocol {
         ApplicationDelegate.shared.application(app, open: url, options: options)
     }
     
-    func singIn() {
-        
+    func signIn() {
         if let _ = Auth.auth().currentUser {
             self.delegate?.signInSuccess()
         } else {
             logIn()
-        }
-    }
-    
-    static func signOut() {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
         }
     }
 }

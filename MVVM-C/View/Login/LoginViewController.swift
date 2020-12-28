@@ -44,7 +44,7 @@ extension LoginViewController: StorySwitchProtocol, LaunchScreenNavigationProtoc
     @IBAction func facebookSignInButtonPressed(_ sender: UIButton) {
         facebookSignIn = FacebookSignIn(controller: self)
         facebookSignIn?.delegate = self
-        facebookSignIn?.singIn()
+        facebookSignIn?.signIn()
     }
     
     @IBAction func appleSignInButtonPressed(_ sender: UIButton) {

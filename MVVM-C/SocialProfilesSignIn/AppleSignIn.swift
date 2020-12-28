@@ -2,11 +2,6 @@ import Foundation
 import Firebase
 import AuthenticationServices
 
-protocol AppleSignInProtocol {
-    func signIn()
-    static func signOut()
-}
-
 class AppleSignIn: NSObject {
     
     private var currentController: UIViewController?
@@ -36,15 +31,6 @@ extension AppleSignIn: AppleSignInProtocol {
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
-    }
-    
-    static func signOut() {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
     }
 }
 

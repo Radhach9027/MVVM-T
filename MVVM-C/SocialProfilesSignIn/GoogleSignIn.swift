@@ -1,22 +1,6 @@
 import GoogleSignIn
 import Firebase
 
-protocol GoogleSignInBaseProtocol {
-    static func setUp()
-    static func handleUrl(url: URL) -> Bool
-}
-
-protocol GoogleSignInProtocol: GoogleSignInBaseProtocol {
-    func config()
-    func signIn()
-    func signOut()
-}
-
-protocol SocialSignInDelegate: class {
-    func signInSuccess()
-    func signInFailure(_ error: String)
-}
-
 class GoogleSingIn: NSObject {
     
     private var currentController: UIViewController?
@@ -54,15 +38,6 @@ extension GoogleSingIn: GoogleSignInProtocol {
     func signIn() {
         if GIDSignIn.sharedInstance()?.hasPreviousSignIn() == false {
             GIDSignIn.sharedInstance()?.signIn()
-        }
-    }
-    
-    func signOut() {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
         }
     }
 }

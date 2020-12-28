@@ -150,6 +150,8 @@
 		A26E19D125986BFD006A7D63 /* FacebookSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E19D025986BFD006A7D63 /* FacebookSignIn.swift */; };
 		A26E1A1D2598BE92006A7D63 /* AppleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E1A1C2598BE92006A7D63 /* AppleSignIn.swift */; };
 		A26E1A242598F22F006A7D63 /* AppleSignIn+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E1A232598F22F006A7D63 /* AppleSignIn+Extension.swift */; };
+		A26E1A282599A1DE006A7D63 /* TwitterSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E1A272599A1DE006A7D63 /* TwitterSignIn.swift */; };
+		A26E1A2C2599CCFC006A7D63 /* SocialSignInProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E1A2B2599CCFC006A7D63 /* SocialSignInProtocols.swift */; };
 		A2AF841E24DFE64700BA174F /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */; };
 		FF4331B0A250246448C494A7 /* Pods_MVVM_CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F581B42A9313ED0609FD1B3E /* Pods_MVVM_CTests.framework */; };
 /* End PBXBuildFile section */
@@ -318,6 +320,8 @@
 		A26E1A1C2598BE92006A7D63 /* AppleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignIn.swift; sourceTree = "<group>"; };
 		A26E1A202598CB95006A7D63 /* MVVM-C.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MVVM-C.entitlements"; sourceTree = "<group>"; };
 		A26E1A232598F22F006A7D63 /* AppleSignIn+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppleSignIn+Extension.swift"; sourceTree = "<group>"; };
+		A26E1A272599A1DE006A7D63 /* TwitterSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterSignIn.swift; sourceTree = "<group>"; };
+		A26E1A2B2599CCFC006A7D63 /* SocialSignInProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignInProtocols.swift; sourceTree = "<group>"; };
 		A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		A44BF0B004CAF8BB8A7B142D /* Pods-MVVM-C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-C.release.xcconfig"; path = "Target Support Files/Pods-MVVM-C/Pods-MVVM-C.release.xcconfig"; sourceTree = "<group>"; };
 		CCD8ACB46A907F9118D1DB56 /* Pods_MVVM_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -771,11 +775,13 @@
 		A25745E12591C12C0009C718 /* SocialProfilesSignIn */ = {
 			isa = PBXGroup;
 			children = (
+				A26E1A2F2599CE73006A7D63 /* Protocols */,
 				A25745E22591C1530009C718 /* GoogleSignIn.swift */,
 				A2574613259260100009C718 /* FirebaseAnalytics.swift */,
 				A26E19D025986BFD006A7D63 /* FacebookSignIn.swift */,
 				A26E1A1C2598BE92006A7D63 /* AppleSignIn.swift */,
 				A26E1A232598F22F006A7D63 /* AppleSignIn+Extension.swift */,
+				A26E1A272599A1DE006A7D63 /* TwitterSignIn.swift */,
 			);
 			path = SocialProfilesSignIn;
 			sourceTree = "<group>";
@@ -862,6 +868,14 @@
 			children = (
 			);
 			path = ManagedClasses;
+			sourceTree = "<group>";
+		};
+		A26E1A2F2599CE73006A7D63 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A26E1A2B2599CCFC006A7D63 /* SocialSignInProtocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		A2AF841C24DFE62F00BA174F /* HelperClasses */ = {
@@ -1133,6 +1147,7 @@
 				5537C19E248D07D000367F0C /* Traveller.swift in Sources */,
 				A26519012529A5090027A085 /* UserRepository.swift in Sources */,
 				A26E19D125986BFD006A7D63 /* FacebookSignIn.swift in Sources */,
+				A26E1A2C2599CCFC006A7D63 /* SocialSignInProtocols.swift in Sources */,
 				A26518DE2529A0A00027A085 /* ArrayExtensions.swift in Sources */,
 				A231C422254FC3F1008CBED9 /* UserServiceEndPoint.swift in Sources */,
 				A26518D92529A0A00027A085 /* UIViewControllerExtensions.swift in Sources */,
@@ -1169,6 +1184,7 @@
 				A265187E252996F20027A085 /* GroupedGenricSectionModel.swift in Sources */,
 				55D3D929248F7B3200A20926 /* LoadingIndicator.swift in Sources */,
 				5548F86924D7C7D5009BFCFB /* UILabelExtensions.swift in Sources */,
+				A26E1A282599A1DE006A7D63 /* TwitterSignIn.swift in Sources */,
 				A26518DA2529A0A00027A085 /* UINavigationItemExtensions.swift in Sources */,
 				A231C3E8254FC1BE008CBED9 /* NetworkEnvironmentProtocol.swift in Sources */,
 				A26518DC2529A0A00027A085 /* UIResponderExtensions.swift in Sources */,
