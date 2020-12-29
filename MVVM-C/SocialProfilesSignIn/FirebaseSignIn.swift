@@ -16,8 +16,12 @@ enum FirebaseKeys: String {
 struct FirebaseSignIn: FirebaseProtocol {
     
     static func signIn(credential: AuthCredential, signInType: SocialSignInType, completion: @escaping (AuthDataResult?, Error?)-> Void) {
-        Keychain.storeData(value: signInType, key: FirebaseKeys.signInType.rawValue)
-        Auth.auth().signIn(with: credential, completion: completion)
+        Auth.auth().signIn(with: credential) { (result, error) in
+            if error == nil {
+                Keychain.storeData(value: signInType, key: FirebaseKeys.signInType.rawValue)
+                completion(result, error)
+            }
+        }
     }
 
     static func signOut() {
