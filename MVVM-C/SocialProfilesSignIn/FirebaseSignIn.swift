@@ -1,18 +1,5 @@
 import Firebase
 
-enum SocialSignInType: String, Codable {
-    case google
-    case apple
-    case facebook
-    case twitter
-    case microsoft
-    case github
-}
-
-enum FirebaseKeys: String {
-    case signInType
-}
-
 struct FirebaseSignIn: FirebaseProtocol {
     
     static func signIn(credential: AuthCredential, signInType: SocialSignInType, completion: @escaping (AuthDataResult?, Error?)-> Void) {
@@ -24,7 +11,7 @@ struct FirebaseSignIn: FirebaseProtocol {
         }
     }
 
-    static func signOut() {
+    static func signOut() throws {
         socialLogout()
         let firebaseAuth = Auth.auth()
         do {

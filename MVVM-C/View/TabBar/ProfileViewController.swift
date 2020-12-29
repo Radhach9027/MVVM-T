@@ -17,8 +17,14 @@ extension ProfileViewController: BarButtonActions {
 }
 
 extension ProfileViewController {
+    
     @IBAction func logOutBackButtonPressed(_ sender: UIButton) {
-        let rootChange = UIStoryboard(name: "Login", bundle: Bundle.main)
-        Traveller.route.switchRootViewController(storyBoard: rootChange, controllerDestination: .launch, animated: true, window: UIWindow.key, modelTransistion: .transitionCrossDissolve).perform()
+        do {
+            try FirebaseSignIn.signOut()
+            let rootChange = UIStoryboard(name: "Login", bundle: Bundle.main)
+            Traveller.route.switchRootViewController(storyBoard: rootChange, controllerDestination: .launch, animated: true, window: UIWindow.key, modelTransistion: .transitionCrossDissolve).perform()
+        } catch let signOutError as NSError {
+            print ("Error signing out from FirebaseSignIn: %@", signOutError)
+        }
     }
 }

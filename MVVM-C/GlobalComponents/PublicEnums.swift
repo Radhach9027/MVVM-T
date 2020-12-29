@@ -129,3 +129,16 @@ enum GoogleSignInMessages: String {
     case noUserExists = "The user has not signed in before or they have since signed out."
     case userFailure = "Authentication Success, but unable to fetch user..!"
 }
+
+enum SocialSignInType: String, Codable {
+    case google
+    case apple
+    case facebook
+    case twitter
+    case microsoft
+    case github
+}
+
+enum FirebaseKeys: String {
+    case signInType
+}
