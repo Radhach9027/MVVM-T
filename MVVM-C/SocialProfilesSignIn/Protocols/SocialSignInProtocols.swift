@@ -6,28 +6,10 @@ import Firebase
 protocol FirebaseProtocol {
     var userExists: Bool {get}
     var currentUser: Firebase.User? {get}
-    func signOut()
+    static func signOut()
+    static func signIn(credential: AuthCredential, completion: @escaping (AuthDataResult?, Error?)-> Void)
 }
 
-extension FirebaseProtocol {
-    
-    func signOut() {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-    }
-    
-    var userExists: Bool {
-        return Auth.auth().currentUser != nil ? true : false
-    }
-    
-    var currentUser: Firebase.User? {
-        return Auth.auth().currentUser
-    }
-}
 
 //  GoogleSignIn.
 
