@@ -12,8 +12,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             NetworkReachability.shared.startNotifier()
             reachabilityObserver()
-            GoogleSingIn.setUp()
+            GoogleSingIn.config()
             FacebookSignIn.config(application: application, launchOptions: launchOptions)
+            TwitterSignIn.config()
             return true
         }
     }
@@ -27,7 +28,11 @@ extension AppDelegate {
 
     @available(iOS 9.0, *)
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-        return GoogleSingIn.handleUrl(url: url)
+        let googleUrl = GoogleSingIn.handleUrl(url: url)
+        let facebookUrl = FacebookSignIn.handleUrl(app: app, url: url, options: options)
+        let twitterUrl = TwitterSignIn.handleUrl(app: app, url: url, options: options)
+        
+        return googleUrl || facebookUrl || twitterUrl
     }
 }
 

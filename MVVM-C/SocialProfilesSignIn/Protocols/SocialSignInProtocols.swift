@@ -33,9 +33,9 @@ extension FirebaseProtocol {
 
 protocol GoogleSignInProtocol {
     func signIn()
-    func config()
+    func setup()
     static func signOut()
-    static func setUp()
+    static func config()
     static func handleUrl(url: URL) -> Bool
 }
 
@@ -56,7 +56,11 @@ protocol FacebookSignInProtocol {
 //  Twitter.
 
 protocol TwitterLoginProtocol {
+    static func config()
     func signIn()
+    static func signOut()
+    @discardableResult
+    static func handleUrl(app: UIApplication, url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool
 }
 
 // Microsoft

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HyB-EX-TYA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HyB-EX-TYA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -197,7 +197,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="singInWithGoogle:" destination="lh6-tY-dhd" eventType="touchUpInside" id="VWz-Kn-BIw"/>
+                                            <action selector="twitterSignInButtonPressed:" destination="lh6-tY-dhd" eventType="touchUpInside" id="jKv-9F-cQZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qW-a5-gIH" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
@@ -215,7 +215,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="facebookSignInButtonPressed:" destination="lh6-tY-dhd" eventType="touchUpInside" id="FEO-cW-bI0"/>
+                                            <action selector="microsoftSignInButtonPressed:" destination="lh6-tY-dhd" eventType="touchUpInside" id="9bF-iP-bTq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ai-9u-jkA" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
@@ -233,7 +233,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="appleSignInButtonPressed:" destination="lh6-tY-dhd" eventType="touchUpInside" id="ZdG-dB-C4w"/>
+                                            <action selector="githubSignInButtonPressed:" destination="lh6-tY-dhd" eventType="touchUpInside" id="4eW-Q0-dE6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -397,7 +397,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="singInWithGoogle:" destination="lh6-tY-dhd" eventType="touchUpInside" id="Cwb-lI-JEQ"/>
+                                            <action selector="twitterSignInButtonPressed:" destination="gx2-KC-2o0" eventType="touchUpInside" id="DwM-jr-bw9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xec-br-0wa" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
@@ -415,7 +415,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="facebookSignInButtonPressed:" destination="lh6-tY-dhd" eventType="touchUpInside" id="gQF-ss-dRE"/>
+                                            <action selector="microsoftSignInButtonPressed:" destination="gx2-KC-2o0" eventType="touchUpInside" id="afF-iw-Qoz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUm-aW-Wgh" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
@@ -433,7 +433,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="appleSignInButtonPressed:" destination="lh6-tY-dhd" eventType="touchUpInside" id="G5j-WD-KfX"/>
+                                            <action selector="githubSignInButtonPressed:" destination="gx2-KC-2o0" eventType="touchUpInside" id="VN1-BW-BVQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -479,40 +479,40 @@
     </scenes>
     <designables>
         <designable name="0Bj-sM-LG3">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="0N3-vn-iJQ">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="3ai-9u-jkA">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="3cp-4k-9Ue">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="4qW-a5-gIH">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="LDt-wb-2Hl">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="WXI-n0-JO1">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="d4q-RY-kfA">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="jUm-aW-Wgh">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="wbM-02-xJe">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="xec-br-0wa">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="y6k-gT-LYj">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
     </designables>
     <resources>

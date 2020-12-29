@@ -10,7 +10,7 @@ class GoogleSingIn: NSObject {
         print("GoogleSingIn InIt")
         super.init()
         currentController = controller
-        config()
+        setup()
     }
     
     deinit {
@@ -20,7 +20,7 @@ class GoogleSingIn: NSObject {
 
 extension GoogleSingIn: GoogleSignInProtocol {
     
-    static func setUp() {
+    static func config() {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
     }
@@ -29,7 +29,7 @@ extension GoogleSingIn: GoogleSignInProtocol {
         return GIDSignIn.sharedInstance().handle(url)
     }
     
-    func config() {
+    func setup() {
         GIDSignIn.sharedInstance()?.presentingViewController = currentController
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         GIDSignIn.sharedInstance()?.delegate = self

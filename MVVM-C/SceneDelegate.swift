@@ -8,12 +8,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let window = window, let naviagtionController = window.rootViewController as? UINavigationController else {return}
         if !SceneDelegate.isUnitTestsLaunched {
-            if let topViewController = naviagtionController.topViewController as? LaunchViewController {
+            if let _ = naviagtionController.topViewController as? LaunchViewController {
                 let wayFinding = WayFinding(navigation: naviagtionController, viewController: naviagtionController.topViewController, storyBoard: naviagtionController.storyboard)
                 Traveller.shared.config(wayFinding: wayFinding)
             }
         }
         guard let _ = (scene as? UIWindowScene) else { return }
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let openURLContext = URLContexts.first{
+            let url = openURLContext.url
+            let options: [UIApplication.OpenURLOptionsKey : Any] = [
+                UIApplication.OpenURLOptionsKey.annotation : openURLContext.options.annotation as Any,
+                UIApplication.OpenURLOptionsKey.sourceApplication : openURLContext.options.sourceApplication as Any,
+                UIApplication.OpenURLOptionsKey.openInPlace : openURLContext.options.openInPlace
+            ]
+            TwitterSignIn.handleUrl(app: UIApplication.shared, url: url, options: options)
+        }
     }
 }
 

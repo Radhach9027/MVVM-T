@@ -5,6 +5,7 @@ class LoginViewController: UIViewController {
     private var googleSignIn: GoogleSingIn?
     private var facebookSignIn: FacebookSignIn?
     private var appleSignIn: AppleSignIn?
+    private var twitterSignIn: TwitterSignIn?
 
     func config(viewModel: LoginViewModelProtocol?) {
         self.viewModel = viewModel
@@ -51,6 +52,18 @@ extension LoginViewController: StorySwitchProtocol, LaunchScreenNavigationProtoc
         appleSignIn = AppleSignIn(controller: self)
         appleSignIn?.delegate = self
         appleSignIn?.signIn()
+    }
+    
+    @IBAction func twitterSignInButtonPressed(_ sender: UIButton) {
+        twitterSignIn = TwitterSignIn(controller: self)
+        twitterSignIn?.delegate = self
+        twitterSignIn?.signIn()
+    }
+    
+    @IBAction func microsoftSignInButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func githubSignInButtonPressed(_ sender: UIButton) {
     }
 }
 

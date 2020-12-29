@@ -36,9 +36,21 @@
 				<string>fb227011512372047</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>twitterkit-dpKWvRRYZXBTdhbRZq3WE1GEK</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>227011512372047</string>
+	<key>FacebookDisplayName</key>
+	<string>MVVMSwift</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>cydia</string>
@@ -93,9 +105,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>FacebookAppID</key>
-	<string>227011512372047</string>
-	<key>FacebookDisplayName</key>
-	<string>MVVMSwift</string>
 </dict>
 </plist>

@@ -15,6 +15,9 @@ target 'MVVM-C' do
   
   # Pods for Google
   pod 'GoogleSignIn'
+  
+  # Pods for Twitter
+  pod 'TwitterKit'
 
   
   # Pods for Facebook

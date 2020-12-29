@@ -5,6 +5,7 @@ class SignupViewController: UIViewController {
     private var googleSignIn: GoogleSingIn?
     private var facebookSignIn: FacebookSignIn?
     private var appleSignIn: AppleSignIn?
+    private var twitterSignIn: TwitterSignIn?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,18 @@ extension SignupViewController: LaunchScreenNavigationProtocol, StorySwitchProto
         facebookSignIn = FacebookSignIn(controller: self)
         facebookSignIn?.delegate = self
         facebookSignIn?.signIn()
+    }
+    
+    @IBAction func twitterSignInButtonPressed(_ sender: UIButton) {
+        twitterSignIn = TwitterSignIn(controller: self)
+        twitterSignIn?.delegate = self
+        twitterSignIn?.signIn()
+    }
+    
+    @IBAction func microsoftSignInButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func githubSignInButtonPressed(_ sender: UIButton) {
     }
     
     @IBAction func appleSignInButtonPressed(_ sender: UIButton) {
