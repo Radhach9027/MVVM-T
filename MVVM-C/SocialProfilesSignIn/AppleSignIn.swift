@@ -53,7 +53,7 @@ extension AppleSignIn: ASAuthorizationControllerDelegate {
             }
             // Initialize a Firebase credential.
             let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
-            Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
+            FirebaseSignIn.signIn(credential: credential, signInType: .apple) { [weak self] (authResult, error) in
                 if error == nil {
                     self?.delegate?.signInSuccess()
                 } else{

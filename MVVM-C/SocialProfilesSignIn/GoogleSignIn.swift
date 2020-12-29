@@ -68,7 +68,7 @@ extension GoogleSingIn: GIDSignInDelegate {
         
         // Authenticate with Firebase using the credential object
         LoadingIndicator.shared.loading(step: .start(animate: true))
-        FirebaseSignIn.signIn(credential: credential) { [weak self] (authResult, error) in
+        FirebaseSignIn.signIn(credential: credential, signInType: .google) { [weak self] (authResult, error) in
             if let error = error {
                 self?.delegate?.signInFailure(error.localizedDescription)
             } else {

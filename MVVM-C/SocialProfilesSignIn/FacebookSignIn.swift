@@ -7,7 +7,7 @@ struct FacebookSignIn {
     
     private var currentController: UIViewController?
     weak var delegate: SocialSignInDelegate?
-    
+
     init(controller: UIViewController? = nil) {
         print("FacebookSignIn InIt")
         currentController = controller
@@ -31,6 +31,10 @@ extension FacebookSignIn: FacebookSignInProtocol {
             logIn()
         }
     }
+    
+    static func signOut() {
+        LoginManager().logOut()
+    }
 }
 
 private extension FacebookSignIn {
@@ -41,14 +45,14 @@ private extension FacebookSignIn {
             switch result {
                 case .success(_, _, token: let token):
                     let credential = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
-                    Auth.auth().signIn(with: credential, completion: { (user, error) in
+                    FirebaseSignIn.signIn(credential: credential, signInType: .facebook) { (authResult, error) in
                         if let error = error {
                             self.delegate?.signInFailure(error.localizedDescription)
                             return
                         }else {
                             self.delegate?.signInSuccess()
                         }
-                    })
+                    }
                 case .cancelled:
                     self.delegate?.signInFailure("User cancelled..")
                 case .failed(let error):

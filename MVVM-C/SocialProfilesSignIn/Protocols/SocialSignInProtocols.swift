@@ -7,9 +7,8 @@ protocol FirebaseProtocol {
     var userExists: Bool {get}
     var currentUser: Firebase.User? {get}
     static func signOut()
-    static func signIn(credential: AuthCredential, completion: @escaping (AuthDataResult?, Error?)-> Void)
+    static func signIn(credential: AuthCredential, signInType: SocialSignInType, completion: @escaping (AuthDataResult?, Error?)-> Void)
 }
-
 
 //  GoogleSignIn.
 
@@ -31,6 +30,7 @@ protocol AppleSignInProtocol {
 
 protocol FacebookSignInProtocol {
     func signIn()
+    static func signOut()
     static func config(application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
     static func handleUrl(app: UIApplication, url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool
 }

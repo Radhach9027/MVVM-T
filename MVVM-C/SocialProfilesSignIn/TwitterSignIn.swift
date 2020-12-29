@@ -30,13 +30,13 @@ struct TwitterSignIn: TwitterLoginProtocol {
                     guard let token = session?.authToken else {return}
                     guard let secret = session?.authTokenSecret else {return}
                     let credential = TwitterAuthProvider.credential(withToken: token, secret: secret)
-                    Auth.auth().signIn(with: credential, completion: { (user, error) in
+                    FirebaseSignIn.signIn(credential: credential, signInType: .twitter) { (authResult, error) in
                         if let error = error {
                             delegate?.signInFailure(error.localizedDescription)
                         } else {
                             delegate?.signInSuccess()
                         }
-                    })
+                    }
                 }
             }
         } else {
