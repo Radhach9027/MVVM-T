@@ -42,6 +42,7 @@ extension FirebaseSignIn: FirebaseProtocol {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
+            Keychain<SocialSignInType>.clearData(key: FirebaseKeys.signInType.rawValue)
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
