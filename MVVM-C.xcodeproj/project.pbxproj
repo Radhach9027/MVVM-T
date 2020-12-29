@@ -1372,7 +1372,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "${APP_ICON}";
 				CODE_SIGN_ENTITLEMENTS = "MVVM-C/MVVM-C.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5D3F6TU62C;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/JitsiMeetSDK/Frameworks",
@@ -1396,7 +1396,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "${APP_ICON}";
 				CODE_SIGN_ENTITLEMENTS = "MVVM-C/MVVM-C.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5D3F6TU62C;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/JitsiMeetSDK/Frameworks",

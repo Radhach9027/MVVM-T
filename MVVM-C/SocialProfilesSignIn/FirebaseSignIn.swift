@@ -22,7 +22,7 @@ struct FirebaseSignIn: FirebaseProtocol {
     }
     
     private static func socialLogout() {
-        if let signInType = Keychain<SocialSignInType>.retriveData(key: FirebaseKeys.signInType.rawValue) {
+        if let signInData = Keychain<Data>.retriveData(key: FirebaseKeys.signInType.rawValue), let signInType = try? JSONDecoder().decode(SocialSignInType.self, from: signInData) {
             switch signInType {
                 case .google:
                     GoogleSingIn.signOut()
@@ -36,11 +36,11 @@ struct FirebaseSignIn: FirebaseProtocol {
         }
     }
     
-    var userExists: Bool {
+    static var userExists: Bool {
         return Auth.auth().currentUser != nil ? true : false
     }
     
-    var currentUser: Firebase.User? {
+    static var currentUser: Firebase.User? {
         return Auth.auth().currentUser
     }
 }

@@ -4,8 +4,8 @@ import Firebase
 //  FireBase.
 
 protocol FirebaseProtocol {
-    var userExists: Bool {get}
-    var currentUser: Firebase.User? {get}
+    static var userExists: Bool {get}
+    static var currentUser: Firebase.User? {get}
     static func signOut() throws
     static func signIn(credential: AuthCredential, signInType: SocialSignInType, completion: @escaping (AuthDataResult?, Error?)-> Void)
 }
