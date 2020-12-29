@@ -142,3 +142,15 @@ enum SocialSignInType: String, Codable {
 enum FirebaseKeys: String {
     case signInType
 }
+
+enum AppleSignInMessages: String {
+    case invalid = "Invalid state: A login callback was received, but no login request was sent."
+    case tokenNotFound = "Unable to fetch identity token"
+    case notSerialized = "Unable to serialize token string from data:"
+    case somethingWrong = "Something went wrong ApplesignIn authResult"
+}
+
+enum TwitterKeys: String {
+    case consumerKey = "dpKWvRRYZXBTdhbRZq3WE1GEK"
+    case consumerSecret = "yLNf9OJwbzTrkV1iyXFpSb3AFz44e9hK4VqTkG8zHPsp3yEgUd"
+}

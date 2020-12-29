@@ -40,24 +40,24 @@ extension AppleSignIn: ASAuthorizationControllerDelegate {
         
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
             guard let nonce = currentNonce else {
-                self.delegate?.signInFailure("Invalid state: A login callback was received, but no login request was sent.")
+                self.delegate?.signInFailure(AppleSignInMessages.invalid.rawValue)
                 return
             }
             guard let appleIDToken = appleIDCredential.identityToken else {
-                self.delegate?.signInFailure("Unable to fetch identity token")
+                self.delegate?.signInFailure(AppleSignInMessages.tokenNotFound.rawValue)
                 return
             }
             guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
-                self.delegate?.signInFailure("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
+                self.delegate?.signInFailure(" \(AppleSignInMessages.notSerialized.rawValue) \(appleIDToken.debugDescription)")
                 return
             }
-            // Initialize a Firebase credential.
+
             let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
             FirebaseSignIn.signIn(credential: credential, signInType: .apple) { [weak self] (authResult, error) in
                 if error == nil {
                     self?.delegate?.signInSuccess()
                 } else{
-                    self?.delegate?.signInFailure(error?.localizedDescription ?? "Something went wrong ApplesignIn authResult")
+                    self?.delegate?.signInFailure(error?.localizedDescription ?? AppleSignInMessages.somethingWrong.rawValue)
                 }
             }
         }

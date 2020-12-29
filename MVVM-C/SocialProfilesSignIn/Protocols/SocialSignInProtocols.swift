@@ -45,11 +45,6 @@ protocol TwitterLoginProtocol {
     static func handleUrl(app: UIApplication, url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool
 }
 
-// Microsoft
-
-
-
-// Github
 
 //  Common Social Delegates.
 

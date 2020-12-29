@@ -1,11 +1,6 @@
 import Firebase
 import TwitterKit
 
-enum TwitterKeys: String {
-    case consumerKey = "dpKWvRRYZXBTdhbRZq3WE1GEK"
-    case consumerSecret = "yLNf9OJwbzTrkV1iyXFpSb3AFz44e9hK4VqTkG8zHPsp3yEgUd"
-}
-
 struct TwitterSignIn: TwitterLoginProtocol {
     
     private var currentController: UIViewController?

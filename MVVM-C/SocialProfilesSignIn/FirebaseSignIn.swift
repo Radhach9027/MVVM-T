@@ -3,7 +3,9 @@ import Firebase
 struct FirebaseSignIn: FirebaseProtocol {
     
     static func signIn(credential: AuthCredential, signInType: SocialSignInType, completion: @escaping (AuthDataResult?, Error?)-> Void) {
+        LoadingIndicator.shared.loading(step: .start(animate: true))
         Auth.auth().signIn(with: credential) { (result, error) in
+            LoadingIndicator.shared.loading(step: .end)
             if error == nil {
                 Keychain.storeData(value: signInType, key: FirebaseKeys.signInType.rawValue)
                 completion(result, error)
