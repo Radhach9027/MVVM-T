@@ -25,8 +25,15 @@ extension FacebookSignIn: FacebookSignInProtocol {
     }
     
     func signIn() {
-        if let _ = Auth.auth().currentUser {
-            self.delegate?.signInSuccess()
+        if let user = Auth.auth().currentUser {
+            user.getIDToken { (accessToken, error) in
+                guard let token = accessToken else {
+                    self.delegate?.signInFailure("Failed to retrive User accessToken")
+                    return
+                }
+                let credential = FacebookAuthProvider.credential(withAccessToken: token)
+                self.delegate?.signInSuccess(credential: credential, signInType: .facebook)
+            }
         } else {
             logIn()
         }
@@ -45,14 +52,7 @@ private extension FacebookSignIn {
             switch result {
                 case .success(_, _, token: let token):
                     let credential = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
-                    FirebaseSignIn.signIn(credential: credential, signInType: .facebook) { (authResult, error) in
-                        if let error = error {
-                            self.delegate?.signInFailure(error.localizedDescription)
-                            return
-                        }else {
-                            self.delegate?.signInSuccess()
-                        }
-                    }
+                    delegate?.signInSuccess(credential: credential, signInType: .facebook)
                 case .cancelled:
                     self.delegate?.signInFailure("User cancelled..")
                 case .failed(let error):

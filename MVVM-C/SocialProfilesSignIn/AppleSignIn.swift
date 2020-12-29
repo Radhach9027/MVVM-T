@@ -5,7 +5,7 @@ import AuthenticationServices
 class AppleSignIn: NSObject {
     
     private var currentController: UIViewController?
-    fileprivate var currentNonce: String?
+    private var currentNonce: String?
     weak var delegate: SocialSignInDelegate?
     
     init(controller: UIViewController? = nil) {
@@ -53,13 +53,7 @@ extension AppleSignIn: ASAuthorizationControllerDelegate {
             }
 
             let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
-            FirebaseSignIn.signIn(credential: credential, signInType: .apple) { [weak self] (authResult, error) in
-                if error == nil {
-                    self?.delegate?.signInSuccess()
-                } else{
-                    self?.delegate?.signInFailure(error?.localizedDescription ?? AppleSignInMessages.somethingWrong.rawValue)
-                }
-            }
+            delegate?.signInSuccess(credential: credential, signInType: .apple)
         }
     }
     

@@ -2,13 +2,12 @@ import UIKit
 
 class LoginViewController: UIViewController {
     private var viewModel: LoginViewModelProtocol?
-    private var googleSignIn: GoogleSingIn?
-    private var facebookSignIn: FacebookSignIn?
-    private var appleSignIn: AppleSignIn?
-    private var twitterSignIn: TwitterSignIn?
+    private var fireBaseSignIn: FirebaseSignIn?
 
     func config(viewModel: LoginViewModelProtocol?) {
         self.viewModel = viewModel
+        fireBaseSignIn = FirebaseSignIn(viewController: self)
+        fireBaseSignIn?.delegate = self
     }
     
     deinit {
@@ -37,37 +36,31 @@ extension LoginViewController: StorySwitchProtocol, LaunchScreenNavigationProtoc
     }
     
     @IBAction func singInWithGoogle(_ sender: UIButton) {
-        googleSignIn = GoogleSingIn(controller: self)
-        googleSignIn?.delegate = self
-        googleSignIn?.signIn()
+        fireBaseSignIn?.signIn(signInType: .google)
     }
     
     @IBAction func facebookSignInButtonPressed(_ sender: UIButton) {
-        facebookSignIn = FacebookSignIn(controller: self)
-        facebookSignIn?.delegate = self
-        facebookSignIn?.signIn()
+        fireBaseSignIn?.signIn(signInType: .facebook)
     }
     
     @IBAction func appleSignInButtonPressed(_ sender: UIButton) {
-        appleSignIn = AppleSignIn(controller: self)
-        appleSignIn?.delegate = self
-        appleSignIn?.signIn()
+        fireBaseSignIn?.signIn(signInType: .apple)
     }
     
     @IBAction func twitterSignInButtonPressed(_ sender: UIButton) {
-        twitterSignIn = TwitterSignIn(controller: self)
-        twitterSignIn?.delegate = self
-        twitterSignIn?.signIn()
+        fireBaseSignIn?.signIn(signInType: .twitter)
     }
     
     @IBAction func microsoftSignInButtonPressed(_ sender: UIButton) {
+        fireBaseSignIn?.signIn(signInType: .microsoft)
     }
     
     @IBAction func githubSignInButtonPressed(_ sender: UIButton) {
+        fireBaseSignIn?.signIn(signInType: .github)
     }
 }
 
-extension LoginViewController: SocialSignInDelegate {
+extension LoginViewController: FireBaseSignInDelegate {
     
     func signInSuccess() {
         switchToHome()

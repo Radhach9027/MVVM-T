@@ -2,13 +2,12 @@ import UIKit
 
 class SignupViewController: UIViewController {
     
-    private var googleSignIn: GoogleSingIn?
-    private var facebookSignIn: FacebookSignIn?
-    private var appleSignIn: AppleSignIn?
-    private var twitterSignIn: TwitterSignIn?
-    
+    private var fireBaseSignIn: FirebaseSignIn?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        fireBaseSignIn = FirebaseSignIn(viewController: self)
+        fireBaseSignIn?.delegate = self
     }
     
     deinit {
@@ -27,37 +26,31 @@ extension SignupViewController: LaunchScreenNavigationProtocol, StorySwitchProto
     }
     
     @IBAction func googleSignInButtonPressed(_ sender: UIButton) {
-        googleSignIn = GoogleSingIn(controller: self)
-        googleSignIn?.delegate = self
-        googleSignIn?.signIn()
+        fireBaseSignIn?.signIn(signInType: .google)
     }
     
     @IBAction func facebookSignInButtonPressed(_ sender: UIButton) {
-        facebookSignIn = FacebookSignIn(controller: self)
-        facebookSignIn?.delegate = self
-        facebookSignIn?.signIn()
+        fireBaseSignIn?.signIn(signInType: .facebook)
     }
     
     @IBAction func twitterSignInButtonPressed(_ sender: UIButton) {
-        twitterSignIn = TwitterSignIn(controller: self)
-        twitterSignIn?.delegate = self
-        twitterSignIn?.signIn()
+        fireBaseSignIn?.signIn(signInType: .twitter)
     }
     
     @IBAction func microsoftSignInButtonPressed(_ sender: UIButton) {
+        fireBaseSignIn?.signIn(signInType: .microsoft)
     }
     
     @IBAction func githubSignInButtonPressed(_ sender: UIButton) {
+        fireBaseSignIn?.signIn(signInType: .github)
     }
     
     @IBAction func appleSignInButtonPressed(_ sender: UIButton) {
-        appleSignIn = AppleSignIn(controller: self)
-        appleSignIn?.delegate = self
-        appleSignIn?.signIn()
+        fireBaseSignIn?.signIn(signInType: .apple)
     }
 }
 
-extension SignupViewController: SocialSignInDelegate {
+extension SignupViewController: FireBaseSignInDelegate {
     
     func signInSuccess() {
         dismissController(animated: true)

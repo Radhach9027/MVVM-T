@@ -60,18 +60,13 @@ extension GoogleSingIn: GIDSignInDelegate {
             return
         }
         
-        guard let authentication = user.authentication else { return }
+        guard let authentication = user.authentication else {
+            delegate?.signInFailure("user.authentication failure")
+            return
+        }
         
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-        
-        FirebaseSignIn.signIn(credential: credential, signInType: .google) { [weak self] (authResult, error) in
-            if let error = error {
-                self?.delegate?.signInFailure(error.localizedDescription)
-            } else {
-                print(authResult?.user ?? GoogleSignInMessages.userFailure.rawValue)
-                self?.delegate?.signInSuccess()
-            }
-        }
+        delegate?.signInSuccess(credential: credential, signInType: .google)
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,

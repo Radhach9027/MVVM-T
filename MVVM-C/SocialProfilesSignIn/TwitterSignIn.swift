@@ -1,7 +1,7 @@
 import Firebase
 import TwitterKit
 
-struct TwitterSignIn: TwitterLoginProtocol {
+struct TwitterSignIn: TwitterSignInProtocol {
     
     private var currentController: UIViewController?
     weak var delegate: SocialSignInDelegate?
@@ -22,20 +22,14 @@ struct TwitterSignIn: TwitterLoginProtocol {
                 if let error = error {
                     delegate?.signInFailure(error.localizedDescription)
                 } else {
-                    guard let token = session?.authToken else {return}
-                    guard let secret = session?.authTokenSecret else {return}
-                    let credential = TwitterAuthProvider.credential(withToken: token, secret: secret)
-                    FirebaseSignIn.signIn(credential: credential, signInType: .twitter) { (authResult, error) in
-                        if let error = error {
-                            delegate?.signInFailure(error.localizedDescription)
-                        } else {
-                            delegate?.signInSuccess()
-                        }
+                    guard let token = session?.authToken, let secret = session?.authTokenSecret else {
+                        delegate?.signInFailure("Failed to retrive Twitter session tokens")
+                        return
                     }
+                    let credential = TwitterAuthProvider.credential(withToken: token, secret: secret)
+                    delegate?.signInSuccess(credential: credential, signInType: .twitter)
                 }
             }
-        } else {
-            delegate?.signInSuccess()
         }
     }
     
