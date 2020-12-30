@@ -6,11 +6,12 @@ import FBSDKLoginKit
 struct FacebookSignIn {
     
     private var viewController: UIViewController?
-    weak var delegate: SocialSignInDelegate?
+    private weak var delegate: SocialSignInDelegate?
 
-    init(viewController: UIViewController? = nil) {
+    init(viewController: UIViewController? = nil, delegate: SocialSignInDelegate?) {
         print("FacebookSignIn InIt")
         self.viewController = viewController
+        self.delegate = delegate
     }
 }
 

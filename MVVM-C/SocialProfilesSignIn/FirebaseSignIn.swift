@@ -76,26 +76,22 @@ extension FirebaseSignIn: FirebaseProtocol {
 private extension FirebaseSignIn {
     
     func singInWithGoogle() {
-        googleSignIn = GoogleSingIn(viewController: self.viewController)
-        googleSignIn?.delegate = self
+        googleSignIn = GoogleSingIn(viewController: self.viewController, delegate: self)
         googleSignIn?.signIn()
     }
     
     func singInWithApple() {
-        appleSignIn = AppleSignIn(viewController: self.viewController)
-        appleSignIn?.delegate = self
+        appleSignIn = AppleSignIn(viewController: self.viewController, delegate: self)
         appleSignIn?.signIn()
     }
     
     func singInWithFacebook() {
-        facebookSignIn = FacebookSignIn(viewController: self.viewController)
-        facebookSignIn?.delegate = self
+        facebookSignIn = FacebookSignIn(viewController: self.viewController, delegate: self)
         facebookSignIn?.signIn()
     }
     
     func singInWithTwitter() {
-        twitterSignIn = TwitterSignIn(viewController: self.viewController)
-        twitterSignIn?.delegate = self
+        twitterSignIn = TwitterSignIn(viewController: self.viewController, delegate: self)
         twitterSignIn?.signIn()
     }
     

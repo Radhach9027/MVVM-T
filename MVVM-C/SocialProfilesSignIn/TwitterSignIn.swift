@@ -4,11 +4,12 @@ import TwitterKit
 struct TwitterSignIn: TwitterSignInProtocol {
     
     private var viewController: UIViewController?
-    weak var delegate: SocialSignInDelegate?
+    private weak var delegate: SocialSignInDelegate?
     
-    init(viewController: UIViewController? = nil) {
+    init(viewController: UIViewController? = nil, delegate: SocialSignInDelegate?) {
         print("TwitterSignIn InIt")
         self.viewController = viewController
+        self.delegate = delegate
     }
     
     static func config() {
