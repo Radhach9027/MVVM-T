@@ -26,15 +26,13 @@ extension FacebookSignIn: FacebookSignInProtocol {
     }
     
     func signIn() {
-        if let user = Auth.auth().currentUser {
-            user.getIDToken { (accessToken, error) in
-                guard let token = accessToken else {
-                    self.delegate?.signInFailure("Failed to retrive User accessToken")
-                    return
-                }
-                let credential = FacebookAuthProvider.credential(withAccessToken: token)
-                self.delegate?.signInSuccess(credential: credential, signInType: .facebook)
+        if let _ = Auth.auth().currentUser {
+            guard let token = AccessToken.current?.tokenString else {
+                LoginManager().logOut()
+                return
             }
+            let credential = FacebookAuthProvider.credential(withAccessToken: token)
+            self.delegate?.signInSuccess(credential: credential, signInType: .facebook)
         } else {
             logIn()
         }
