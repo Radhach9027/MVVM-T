@@ -6,8 +6,7 @@ class LoginViewController: UIViewController {
 
     func config(viewModel: LoginViewModelProtocol?) {
         self.viewModel = viewModel
-        fireBaseSignIn = FirebaseSignIn(viewController: self)
-        fireBaseSignIn?.delegate = self
+        fireBaseSignIn = FirebaseSignIn(viewController: self, delegate: self)
     }
     
     deinit {

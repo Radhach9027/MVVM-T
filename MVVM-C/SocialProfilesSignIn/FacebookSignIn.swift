@@ -5,12 +5,12 @@ import FBSDKLoginKit
 
 struct FacebookSignIn {
     
-    private var currentController: UIViewController?
+    private var viewController: UIViewController?
     weak var delegate: SocialSignInDelegate?
 
-    init(controller: UIViewController? = nil) {
+    init(viewController: UIViewController? = nil) {
         print("FacebookSignIn InIt")
-        currentController = controller
+        self.viewController = viewController
     }
 }
 
@@ -48,7 +48,7 @@ private extension FacebookSignIn {
     
     func logIn() {
         let loginManager = LoginManager()
-        loginManager.logIn(permissions: [.publicProfile, .email], viewController: currentController) { (result) in
+        loginManager.logIn(permissions: [.publicProfile, .email], viewController: viewController) { (result) in
             switch result {
                 case .success(_, _, token: let token):
                     let credential = FacebookAuthProvider.credential(withAccessToken: token.tokenString)

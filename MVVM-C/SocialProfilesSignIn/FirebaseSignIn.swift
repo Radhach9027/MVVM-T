@@ -6,12 +6,13 @@ class FirebaseSignIn {
     private var facebookSignIn: FacebookSignIn?
     private var appleSignIn: AppleSignIn?
     private var twitterSignIn: TwitterSignIn?
-    private var currentController: UIViewController?
-    weak var delegate: FireBaseSignInDelegate?
+    private var viewController: UIViewController?
+    private weak var delegate: FireBaseSignInDelegate?
 
-    init(viewController: UIViewController) {
+    init(viewController: UIViewController, delegate: FireBaseSignInDelegate?) {
         print("FirebaseSignIn InIt")
-        currentController = viewController
+        self.viewController = viewController
+        self.delegate = delegate
     }
     
     deinit {
@@ -38,7 +39,7 @@ extension FirebaseSignIn: FirebaseProtocol {
     }
     
     static func signOut() throws {
-        socialLogout()
+        socialProfileLogout()
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -48,7 +49,7 @@ extension FirebaseSignIn: FirebaseProtocol {
         }
     }
     
-    private static func socialLogout() {
+    private static func socialProfileLogout() {
         if let signInData = Keychain<Data>.retriveData(key: FirebaseKeys.signInType.rawValue), let signInType = try? JSONDecoder().decode(SocialSignInType.self, from: signInData) {
             switch signInType {
                 case .google:
@@ -75,25 +76,25 @@ extension FirebaseSignIn: FirebaseProtocol {
 private extension FirebaseSignIn {
     
     func singInWithGoogle() {
-        googleSignIn = GoogleSingIn(controller: self.currentController)
+        googleSignIn = GoogleSingIn(viewController: self.viewController)
         googleSignIn?.delegate = self
         googleSignIn?.signIn()
     }
     
     func singInWithApple() {
-        appleSignIn = AppleSignIn(controller: self.currentController)
+        appleSignIn = AppleSignIn(viewController: self.viewController)
         appleSignIn?.delegate = self
         appleSignIn?.signIn()
     }
     
     func singInWithFacebook() {
-        facebookSignIn = FacebookSignIn(controller: self.currentController)
+        facebookSignIn = FacebookSignIn(viewController: self.viewController)
         facebookSignIn?.delegate = self
         facebookSignIn?.signIn()
     }
     
     func singInWithTwitter() {
-        twitterSignIn = TwitterSignIn(controller: self.currentController)
+        twitterSignIn = TwitterSignIn(viewController: self.viewController)
         twitterSignIn?.delegate = self
         twitterSignIn?.signIn()
     }

@@ -6,8 +6,7 @@ class SignupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fireBaseSignIn = FirebaseSignIn(viewController: self)
-        fireBaseSignIn?.delegate = self
+        fireBaseSignIn = FirebaseSignIn(viewController: self, delegate: self)
     }
     
     deinit {

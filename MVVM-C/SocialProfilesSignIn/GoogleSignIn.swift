@@ -3,13 +3,13 @@ import Firebase
 
 class GoogleSingIn: NSObject {
     
-    private var currentController: UIViewController?
+    private var viewController: UIViewController?
     weak var delegate: SocialSignInDelegate?
 
-    init(controller: UIViewController? = nil) {
+    init(viewController: UIViewController? = nil) {
         print("GoogleSingIn InIt")
         super.init()
-        currentController = controller
+        self.viewController = viewController
         setup()
     }
     
@@ -30,7 +30,7 @@ extension GoogleSingIn: GoogleSignInProtocol {
     }
     
     func setup() {
-        GIDSignIn.sharedInstance()?.presentingViewController = currentController
+        GIDSignIn.sharedInstance()?.presentingViewController = viewController
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         GIDSignIn.sharedInstance()?.delegate = self
     }

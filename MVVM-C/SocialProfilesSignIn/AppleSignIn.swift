@@ -4,13 +4,13 @@ import AuthenticationServices
 
 class AppleSignIn: NSObject {
     
-    private var currentController: UIViewController?
+    private var viewController: UIViewController?
     private var currentNonce: String?
     weak var delegate: SocialSignInDelegate?
     
-    init(controller: UIViewController? = nil) {
+    init(viewController: UIViewController? = nil) {
         print("FacebookSignIn InIt")
-        currentController = controller
+        self.viewController = viewController
     }
     
     deinit {
@@ -65,6 +65,6 @@ extension AppleSignIn: ASAuthorizationControllerDelegate {
 extension AppleSignIn: ASAuthorizationControllerPresentationContextProviding {
     
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return (currentController?.view.window)!
+        return (self.viewController?.view.window)!
     }
 }

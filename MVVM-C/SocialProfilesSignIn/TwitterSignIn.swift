@@ -3,12 +3,12 @@ import TwitterKit
 
 struct TwitterSignIn: TwitterSignInProtocol {
     
-    private var currentController: UIViewController?
+    private var viewController: UIViewController?
     weak var delegate: SocialSignInDelegate?
     
-    init(controller: UIViewController? = nil) {
+    init(viewController: UIViewController? = nil) {
         print("TwitterSignIn InIt")
-        currentController = controller
+        self.viewController = viewController
     }
     
     static func config() {
@@ -18,7 +18,7 @@ struct TwitterSignIn: TwitterSignInProtocol {
     func signIn() {
         
         if TWTRTwitter.sharedInstance().sessionStore.session() == nil {
-            TWTRTwitter.sharedInstance().logIn(with: currentController) { (session, error) in
+            TWTRTwitter.sharedInstance().logIn(with: self.viewController) { (session, error) in
                 if let error = error {
                     delegate?.signInFailure(error.localizedDescription)
                 } else {
