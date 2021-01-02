@@ -62,6 +62,7 @@ extension LoginViewController: StorySwitchProtocol, LaunchScreenNavigationProtoc
 extension LoginViewController: FireBaseSignInDelegate {
     
     func signInSuccess() {
+        print("Current User = \(String(describing: FirebaseSignIn.currentUser?.displayName))")
         switchToHome()
     }
     

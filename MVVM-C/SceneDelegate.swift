@@ -6,14 +6,10 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let window = window, let naviagtionController = window.rootViewController as? UINavigationController else {return}
+        guard let window = window else {fatalError("No window found in SceneDelegate")}
         if !SceneDelegate.isUnitTestsLaunched {
-            if let _ = naviagtionController.topViewController as? LaunchViewController {
-                let wayFinding = WayFinding(navigation: naviagtionController, viewController: naviagtionController.topViewController, storyBoard: naviagtionController.storyboard)
-                Traveller.shared.config(wayFinding: wayFinding)
-            }
+            AutoLogin().login(window: window)
         }
-        guard let _ = (scene as? UIWindowScene) else { return }
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

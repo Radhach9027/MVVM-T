@@ -3,7 +3,7 @@
 import UIKit
 
 /**
- !* @discussion: This class controls all the navigation behaviour for the entire Application. It has been using as Singleton object via shared reference.
+ !* @discussion: This class controls all the navigation behaviour for the entire Application. It 's been used as Singleton object via shared reference.
  */
 
 class Traveller {

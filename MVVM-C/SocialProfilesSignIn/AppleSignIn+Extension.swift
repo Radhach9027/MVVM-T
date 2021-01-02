@@ -3,10 +3,10 @@ import CryptoKit
 
 extension AppleSignIn {
     
-    func randomNonceString(length: Int = 32) -> String {
+     func randomNonceString(length: Int = 32) -> String {
         precondition(length > 0)
         let charset: Array<Character> =
-            Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
+            Array(RandomGeneratorKey.key.rawValue)
         var result = ""
         var remainingLength = length
         

@@ -32,31 +32,30 @@ extension WayFinding: TravellerWayFindingProtocol {
      */
     
     func switchRootViewController<T>(destination: ControllerDestination, storyBoard: TravellerStoryBoardProtocol , animated: Bool, window: TravellerWindowProtocol?, animations: UIView.AnimationOptions,  configure: ((T) -> Void)?) -> T? where T : UIViewController {
-        let storyBoard = storyBoard.instantiateInitialViewController()
+        guard let window = window else { return nil }
+        var viewController: UIViewController?
+        let root = storyBoard.instantiateInitialViewController()
         if animated {
-            guard let window = window else { return nil }
             UIView.transition(with: window as! UIView, duration: 0.5, options: animations, animations: {
                 let oldState: Bool = UIView.areAnimationsEnabled
                 UIView.setAnimationsEnabled(false)
-                window.rootViewController = storyBoard
+                window.rootViewController = root
                 UIView.setAnimationsEnabled(oldState)
             }, completion: nil)
         }else {
-            window?.rootViewController = storyBoard
+            window.rootViewController = root
         }
-        window?.makeKeyAndVisible()
+        window.makeKeyAndVisible()
         
-        var wayFinding: WayFinding?
-        if let tabBarController = window?.rootViewController as? UITabBarController, let navigationController = tabBarController.selectedViewController as? UINavigationController {
-            wayFinding = WayFinding(navigation: navigationController, viewController: navigationController.topViewController, storyBoard: window?.rootViewController?.storyboard)
-        } else {
-            guard let navigation = window?.rootViewController as? UINavigationController, let viewController = navigation.topViewController, let storyBoard = navigation.storyboard else { return nil }
-            wayFinding = WayFinding(navigation: navigation, viewController: viewController, storyBoard: storyBoard)
+        if let navigation = window.rootViewController as? UINavigationController {
+            viewController = navigation.topViewController
         }
-        
-        Traveller.shared.config(wayFinding: wayFinding)
-        configure?(wayFinding?.navigation?.topViewController as! T)
-        return wayFinding?.navigation?.topViewController as? T
+        if let tabController = window.rootViewController as? TabBarController {
+            viewController = tabController.viewControllers?.first
+        }
+
+        configure?(viewController as! T)
+        return viewController as? T
     }
 
     

@@ -13,7 +13,7 @@ extension Nib where Self : UIView {
         guard let _ = bundle.path(forResource: nibName, ofType: "nib")
             else { fatalError("can't find \(nibName) xib resource in current bundle") }
         #endif
-        guard let view = Bundle(for: type(of: self)).loadNibNamed(nibName, owner: self, options: nil)?.first as? UIView, let rootView = UIWindow.key
+        guard let view = Bundle(for: type(of: self)).loadNibNamed(nibName, owner: self, options: nil)?.first as? UIView, let rootView = UIWindow.window
             else { return }
         addSubview(view)
         rootView.addSubview(self)

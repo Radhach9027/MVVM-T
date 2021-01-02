@@ -42,6 +42,14 @@ enum AppFontSize: CGFloat {
     case navTitle = 18.0
 }
 
+enum AppFontName: String {
+    case regular = "KohinoorTelugu-Regular"
+    case medium = "KohinoorTelugu-Medium"
+    case bold = "KohinoorGujarati-Bold"
+    case light = "KohinoorTelugu-Light"
+    case semiBold = "KohinoorDevanagari-Semibold"
+}
+
 enum AnimatePosition {
     case top, bottom, middle
 }
@@ -153,4 +161,8 @@ enum AppleSignInMessages: String {
 enum TwitterKeys: String {
     case consumerKey = "dpKWvRRYZXBTdhbRZq3WE1GEK"
     case consumerSecret = "yLNf9OJwbzTrkV1iyXFpSb3AFz44e9hK4VqTkG8zHPsp3yEgUd"
+}
+
+enum RandomGeneratorKey: String {
+    case key = "0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._"
 }
