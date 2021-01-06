@@ -3,19 +3,11 @@ import UIKit
 extension UIWindow {
     
     static var window: UIWindow? {
-        if #available(iOS 13, *) {
-            var window: UIWindow?
-            window = UIApplication.shared.windows.first { $0.isKeyWindow }
-            if window == nil {
-                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene  {
-                    window = UIWindow(windowScene: windowScene)
-                    return window
-                }
-            }
+        let scene = UIApplication.shared.connectedScenes.first
+        if let sceneDelegate : SceneDelegate = (scene?.delegate as? SceneDelegate), let window = sceneDelegate.window {
             return window
-        } else {
-            return UIApplication.shared.keyWindow
         }
+        return nil
     }
     
     class func getTopViewController(base: UIViewController? = window?.rootViewController) -> UIViewController? {
@@ -29,3 +21,4 @@ extension UIWindow {
         return base
     }
 }
+

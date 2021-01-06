@@ -119,30 +119,30 @@ extension Traveller {
          */
         case dismiss(modelTransistionStyle: UIModalTransitionStyle, animated: Bool)
         
-
+        
         @discardableResult
         func perform<T>(_ configure: ((T) -> Void)? = nil) -> T? where T: UIViewController {
             switch self {
-            case let .switchRootViewController(storyBoard, destination, animated, window, modelTransistion):
-                return Traveller.shared.wayFinding?.switchRootViewController(destination: destination, storyBoard: storyBoard, animated: animated, window: window, animations: modelTransistion, configure: configure)
-            case let .present(story, controller, animated, modelTransistion, modelPresentation):
-                return Traveller.shared.wayFinding?.present(to: controller, storyDestination: story, modelPresentationStyle: modelPresentation, modelTransistionStyle: modelTransistion, animated: animated, configure: configure)
+                case let .switchRootViewController(storyBoard, destination, animated, window, modelTransistion):
+                    return Traveller.shared.switchRootViewController(destination: destination, storyBoard: storyBoard, animated: animated, window: window, animations: modelTransistion, configure: configure)
+                case let .present(story, controller, animated, modelTransistion, modelPresentation):
+                    return Traveller.shared.wayFinding?.present(to: controller, storyDestination: story, modelPresentationStyle: modelPresentation, modelTransistionStyle: modelTransistion, animated: animated, configure: configure)
                 case let .push(story, controller, animated, hidesBottomBar, modelTransistion, modelPresentation):
-                return Traveller.shared.wayFinding?.push(to: controller, storyDestination: story, hidesBottomBar: hidesBottomBar, modelPresentationStyle: modelPresentation, modelTransistionStyle: modelTransistion, animated: animated, configure: configure)
-            case let .performSegue(segue, story, stroyPorotocol, modelTransistion):
-                return Traveller.shared.wayFinding?.performSegue(to: segue, storyDestination: story, storyBoardProtocol: stroyPorotocol, modelTransistionStyle: modelTransistion, configure: configure)
-            case let .addChild(childController, storyDestination, modelTransistionStyle):
-                return Traveller.shared.wayFinding?.addChild(to: childController, storyDestination: storyDestination, modelTransistionStyle: modelTransistionStyle, configure: configure)
-            case .removeChild:
-                Traveller.shared.wayFinding?.removeChild()
-            case let .pop(toRootController, animated, modelTransistionStyle):
-                Traveller.shared.wayFinding?.pop(toRootController: toRootController, animated: animated, modelTransistionStyle: modelTransistionStyle)
-            case let .popToViewController(destination, animated, modelTransistionStyle):
-                return Traveller.shared.wayFinding?.popToViewController(destination: destination, animated: animated, modelTransistionStyle: modelTransistionStyle, configure: configure)
-            case let .dismiss(modelTransistionStyle, animated):
-                Traveller.shared.wayFinding?.dismiss(modelTransistionStyle: modelTransistionStyle, animated: animated)
-            case let .unwind(destination, storyDestination, modelTransistionStyle, storyBoardSegue):
-                return Traveller.shared.wayFinding?.unwind(to: destination, storyDestination: storyDestination, modelTransistionStyle: modelTransistionStyle, storyBoardSegue: storyBoardSegue, configure: configure)
+                    return Traveller.shared.wayFinding?.push(to: controller, storyDestination: story, hidesBottomBar: hidesBottomBar, modelPresentationStyle: modelPresentation, modelTransistionStyle: modelTransistion, animated: animated, configure: configure)
+                case let .performSegue(segue, story, stroyPorotocol, modelTransistion):
+                    return Traveller.shared.wayFinding?.performSegue(to: segue, storyDestination: story, storyBoardProtocol: stroyPorotocol, modelTransistionStyle: modelTransistion, configure: configure)
+                case let .addChild(childController, storyDestination, modelTransistionStyle):
+                    return Traveller.shared.wayFinding?.addChild(to: childController, storyDestination: storyDestination, modelTransistionStyle: modelTransistionStyle, configure: configure)
+                case .removeChild:
+                    Traveller.shared.wayFinding?.removeChild()
+                case let .pop(toRootController, animated, modelTransistionStyle):
+                    Traveller.shared.wayFinding?.pop(toRootController: toRootController, animated: animated, modelTransistionStyle: modelTransistionStyle)
+                case let .popToViewController(destination, animated, modelTransistionStyle):
+                    return Traveller.shared.wayFinding?.popToViewController(destination: destination, animated: animated, modelTransistionStyle: modelTransistionStyle, configure: configure)
+                case let .dismiss(modelTransistionStyle, animated):
+                    Traveller.shared.wayFinding?.dismiss(modelTransistionStyle: modelTransistionStyle, animated: animated)
+                case let .unwind(destination, storyDestination, modelTransistionStyle, storyBoardSegue):
+                    return Traveller.shared.wayFinding?.unwind(to: destination, storyDestination: storyDestination, modelTransistionStyle: modelTransistionStyle, storyBoardSegue: storyBoardSegue, configure: configure)
             }
             return nil
         }
@@ -150,10 +150,10 @@ extension Traveller {
         
         static func ==(lhs: route, rhs: route) -> Bool {
             switch (lhs, rhs) {
-            case let (.pop(lhstoRoot, lhsanimate, lhsTransistionStyle), .pop(rhstoRoot, rhsanimate, rhsTransistionStyle)):
-                return lhstoRoot == rhstoRoot && rhsanimate == lhsanimate && lhsTransistionStyle == rhsTransistionStyle
-            default:
-                break
+                case let (.pop(lhstoRoot, lhsanimate, lhsTransistionStyle), .pop(rhstoRoot, rhsanimate, rhsTransistionStyle)):
+                    return lhstoRoot == rhstoRoot && rhsanimate == lhsanimate && lhsTransistionStyle == rhsTransistionStyle
+                default:
+                    break
             }
             return false
         }
@@ -161,3 +161,39 @@ extension Traveller {
 }
 
 
+private extension Traveller {
+    
+    func switchRootViewController<T>(destination: ControllerDestination, storyBoard: TravellerStoryBoardProtocol , animated: Bool, window: TravellerWindowProtocol?, animations: UIView.AnimationOptions,  configure: ((T) -> Void)?) -> T? where T : UIViewController {
+        
+        guard let window = window else { fatalError("switchRootViewController window is nil") }
+        
+        guard let root = storyBoard.instantiateInitialViewController() else {fatalError("switchRootViewController root is nil from storyboard")}
+        
+        var viewController: UIViewController?
+        var wayFinding: WayFinding?
+        
+        if animated {
+            window.animateRootChangeToWindow(options: animations, root: root)
+        }else {
+            window.rootViewController = root
+        }
+        
+        window.makeKeyAndVisible()
+        
+        if let navigation = window.rootViewController as? UINavigationController, let topViewController = navigation.topViewController {
+            
+            viewController = topViewController
+            wayFinding = WayFinding(navigation: navigation, viewController: navigation.topViewController, storyBoard: topViewController.storyboard)
+        }
+        
+        if let tabController = window.rootViewController as? TabBarController, let navigation = tabController.viewControllers?.first as? UINavigationController, let topViewController = navigation.topViewController {
+            
+            viewController = topViewController
+            wayFinding = WayFinding(navigation: navigation, viewController: viewController, storyBoard: topViewController.storyboard)
+        }
+        
+        Traveller.shared.config(wayFinding: wayFinding)
+        configure?(viewController as! T)
+        return viewController as? T
+    }
+}

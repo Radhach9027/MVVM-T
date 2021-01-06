@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVv-pD-XPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="828.98550724637687" y="118.52678571428571"/>
+            <point key="canvasLocation" x="665" y="119"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="nGT-tf-4Rf">
@@ -255,6 +255,7 @@
                             <constraint firstItem="h3B-K8-eGT" firstAttribute="top" secondItem="6OC-dt-nn5" secondAttribute="bottom" constant="5" id="wTi-Bl-lz7"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="juO-PJ-5Nu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIf-cc-jnU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -479,40 +480,40 @@
     </scenes>
     <designables>
         <designable name="0Bj-sM-LG3">
-            <size key="intrinsicContentSize" width="87" height="32"/>
+            <size key="intrinsicContentSize" width="81" height="32"/>
         </designable>
         <designable name="0N3-vn-iJQ">
-            <size key="intrinsicContentSize" width="87" height="32"/>
+            <size key="intrinsicContentSize" width="81" height="32"/>
         </designable>
         <designable name="3ai-9u-jkA">
-            <size key="intrinsicContentSize" width="87" height="32"/>
+            <size key="intrinsicContentSize" width="81" height="32"/>
         </designable>
         <designable name="3cp-4k-9Ue">
-            <size key="intrinsicContentSize" width="87" height="32"/>
+            <size key="intrinsicContentSize" width="81" height="32"/>
         </designable>
         <designable name="4qW-a5-gIH">
-            <size key="intrinsicContentSize" width="87" height="32"/>
+            <size key="intrinsicContentSize" width="81" height="32"/>
         </designable>
         <designable name="LDt-wb-2Hl">
-            <size key="intrinsicContentSize" width="87" height="32"/>
+            <size key="intrinsicContentSize" width="81" height="32"/>
         </designable>
         <designable name="WXI-n0-JO1">
-            <size key="intrinsicContentSize" width="87" height="32"/>
+            <size key="intrinsicContentSize" width="81" height="32"/>
         </designable>
         <designable name="d4q-RY-kfA">
-            <size key="intrinsicContentSize" width="87" height="32"/>
+            <size key="intrinsicContentSize" width="81" height="32"/>
         </designable>
         <designable name="jUm-aW-Wgh">
-            <size key="intrinsicContentSize" width="87" height="32"/>
+            <size key="intrinsicContentSize" width="81" height="32"/>
         </designable>
         <designable name="wbM-02-xJe">
-            <size key="intrinsicContentSize" width="87" height="32"/>
+            <size key="intrinsicContentSize" width="81" height="32"/>
         </designable>
         <designable name="xec-br-0wa">
-            <size key="intrinsicContentSize" width="87" height="32"/>
+            <size key="intrinsicContentSize" width="81" height="32"/>
         </designable>
         <designable name="y6k-gT-LYj">
-            <size key="intrinsicContentSize" width="87" height="32"/>
+            <size key="intrinsicContentSize" width="81" height="32"/>
         </designable>
     </designables>
     <resources>

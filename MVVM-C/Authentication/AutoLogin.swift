@@ -2,12 +2,12 @@ import UIKit
 
 struct AutoLogin: StorySwitchProtocol {
     
-    func login(window: UIWindow) {
+    func login() {
         
         if FirebaseSignIn.userExists {
-            switchToHome(window)
+            switchToHome()
         } else {
-            switchToLaunch(window)
+           switchToLaunch()
         }
     }
 }

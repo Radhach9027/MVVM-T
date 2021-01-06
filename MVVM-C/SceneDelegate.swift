@@ -6,22 +6,23 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let window = window else {fatalError("No window found in SceneDelegate")}
+        guard let winScene = (scene as? UIWindowScene) else { fatalError("WindowScene is nil in SceneDelegate") }
+        window = UIWindow(windowScene: winScene)
         if !SceneDelegate.isUnitTestsLaunched {
-            AutoLogin().login(window: window)
+            AutoLogin().login()
         }
     }
-    
-    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        if let openURLContext = URLContexts.first{
-            let url = openURLContext.url
-            let options: [UIApplication.OpenURLOptionsKey : Any] = [
-                UIApplication.OpenURLOptionsKey.annotation : openURLContext.options.annotation as Any,
-                UIApplication.OpenURLOptionsKey.sourceApplication : openURLContext.options.sourceApplication as Any,
-                UIApplication.OpenURLOptionsKey.openInPlace : openURLContext.options.openInPlace
-            ]
-            TwitterSignIn.handleUrl(app: UIApplication.shared, url: url, options: options)
-        }
+}
+
+func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    if let openURLContext = URLContexts.first{
+        let url = openURLContext.url
+        let options: [UIApplication.OpenURLOptionsKey : Any] = [
+            UIApplication.OpenURLOptionsKey.annotation : openURLContext.options.annotation as Any,
+            UIApplication.OpenURLOptionsKey.sourceApplication : openURLContext.options.sourceApplication as Any,
+            UIApplication.OpenURLOptionsKey.openInPlace : openURLContext.options.openInPlace
+        ]
+        TwitterSignIn.handleUrl(app: UIApplication.shared, url: url, options: options)
     }
 }
 

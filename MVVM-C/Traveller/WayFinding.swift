@@ -20,45 +20,7 @@ final class WayFinding: NSObject, UIAdaptivePresentationControllerDelegate {
 }
 
 extension WayFinding: TravellerWayFindingProtocol {
-    
-    /**
-     !* @discussion: This function takes cares of switching root viewcontroller from one to other.
-     !* @param: ControllerDestination, storyBoard , animated, window, animations
-     1. Intially we are loading controller from stroyboard by using  storyBoard.instantiateViewController via TravellerStoryBoardProtocol.
-     2. Once fetching the controller from storyboard, we are getting the window object by TravellerWindowProtocol.
-     3. Then applying animation using animations via UIView.AnimationOptions, finally setting the rootView to window object.
-     4. Finally apply new WayFinding config to old WayFinding config.
-     Note: Check if you'r using tabbar controller or general navigation.
-     */
-    
-    func switchRootViewController<T>(destination: ControllerDestination, storyBoard: TravellerStoryBoardProtocol , animated: Bool, window: TravellerWindowProtocol?, animations: UIView.AnimationOptions,  configure: ((T) -> Void)?) -> T? where T : UIViewController {
-        guard let window = window else { return nil }
-        var viewController: UIViewController?
-        let root = storyBoard.instantiateInitialViewController()
-        if animated {
-            UIView.transition(with: window as! UIView, duration: 0.5, options: animations, animations: {
-                let oldState: Bool = UIView.areAnimationsEnabled
-                UIView.setAnimationsEnabled(false)
-                window.rootViewController = root
-                UIView.setAnimationsEnabled(oldState)
-            }, completion: nil)
-        }else {
-            window.rootViewController = root
-        }
-        window.makeKeyAndVisible()
-        
-        if let navigation = window.rootViewController as? UINavigationController {
-            viewController = navigation.topViewController
-        }
-        if let tabController = window.rootViewController as? TabBarController {
-            viewController = tabController.viewControllers?.first
-        }
 
-        configure?(viewController as! T)
-        return viewController as? T
-    }
-
-    
     /**
      !* @discussion: This function takes cares of pushing viewcontroller over navigation controller.
      !* @param: ControllerDestination, storyDestination , modelPresentationStyle, modelTransistionStyle
