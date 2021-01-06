@@ -16,8 +16,4 @@ extension LaunchViewController: StorySwitchProtocol, LaunchScreenNavigationProto
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
         presentSignUp()
     }
-    
-    @IBAction func homeButtonPressed(_ sender: UIButton) {
-       switchToHome()
-    }
 }

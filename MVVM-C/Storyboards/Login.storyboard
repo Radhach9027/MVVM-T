@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="mIe-Af-JYR">
-                                <rect key="frame" x="157" y="373" width="100" height="150"/>
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ri6-8p-KiE">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="41.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="43.5"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
                                         <state key="normal" title="Login">
@@ -32,7 +32,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lij-jo-SSr">
-                                        <rect key="frame" x="0.0" y="54.5" width="100" height="41"/>
+                                        <rect key="frame" x="0.0" y="56.5" width="100" height="43.5"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
                                         <state key="normal" title="Sign up">
@@ -42,20 +42,9 @@
                                             <action selector="signUpButtonPressed:" destination="ibU-hb-lij" eventType="touchUpInside" id="eZB-pY-D6Y"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfd-Ys-TXH">
-                                        <rect key="frame" x="0.0" y="108.5" width="100" height="41.5"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
-                                        <state key="normal" title="Home">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="homeButtonPressed:" destination="ibU-hb-lij" eventType="touchUpInside" id="L7I-Hg-ngt"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="Wki-VG-NPT"/>
+                                    <constraint firstAttribute="height" constant="100" id="Wki-VG-NPT"/>
                                     <constraint firstAttribute="width" constant="100" id="uCv-he-7E5"/>
                                 </constraints>
                             </stackView>
@@ -480,40 +469,40 @@
     </scenes>
     <designables>
         <designable name="0Bj-sM-LG3">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="0N3-vn-iJQ">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="3ai-9u-jkA">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="3cp-4k-9Ue">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="4qW-a5-gIH">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="LDt-wb-2Hl">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="WXI-n0-JO1">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="d4q-RY-kfA">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="jUm-aW-Wgh">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="wbM-02-xJe">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="xec-br-0wa">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
         <designable name="y6k-gT-LYj">
-            <size key="intrinsicContentSize" width="81" height="32"/>
+            <size key="intrinsicContentSize" width="87" height="32"/>
         </designable>
     </designables>
     <resources>
