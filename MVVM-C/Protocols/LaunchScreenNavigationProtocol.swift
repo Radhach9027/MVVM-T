@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 protocol BaseNavigation {
-    func dismissController(animated: Bool)
+    func dismissController(animated: Bool, dismissed: @escaping ((Bool) -> Void))
     func popToRoot(to root: Bool)
 }
 
@@ -28,8 +28,8 @@ extension LaunchScreenNavigationProtocol {
         }
     }
     
-    func dismissController(animated: Bool) {
-        Traveller.route.dismiss(modelTransistionStyle: .crossDissolve, animated: animated).perform()
+    func dismissController(animated: Bool, dismissed: @escaping ((Bool) -> Void)) {
+        Traveller.route.dismiss(modelTransistionStyle: .crossDissolve, animated: animated, dismissed: dismissed).perform()
     }
     
     

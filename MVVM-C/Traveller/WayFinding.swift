@@ -145,7 +145,7 @@ extension WayFinding: TravellerWayFindingProtocol {
         if let navigationController = self.navigation {
             if toRootController {
                 if (self.viewController?.presentedViewController != nil) {
-                  dismiss(modelTransistionStyle: modelTransistionStyle, animated: animated)
+                    dismiss(modelTransistionStyle: modelTransistionStyle, animated: animated) { _ in }
                 } else {
                     navigationController.popToRootViewController(animated: animated)
                 }
@@ -183,14 +183,16 @@ extension WayFinding: TravellerWayFindingProtocol {
      1. Apply modelTransistionStyle and animated flag accordingly.
      */
     
-    func dismiss(modelTransistionStyle: UIModalTransitionStyle, animated: Bool) {
+    func dismiss(modelTransistionStyle: UIModalTransitionStyle, animated: Bool, dismissed: @escaping ((Bool) -> Void)) {
         if let topViewController = self.viewController{
             topViewController.modalTransitionStyle = modelTransistionStyle
             topViewController.dismiss(animated: animated) { [weak self] in
+                dismissed(true)
                 self?.checkStorageAndReAssignWayFindingWhenControllerIsDismissed()
             }
         }
     }
+
 }
 
 extension WayFinding {

@@ -117,7 +117,7 @@ extension Traveller {
         /**
          !* @discussion:  This function will help to dismiss the presented ViewController on current ViewController.
          */
-        case dismiss(modelTransistionStyle: UIModalTransitionStyle, animated: Bool)
+        case dismiss(modelTransistionStyle: UIModalTransitionStyle, animated: Bool, dismissed: ((Bool) -> Void))
         
         
         @discardableResult
@@ -139,8 +139,8 @@ extension Traveller {
                     Traveller.shared.wayFinding?.pop(toRootController: toRootController, animated: animated, modelTransistionStyle: modelTransistionStyle)
                 case let .popToViewController(destination, animated, modelTransistionStyle):
                     return Traveller.shared.wayFinding?.popToViewController(destination: destination, animated: animated, modelTransistionStyle: modelTransistionStyle, configure: configure)
-                case let .dismiss(modelTransistionStyle, animated):
-                    Traveller.shared.wayFinding?.dismiss(modelTransistionStyle: modelTransistionStyle, animated: animated)
+                case let .dismiss(modelTransistionStyle, animated, dismissed):
+                    Traveller.shared.wayFinding?.dismiss(modelTransistionStyle: modelTransistionStyle, animated: animated, dismissed: dismissed)
                 case let .unwind(destination, storyDestination, modelTransistionStyle, storyBoardSegue):
                     return Traveller.shared.wayFinding?.unwind(to: destination, storyDestination: storyDestination, modelTransistionStyle: modelTransistionStyle, storyBoardSegue: storyBoardSegue, configure: configure)
             }
@@ -162,6 +162,9 @@ extension Traveller {
 
 
 private extension Traveller {
+    /**
+     !* @discussion:  This function will help to change the window rootViewController.
+     */
     
     func switchRootViewController<T>(destination: ControllerDestination, storyBoard: TravellerStoryBoardProtocol , animated: Bool, window: TravellerWindowProtocol?, animations: UIView.AnimationOptions,  configure: ((T) -> Void)?) -> T? where T : UIViewController {
         
