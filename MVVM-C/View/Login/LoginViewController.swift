@@ -2,11 +2,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
     private var viewModel: LoginViewModelProtocol?
-    private var fireBaseSignIn: FirebaseSignIn?
+    private var fireBaseSignIn: FirebaseSignIn? // When use any social profiles, move this to ur viewModel
 
     func config(viewModel: LoginViewModelProtocol?) {
         self.viewModel = viewModel
-        fireBaseSignIn = FirebaseSignIn(viewController: self, delegate: self)
+        fireBaseSignIn = FirebaseSignIn(delegate: self)
     }
     
     deinit {

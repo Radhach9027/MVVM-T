@@ -76,7 +76,7 @@ private extension AnimatedView {
                 self?.transfrom(with: .show)
             }
         }
-        guard let rootView = UIWindow.getTopViewController()?.view else { return }
+        guard let rootView = UIWindow.topViewController?.view else { return }
         let icon: UIImageView = self.iconType(NetworkMessages.AnimatedIcons(message)())
         let titleLabel: UILabel = self.titleLabel(.white, message.rawValue)
         

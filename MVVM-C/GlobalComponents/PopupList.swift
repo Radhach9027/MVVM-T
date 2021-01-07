@@ -64,7 +64,7 @@ extension PopupList {
             jsonArray = ["Telangana", "Karnataka", "Kerala", "Andhra pradesh", "Tamilnadu"]
         }
         
-        if let currentController = UIWindow.getTopViewController() {
+        if let currentController = UIWindow.topViewController {
             currentController.view.addSubview(self)
             addConstraints(present: currentController)
         }

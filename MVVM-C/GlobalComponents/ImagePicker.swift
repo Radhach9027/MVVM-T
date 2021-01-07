@@ -7,7 +7,7 @@ public protocol ImagePickerDelegate: class {
 open class ImagePicker: NSObject {
     
     private let pickerController: UIImagePickerController
-    private weak var presentationController: UIViewController? = UIWindow.getTopViewController()
+    private weak var presentationController: UIViewController? = UIWindow.topViewController
     private weak var delegate: ImagePickerDelegate?
     
     public init(delegate: ImagePickerDelegate) {

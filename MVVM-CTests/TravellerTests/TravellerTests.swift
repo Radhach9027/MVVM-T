@@ -91,7 +91,7 @@ class TravellerTests: XCTestCase {
     }
     
     func testDismissViewController_ShouldRetrunExpectedViewController() {
-        Traveller.route.dismiss(modelTransistionStyle: .crossDissolve, animated: true).perform()
+        Traveller.route.dismiss(modelTransistionStyle: .crossDissolve, animated: true, dismissed: {_ in}).perform()
         XCTAssertEqual(mockViewController.mockDismissTriggered, 1)
         XCTAssertEqual(UIModalTransitionStyle.crossDissolve, mockViewController.modalTransitionStyle)
     }

@@ -6,12 +6,15 @@ class FirebaseSignIn {
     private var facebookSignIn: FacebookSignIn?
     private var appleSignIn: AppleSignIn?
     private var twitterSignIn: TwitterSignIn?
-    private var viewController: UIViewController?
+    private var viewController: UIViewController? {
+        get {
+            return UIWindow.topViewController
+        }
+    }
     private weak var delegate: FireBaseSignInDelegate?
 
-    init(viewController: UIViewController, delegate: FireBaseSignInDelegate?) {
+    init(delegate: FireBaseSignInDelegate?) {
         print("FirebaseSignIn InIt")
-        self.viewController = viewController
         self.delegate = delegate
     }
     

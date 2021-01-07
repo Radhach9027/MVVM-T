@@ -6,7 +6,7 @@ class DatePicker {
     
     func showDatePicker(completion: @escaping (_ date: String) -> Void) {
         
-        if let controller = UIWindow.getTopViewController() {
+        if let controller = UIWindow.topViewController {
             let alert = UIAlertController(title: "Pick Date", message: "\n\n\n\n\n\n\n\n\n\n\n", preferredStyle: .actionSheet)
             datePicker = UIDatePicker(frame: CGRect(x:0, y:40, width: controller.view.frame.size.width, height: 250))
             datePicker?.datePickerMode = .date

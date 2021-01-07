@@ -55,7 +55,7 @@ extension String {
     
     static func stringFromTimeInterval(interval: TimeInterval) -> NSString {
         let ti = NSInteger(interval)
-        let ms = Int((interval / 1) * 1000)
+        let _ = Int((interval / 1) * 1000)
         let seconds = ti % 60
         return NSString(format: "%0.2d",seconds)
     }

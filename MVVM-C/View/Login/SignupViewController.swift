@@ -2,11 +2,11 @@ import UIKit
 
 class SignupViewController: UIViewController {
     
-    private var fireBaseSignIn: FirebaseSignIn?
+    private var fireBaseSignIn: FirebaseSignIn? // When use any social profiles, move this to ur viewModel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fireBaseSignIn = FirebaseSignIn(viewController: self, delegate: self)
+        fireBaseSignIn = FirebaseSignIn(delegate: self)
     }
     
     deinit {

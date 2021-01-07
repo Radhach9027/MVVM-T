@@ -10,15 +10,16 @@ extension UIWindow {
         return nil
     }
     
-    class func getTopViewController(base: UIViewController? = window?.rootViewController) -> UIViewController? {
-        if let nav = base as? UINavigationController {
-            return getTopViewController(base: nav.visibleViewController)
-        } else if let tab = base as? UITabBarController, let selected = tab.selectedViewController {
-            return getTopViewController(base: selected)
-        } else if let presented = base?.presentedViewController {
-            return getTopViewController(base: presented)
+    static var topViewController: UIViewController? {
+        
+        if let nav = window?.rootViewController as? UINavigationController {
+            return nav.topViewController
+        } else if let tab = window?.rootViewController as? UITabBarController, let selected = tab.selectedViewController {
+            return selected
+        } else if let presented = window?.rootViewController?.presentedViewController {
+            return presented
         }
-        return base
+        return nil
     }
 }
 

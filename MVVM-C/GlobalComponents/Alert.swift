@@ -20,7 +20,7 @@ class Alert {
             print("You've pressed OK Button")
         }
         alertController.addAction(okAction)
-        let topController = controller == nil ? UIWindow.getTopViewController() : controller
+        let topController = controller == nil ? UIWindow.topViewController : controller
         topController?.present(alertController, animated: true, completion: nil)
     }
 
@@ -38,7 +38,7 @@ class Alert {
                 }
             }
         }
-        let topController = controller == nil ? UIWindow.getTopViewController() : controller
+        let topController = controller == nil ? UIWindow.topViewController : controller
         topController?.present(alertController, animated: true, completion: nil)
     }
 }

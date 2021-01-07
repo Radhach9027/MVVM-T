@@ -27,6 +27,7 @@ class UserService {
 extension UserService: UserServiceProtocol, NetworkParserProtocol {
     
     func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?)-> Void) {
+        
         let networkAction = NetworkAction(request: requestType)
         guard let dispatcher = requestDispatcher else { fatalError("Couldn't dispatch fetchUser") }
         
