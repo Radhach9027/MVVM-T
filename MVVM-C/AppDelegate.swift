@@ -1,5 +1,5 @@
 //  Created by Radhachandan on 07/06/20.
-//  Copyright © 2020 RC_Private.com. All rights reserved.
+//  Copyright © 2020 Radhachandan. All rights reserved.
 
 import UIKit
 

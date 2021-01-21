@@ -3,7 +3,7 @@ import UIKit
 class LoginViewController: UIViewController {
                 
     @Inject private var viewModel: LoginViewModelProtocol
-    private var fireBaseSignIn: FirebaseSignIn? // When you're using any social profiles, move fireBaseSignIn to ur viewModel
+    private var fireBaseSignIn: FirebaseSignIn? // When you're using any social profiles, move fireBaseSignIn to ur viewModel. This is just for demo purpose.
 
     override func viewDidLoad() {
         super.viewDidLoad()
