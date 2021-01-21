@@ -6,12 +6,12 @@ class FirebaseSignIn {
     private var facebookSignIn: FacebookSignIn?
     private var appleSignIn: AppleSignIn?
     private var twitterSignIn: TwitterSignIn?
+    private weak var delegate: FireBaseSignInDelegate?
     private var viewController: UIViewController? {
         get {
             return UIWindow.topViewController
         }
     }
-    private weak var delegate: FireBaseSignInDelegate?
 
     init(delegate: FireBaseSignInDelegate?) {
         print("FirebaseSignIn InIt")
@@ -113,7 +113,7 @@ extension FirebaseSignIn: SocialSignInDelegate {
                 Keychain.storeData(value: signInType, key: FirebaseKeys.signInType.rawValue)
                 self?.delegate?.signInSuccess()
             } else {
-                self?.delegate?.signInFailure(error?.localizedDescription ?? "Something went wrong with social sign = \(signInType.rawValue)")
+                self?.delegate?.signInFailure(error?.localizedDescription ?? "Something went wrong with social signIn = \(signInType.rawValue)")
             }
         }
     }

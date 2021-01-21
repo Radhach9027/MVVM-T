@@ -7,19 +7,15 @@ protocol BaseNavigation {
 }
 
 protocol LaunchScreenNavigationProtocol: BaseNavigation {
-    func pushToLogin(viewModel: LoginViewModelProtocol?)
+    func pushToLogin()
     func presentSignUp()
     func pushToForgotpassword()
 }
 
 extension LaunchScreenNavigationProtocol {
 
-    func pushToLogin(viewModel: LoginViewModelProtocol?) {
-        guard let viewModel = viewModel else { fatalError("received viewModel as nil in navigation to LoginViewController") }
-        
-        Traveller.route.push(story: .login, controller: .login, animated: true, hidesBottomBar: false, modelTransistion: .crossDissolve, modelPresentation: .none).perform { (controller: LoginViewController) in
-            controller.config(viewModel: viewModel)
-        }
+    func pushToLogin() {
+        Traveller.route.push(story: .login, controller: .login, animated: true, hidesBottomBar: false, modelTransistion: .crossDissolve, modelPresentation: .none).perform()
     }
     
     func presentSignUp() {

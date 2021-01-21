@@ -10,7 +10,7 @@ class LaunchViewController: UIViewController {
 extension LaunchViewController: StorySwitchProtocol, LaunchScreenNavigationProtocol {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        pushToLogin(viewModel: LoginViewModel())
+        pushToLogin()
     }
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {

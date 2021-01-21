@@ -1,11 +1,12 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    private var viewModel: LoginViewModelProtocol?
-    private var fireBaseSignIn: FirebaseSignIn? // When use any social profiles, move this to ur viewModel
+                
+    @Inject private var viewModel: LoginViewModelProtocol
+    private var fireBaseSignIn: FirebaseSignIn? // When you're using any social profiles, move fireBaseSignIn to ur viewModel
 
-    func config(viewModel: LoginViewModelProtocol?) {
-        self.viewModel = viewModel
+    override func viewDidLoad() {
+        super.viewDidLoad()
         fireBaseSignIn = FirebaseSignIn(delegate: self)
     }
     
@@ -22,7 +23,7 @@ extension LoginViewController: StorySwitchProtocol, LaunchScreenNavigationProtoc
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         self.startLoading(show: true, animate: true, message: "Fetching...")
-        self.viewModel?.fetchUser(requestType: .all, completion: { [weak self] (status, error) in
+        self.viewModel.fetchUser(requestType: .all, completion: { [weak self] (status, error) in
             self?.startLoading(show: false, animate: false)
             
             if status == true {
