@@ -3,11 +3,10 @@ import UIKit
 class LoginViewController: UIViewController {
                 
     @Inject private var viewModel: LoginViewModelProtocol
-    private var fireBaseSignIn: FirebaseSignIn? // When you're using any social profiles, move fireBaseSignIn to ur viewModel. This is just for demo purpose.
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fireBaseSignIn = FirebaseSignIn(delegate: self)
+        viewModel._delgate = self
     }
     
     deinit {
@@ -36,31 +35,31 @@ extension LoginViewController: StorySwitchProtocol, LaunchScreenNavigationProtoc
     }
     
     @IBAction func singInWithGoogle(_ sender: UIButton) {
-        fireBaseSignIn?.signIn(signInType: .google)
+        self.viewModel.socialProfileSignIn(signInType: .google)
     }
     
     @IBAction func facebookSignInButtonPressed(_ sender: UIButton) {
-        fireBaseSignIn?.signIn(signInType: .facebook)
+        self.viewModel.socialProfileSignIn(signInType: .facebook)
     }
     
     @IBAction func appleSignInButtonPressed(_ sender: UIButton) {
-        fireBaseSignIn?.signIn(signInType: .apple)
+        self.viewModel.socialProfileSignIn(signInType: .apple)
     }
     
     @IBAction func twitterSignInButtonPressed(_ sender: UIButton) {
-        fireBaseSignIn?.signIn(signInType: .twitter)
+        self.viewModel.socialProfileSignIn(signInType: .twitter)
     }
     
     @IBAction func microsoftSignInButtonPressed(_ sender: UIButton) {
-        fireBaseSignIn?.signIn(signInType: .microsoft)
+        self.viewModel.socialProfileSignIn(signInType: .microsoft)
     }
     
     @IBAction func githubSignInButtonPressed(_ sender: UIButton) {
-        fireBaseSignIn?.signIn(signInType: .github)
+        self.viewModel.socialProfileSignIn(signInType: .github)
     }
 }
 
-extension LoginViewController: FireBaseSignInDelegate {
+extension LoginViewController: LoginViewModelDelegate {
     
     func signInSuccess() {
         print("Current User = \(String(describing: FirebaseSignIn.currentUser?.displayName))")
