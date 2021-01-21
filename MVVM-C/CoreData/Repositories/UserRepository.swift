@@ -1,8 +1,6 @@
 import Foundation
 import CoreData
 
-protocol UserRepository: BaseRepository{}
-
 struct UserDataRepository : UserRepository {
     
     typealias T = Users
