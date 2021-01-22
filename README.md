@@ -10,6 +10,8 @@ MVVM-T
 
 * Customised Network clinet using URLSession
 
+* Application security (Jailbroke check, SSLPinning, Cryptography).
+
 * MMVM-T: Here T reperesents as traveller (Navigations) for the entire application, which easies the maintainence of navigation stack and testability. (single line of code to travel from screen to screen)
 
 * Special Global components like (CustomSegmentControl, DatePicker, ImagePicker, LocationManager, PopupList, Validators, Alerts, ToastView, LoadingIndicator,CustomPopup, UserDefaultsHelper)
