@@ -1,6 +1,6 @@
 # MVVM-T
 
-* if you want to develop an iOS app using MVVM design pattern, this is a base skelton app with many features as addition and tried to stick with SOLID Principles. It launches with login, Signup screen follwed by Tabbar controller.
+* if you want to develop an iOS app using MVVM design pattern with SOLID Principles, this is a base skelton app with many features as addition. It launches with login, Signup screen follwed by Tabbar controller.
 
 MVVM-T
 
