@@ -397,13 +397,6 @@
 			path = TableViewCustomCells;
 			sourceTree = "<group>";
 		};
-		5514FAE624A7907900AF78B2 /* CollectionViewCustomCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CollectionViewCustomCells;
-			sourceTree = "<group>";
-		};
 		5514FAED24A795D800AF78B2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -528,7 +521,6 @@
 				554482A624AB80A70032E210 /* Login */,
 				5514FB0124A8613600AF78B2 /* GenericCollections */,
 				5514FAF624A8607100AF78B2 /* TabBar */,
-				5514FAE624A7907900AF78B2 /* CollectionViewCustomCells */,
 				5514FAE524A78F9200AF78B2 /* TableViewCustomCells */,
 			);
 			path = View;
@@ -857,7 +849,6 @@
 			isa = PBXGroup;
 			children = (
 				A2314C8425B97B76007962C3 /* Protocols */,
-				A265190F2529A9AC0027A085 /* ManagedClasses */,
 				A26518FF2529A4E50027A085 /* Repositories */,
 				A26518F82529A4C10027A085 /* Managers */,
 				A26519062529A5820027A085 /* PersistentStorage.swift */,
@@ -890,13 +881,6 @@
 				A26519002529A5090027A085 /* UserRepository.swift */,
 			);
 			path = Repositories;
-			sourceTree = "<group>";
-		};
-		A265190F2529A9AC0027A085 /* ManagedClasses */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ManagedClasses;
 			sourceTree = "<group>";
 		};
 		A26E1A2F2599CE73006A7D63 /* Protocols */ = {
