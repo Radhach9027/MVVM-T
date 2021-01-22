@@ -59,6 +59,7 @@
 		A2314C7B25B9743D007962C3 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314C7A25B9743D007962C3 /* Dependencies.swift */; };
 		A2314C8125B97465007962C3 /* DependencyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314C8025B97465007962C3 /* DependencyWrapper.swift */; };
 		A2314C8625B97B88007962C3 /* CoreDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314C8525B97B88007962C3 /* CoreDataProtocols.swift */; };
+		A2314C9025BA9DD0007962C3 /* DependencyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314C8F25BA9DD0007962C3 /* DependencyBuilder.swift */; };
 		A231C3E2254FC1BE008CBED9 /* NetworkParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3DB254FC1BE008CBED9 /* NetworkParserProtocol.swift */; };
 		A231C3E3254FC1BE008CBED9 /* NetworkRequestDispatchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3DC254FC1BE008CBED9 /* NetworkRequestDispatchProtocol.swift */; };
 		A231C3E4254FC1BE008CBED9 /* NetworkRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3DD254FC1BE008CBED9 /* NetworkRequestProtocol.swift */; };
@@ -233,6 +234,7 @@
 		A2314C7A25B9743D007962C3 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		A2314C8025B97465007962C3 /* DependencyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyWrapper.swift; sourceTree = "<group>"; };
 		A2314C8525B97B88007962C3 /* CoreDataProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProtocols.swift; sourceTree = "<group>"; };
+		A2314C8F25BA9DD0007962C3 /* DependencyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyBuilder.swift; sourceTree = "<group>"; };
 		A231C3DB254FC1BE008CBED9 /* NetworkParserProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkParserProtocol.swift; sourceTree = "<group>"; };
 		A231C3DC254FC1BE008CBED9 /* NetworkRequestDispatchProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestDispatchProtocol.swift; sourceTree = "<group>"; };
 		A231C3DD254FC1BE008CBED9 /* NetworkRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestProtocol.swift; sourceTree = "<group>"; };
@@ -690,6 +692,7 @@
 				A2314C6E25ACA625007962C3 /* Dependency.swift */,
 				A2314C7A25B9743D007962C3 /* Dependencies.swift */,
 				A2314C8025B97465007962C3 /* DependencyWrapper.swift */,
+				A2314C8F25BA9DD0007962C3 /* DependencyBuilder.swift */,
 			);
 			path = DependencyContainer;
 			sourceTree = "<group>";
@@ -1187,6 +1190,7 @@
 				A231C422254FC3F1008CBED9 /* UserServiceEndPoint.swift in Sources */,
 				A26518D92529A0A00027A085 /* UIViewControllerExtensions.swift in Sources */,
 				5537C1A4248D092A00367F0C /* Configuration.swift in Sources */,
+				A2314C9025BA9DD0007962C3 /* DependencyBuilder.swift in Sources */,
 				A26518DB2529A0A00027A085 /* UIImageExtensions.swift in Sources */,
 				5514FAFA24A860BF00AF78B2 /* ProfileViewController.swift in Sources */,
 				A2574614259260100009C718 /* FirebaseAnalytics.swift in Sources */,

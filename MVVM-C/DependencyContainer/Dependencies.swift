@@ -5,11 +5,6 @@ class Dependencies {
     static private(set) var shared = Dependencies()
     fileprivate var dependencies = [Dependency]()
     
-    @_functionBuilder struct DependencyBuilder {
-        static func buildBlock(_ dependency: Dependency) -> Dependency { dependency }
-        static func buildBlock(_ dependencies: Dependency...) -> [Dependency] { dependencies }
-    }
-    
     convenience init(@DependencyBuilder _ dependencies: () -> [Dependency]) {
         self.init()
         dependencies().forEach { register($0) }
