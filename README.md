@@ -20,6 +20,8 @@ MVVM-T
 
 * Dependency Container using Builder pattern.
 
+* Designables with custom layout helper which gonna be very handy for constraints adjustments across all the iOS Devices.
+
 * Application Environment config files.
 
 * Basic usage of Core Data.
