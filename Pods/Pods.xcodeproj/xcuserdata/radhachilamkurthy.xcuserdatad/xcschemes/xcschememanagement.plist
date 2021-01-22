@@ -84,12 +84,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-MVVM-C.xcscheme</key>
+		<key>Pods-MVVM-T.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-MVVM-CTests.xcscheme</key>
+		<key>Pods-MVVM-TTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

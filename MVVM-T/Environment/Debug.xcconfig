@@ -1,0 +1,14 @@
+#include "Pods/Target Support Files/Pods-MVVM-T/Pods-MVVM-T.Debug.xcconfig"
+
+// Server URL
+APP_API_BASE_URL = https:/$()/reqres.in/api
+// Keys
+APP_API_KEY = 783u9djd8a_hkzos7jd803001nd
+
+// App Settings
+APP_BUNDLE_NAME = MVVM_T (dev)
+APP_BUNDLE_ID = RCGroup.MVVM-C.dev
+APP_VERSION = 1.0.0
+APP_ICON = AppIconDebug
+
+//Google FireBase
