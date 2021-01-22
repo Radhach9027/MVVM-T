@@ -1,4 +1,4 @@
-@testable import MVVM_C
+@testable import MVVM_T
 import UIKit
 
 class UserDefaultsMock: UserDefaultsProtocol {

@@ -1,11 +1,11 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'MVVM-C' do
+target 'MVVM-T' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for MVVM-C
+  # Pods for MVVM-T
   pod 'ReachabilitySwift', '~> 5.0'
   pod 'SwiftKeychainWrapper', '~> 3.4'
   
@@ -25,7 +25,7 @@ target 'MVVM-C' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
 
-  target 'MVVM-CTests' do
+  target 'MVVM-TTests' do
     inherit! :search_paths
     # Pods for testing
   end

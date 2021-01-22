@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5537C176248CBE9B00367F0C"
-               BuildableName = "MVVM-C.app"
-               BlueprintName = "MVVM-C"
-               ReferencedContainer = "container:MVVM-C.xcodeproj">
+               BuildableName = "MVVM-T.app"
+               BlueprintName = "MVVM-T"
+               ReferencedContainer = "container:MVVM-T.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "55A5B49424D67C9400F10070"
-               BuildableName = "MVVM-CTests.xctest"
-               BlueprintName = "MVVM-CTests"
-               ReferencedContainer = "container:MVVM-C.xcodeproj">
+               BuildableName = "MVVM-TTests.xctest"
+               BlueprintName = "MVVM-TTests"
+               ReferencedContainer = "container:MVVM-T.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5537C176248CBE9B00367F0C"
-            BuildableName = "MVVM-C.app"
-            BlueprintName = "MVVM-C"
-            ReferencedContainer = "container:MVVM-C.xcodeproj">
+            BuildableName = "MVVM-T.app"
+            BlueprintName = "MVVM-T"
+            ReferencedContainer = "container:MVVM-T.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -73,9 +73,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5537C176248CBE9B00367F0C"
-            BuildableName = "MVVM-C.app"
-            BlueprintName = "MVVM-C"
-            ReferencedContainer = "container:MVVM-C.xcodeproj">
+            BuildableName = "MVVM-T.app"
+            BlueprintName = "MVVM-T"
+            ReferencedContainer = "container:MVVM-T.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

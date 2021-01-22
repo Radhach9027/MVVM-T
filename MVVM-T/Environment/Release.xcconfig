@@ -1,4 +1,4 @@
-#include "Pods/Target Support Files/Pods-MVVM-C/Pods-MVVM-C.Release.xcconfig"
+#include "Pods/Target Support Files/Pods-MVVM-T/Pods-MVVM-T.Release.xcconfig"
 
 // Server URL
 ROOT_URL =
@@ -7,7 +7,7 @@ ROOT_URL =
 API_KEY = 783u9djd8a_hkzos7jd803001nd
 
 // App Settings
-APP_NAME = MVVM_C
+APP_NAME = MVVM_T
 APP_BUNDLE_ID = RCGroup.MVVM-C
 APP_VERSION = 1.0.0
 APP_ICON = AppIconRelease

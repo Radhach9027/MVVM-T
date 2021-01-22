@@ -1,4 +1,4 @@
-@testable import MVVM_C
+@testable import MVVM_T
 import XCTest
 
 class UserDefaultsHelperTests: XCTestCase {
