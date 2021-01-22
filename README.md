@@ -1,8 +1,13 @@
 # MVVM-T
 
-* if you want to develop an iOS app using MVVM design pattern with SOLID Principles, this is a base skelton app with many features as addition. It launches with login, Signup screen follwed by Tabbar controller.
+* If you want to develop an iOS app using MVVM design pattern with SOLID Principles, this is a base skelton app with many features as addition. It launches with login, Signup screen follwed by Tabbar controller. 
 
-MVVM-T
+* Simply you can download the code and start building your app.
+
+* Checkout to master or develop.
+
+
+Key Features:
 
 * SSO Using social profiles like (google, facebook, apple, twitter, microsoft, github via  firebase authentication).
 
@@ -31,6 +36,15 @@ MVVM-T
 * App & Folder Structure.
 
 * It has decent amount of unit testing for customised components.
+
+
+Note:
+
+* Open for Constructive feedback.
+
+* Anyone interested to contribute their knowledge, happy to welcome you.
+
+* Still working on some components and test cases.
 
 
 
