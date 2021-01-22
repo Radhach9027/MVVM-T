@@ -14,7 +14,7 @@ MVVM-T
 
 * Special Global components like (CustomSegmentControl, DatePicker, ImagePicker, LocationManager, PopupList, Validators, Alerts, ToastView, LoadingIndicator,CustomPopup, UserDefaultsHelper)
 
-* It has many helpful extension, where it's very handy once you start developing any app.
+* It has many helpful extension, where those will become handy once you start developing any app.
 
 * Biometric authentication (FaceID, TouchID)
 
