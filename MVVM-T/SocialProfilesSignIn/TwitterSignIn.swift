@@ -19,6 +19,7 @@ struct TwitterSignIn: TwitterSignInProtocol {
     func signIn() {
         
         if TWTRTwitter.sharedInstance().sessionStore.session() == nil {
+            
             TWTRTwitter.sharedInstance().logIn(with: self.viewController) { (session, error) in
                 if let error = error {
                     delegate?.signInFailure(error.localizedDescription)
@@ -31,6 +32,15 @@ struct TwitterSignIn: TwitterSignInProtocol {
                     delegate?.signInSuccess(credential: credential, signInType: .twitter)
                 }
             }
+            
+        } else {
+            
+            guard let session = TWTRTwitter.sharedInstance().sessionStore.session() else {
+                delegate?.signInFailure("Failed to retrive Twitter session tokens")
+                return
+            }
+            let credential = TwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
+            delegate?.signInSuccess(credential: credential, signInType: .twitter)
         }
     }
     

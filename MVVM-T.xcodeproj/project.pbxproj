@@ -175,7 +175,6 @@
 /* Begin PBXFileReference section */
 		354D7D0A6BFBFCFB871C03AD /* Pods-MVVM-T.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-T.release.xcconfig"; path = "Target Support Files/Pods-MVVM-T/Pods-MVVM-T.release.xcconfig"; sourceTree = "<group>"; };
 		44217978B490AD4CC4EAA7C2 /* Pods-MVVM-T.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-T.debug.xcconfig"; path = "Target Support Files/Pods-MVVM-T/Pods-MVVM-T.debug.xcconfig"; sourceTree = "<group>"; };
-		546BDC8E42FE5EBF49108453 /* Pods-MVVM-CTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-CTests.debug.xcconfig"; path = "Target Support Files/Pods-MVVM-CTests/Pods-MVVM-CTests.debug.xcconfig"; sourceTree = "<group>"; };
 		54C356A8901B6045622A963A /* Pods-MVVM-TTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-TTests.release.xcconfig"; path = "Target Support Files/Pods-MVVM-TTests/Pods-MVVM-TTests.release.xcconfig"; sourceTree = "<group>"; };
 		5514FA8724948CE000AF78B2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5514FA8924948CFB00AF78B2 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -221,8 +220,6 @@
 		55A5B4A424D67D2B00F10070 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerMock.swift; sourceTree = "<group>"; };
 		55A7F22024D7244A0058629E /* StoryBoardMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardMock.swift; sourceTree = "<group>"; };
 		55B69F2624BEDCAF00E99014 /* Destinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destinations.swift; sourceTree = "<group>"; };
-		55BE9A1824B2DBCB00B4FB3E /* JitsiMeet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JitsiMeet.framework; path = Pods/JitsiMeetSDK/Frameworks/JitsiMeet.framework; sourceTree = "<group>"; };
-		55BE9A1924B2DBCB00B4FB3E /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = Pods/JitsiMeetSDK/Frameworks/WebRTC.framework; sourceTree = "<group>"; };
 		55D3D917248D2D7D00A20926 /* GenericCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewController.swift; sourceTree = "<group>"; };
 		55D3D918248D2D7D00A20926 /* GenericTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTableViewController.swift; sourceTree = "<group>"; };
 		55D3D91E248D4C2B00A20926 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -232,7 +229,6 @@
 		55D3D92A248F7BFB00A20926 /* LoadingIndicator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingIndicator.xib; sourceTree = "<group>"; };
 		55D3D92F2492762A00A20926 /* CustomPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopup.swift; sourceTree = "<group>"; };
 		55D3D9312492765200A20926 /* CustomPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPopup.xib; sourceTree = "<group>"; };
-		57480A2BC63AC930D9FAB0B6 /* Pods-MVVM-C.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-C.debug.xcconfig"; path = "Target Support Files/Pods-MVVM-C/Pods-MVVM-C.debug.xcconfig"; sourceTree = "<group>"; };
 		5DBB78B61B259D9E59C9F22B /* Pods_MVVM_T.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_T.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		622409390331086E44E5F725 /* Pods_MVVM_TTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_TTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6985AF829ABE3D32B098772A /* Pods-MVVM-TTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-TTests.debug.xcconfig"; path = "Target Support Files/Pods-MVVM-TTests/Pods-MVVM-TTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -341,8 +337,6 @@
 		A283A03E259B3B07003A073B /* FirebaseSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSignIn.swift; sourceTree = "<group>"; };
 		A283A049259BA0F8003A073B /* SocialSignInDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignInDelegates.swift; sourceTree = "<group>"; };
 		A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
-		A44BF0B004CAF8BB8A7B142D /* Pods-MVVM-C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-C.release.xcconfig"; path = "Target Support Files/Pods-MVVM-C/Pods-MVVM-C.release.xcconfig"; sourceTree = "<group>"; };
-		DE72787014134C5EFB5D1DE9 /* Pods-MVVM-CTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-CTests.release.xcconfig"; path = "Target Support Files/Pods-MVVM-CTests/Pods-MVVM-CTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,8 +370,6 @@
 				A25745D92590E77A0009C718 /* AuthenticationServices.framework */,
 				A25745D72590E7700009C718 /* SafariServices.framework */,
 				A2604DCB24E58A7200945435 /* LocalAuthentication.framework */,
-				55BE9A1824B2DBCB00B4FB3E /* JitsiMeet.framework */,
-				55BE9A1924B2DBCB00B4FB3E /* WebRTC.framework */,
 				5DBB78B61B259D9E59C9F22B /* Pods_MVVM_T.framework */,
 				622409390331086E44E5F725 /* Pods_MVVM_TTests.framework */,
 			);
@@ -682,10 +674,6 @@
 		5D60A8D33046FB24FAB223C8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				57480A2BC63AC930D9FAB0B6 /* Pods-MVVM-C.debug.xcconfig */,
-				A44BF0B004CAF8BB8A7B142D /* Pods-MVVM-C.release.xcconfig */,
-				546BDC8E42FE5EBF49108453 /* Pods-MVVM-CTests.debug.xcconfig */,
-				DE72787014134C5EFB5D1DE9 /* Pods-MVVM-CTests.release.xcconfig */,
 				44217978B490AD4CC4EAA7C2 /* Pods-MVVM-T.debug.xcconfig */,
 				354D7D0A6BFBFCFB871C03AD /* Pods-MVVM-T.release.xcconfig */,
 				6985AF829ABE3D32B098772A /* Pods-MVVM-TTests.debug.xcconfig */,
