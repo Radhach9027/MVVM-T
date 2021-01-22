@@ -87,15 +87,15 @@ private extension AnimatedView {
         
         
         switch postion {
-        case .top:
-            self.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
-            break
-        case .bottom:
-            self.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.bottomAnchor, constant: -self.viewHeight(message)).isActive = true
-            break
-        case .middle:
-            self.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor, constant: rootView.frame.size.height / 2 - self.viewHeight(message)).isActive = true
-            break
+            case .top:
+                self.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor, constant: UIWindow.topViewController?.navigationController?.isNavigationBarHidden == true ? 20: 50).isActive = true
+                break
+            case .bottom:
+                self.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.bottomAnchor, constant: -(self.viewHeight(message) + (UIWindow.topViewController?.tabBarController?.hidesBottomBarWhenPushed == true ? 0 : 5))).isActive = true
+                break
+            case .middle:
+                self.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor, constant: rootView.frame.size.height / 2 - self.viewHeight(message)).isActive = true
+                break
         }
         
         self.leftAnchor.constraint(equalTo: rootView.leftAnchor, constant: 10).isActive = true
@@ -115,22 +115,22 @@ private extension AnimatedView {
     
     func transfrom(with transform: Transform) {
         switch transform {
-        case .show:
-            show(hide: false)
-            UIView.animate(withDuration: 0.8) { [weak self] in
-                self?.alpha = 1
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
-                    self?.transfrom(with: .hide)
+            case .show:
+                show(hide: false)
+                UIView.animate(withDuration: 0.8) { [weak self] in
+                    self?.alpha = 1
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+                        self?.transfrom(with: .hide)
+                    }
                 }
-            }
-        case .hide:
-            UIView.animate(withDuration: 0.5,
-                           animations: { [weak self] in
-                            self?.alpha = 0
-                },completion: { [weak self] (true)  in
-                    AnimatedView.destroy()
-                    self?.removeFromSuperview()
-            })
+            case .hide:
+                UIView.animate(withDuration: 0.5,
+                               animations: { [weak self] in
+                                self?.alpha = 0
+                               },completion: { [weak self] (true)  in
+                                AnimatedView.destroy()
+                                self?.removeFromSuperview()
+                               })
         }
     }
     
