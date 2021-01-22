@@ -7,6 +7,7 @@ protocol FirebaseProtocol {
     static var currentUser: Firebase.User? {get}
     static func signOut() throws
     func signIn(signInType: SocialSignInType)
+    var _delgate: FireBaseSignInDelegate? {get set}
 }
 
 //  GoogleSignIn.

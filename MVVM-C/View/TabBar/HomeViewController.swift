@@ -27,7 +27,7 @@ extension HomeViewController {
     
     @IBAction func loadingButtonPressed(_ sender: UIButton) {
         LoadingIndicator.shared.loading(step: .start(animate: true))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
             LoadingIndicator.shared.loading(step: .success(animate: true))
         }
     }

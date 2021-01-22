@@ -2,11 +2,8 @@ import UIKit
 
 class SignupViewController: UIViewController {
     
-    private var fireBaseSignIn: FirebaseSignIn? // When use any social profiles, move this to ur viewModel
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        fireBaseSignIn = FirebaseSignIn(delegate: self)
     }
     
     deinit {
@@ -22,30 +19,6 @@ extension SignupViewController: LaunchScreenNavigationProtocol, StorySwitchProto
     
     @IBAction func pushDetailButtonPressed(_ sender: UIButton) {
         pushToForgotpassword()
-    }
-    
-    @IBAction func googleSignInButtonPressed(_ sender: UIButton) {
-        fireBaseSignIn?.signIn(signInType: .google)
-    }
-    
-    @IBAction func facebookSignInButtonPressed(_ sender: UIButton) {
-        fireBaseSignIn?.signIn(signInType: .facebook)
-    }
-    
-    @IBAction func twitterSignInButtonPressed(_ sender: UIButton) {
-        fireBaseSignIn?.signIn(signInType: .twitter)
-    }
-    
-    @IBAction func microsoftSignInButtonPressed(_ sender: UIButton) {
-        fireBaseSignIn?.signIn(signInType: .microsoft)
-    }
-    
-    @IBAction func githubSignInButtonPressed(_ sender: UIButton) {
-        fireBaseSignIn?.signIn(signInType: .github)
-    }
-    
-    @IBAction func appleSignInButtonPressed(_ sender: UIButton) {
-        fireBaseSignIn?.signIn(signInType: .apple)
     }
 }
 

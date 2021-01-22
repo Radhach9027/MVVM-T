@@ -16,12 +16,12 @@ class LoginViewModel {
     
     @Inject private var userService: UserServiceProtocol
     @Inject private var userManager: UserManagerProtocol
-    private var fireBaseSignIn: FirebaseSignIn?
+    @Inject private var fireBaseSignIn: FirebaseProtocol
+    
     private weak var delegate: LoginViewModelDelegate?
     
     init() {
         print("LoginViewModel init")
-        fireBaseSignIn = FirebaseSignIn(delegate: self)
     }
     
     deinit {
@@ -33,13 +33,9 @@ class LoginViewModel {
 extension LoginViewModel: LoginViewModelProtocol {
     
     var _delgate: LoginViewModelDelegate? {
-        set {
-            self.delegate = newValue
-        }
         
-        get {
-            return self.delegate
-        }
+        set { self.delegate = newValue }
+        get { return self.delegate }
     }
     
     func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?)-> Void) {
@@ -61,7 +57,8 @@ extension LoginViewModel: LoginViewModelProtocol {
     }
     
     func socialProfileSignIn(signInType: SocialSignInType) {
-        fireBaseSignIn?.signIn(signInType: signInType)
+        fireBaseSignIn._delgate = self
+        fireBaseSignIn.signIn(signInType: signInType)
     }
 }
 

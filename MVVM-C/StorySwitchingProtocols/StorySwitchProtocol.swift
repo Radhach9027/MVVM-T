@@ -27,6 +27,7 @@ private extension StorySwitchProtocol {
         
         //***** Add all you'r story dependcies here
         let dependcies = Dependencies {
+            Dependency {FirebaseSignIn()}
             Dependency {LoginViewModel()}
             Dependency {UserService()}
             Dependency {UserManager()}
