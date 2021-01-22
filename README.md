@@ -4,7 +4,7 @@
 
 * Simply you can download the code and start building your app.
 
-* Checkout to master or develop.
+* Checkout to master or develop, To understand the flow and functionality of the app start analysing from SceneDelegate & App Delegate. This should do the needful.
 
 
 Key Features:
