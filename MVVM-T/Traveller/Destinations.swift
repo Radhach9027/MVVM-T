@@ -4,7 +4,7 @@
  !* @discussion: All the below cases refers to stories i.e., (.storyBoard)
 */
 
-enum StoryDestination: String { // Different Storyboards.
+public enum StoryDestination: String { // Different Storyboards.
     case login = "Login"
     case tab = "TabBar"
 }
@@ -13,7 +13,7 @@ enum StoryDestination: String { // Different Storyboards.
  !* @discussion: All the below cases refers to viewcontroller from all the stories i.e., (.storyBoard)
 */
 
-enum ControllerDestination: String { // Different ViewControllers.
+public enum ControllerDestination: String { // Different ViewControllers.
     case login =  "LoginViewController"
     case signup = "SignupViewController"
     case launch = "LaunchViewController"
@@ -23,3 +23,4 @@ enum ControllerDestination: String { // Different ViewControllers.
     case detail = "HomeDetailsViewController"
     case forgotPassword = "ForgotPasswordViewController"
 }
+

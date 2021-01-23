@@ -6,7 +6,7 @@ import UIKit
  !* @discussion: This class controls all the navigation behaviour for the entire Application. It 's been used as Singleton object via shared reference.
  */
 
-class Traveller {
+public final class Traveller {
     private static var sharedInstance: Traveller?
     private var wayFinding: TravellerWayFindingProtocol?
     var storage: [Any] = [] // To store current stack when config is about to change the router.

@@ -61,6 +61,7 @@
 		A2314C8125B97465007962C3 /* DependencyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314C8025B97465007962C3 /* DependencyWrapper.swift */; };
 		A2314C8625B97B88007962C3 /* CoreDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314C8525B97B88007962C3 /* CoreDataProtocols.swift */; };
 		A2314C9025BA9DD0007962C3 /* DependencyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314C8F25BA9DD0007962C3 /* DependencyBuilder.swift */; };
+		A2314DD425BC8448007962C3 /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314DD325BC8448007962C3 /* LoginViewModelProtocol.swift */; };
 		A231C3E2254FC1BE008CBED9 /* NetworkParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3DB254FC1BE008CBED9 /* NetworkParserProtocol.swift */; };
 		A231C3E3254FC1BE008CBED9 /* NetworkRequestDispatchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3DC254FC1BE008CBED9 /* NetworkRequestDispatchProtocol.swift */; };
 		A231C3E4254FC1BE008CBED9 /* NetworkRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3DD254FC1BE008CBED9 /* NetworkRequestProtocol.swift */; };
@@ -237,6 +238,7 @@
 		A2314C8025B97465007962C3 /* DependencyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyWrapper.swift; sourceTree = "<group>"; };
 		A2314C8525B97B88007962C3 /* CoreDataProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProtocols.swift; sourceTree = "<group>"; };
 		A2314C8F25BA9DD0007962C3 /* DependencyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyBuilder.swift; sourceTree = "<group>"; };
+		A2314DD325BC8448007962C3 /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		A231C3DB254FC1BE008CBED9 /* NetworkParserProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkParserProtocol.swift; sourceTree = "<group>"; };
 		A231C3DC254FC1BE008CBED9 /* NetworkRequestDispatchProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestDispatchProtocol.swift; sourceTree = "<group>"; };
 		A231C3DD254FC1BE008CBED9 /* NetworkRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestProtocol.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 			isa = PBXGroup;
 			children = (
 				5514FA902495FBC100AF78B2 /* LoginViewModel.swift */,
+				A2314DD325BC8448007962C3 /* LoginViewModelProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1106,6 +1109,7 @@
 				A26518B325299FA10027A085 /* CustomButton.swift in Sources */,
 				A2651884252997E20027A085 /* TabledCollectionView.swift in Sources */,
 				55A5B49024D5A05B00F10070 /* TravellerWayFindingProtocol.swift in Sources */,
+				A2314DD425BC8448007962C3 /* LoginViewModelProtocol.swift in Sources */,
 				A25745E32591C1530009C718 /* GoogleSignIn.swift in Sources */,
 				A257465C25946BF20009C718 /* TabTransistion.swift in Sources */,
 				5548F87224D7C977009BFCFB /* TravellerNavigationProtocol.swift in Sources */,
