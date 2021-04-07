@@ -1,4 +1,4 @@
-struct Dependency {
+public struct Dependency {
     
     typealias ResolveBlock<T> = () -> T
     

@@ -1,4 +1,5 @@
 import Foundation
+import DependencyContainer
 
 protocol UserServiceProtocol {
     func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?)-> Void)

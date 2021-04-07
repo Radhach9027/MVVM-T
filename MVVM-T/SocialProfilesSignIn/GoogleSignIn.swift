@@ -14,9 +14,7 @@ class GoogleSingIn: NSObject {
         setup()
     }
     
-    deinit {
-        print("GoogleSingIn de-InIt")
-    }
+    deinit { print("GoogleSingIn de-InIt") }
 }
 
 extension GoogleSingIn: GoogleSignInProtocol {
@@ -49,8 +47,7 @@ extension GoogleSingIn: GoogleSignInProtocol {
 
 extension GoogleSingIn: GIDSignInDelegate {
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
-              withError error: Error!) {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
         if let error = error {
             if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
@@ -70,8 +67,7 @@ extension GoogleSingIn: GIDSignInDelegate {
         delegate?.signInSuccess(credential: credential, signInType: .google)
     }
     
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
-              withError error: Error!) {
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         GIDSignIn.sharedInstance()?.disconnect()
         guard let errorMsg = error else { return }
         delegate?.signInFailure(errorMsg.localizedDescription)

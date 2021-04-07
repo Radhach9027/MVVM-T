@@ -1,30 +1,19 @@
 import Foundation
+import DependencyContainer
 
 class LoginViewModel {
     
-    @Inject private var userService: UserServiceProtocol
-    @Inject private var userManager: UserManagerProtocol
-    @Inject private var fireBaseSignIn: FirebaseProtocol
-    
+    @Inject var userService: UserServiceProtocol
+    @Inject var userManager: UserManagerProtocol
+    @Inject var fireBaseSignIn: FirebaseProtocol
     private weak var delegate: LoginViewModelDelegate?
-    
-    init() {
-        print("LoginViewModel init")
-    }
     
     deinit {
         print("LoginViewModel de-init")
-        _delgate = nil
     }
 }
 
 extension LoginViewModel: LoginViewModelProtocol {
-    
-    var _delgate: LoginViewModelDelegate? {
-        
-        set { self.delegate = newValue }
-        get { return self.delegate }
-    }
     
     func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?)-> Void) {
         
@@ -44,9 +33,8 @@ extension LoginViewModel: LoginViewModelProtocol {
         })
     }
     
-    func socialProfileSignIn(signInType: SocialSignInType) {
-        fireBaseSignIn._delgate = self
-        fireBaseSignIn.signIn(signInType: signInType)
+    func socialProfileSignIn(signInType: SocialSignInType, delegate: LoginViewModelDelegate) {
+        fireBaseSignIn.signIn(signInType: signInType, delgate: self)
     }
 }
 

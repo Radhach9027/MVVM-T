@@ -4,11 +4,9 @@ class HomeViewController: UIViewController {
 
 }
 
-extension HomeViewController {
+extension HomeViewController: TravellerProtocol {
     @IBAction func homeDetailsButtonPressed(_ sender: UIButton) {
-        if let controller: HomeDetailsViewController = Traveller.route.push(story: .tab, controller: .detail, animated: true, hidesBottomBar: true, modelTransistion: .coverVertical, modelPresentation: .currentContext).perform() {
-            controller.title = "Details"
-        }
+        push(type: .detail, animated: true, hidesTopBar: false, hidesBottomBar: true)
     }
     
     @IBAction func alertButtonPressed(_ sender: UIButton) {

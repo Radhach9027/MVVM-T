@@ -11,7 +11,6 @@ struct CustomSegmentAttributes {
     var itemSelectedFont: UIFont = UIFont.regularSemiBold()
     var itemCornerRadius: CGFloat = 5.0
     var itemTextAlignment: UIControl.ContentHorizontalAlignment = .left
-    
 }
 
 protocol CustomSegmentControlDelegate:class {

@@ -6,12 +6,10 @@ protocol FirebaseProtocol {
     static var userExists: Bool {get}
     static var currentUser: Firebase.User? {get}
     static func signOut() throws
-    func signIn(signInType: SocialSignInType)
-    var _delgate: FireBaseSignInDelegate? {get set}
+    func signIn(signInType: SocialSignInType, delgate: FireBaseSignInDelegate)
 }
 
 //  GoogleSignIn.
-
 protocol GoogleSignInProtocol {
     func signIn()
     func setup()
@@ -21,13 +19,11 @@ protocol GoogleSignInProtocol {
 }
 
 // Apple
-
 protocol AppleSignInProtocol {
     func signIn()
 }
 
 //  Facebook.
-
 protocol FacebookSignInProtocol {
     func signIn()
     static func signOut()
@@ -36,7 +32,6 @@ protocol FacebookSignInProtocol {
 }
 
 //  Twitter.
-
 protocol TwitterSignInProtocol {
     static func config()
     func signIn()

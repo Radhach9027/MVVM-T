@@ -15,21 +15,14 @@ class FirebaseSignIn {
 
     init() { print("FirebaseSignIn InIt") }
     
-    deinit {
-        print("FirebaseSignIn De-InIt")
-        _delgate = nil
-    }
+    deinit { print("FirebaseSignIn De-InIt") }
 }
 
 extension FirebaseSignIn: FirebaseProtocol {
     
-    var _delgate: FireBaseSignInDelegate? {
+    func signIn(signInType: SocialSignInType, delgate: FireBaseSignInDelegate) {
         
-        set { self.delegate = newValue }
-        get { return self.delegate }
-    }
-    
-    func signIn(signInType: SocialSignInType) {
+        self.delegate = delgate
         
         switch signInType {
             case .google:

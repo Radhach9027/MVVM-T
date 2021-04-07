@@ -1,25 +1,32 @@
 import Foundation
 
-class Dependencies {
+public protocol DependenciesProtocol {
+    func register(_ dependency: Dependency)
+    func build()
+    func resolve<T>() -> T
+    func clear()
+}
+
+public class Dependencies {
     
     static private(set) var shared = Dependencies()
     fileprivate var dependencies = [Dependency]()
     
-    convenience init(@DependencyBuilder _ dependencies: () -> [Dependency]) {
+    public convenience init(@DependencyBuilder _ dependencies: () -> [Dependency]) {
         self.init()
         dependencies().forEach { register($0) }
     }
     
-    convenience init(@DependencyBuilder _ dependency: () -> Dependency) {
+    public convenience init(@DependencyBuilder _ dependency: () -> Dependency) {
         self.init()
         register(dependency())
     }
 }
 
 
-extension Dependencies {
+extension Dependencies: DependenciesProtocol{
     
-    func register(_ dependency: Dependency) {
+    public func register(_ dependency: Dependency) {
         guard dependencies.firstIndex(where: { $0.name == dependency.name }) == nil else {
             debugPrint("\(String(describing: dependency.name)) already registered, let's ignore")
             return
@@ -27,21 +34,21 @@ extension Dependencies {
         dependencies.append(dependency)
     }
     
-    func build() {
+    public func build() {
         for index in dependencies.startIndex..<dependencies.endIndex {
             dependencies[index].resolve()
         }
         Self.shared = self
     }
     
-    func resolve<T>() -> T {
+    public func resolve<T>() -> T {
         guard let dependency = dependencies.first(where: { $0.value is T })?.value as? T else {
             fatalError("Can't resolve \(T.self)")
         }
         return dependency
     }
     
-    func clear() {
+    public func clear() {
         if dependencies.count > 0 {
             dependencies.removeAll()
         }

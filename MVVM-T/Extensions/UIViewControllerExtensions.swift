@@ -15,7 +15,7 @@ extension UIViewController {
         removeFromParent()
     }
     
-    func makeViewController<T>(for controller: ControllerDestination, storyBoardName: StoryDestination, storyBoard: TravellerStoryBoardProtocol?,  modelPresentationStyle: UIModalPresentationStyle? = nil, modelTransistionStyle: UIModalTransitionStyle? = nil) -> T? where T: UIViewController {
+    func makeViewController<T>(for controller: Destinations, storyBoardName: Stories, storyBoard: UIStoryboard?,  modelPresentationStyle: UIModalPresentationStyle? = nil, modelTransistionStyle: UIModalTransitionStyle? = nil) -> T? where T: UIViewController {
         if let viewController = storyBoard?.instantiateViewController(withIdentifier: controller.rawValue) {
             if let presentation = modelPresentationStyle {
                 viewController.modalPresentationStyle = presentation
@@ -65,4 +65,3 @@ protocol KeyBoardListenerDelegates: class {
     func keyBoardShow(_ notification: Notification)
     func keyBoardHide(_ notification: Notification)
 }
-

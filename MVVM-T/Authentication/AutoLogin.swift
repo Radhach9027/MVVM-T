@@ -1,13 +1,14 @@
 import UIKit
 
-struct AutoLogin: StorySwitchProtocol {
+struct AutoLogin: TravellerProtocol, DependencyProtocol {
     
     func login() {
         
         if FirebaseSignIn.userExists {
-            switchToHome()
+            storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: true, hidesBottomBar: false)
         } else {
-           switchToLaunch()
+            loginDependencies()
+            storySwitch(story: .login, destination: .login, animated: true, hidesTopBar: false, hidesBottomBar: false)
         }
     }
 }
