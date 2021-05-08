@@ -1,12 +1,10 @@
 import UIKit
 
-class HomeViewController: UIViewController {
-
-}
+class HomeViewController: UIViewController {}
 
 extension HomeViewController: TravellerProtocol {
     @IBAction func homeDetailsButtonPressed(_ sender: UIButton) {
-        push(type: .detail, animated: true, hidesTopBar: false, hidesBottomBar: true)
+        push(type: .detail, animated: true, hidesTopBar: false, hidesBottomBar: false)
     }
     
     @IBAction func alertButtonPressed(_ sender: UIButton) {
@@ -20,7 +18,7 @@ extension HomeViewController: TravellerProtocol {
     }
     
     @IBAction func slideViewButtonPressed(_ sender: UIButton) {
-        AnimatedView.shared.present(message: .internet, postion: .top, bgColor: .indigoColor())
+        AnimatedView.shared.present(message: .message("Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."), postion: .top, bgColor: .indigoColor())
     }
     
     @IBAction func loadingButtonPressed(_ sender: UIButton) {

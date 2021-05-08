@@ -5,7 +5,7 @@ protocol FireBaseSignInDelegate: class {
     func signInFailure(_ error: String)
 }
 
-protocol SocialSignInDelegate: class {
+protocol SocialProfilesSignInDelegate: class {
     func signInSuccess(credential: AuthCredential, signInType: SocialSignInType)
     func signInFailure(_ error: String)
 }

@@ -4,9 +4,9 @@ import TwitterKit
 struct TwitterSignIn: TwitterSignInProtocol {
     
     private var viewController: UIViewController?
-    private weak var delegate: SocialSignInDelegate?
+    private weak var delegate: SocialProfilesSignInDelegate?
     
-    init(viewController: UIViewController? = nil, delegate: SocialSignInDelegate?) {
+    init(viewController: UIViewController? = nil, delegate: SocialProfilesSignInDelegate?) {
         print("TwitterSignIn InIt")
         self.viewController = viewController
         self.delegate = delegate

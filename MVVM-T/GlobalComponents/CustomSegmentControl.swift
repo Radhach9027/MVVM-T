@@ -13,7 +13,7 @@ struct CustomSegmentAttributes {
     var itemTextAlignment: UIControl.ContentHorizontalAlignment = .left
 }
 
-protocol CustomSegmentControlDelegate:class {
+protocol CustomSegmentControlDelegate: class {
     func change(to index:Int)
 }
 

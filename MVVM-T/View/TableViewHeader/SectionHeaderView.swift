@@ -1,4 +1,5 @@
 import UIKit
+import GenericCollectionsPackage
 
 protocol SectionHeaderViewDelegate: class {
     func headerTapped()

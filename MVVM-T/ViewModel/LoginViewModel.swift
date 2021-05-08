@@ -34,6 +34,7 @@ extension LoginViewModel: LoginViewModelProtocol {
     }
     
     func socialProfileSignIn(signInType: SocialSignInType, delegate: LoginViewModelDelegate) {
+        self.delegate = delegate
         fireBaseSignIn.signIn(signInType: signInType, delgate: self)
     }
 }

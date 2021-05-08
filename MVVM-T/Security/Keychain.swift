@@ -1,4 +1,5 @@
 import SwiftKeychainWrapper
+import Foundation
 
 struct Keychain<T> where T: Codable {
     

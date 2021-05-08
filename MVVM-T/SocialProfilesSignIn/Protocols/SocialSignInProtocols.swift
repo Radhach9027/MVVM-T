@@ -1,5 +1,6 @@
 import Foundation
 import Firebase
+import UIKit
 
 //  FireBase.
 protocol FirebaseProtocol {

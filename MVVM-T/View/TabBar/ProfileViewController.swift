@@ -15,11 +15,8 @@ extension ProfileViewController: BarButtonActions, TravellerProtocol {
     }
     
     @IBAction func logOutBackButtonPressed(_ sender: UIButton) {
-        do {
-            try FirebaseSignIn.signOut()
-            storySwitch(story: .login, destination: .launch, animated: true, hidesTopBar: false, hidesBottomBar: false)
-        } catch let signOutError as NSError {
-            presentAlert("Error signing out from FirebaseSignIn: %@ \(signOutError)")
+        if let error = AutoLogin().logOut() {
+            presentAlert(error)
         }
     }
 }

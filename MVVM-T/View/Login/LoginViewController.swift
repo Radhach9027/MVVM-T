@@ -5,8 +5,17 @@ class LoginViewController: UIViewController {
                 
     @Inject private var viewModel: LoginViewModelProtocol
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let letters = "abracadabra"
+        let letterCount = letters.reduce(into: [:]) { counts, letter in
+            counts[letter, default: 0] += 1
+        }
+        
+        print(letterCount)
+        
     }
     
     deinit {

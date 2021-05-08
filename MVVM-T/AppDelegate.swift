@@ -42,9 +42,9 @@ extension AppDelegate {
             switch status {
             case .connected:
                  print("Internet Connected")
-                AnimatedView.shared.present(message: .internet, postion: .top, bgColor: .indigoColor())
+                AnimatedView.shared.present(message: .message(NetworkMessages.internet.rawValue), postion: .top, bgColor: .indigoColor())
             case .disconnected:
-                AnimatedView.shared.present(message: .noInternet, postion: .top, bgColor: .red())
+                AnimatedView.shared.present(message: .message(NetworkMessages.noInternet.rawValue), postion: .top, bgColor: .red())
             }
         }
     }

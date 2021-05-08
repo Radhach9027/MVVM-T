@@ -4,9 +4,9 @@ import Firebase
 class GoogleSingIn: NSObject {
     
     private var viewController: UIViewController?
-    private weak var delegate: SocialSignInDelegate?
+    private weak var delegate: SocialProfilesSignInDelegate?
 
-    init(viewController: UIViewController? = nil, delegate: SocialSignInDelegate?) {
+    init(viewController: UIViewController? = nil, delegate: SocialProfilesSignInDelegate?) {
         print("GoogleSingIn InIt")
         super.init()
         self.viewController = viewController

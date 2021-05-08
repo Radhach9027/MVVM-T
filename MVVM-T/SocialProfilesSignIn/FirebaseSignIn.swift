@@ -1,6 +1,7 @@
 import Firebase
+import UIKit
 
-class FirebaseSignIn {
+open class FirebaseSignIn {
     
     private var googleSignIn: GoogleSingIn?
     private var facebookSignIn: FacebookSignIn?
@@ -100,7 +101,7 @@ private extension FirebaseSignIn {
     }
 }
 
-extension FirebaseSignIn: SocialSignInDelegate {
+extension FirebaseSignIn: SocialProfilesSignInDelegate {
     
     func signInSuccess(credential: AuthCredential, signInType: SocialSignInType) {
         LoadingIndicator.shared.loading(step: .start(animate: true))
