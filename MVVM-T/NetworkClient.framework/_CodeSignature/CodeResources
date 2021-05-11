@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/NetworkClient.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		kpmX3b7vw0Y/WuIrbiiEEIj4yqs=
+		2nWDNhzK5cAH7/KQfXik72oj/Wg=
 		</data>
 		<key>Modules/NetworkClient.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		kpmX3b7vw0Y/WuIrbiiEEIj4yqs=
+		2nWDNhzK5cAH7/KQfXik72oj/Wg=
 		</data>
 		<key>Modules/NetworkClient.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/NetworkClient.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		AkLfWeKN58/f4e3gUjOrbTLdfEI=
+		IJ022vVDL6x8mHmwUgpDMPYMq9U=
 		</data>
 		<key>Modules/NetworkClient.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/NetworkClient.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		AkLfWeKN58/f4e3gUjOrbTLdfEI=
+		IJ022vVDL6x8mHmwUgpDMPYMq9U=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -65,14 +65,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YLsSa8K5enK9eCoZpLDAiq70ouQibSujrbjuBW4dE48=
+			uh4FtHXytS2XclTp9eLb2I5qxqDO0laeJsYGs/6HhcQ=
 			</data>
 		</dict>
 		<key>Modules/NetworkClient.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YLsSa8K5enK9eCoZpLDAiq70ouQibSujrbjuBW4dE48=
+			uh4FtHXytS2XclTp9eLb2I5qxqDO0laeJsYGs/6HhcQ=
 			</data>
 		</dict>
 		<key>Modules/NetworkClient.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -86,7 +86,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/6GzytjQxnIJdFBSrAb0Bt0WIVb4zaDzMvHVTQJPSHw=
+			zwUafUXAofNktpGXMY60o/7ilCm0EikE4CpAGW7wHXw=
 			</data>
 		</dict>
 		<key>Modules/NetworkClient.swiftmodule/x86_64.swiftdoc</key>
@@ -100,7 +100,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/6GzytjQxnIJdFBSrAb0Bt0WIVb4zaDzMvHVTQJPSHw=
+			zwUafUXAofNktpGXMY60o/7ilCm0EikE4CpAGW7wHXw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

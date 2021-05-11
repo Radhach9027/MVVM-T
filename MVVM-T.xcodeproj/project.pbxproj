@@ -137,8 +137,8 @@
 		A2F2383625C2A54C00C27931 /* SwiftTraveller in Frameworks */ = {isa = PBXBuildFile; productRef = A2F2383525C2A54C00C27931 /* SwiftTraveller */; };
 		A2FB6470264A49FB00ED0084 /* SharedNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB646F264A49FB00ED0084 /* SharedNetworkClient.swift */; };
 		A2FB6474264A6C2F00ED0084 /* UINotifications+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB6473264A6C2F00ED0084 /* UINotifications+Extensions.swift */; };
-		A2FB6475264A6F2300ED0084 /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FB6471264A687D00ED0084 /* NetworkClient.framework */; };
-		A2FB6476264A6F2300ED0084 /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A2FB6471264A687D00ED0084 /* NetworkClient.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A2FB6482264AA16C00ED0084 /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FB6480264AA16500ED0084 /* NetworkClient.framework */; };
+		A2FB6483264AA16C00ED0084 /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A2FB6480264AA16500ED0084 /* NetworkClient.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,7 +158,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A2FB6476264A6F2300ED0084 /* NetworkClient.framework in Embed Frameworks */,
+				A2FB6483264AA16C00ED0084 /* NetworkClient.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,8 +297,8 @@
 		A294FC522646C8F50011F0D8 /* TravellerProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravellerProtocols.swift; sourceTree = "<group>"; };
 		A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		A2FB646F264A49FB00ED0084 /* SharedNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedNetworkClient.swift; sourceTree = "<group>"; };
-		A2FB6471264A687D00ED0084 /* NetworkClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkClient.framework; sourceTree = "<group>"; };
 		A2FB6473264A6C2F00ED0084 /* UINotifications+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINotifications+Extensions.swift"; sourceTree = "<group>"; };
+		A2FB6480264AA16500ED0084 /* NetworkClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkClient.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,7 +308,7 @@
 			files = (
 				A25745DC2590E7830009C718 /* SystemConfiguration.framework in Frameworks */,
 				A2A95B992645B927009C8DB4 /* GenericCollectionsPackage in Frameworks */,
-				A2FB6475264A6F2300ED0084 /* NetworkClient.framework in Frameworks */,
+				A2FB6482264AA16C00ED0084 /* NetworkClient.framework in Frameworks */,
 				A233172E262043B00075B82F /* FirebaseAuth in Frameworks */,
 				A25745DA2590E77A0009C718 /* AuthenticationServices.framework in Frameworks */,
 				A23316D5261207400075B82F /* DependencyContainer in Frameworks */,
@@ -433,7 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				A26E1A202598CB95006A7D63 /* MVVM-T.entitlements */,
-				A2FB6471264A687D00ED0084 /* NetworkClient.framework */,
+				A2FB6480264AA16500ED0084 /* NetworkClient.framework */,
 				A294FC502646C8E60011F0D8 /* Traveller */,
 				A23316D8261207AA0075B82F /* Dependency */,
 				A25745E12591C12C0009C718 /* SocialProfilesSignIn */,

@@ -6,7 +6,8 @@ class SharedNetworkClient {
 
     public var request: NetworkRequestDispatcher
     public var networkAction: NetworkAction?
-
+    public var isNetworkReachable = NetworkReachability.shared.isReachable
+    
     private init() {
         request = NetworkRequestDispatcher(environment: NetworkEnvironment.dev, networkSession: NetworkSession().session!)
     }
