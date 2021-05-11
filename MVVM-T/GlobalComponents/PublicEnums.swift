@@ -1,16 +1,5 @@
 import UIKit
 
-enum ValidationMessages: String {
-    case noPassword = "Please enter a password"
-    case validPassword = "Password length should be greater than or equal to 8 charcters & should contain atleast one special char, numeric, uppercase, lowercase"
-    case noEmail = "Please enter email"
-    case validEmail = "Please enter a valid email address"
-    case noPhone = "Please enter phone number"
-    case validPhone = "Please enter a valid phone number"
-    case passwordNotMatch = "Please check the password you've entered, try again.."
-    case globalNoValue = "Please enter an email or phone or userName"
-}
-
 enum UserDefaultsKeys: String {
     case storeStack
 }
@@ -100,21 +89,6 @@ enum CustomPopupAnimateOptions {
     case crossDisolve
     case affineOut
     case bounce
-}
-
-enum UIDeviceSize  {
-    case i3_5Inch
-    case i4Inch
-    case i4_7Inch
-    case i5_5Inch
-    case i5_8Inch
-    case i6_1Inch
-    case i6_5Inch
-    case i7_9Inch
-    case i9_7Inch
-    case i10_5Inch
-    case i12_9Inch
-    case unknown
 }
 
 enum PopupListTypes: String {

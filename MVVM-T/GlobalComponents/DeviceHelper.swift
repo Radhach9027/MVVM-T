@@ -1,15 +1,30 @@
 import UIKit
 
-struct DeviceSpecific {
-    
-    static var deviceVersion: String { UIDevice.current.systemVersion}
-    static var devicePlatformName: String { UIDevice.current.systemName }
-    static var deviceName: String {UIDevice.current.name}
-    static var countryCode: Countries? { Countries.fetchObject(code: "IN") ?? nil}
+public enum UIDeviceSize  {
+    case i3_5Inch
+    case i4Inch
+    case i4_7Inch
+    case i5_5Inch
+    case i5_8Inch
+    case i6_1Inch
+    case i6_5Inch
+    case i7_9Inch
+    case i9_7Inch
+    case i10_5Inch
+    case i12_9Inch
+    case unknown
 }
 
 
-let deviceSize : UIDeviceSize = {
+public struct DeviceSpecific {
+    public static var deviceVersion: String { UIDevice.current.systemVersion}
+    public static var devicePlatformName: String { UIDevice.current.systemName }
+    public static var deviceName: String {UIDevice.current.name}
+    public static var countryCode: Countries? { Countries.fetchObject(code: "IN") ?? nil}
+}
+
+
+public let deviceSize : UIDeviceSize = {
     let w: Double = Double(UIScreen.main.bounds.width)
     let h: Double = Double(UIScreen.main.bounds.height)
     let screenHeight: Double = max(w, h)

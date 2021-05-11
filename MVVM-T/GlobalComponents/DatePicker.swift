@@ -1,10 +1,10 @@
 import UIKit
 
-class DatePicker {
+public final class DatePicker {
     
     private var datePicker: UIDatePicker?
     
-    func showDatePicker(completion: @escaping (_ date: String) -> Void) {
+    public func showDatePicker(completion: @escaping (_ date: String) -> Void) {
         
         if let controller = UIWindow.topViewController {
             let alert = UIAlertController(title: "Pick Date", message: "\n\n\n\n\n\n\n\n\n\n\n", preferredStyle: .actionSheet)

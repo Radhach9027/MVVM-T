@@ -1,12 +1,18 @@
 import UIKit
 
-struct Countries: Codable {
+public struct Countries: Codable {
     
-    var name: String
-    var dial_code: String
-    var code: String
+    public var name: String
+    public var dial_code: String
+    public var code: String
     
-    static func fetchObject(code: String) -> Countries? {
+    public init(name: String, dail_code: String, code: String) {
+        self.name = name
+        self.dial_code = dail_code
+        self.code = code
+    }
+    
+    public static func fetchObject(code: String) -> Countries? {
         if let path = Bundle.main.path(forResource: "CountryCode", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: [])

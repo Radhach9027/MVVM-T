@@ -48,8 +48,4 @@ class Validator {
             }
         }
     }
-    
-    public static func passwordHintMessage(message: ValidationMessages) {
-        Alert.presentAlert(withTitle: "Password Hint", message: message.rawValue, actionParameters: [AlertParameters(title: "Ok", actionStyle: .cancel)], controller: nil, style: .actionSheet)
-    }
 }

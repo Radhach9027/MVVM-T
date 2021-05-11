@@ -1,11 +1,12 @@
 import UIKit
 
-struct AlertParameters {
-    var title: String?
-    var action: ((UIAlertAction) -> Void)?
-    var preferredAction: Bool
-    var actionStyle: UIAlertAction.Style
-    init(title: String, action: ((UIAlertAction) -> Void)? = nil, preferredAction: Bool = false, actionStyle: UIAlertAction.Style = .default) {
+public struct AlertParameters {
+    public var title: String?
+    public var action: ((UIAlertAction) -> Void)?
+    public var preferredAction: Bool
+    public var actionStyle: UIAlertAction.Style
+    
+    public init(title: String, action: ((UIAlertAction) -> Void)? = nil, preferredAction: Bool = false, actionStyle: UIAlertAction.Style = .default) {
         self.title = title
         self.action = action
         self.preferredAction = preferredAction
@@ -13,8 +14,9 @@ struct AlertParameters {
     }
 }
 
-class Alert {
-    class func presentAlert(withTitle title: String? = nil, message: String? = nil, controller: UIViewController? = nil) {
+public final class Alert {
+    
+    public class func presentAlert(withTitle title: String? = nil, message: String? = nil, controller: UIViewController? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             print("You've pressed OK Button")
@@ -24,7 +26,7 @@ class Alert {
         topController?.present(alertController, animated: true, completion: nil)
     }
 
-    class func presentAlert(withTitle title: String? = nil, message: String? = nil, actionParameters: [AlertParameters], controller: UIViewController? = nil, style: UIAlertController.Style = .alert) {
+    public class func presentAlert(withTitle title: String? = nil, message: String? = nil, actionParameters: [AlertParameters], controller: UIViewController? = nil, style: UIAlertController.Style = .alert) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         if actionParameters.isEmpty {
             alertController.addAction(UIAlertAction(title: "OK", style: .default))
