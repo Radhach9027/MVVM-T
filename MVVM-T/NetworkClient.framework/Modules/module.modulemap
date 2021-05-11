@@ -1,0 +1,11 @@
+framework module NetworkClient {
+  umbrella header "NetworkClient.h"
+
+  export *
+  module * { export * }
+}
+
+module NetworkClient.Swift {
+    header "NetworkClient-Swift.h"
+    requires objc
+}

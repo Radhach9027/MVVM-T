@@ -1,27 +1,12 @@
 import UIKit
 
-protocol PopupListDelegate: class {
+protocol PopupListDelegate: AnyObject {
     func didSelectedOption(type: PopupListTypes, value: String)
 }
 
 class PopupList: UIView, Nib {
     
-    private static var sharedInstance: PopupList?
-    class var shared : PopupList {
-        
-        guard let instance = self.sharedInstance else {
-            let strongInstance = PopupList()
-            self.sharedInstance = strongInstance
-            return strongInstance
-        }
-        return instance
-    }
-    
-    class func destroy() {
-        DispatchQueue.main.async() {
-            sharedInstance = nil
-        }
-    }
+    static let shared = PopupList()
     
     private init() {
         super.init(frame: .zero)
@@ -139,7 +124,6 @@ extension PopupList: UITableViewDelegate {
 
 extension PopupList {
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
-        PopupList.destroy()
         self.removeFromSuperview()
     }
 }

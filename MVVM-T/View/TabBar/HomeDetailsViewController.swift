@@ -35,20 +35,20 @@ extension HomeDetailsViewController {
         //Prepare Generic custom cell with model
         let tableModel = tableSectionedGroup(DummyModel.users)
         
-        tableView = GenericTableViewController(grouped: tableModel, attributes: GenericTableViewAttributes(separatorLine: .singleLine, refreshMessage: .config(messgae: "Loading...", tint: .blue)), cellForRow: { (cell, indexPath) in
-            print("Cell Rolling")
+        tableView = GenericTableViewController(grouped: tableModel, attributes: GenericTableViewAttributes(separatorLine: .singleLine, refreshMessage: .config(messgae: "Hey..was up!", tint: .blue)), cellForRow: { (cell, indexPath) in
+            print("Cell rolling")
         }, didSelectRow: { (cell, indexPath) in
-            print("Cell Tapped")
+            print("Cell tapped")
         }, refreshHandler: { (refresh) in
-            print("RefreshControl Pulled")
+            print("Refresh control pulled")
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 refresh.endRefreshing()
-            print("RefreshControl Ended")
+            print("Refresh control ended")
             }
         }, viewForSection: { (header, section) in
-            print("Header View")
+            print("Header view actions")
         }, swipeToDelete: { (tableView, indexPath) in
-            print("swipeToDelete Tapped")
+            print("Swipe to delete tapped")
         })
         
         add(tableView!)

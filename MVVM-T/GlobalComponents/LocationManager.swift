@@ -1,23 +1,7 @@
 import Foundation
-import CoreLocation
-import UIKit
 
-class LocationManager: NSObject {
+class LocationManager {
     
-    private static var sharedInstance: LocationManager?
-    class var shared : LocationManager {
-        
-        guard let instance = self.sharedInstance else {
-            let strongInstance = LocationManager()
-            self.sharedInstance = strongInstance
-            return strongInstance
-        }
-        return instance
-    }
-    
-    class func destroy() {
-        DispatchQueue.main.async() {
-            sharedInstance = nil
-        }
-    }
+    static let shared = LocationManager()
+    private init() {}
 }

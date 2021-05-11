@@ -1,3 +1,5 @@
+import NetworkClient
+
 enum NetworkEnvironment: NetworkEnvironmentProtocol {
     
     case dev

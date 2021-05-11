@@ -6,26 +6,10 @@ enum AnimatedViewMessage {
 
 class AnimatedView: UIView {
     
-    private static var sharedInstance: AnimatedView?
-    
-    class var shared : AnimatedView {
-        guard let instance = self.sharedInstance else {
-            let strongInstance = AnimatedView()
-            self.sharedInstance = strongInstance
-            return strongInstance
-        }
-        return instance
-    }
-    
-    class func destroy() {
-        DispatchQueue.main.async() {
-            sharedInstance = nil
-        }
-    }
-        
+    static let shared = AnimatedView()
     private init() { super.init(frame: .zero)}
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented")}
-
+    
     private static let actualHeight: CGFloat = 60
     
     private lazy var titleLabel: (UIColor, String) -> UILabel = { (textColor, title) in
@@ -119,7 +103,6 @@ private extension AnimatedView {
                                 self?.alpha = 0
                                },completion: { [weak self] (true)  in
                                 self?.removeFromSuperview()
-                                AnimatedView.destroy()
                                })
         }
     }

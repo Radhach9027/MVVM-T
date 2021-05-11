@@ -37,7 +37,6 @@
 		55A5B4A524D67D2B00F10070 /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B4A424D67D2B00F10070 /* NavigationControllerMock.swift */; };
 		55A7F22124D7244A0058629E /* StoryBoardMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7F22024D7244A0058629E /* StoryBoardMock.swift */; };
 		55D3D91F248D4C2B00A20926 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D3D91E248D4C2B00A20926 /* Alert.swift */; };
-		55D3D921248D568500A20926 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D3D920248D568500A20926 /* NetworkReachability.swift */; };
 		55D3D923248D5C5B00A20926 /* AnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D3D922248D5C5B00A20926 /* AnimateView.swift */; };
 		55D3D929248F7B3200A20926 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D3D928248F7B3200A20926 /* LoadingIndicator.swift */; };
 		55D3D92B248F7BFB00A20926 /* LoadingIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D3D92A248F7BFB00A20926 /* LoadingIndicator.xib */; };
@@ -47,23 +46,7 @@
 		925642686C63AB15E571F653 /* Pods_MVVM_T.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBB78B61B259D9E59C9F22B /* Pods_MVVM_T.framework */; };
 		A2314C8625B97B88007962C3 /* CoreDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314C8525B97B88007962C3 /* CoreDataProtocols.swift */; };
 		A2314DD425BC8448007962C3 /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314DD325BC8448007962C3 /* LoginViewModelProtocol.swift */; };
-		A231C3E2254FC1BE008CBED9 /* NetworkParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3DB254FC1BE008CBED9 /* NetworkParserProtocol.swift */; };
-		A231C3E3254FC1BE008CBED9 /* NetworkRequestDispatchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3DC254FC1BE008CBED9 /* NetworkRequestDispatchProtocol.swift */; };
-		A231C3E4254FC1BE008CBED9 /* NetworkRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3DD254FC1BE008CBED9 /* NetworkRequestProtocol.swift */; };
-		A231C3E5254FC1BE008CBED9 /* NetworkSessionTaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3DE254FC1BE008CBED9 /* NetworkSessionTaskProtocol.swift */; };
-		A231C3E6254FC1BE008CBED9 /* NetworkSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3DF254FC1BE008CBED9 /* NetworkSessionProtocol.swift */; };
-		A231C3E7254FC1BE008CBED9 /* NetworkOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3E0254FC1BE008CBED9 /* NetworkOperationProtocol.swift */; };
-		A231C3E8254FC1BE008CBED9 /* NetworkEnvironmentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3E1254FC1BE008CBED9 /* NetworkEnvironmentProtocol.swift */; };
-		A231C3F1254FC1DD008CBED9 /* NetworkRequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3EB254FC1DC008CBED9 /* NetworkRequestMethod.swift */; };
-		A231C3F2254FC1DD008CBED9 /* NetworkOperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3EC254FC1DC008CBED9 /* NetworkOperationResult.swift */; };
 		A231C3F3254FC1DD008CBED9 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3ED254FC1DD008CBED9 /* NetworkEnvironment.swift */; };
-		A231C3F4254FC1DD008CBED9 /* NetworkRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3EE254FC1DD008CBED9 /* NetworkRequestType.swift */; };
-		A231C3F5254FC1DD008CBED9 /* NetworkResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3EF254FC1DD008CBED9 /* NetworkResponseType.swift */; };
-		A231C3F6254FC1DD008CBED9 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3F0254FC1DD008CBED9 /* NetworkError.swift */; };
-		A231C3FB254FC22D008CBED9 /* NetworkTypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3F9254FC22D008CBED9 /* NetworkTypeAlias.swift */; };
-		A231C3FC254FC22D008CBED9 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3FA254FC22D008CBED9 /* NetworkSession.swift */; };
-		A231C400254FC237008CBED9 /* NetworkAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3FF254FC237008CBED9 /* NetworkAction.swift */; };
-		A231C404254FC26C008CBED9 /* NetworkRequestDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C403254FC26C008CBED9 /* NetworkRequestDispatcher.swift */; };
 		A231C411254FC303008CBED9 /* URLSessionUploadTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C40D254FC303008CBED9 /* URLSessionUploadTaskMock.swift */; };
 		A231C412254FC303008CBED9 /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C40E254FC303008CBED9 /* URLSessionDataTaskMock.swift */; };
 		A231C413254FC303008CBED9 /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C40F254FC303008CBED9 /* NetworkSessionMock.swift */; };
@@ -152,6 +135,10 @@
 		A2A95B992645B927009C8DB4 /* GenericCollectionsPackage in Frameworks */ = {isa = PBXBuildFile; productRef = A2A95B982645B927009C8DB4 /* GenericCollectionsPackage */; };
 		A2AF841E24DFE64700BA174F /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */; };
 		A2F2383625C2A54C00C27931 /* SwiftTraveller in Frameworks */ = {isa = PBXBuildFile; productRef = A2F2383525C2A54C00C27931 /* SwiftTraveller */; };
+		A2FB6470264A49FB00ED0084 /* SharedNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB646F264A49FB00ED0084 /* SharedNetworkClient.swift */; };
+		A2FB6474264A6C2F00ED0084 /* UINotifications+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB6473264A6C2F00ED0084 /* UINotifications+Extensions.swift */; };
+		A2FB6475264A6F2300ED0084 /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FB6471264A687D00ED0084 /* NetworkClient.framework */; };
+		A2FB6476264A6F2300ED0084 /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A2FB6471264A687D00ED0084 /* NetworkClient.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +150,20 @@
 			remoteInfo = LasoCare;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A2FB6477264A6F2300ED0084 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A2FB6476264A6F2300ED0084 /* NetworkClient.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		354D7D0A6BFBFCFB871C03AD /* Pods-MVVM-T.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-T.release.xcconfig"; path = "Target Support Files/Pods-MVVM-T/Pods-MVVM-T.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,7 +205,6 @@
 		55A5B4A424D67D2B00F10070 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerMock.swift; sourceTree = "<group>"; };
 		55A7F22024D7244A0058629E /* StoryBoardMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardMock.swift; sourceTree = "<group>"; };
 		55D3D91E248D4C2B00A20926 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		55D3D920248D568500A20926 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		55D3D922248D5C5B00A20926 /* AnimateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateView.swift; sourceTree = "<group>"; };
 		55D3D928248F7B3200A20926 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		55D3D92A248F7BFB00A20926 /* LoadingIndicator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingIndicator.xib; sourceTree = "<group>"; };
@@ -215,23 +215,7 @@
 		6985AF829ABE3D32B098772A /* Pods-MVVM-TTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-TTests.debug.xcconfig"; path = "Target Support Files/Pods-MVVM-TTests/Pods-MVVM-TTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A2314C8525B97B88007962C3 /* CoreDataProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProtocols.swift; sourceTree = "<group>"; };
 		A2314DD325BC8448007962C3 /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
-		A231C3DB254FC1BE008CBED9 /* NetworkParserProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkParserProtocol.swift; sourceTree = "<group>"; };
-		A231C3DC254FC1BE008CBED9 /* NetworkRequestDispatchProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestDispatchProtocol.swift; sourceTree = "<group>"; };
-		A231C3DD254FC1BE008CBED9 /* NetworkRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestProtocol.swift; sourceTree = "<group>"; };
-		A231C3DE254FC1BE008CBED9 /* NetworkSessionTaskProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionTaskProtocol.swift; sourceTree = "<group>"; };
-		A231C3DF254FC1BE008CBED9 /* NetworkSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionProtocol.swift; sourceTree = "<group>"; };
-		A231C3E0254FC1BE008CBED9 /* NetworkOperationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperationProtocol.swift; sourceTree = "<group>"; };
-		A231C3E1254FC1BE008CBED9 /* NetworkEnvironmentProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEnvironmentProtocol.swift; sourceTree = "<group>"; };
-		A231C3EB254FC1DC008CBED9 /* NetworkRequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestMethod.swift; sourceTree = "<group>"; };
-		A231C3EC254FC1DC008CBED9 /* NetworkOperationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperationResult.swift; sourceTree = "<group>"; };
 		A231C3ED254FC1DD008CBED9 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
-		A231C3EE254FC1DD008CBED9 /* NetworkRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestType.swift; sourceTree = "<group>"; };
-		A231C3EF254FC1DD008CBED9 /* NetworkResponseType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseType.swift; sourceTree = "<group>"; };
-		A231C3F0254FC1DD008CBED9 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		A231C3F9254FC22D008CBED9 /* NetworkTypeAlias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTypeAlias.swift; sourceTree = "<group>"; };
-		A231C3FA254FC22D008CBED9 /* NetworkSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
-		A231C3FF254FC237008CBED9 /* NetworkAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAction.swift; sourceTree = "<group>"; };
-		A231C403254FC26C008CBED9 /* NetworkRequestDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestDispatcher.swift; sourceTree = "<group>"; };
 		A231C40D254FC303008CBED9 /* URLSessionUploadTaskMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionUploadTaskMock.swift; sourceTree = "<group>"; };
 		A231C40E254FC303008CBED9 /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
 		A231C40F254FC303008CBED9 /* NetworkSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
@@ -312,6 +296,9 @@
 		A294FC512646C8F50011F0D8 /* TravellerEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravellerEnums.swift; sourceTree = "<group>"; };
 		A294FC522646C8F50011F0D8 /* TravellerProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravellerProtocols.swift; sourceTree = "<group>"; };
 		A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		A2FB646F264A49FB00ED0084 /* SharedNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedNetworkClient.swift; sourceTree = "<group>"; };
+		A2FB6471264A687D00ED0084 /* NetworkClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkClient.framework; sourceTree = "<group>"; };
+		A2FB6473264A6C2F00ED0084 /* UINotifications+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINotifications+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +308,7 @@
 			files = (
 				A25745DC2590E7830009C718 /* SystemConfiguration.framework in Frameworks */,
 				A2A95B992645B927009C8DB4 /* GenericCollectionsPackage in Frameworks */,
+				A2FB6475264A6F2300ED0084 /* NetworkClient.framework in Frameworks */,
 				A233172E262043B00075B82F /* FirebaseAuth in Frameworks */,
 				A25745DA2590E77A0009C718 /* AuthenticationServices.framework in Frameworks */,
 				A23316D5261207400075B82F /* DependencyContainer in Frameworks */,
@@ -404,6 +392,7 @@
 				5548F86A24D7C821009BFCFB /* StringExtensions.swift */,
 				5548F86C24D7C856009BFCFB /* UISegmentControlExtensions.swift */,
 				5548F86E24D7C88A009BFCFB /* UITabBarExtensions.swift */,
+				A2FB6473264A6C2F00ED0084 /* UINotifications+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -444,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				A26E1A202598CB95006A7D63 /* MVVM-T.entitlements */,
+				A2FB6471264A687D00ED0084 /* NetworkClient.framework */,
 				A294FC502646C8E60011F0D8 /* Traveller */,
 				A23316D8261207AA0075B82F /* Dependency */,
 				A25745E12591C12C0009C718 /* SocialProfilesSignIn */,
@@ -512,12 +502,8 @@
 		5537C192248CC35500367F0C /* NetworkClient */ = {
 			isa = PBXGroup;
 			children = (
-				A231C3DA254FC18D008CBED9 /* NetworkReachability */,
-				A231C3D9254FC17F008CBED9 /* NetworkProtocols */,
-				A231C3D8254FC177008CBED9 /* NetworkEnums */,
-				A231C3D7254FC165008CBED9 /* NetworkSession */,
-				A231C3D6254FC157008CBED9 /* NetworkOperation */,
-				A231C3D5254FC13C008CBED9 /* NetworkDispatcher */,
+				A231C3ED254FC1DD008CBED9 /* NetworkEnvironment.swift */,
+				A2FB646F264A49FB00ED0084 /* SharedNetworkClient.swift */,
 			);
 			path = NetworkClient;
 			sourceTree = "<group>";
@@ -629,66 +615,6 @@
 				A2314C8525B97B88007962C3 /* CoreDataProtocols.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		A231C3D5254FC13C008CBED9 /* NetworkDispatcher */ = {
-			isa = PBXGroup;
-			children = (
-				A231C403254FC26C008CBED9 /* NetworkRequestDispatcher.swift */,
-			);
-			path = NetworkDispatcher;
-			sourceTree = "<group>";
-		};
-		A231C3D6254FC157008CBED9 /* NetworkOperation */ = {
-			isa = PBXGroup;
-			children = (
-				A231C3FF254FC237008CBED9 /* NetworkAction.swift */,
-			);
-			path = NetworkOperation;
-			sourceTree = "<group>";
-		};
-		A231C3D7254FC165008CBED9 /* NetworkSession */ = {
-			isa = PBXGroup;
-			children = (
-				A231C3FA254FC22D008CBED9 /* NetworkSession.swift */,
-				A231C3F9254FC22D008CBED9 /* NetworkTypeAlias.swift */,
-			);
-			path = NetworkSession;
-			sourceTree = "<group>";
-		};
-		A231C3D8254FC177008CBED9 /* NetworkEnums */ = {
-			isa = PBXGroup;
-			children = (
-				A231C3ED254FC1DD008CBED9 /* NetworkEnvironment.swift */,
-				A231C3F0254FC1DD008CBED9 /* NetworkError.swift */,
-				A231C3EC254FC1DC008CBED9 /* NetworkOperationResult.swift */,
-				A231C3EB254FC1DC008CBED9 /* NetworkRequestMethod.swift */,
-				A231C3EE254FC1DD008CBED9 /* NetworkRequestType.swift */,
-				A231C3EF254FC1DD008CBED9 /* NetworkResponseType.swift */,
-			);
-			path = NetworkEnums;
-			sourceTree = "<group>";
-		};
-		A231C3D9254FC17F008CBED9 /* NetworkProtocols */ = {
-			isa = PBXGroup;
-			children = (
-				A231C3E1254FC1BE008CBED9 /* NetworkEnvironmentProtocol.swift */,
-				A231C3E0254FC1BE008CBED9 /* NetworkOperationProtocol.swift */,
-				A231C3DB254FC1BE008CBED9 /* NetworkParserProtocol.swift */,
-				A231C3DC254FC1BE008CBED9 /* NetworkRequestDispatchProtocol.swift */,
-				A231C3DD254FC1BE008CBED9 /* NetworkRequestProtocol.swift */,
-				A231C3DF254FC1BE008CBED9 /* NetworkSessionProtocol.swift */,
-				A231C3DE254FC1BE008CBED9 /* NetworkSessionTaskProtocol.swift */,
-			);
-			path = NetworkProtocols;
-			sourceTree = "<group>";
-		};
-		A231C3DA254FC18D008CBED9 /* NetworkReachability */ = {
-			isa = PBXGroup;
-			children = (
-				55D3D920248D568500A20926 /* NetworkReachability.swift */,
-			);
-			path = NetworkReachability;
 			sourceTree = "<group>";
 		};
 		A231C407254FC2C6008CBED9 /* NetworkClientTests */ = {
@@ -849,6 +775,7 @@
 				5537C175248CBE9B00367F0C /* Resources */,
 				65392F31385850EB87D239DE /* [CP] Embed Pods Frameworks */,
 				C02B48B78A562F4C7B3FFE16 /* [CP] Copy Pods Resources */,
+				A2FB6477264A6F2300ED0084 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1052,7 +979,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A26E1A1D2598BE92006A7D63 /* AppleSignIn.swift in Sources */,
-				A231C3E3254FC1BE008CBED9 /* NetworkRequestDispatchProtocol.swift in Sources */,
 				5537C1A0248D085D00367F0C /* JailBrokeCheck.swift in Sources */,
 				5548F86D24D7C856009BFCFB /* UISegmentControlExtensions.swift in Sources */,
 				A26518C52529A0340027A085 /* PopupList.swift in Sources */,
@@ -1062,10 +988,8 @@
 				A2314DD425BC8448007962C3 /* LoginViewModelProtocol.swift in Sources */,
 				A25745E32591C1530009C718 /* GoogleSignIn.swift in Sources */,
 				A257465C25946BF20009C718 /* TabTransistion.swift in Sources */,
-				A231C404254FC26C008CBED9 /* NetworkRequestDispatcher.swift in Sources */,
 				5548F86324D7C6FE009BFCFB /* UITabBarItemExtensions.swift in Sources */,
 				554482A924AEF96F0032E210 /* SectionHeaderView.swift in Sources */,
-				A231C3F2254FC1DD008CBED9 /* NetworkOperationResult.swift in Sources */,
 				A26518E32529A0A00027A085 /* UINavigationControllerExtensions.swift in Sources */,
 				A26518AD25299FA10027A085 /* CustomPageControl.swift in Sources */,
 				A26518C02529A0340027A085 /* DeviceHelper.swift in Sources */,
@@ -1075,9 +999,9 @@
 				A246E61A24E1BC5400D4289F /* AutoLogin.swift in Sources */,
 				A26E1A242598F22F006A7D63 /* AppleSignIn+Extension.swift in Sources */,
 				A246E61824E1BC3800D4289F /* Authentication.swift in Sources */,
-				A231C3E6254FC1BE008CBED9 /* NetworkSessionProtocol.swift in Sources */,
 				A231C3F3254FC1DD008CBED9 /* NetworkEnvironment.swift in Sources */,
 				A294FC532646C8F50011F0D8 /* TravellerEnums.swift in Sources */,
+				A2FB6474264A6C2F00ED0084 /* UINotifications+Extensions.swift in Sources */,
 				A26518C22529A0340027A085 /* ImagePicker.swift in Sources */,
 				A26518C32529A0340027A085 /* DatePicker.swift in Sources */,
 				A25E2C3324E90C19003A8942 /* UIDateExtensions.swift in Sources */,
@@ -1085,22 +1009,18 @@
 				A26518D82529A0A00027A085 /* UIViewExtensions.swift in Sources */,
 				A2651893252999720027A085 /* UserModel.swift in Sources */,
 				A283A03F259B3B07003A073B /* FirebaseSignIn.swift in Sources */,
-				A231C3FB254FC22D008CBED9 /* NetworkTypeAlias.swift in Sources */,
 				5537C17B248CBE9B00367F0C /* AppDelegate.swift in Sources */,
-				A231C3F4254FC1DD008CBED9 /* NetworkRequestType.swift in Sources */,
 				A26519562529B8A60027A085 /* UsersCustomCell.swift in Sources */,
 				55D3D923248D5C5B00A20926 /* AnimateView.swift in Sources */,
-				A231C3FC254FC22D008CBED9 /* NetworkSession.swift in Sources */,
 				55D3D91F248D4C2B00A20926 /* Alert.swift in Sources */,
 				5537C1A2248D088900367F0C /* Keychain.swift in Sources */,
 				5514FA8824948CE000AF78B2 /* LoginViewController.swift in Sources */,
 				A26518E12529A0A00027A085 /* UIButtonExtensions.swift in Sources */,
 				A26518E02529A0A00027A085 /* UIColorExtensions.swift in Sources */,
 				A283A04A259BA0F8003A073B /* SocialSignInDelegates.swift in Sources */,
-				55D3D921248D568500A20926 /* NetworkReachability.swift in Sources */,
 				5514FA912495FBC100AF78B2 /* LoginViewModel.swift in Sources */,
-				A231C3F6254FC1DD008CBED9 /* NetworkError.swift in Sources */,
 				5548F86F24D7C88A009BFCFB /* UITabBarExtensions.swift in Sources */,
+				A2FB6470264A49FB00ED0084 /* SharedNetworkClient.swift in Sources */,
 				5514FA8C2494980E00AF78B2 /* Nib.swift in Sources */,
 				A231C421254FC3F1008CBED9 /* UserService.swift in Sources */,
 				A294FC25264643B30011F0D8 /* DummyModel.swift in Sources */,
@@ -1124,7 +1044,6 @@
 				5533483824A9B42100DFD13E /* LaunchViewController.swift in Sources */,
 				A231C42A254FC89E008CBED9 /* SSLPinningKeys.swift in Sources */,
 				A26518B025299FA10027A085 /* CustomImageView.swift in Sources */,
-				A231C400254FC237008CBED9 /* NetworkAction.swift in Sources */,
 				A26518D72529A0A00027A085 /* UIFontExtensions.swift in Sources */,
 				A26518C72529A0340027A085 /* PublicEnums.swift in Sources */,
 				A26518DF2529A0A00027A085 /* NSAttributedStringExtensions.swift in Sources */,
@@ -1132,25 +1051,18 @@
 				5514FAF524A8599800AF78B2 /* TabBarController.swift in Sources */,
 				A26518B225299FA10027A085 /* CustomTextField.swift in Sources */,
 				A25C0EF224DEC63200E13292 /* HomeDetailsViewController.swift in Sources */,
-				A231C3F5254FC1DD008CBED9 /* NetworkResponseType.swift in Sources */,
-				A231C3E5254FC1BE008CBED9 /* NetworkSessionTaskProtocol.swift in Sources */,
-				A231C3E2254FC1BE008CBED9 /* NetworkParserProtocol.swift in Sources */,
 				A2574662259473090009C718 /* TabFadeAnimation.swift in Sources */,
 				A26518C62529A0340027A085 /* Validator.swift in Sources */,
 				A2604DCA24E58A5300945435 /* BioMetricAuthentication.swift in Sources */,
-				A231C3E4254FC1BE008CBED9 /* NetworkRequestProtocol.swift in Sources */,
 				55D3D929248F7B3200A20926 /* LoadingIndicator.swift in Sources */,
 				5548F86924D7C7D5009BFCFB /* UILabelExtensions.swift in Sources */,
 				A26E1A282599A1DE006A7D63 /* TwitterSignIn.swift in Sources */,
 				A26518DA2529A0A00027A085 /* UINavigationItemExtensions.swift in Sources */,
-				A231C3E8254FC1BE008CBED9 /* NetworkEnvironmentProtocol.swift in Sources */,
 				A26518DC2529A0A00027A085 /* UIResponderExtensions.swift in Sources */,
 				A23316DA261207BB0075B82F /* _Dependencies.swift in Sources */,
-				A231C3F1254FC1DD008CBED9 /* NetworkRequestMethod.swift in Sources */,
 				A2AF841E24DFE64700BA174F /* UserDefaultsHelper.swift in Sources */,
 				5548F86724D7C77E009BFCFB /* UIWindowExtensions.swift in Sources */,
 				A2314C8625B97B88007962C3 /* CoreDataProtocols.swift in Sources */,
-				A231C3E7254FC1BE008CBED9 /* NetworkOperationProtocol.swift in Sources */,
 				A26518AF25299FA10027A085 /* LayoutHelper.swift in Sources */,
 				A294FC542646C8F50011F0D8 /* TravellerProtocols.swift in Sources */,
 				A2651889252998330027A085 /* TabeledCollectionCustomCell.swift in Sources */,
@@ -1330,6 +1242,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/JitsiMeetSDK/Frameworks",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MVVM-T",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/MVVM-T/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1354,6 +1268,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/JitsiMeetSDK/Frameworks",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MVVM-T",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/MVVM-T/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

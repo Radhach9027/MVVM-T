@@ -7,35 +7,28 @@ protocol UserServiceProtocol {
 }
 
 class UserService {
-    
-    @Inject private var requestDispatcher: NetworkRequestDispatcher
-    
-    deinit {
-        print("UserService de-init")
-    }
+    init() { print("UserService init") }
+    deinit { print("UserService de-init") }
 }
 
-extension UserService: UserServiceProtocol, NetworkParserProtocol {
+extension UserService: UserServiceProtocol {
     
     func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?)-> Void) {
         
-        let networkAction = NetworkAction(request: requestType)
+        SharedNetworkClient.shared.injectRequest(request: requestType)
         
-        networkAction.fetch(in: requestDispatcher) { [weak self] result in
+        SharedNetworkClient.shared.networkAction?.fetch(in: SharedNetworkClient.shared.request, completion: { result in
+            
             switch result {
                 case  .json(_, let data):
                     
                     if let data = data {
-                        
-                        let result = self?.convertDataToModel(data: data, decodingType: LoginModel.self)
-                        
+                        let result = SharedNetworkClient.shared.convertDataToModel(data: data, decodingType: LoginModel.self)
                         switch result {
                             case let .success(model):
                                 completion(true, nil, model)
                             case let .failure(error):
                                 completion(false, error, nil)
-                            case .none:
-                                break
                         }
                     }
                 case let .error(error, _, noNetwork):
@@ -43,20 +36,21 @@ extension UserService: UserServiceProtocol, NetworkParserProtocol {
                 default:
                     break
             }
-        }
+        })
     }
     
-    func dowloadFile(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?)-> Void) {
-        let networkAction = NetworkAction(request: requestType)
+    func dowloadFile(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?) -> Void) {
         
-        networkAction.fetch(in: requestDispatcher) { result in
-            
+        SharedNetworkClient.shared.injectRequest(request: requestType)
+        
+        SharedNetworkClient.shared.networkAction?.fetch(in: SharedNetworkClient.shared.request, completion: { result in
             switch result {
                 case let .file(file, response):
                     print("File = \(String(describing: file)), response = \(String(describing: response))")
                 default:
                     break
             }
-        }
+        })
     }
+    
 }
