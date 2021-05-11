@@ -2,7 +2,22 @@ import UIKit
 
 class CustomPopup: UIView, Nib {
     
-    static let shared = CustomPopup()
+    private static var sharedInstance: CustomPopup?
+    
+    class var shared : CustomPopup {
+        guard let instance = self.sharedInstance else {
+            let strongInstance = CustomPopup()
+            self.sharedInstance = strongInstance
+            return strongInstance
+        }
+        return instance
+    }
+    
+    class func destroy() {
+        DispatchQueue.main.async() {
+            sharedInstance = nil
+        }
+    }
     
     private init() {
         super.init(frame: .zero)
@@ -18,6 +33,7 @@ class CustomPopup: UIView, Nib {
     }
     
     deinit {
+        CustomPopup.destroy()
         print("CustomPopup de-init")
     }
     
@@ -48,5 +64,6 @@ private extension CustomPopup {
     
     @IBAction func closeButtonPressed(_ sender: Any) {
         self.dismiss(animate: currentState)
+        CustomPopup.destroy()
     }
 }

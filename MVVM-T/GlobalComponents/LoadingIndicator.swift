@@ -2,14 +2,22 @@ import UIKit
 
 class LoadingIndicator: UIView, Nib {
     
-    static let shared = LoadingIndicator()
-    private init() {
-        super.init(frame: .zero)
-        loadNibFile()
+    private static var sharedInstance: LoadingIndicator?
+    
+    class var shared : LoadingIndicator {
+        
+        guard let instance = self.sharedInstance else {
+            let strongInstance = LoadingIndicator()
+            self.sharedInstance = strongInstance
+            return strongInstance
+        }
+        return instance
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    class func destroy() {
+        DispatchQueue.main.async() {
+            sharedInstance = nil
+        }
     }
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -20,6 +28,16 @@ class LoadingIndicator: UIView, Nib {
     private var status: Bool = false
     private var title: String?
     private var duration: Double = 0.25
+    
+    
+    private init() {
+        super.init(frame: .zero)
+        loadNibFile()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
     func loadNibFile() {
         registerNib()
@@ -69,6 +87,7 @@ private extension LoadingIndicator {
         UIView.animate(withDuration: 0.6, animations: { [weak self] in
             self?.alpha = 0
         }) { [weak self] (true)  in
+            LoadingIndicator.destroy()
             self?.removeFromSuperview()
         }
     }

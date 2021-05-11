@@ -1,7 +1,7 @@
 import UIKit
 import GenericCollectionsPackage
 
-protocol SectionHeaderViewDelegate: class {
+protocol SectionHeaderViewDelegate: AnyObject {
     func headerTapped()
 }
 

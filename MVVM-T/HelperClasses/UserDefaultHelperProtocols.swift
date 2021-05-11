@@ -7,7 +7,7 @@ protocol UserDefaultsHelperProtocol {
     func dataSynchronize()
 }
 
-protocol UserDefaultsProtocol: class {
+protocol UserDefaultsProtocol: AnyObject {
     func set(_ value: Any?, forKey defaultName: String)
     func object(forKey defaultName: String) -> Any?
     @discardableResult
@@ -15,11 +15,11 @@ protocol UserDefaultsProtocol: class {
     func removeObject(forKey defaultName: String)
 }
 
-protocol PropertListEncoderProtocol: class {
+protocol PropertListEncoderProtocol: AnyObject {
     func encode<Value>(_ value: Value) throws -> Data where Value : Encodable
 }
 
-protocol PropertyListDecoderProtocol: class {
+protocol PropertyListDecoderProtocol: AnyObject {
     func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable
 }
 

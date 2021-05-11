@@ -1,7 +1,21 @@
 import Foundation
 
-class LocationManager {
+class LocationManager: NSObject {
     
-    static let shared = LocationManager()
-    private init() {}
+    private static var sharedInstance: LocationManager?
+    class var shared : LocationManager {
+        
+        guard let instance = self.sharedInstance else {
+            let strongInstance = LocationManager()
+            self.sharedInstance = strongInstance
+            return strongInstance
+        }
+        return instance
+    }
+    
+    class func destroy() {
+        DispatchQueue.main.async() {
+            sharedInstance = nil
+        }
+    }
 }

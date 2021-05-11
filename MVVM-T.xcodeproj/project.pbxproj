@@ -47,11 +47,6 @@
 		A2314C8625B97B88007962C3 /* CoreDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314C8525B97B88007962C3 /* CoreDataProtocols.swift */; };
 		A2314DD425BC8448007962C3 /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314DD325BC8448007962C3 /* LoginViewModelProtocol.swift */; };
 		A231C3F3254FC1DD008CBED9 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3ED254FC1DD008CBED9 /* NetworkEnvironment.swift */; };
-		A231C411254FC303008CBED9 /* URLSessionUploadTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C40D254FC303008CBED9 /* URLSessionUploadTaskMock.swift */; };
-		A231C412254FC303008CBED9 /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C40E254FC303008CBED9 /* URLSessionDataTaskMock.swift */; };
-		A231C413254FC303008CBED9 /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C40F254FC303008CBED9 /* NetworkSessionMock.swift */; };
-		A231C414254FC303008CBED9 /* URLSessionDownloadTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C410254FC303008CBED9 /* URLSessionDownloadTaskMock.swift */; };
-		A231C41A254FC31C008CBED9 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C419254FC31C008CBED9 /* NetworkClientTests.swift */; };
 		A231C421254FC3F1008CBED9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C41F254FC3F0008CBED9 /* UserService.swift */; };
 		A231C422254FC3F1008CBED9 /* UserServiceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C420254FC3F1008CBED9 /* UserServiceEndPoint.swift */; };
 		A231C42A254FC89E008CBED9 /* SSLPinningKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C429254FC89E008CBED9 /* SSLPinningKeys.swift */; };
@@ -216,11 +211,6 @@
 		A2314C8525B97B88007962C3 /* CoreDataProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProtocols.swift; sourceTree = "<group>"; };
 		A2314DD325BC8448007962C3 /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		A231C3ED254FC1DD008CBED9 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
-		A231C40D254FC303008CBED9 /* URLSessionUploadTaskMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionUploadTaskMock.swift; sourceTree = "<group>"; };
-		A231C40E254FC303008CBED9 /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
-		A231C40F254FC303008CBED9 /* NetworkSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
-		A231C410254FC303008CBED9 /* URLSessionDownloadTaskMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionDownloadTaskMock.swift; sourceTree = "<group>"; };
-		A231C419254FC31C008CBED9 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		A231C41F254FC3F0008CBED9 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A231C420254FC3F1008CBED9 /* UserServiceEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServiceEndPoint.swift; sourceTree = "<group>"; };
 		A231C429254FC89E008CBED9 /* SSLPinningKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLPinningKeys.swift; sourceTree = "<group>"; };
@@ -543,7 +533,6 @@
 			children = (
 				A246E61124E1624F00D4289F /* UserDefaultsHelperTests */,
 				55A5B49F24D67CA000F10070 /* TravellerTests */,
-				A231C407254FC2C6008CBED9 /* NetworkClientTests */,
 				55A5B49924D67C9400F10070 /* Info.plist */,
 			);
 			path = "MVVM-TTests";
@@ -615,26 +604,6 @@
 				A2314C8525B97B88007962C3 /* CoreDataProtocols.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		A231C407254FC2C6008CBED9 /* NetworkClientTests */ = {
-			isa = PBXGroup;
-			children = (
-				A231C408254FC2D2008CBED9 /* NetworkMocks */,
-				A231C419254FC31C008CBED9 /* NetworkClientTests.swift */,
-			);
-			path = NetworkClientTests;
-			sourceTree = "<group>";
-		};
-		A231C408254FC2D2008CBED9 /* NetworkMocks */ = {
-			isa = PBXGroup;
-			children = (
-				A231C40F254FC303008CBED9 /* NetworkSessionMock.swift */,
-				A231C40E254FC303008CBED9 /* URLSessionDataTaskMock.swift */,
-				A231C410254FC303008CBED9 /* URLSessionDownloadTaskMock.swift */,
-				A231C40D254FC303008CBED9 /* URLSessionUploadTaskMock.swift */,
-			);
-			path = NetworkMocks;
 			sourceTree = "<group>";
 		};
 		A23316D8261207AA0075B82F /* Dependency */ = {
@@ -1078,16 +1047,11 @@
 			files = (
 				55A5B4A324D67CCD00F10070 /* TravellerTests.swift in Sources */,
 				A246E61524E16C6B00D4289F /* UserDefaultsMocks.swift in Sources */,
-				A231C411254FC303008CBED9 /* URLSessionUploadTaskMock.swift in Sources */,
 				55A5B4A524D67D2B00F10070 /* NavigationControllerMock.swift in Sources */,
 				A246E61324E1627700D4289F /* UserDefaultsHelperTests.swift in Sources */,
 				A25C0EEE24DC747F00E13292 /* ViewControllerMock.swift in Sources */,
-				A231C414254FC303008CBED9 /* URLSessionDownloadTaskMock.swift in Sources */,
 				55A7F22124D7244A0058629E /* StoryBoardMock.swift in Sources */,
-				A231C413254FC303008CBED9 /* NetworkSessionMock.swift in Sources */,
 				A25C0EF024DE6F5400E13292 /* WindowMock.swift in Sources */,
-				A231C412254FC303008CBED9 /* URLSessionDataTaskMock.swift in Sources */,
-				A231C41A254FC31C008CBED9 /* NetworkClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

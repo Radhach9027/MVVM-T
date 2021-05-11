@@ -57,11 +57,11 @@ extension UIViewController {
     }
 }
 
-protocol TextFieldViewTouchabilityDelegates: class {
+protocol TextFieldViewTouchabilityDelegates: AnyObject {
     func rightViewTapped()
 }
 
-protocol KeyBoardListenerDelegates: class {
+protocol KeyBoardListenerDelegates: AnyObject {
     func keyBoardShow(_ notification: Notification)
     func keyBoardHide(_ notification: Notification)
 }
