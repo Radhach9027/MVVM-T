@@ -17,7 +17,7 @@ extension UserService: UserServiceProtocol {
         
         SharedNetworkClient.shared.injectRequest(request: requestType)
         
-        SharedNetworkClient.shared.networkAction?.fetch(in: SharedNetworkClient.shared.request, completion: { result in
+        SharedNetworkClient.shared.networkAction?.fetch(in: SharedNetworkClient.shared.networkRequest, completion: { result in
             
             switch result {
                 case  .json(_, let data):
@@ -43,7 +43,7 @@ extension UserService: UserServiceProtocol {
         
         SharedNetworkClient.shared.injectRequest(request: requestType)
         
-        SharedNetworkClient.shared.networkAction?.fetch(in: SharedNetworkClient.shared.request, completion: { result in
+        SharedNetworkClient.shared.networkAction?.fetch(in: SharedNetworkClient.shared.networkRequest, completion: { result in
             switch result {
                 case let .file(file, response):
                     print("File = \(String(describing: file)), response = \(String(describing: response))")

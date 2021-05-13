@@ -4,7 +4,6 @@ import DependencyContainer
 class LoginViewController: UIViewController {
                 
     @Inject private var viewModel: LoginViewModelProtocol
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,9 +12,7 @@ class LoginViewController: UIViewController {
         let letterCount = letters.reduce(into: [:]) { counts, letter in
             counts[letter, default: 0] += 1
         }
-        
         print(letterCount)
-        
     }
     
     deinit {
@@ -30,15 +27,14 @@ extension LoginViewController: TravellerProtocol {
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        self.startLoading(show: true, animate: true, message: "Fetching...")
+        ResuableComponents.shared.presentLoadingIndicator(steps: .start(animate: true))
         self.viewModel.fetchUser(requestType: .all, completion: { [weak self] (status, error) in
-            self?.startLoading(show: false, animate: false)
-            
+            ResuableComponents.shared.presentLoadingIndicator(steps: .end)
             if status == true {
                 self?.storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: false, hidesBottomBar: false)
             } else {
                 guard let errorMessage = error?.localizedDescription else { return }
-                self?.presentAlert(errorMessage)
+                ResuableComponents.shared.presentAlert(title: "Alert", message: errorMessage, controller: self!)
             }
         })
     }
@@ -76,7 +72,7 @@ extension LoginViewController: LoginViewModelDelegate {
     }
     
     func signInFailure(_ error: String) {
-        presentAlert(error)
+        ResuableComponents.shared.presentAlert(title: "Alert", message: error, controller: self)
     }
 }
 

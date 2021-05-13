@@ -14,12 +14,12 @@ class SharedNetworkClient {
     
     static let shared = SharedNetworkClient()
     private init() {
-        request = NetworkRequestDispatcher(environment: NetworkEnvironment.dev, networkSession: NetworkSession().session!)
+        networkRequest = NetworkRequestDispatcher(environment: NetworkEnvironment.dev, networkSession: NetworkSession().session!)
     }
     
     #endif
 
-    public var request: NetworkRequestDispatcher
+    public var networkRequest: NetworkRequestDispatcher
     public var networkAction: NetworkAction?
     public var isNetworkReachable = NetworkReachability.shared.isReachable
     

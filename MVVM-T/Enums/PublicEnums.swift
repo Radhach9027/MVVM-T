@@ -39,61 +39,9 @@ enum AppFontName: String {
     case semiBold = "KohinoorDevanagari-Semibold"
 }
 
-enum AnimatePosition {
-    case top, bottom, middle
-}
-
-enum NetworkMessages: String {
-    
-    case internet = "Hey Seems to have good internet connectivity..Let's ride the app..😃"
-    case noInternet = "As it seems there is no network connection available on the device, please check and try again..😟"
-    case error = "Oops...Something went wrong, Please try again."
-    
-    func AnimatedIcons () -> UIImage {
-        switch self {
-        case .noInternet:
-            return UIImage(named: "NoInternet")!
-        case .internet:
-            return UIImage(named: "Internet")!
-        case .error:
-            return UIImage(named: "error")!
-        }
-    }
-    
-    enum ApiError {
-        case api(Error)
-
-        func errorMessages() -> String {
-            switch self {
-            case let .api(error):
-                return error.localizedDescription
-            }
-        }
-    }
-}
-
 enum Transform {
     case show
     case hide
-}
-
-enum LoadingSteps {
-    case start(animate: Bool)
-    case end
-    case success(animate: Bool)
-    case failure(animate: Bool)
-}
-
-enum CustomPopupAnimateOptions {
-    case affineIn
-    case crossDisolve
-    case affineOut
-    case bounce
-}
-
-enum PopupListTypes: String {
-    case City
-    case State
 }
 
 enum GenderSpecification: String {

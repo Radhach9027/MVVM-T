@@ -78,8 +78,8 @@
         "repositoryURL": "https://github.com/google/GoogleUtilities.git",
         "state": {
           "branch": null,
-          "revision": "66f5945ac3a4c4ac268bf94c31f226116b14e327",
-          "version": "7.4.0"
+          "revision": "58359415d4ea29ebdc8fa5b41ce96c434d76d901",
+          "version": "7.4.1"
         }
       },
       {
@@ -134,6 +134,15 @@
           "branch": null,
           "revision": "c01bbdf2d633cf049ae1ed1a68a2020a8bda32e2",
           "version": "5.1.0"
+        }
+      },
+      {
+        "package": "ReusableComponentsSwift",
+        "repositoryURL": "https://github.com/Radhach9027/ReusableComponentsSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "8422264f7854669c944b5a09042e3044dc5dc763",
+          "version": "0.0.4"
         }
       },
       {

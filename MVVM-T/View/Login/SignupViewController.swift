@@ -30,6 +30,6 @@ extension SignupViewController: FireBaseSignInDelegate {
     }
     
     func signInFailure(_ error: String) {
-        presentAlert(error)
+        print("Error")
     }
 }

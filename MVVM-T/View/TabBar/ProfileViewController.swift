@@ -16,7 +16,7 @@ extension ProfileViewController: BarButtonActions, TravellerProtocol {
     
     @IBAction func logOutBackButtonPressed(_ sender: UIButton) {
         if let error = AutoLogin().logOut() {
-            presentAlert(error)
+            ResuableComponents.shared.presentAlert(title: "Error", message: error, controller: self)
         }
     }
 }

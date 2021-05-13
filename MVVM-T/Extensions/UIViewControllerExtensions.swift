@@ -39,19 +39,6 @@ extension UIViewController {
         return true
     }
     
-    func startLoading(show: Bool, animate: Bool, message: String = "Loading..", success: Bool? = nil) {
-        if show {
-            LoadingIndicator.shared.loading(step: .start(animate: animate), title: message)
-        } else {
-            guard let success = success else { return LoadingIndicator.shared.loading(step: .end)}
-            LoadingIndicator.shared.loading(step: success ? .success(animate: animate): .failure(animate: animate))
-        }
-    }
-    
-    func presentAlert(_ message: String) {
-        Alert.presentAlert(withTitle: "Alert", message: message, controller: self)
-    }
-    
     func endEditing() {
         self.view.endEditing(true)
     }
