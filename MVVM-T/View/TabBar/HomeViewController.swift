@@ -16,13 +16,13 @@ extension HomeViewController: TravellerProtocol {
     }
     
     @IBAction func slideViewButtonPressed(_ sender: UIButton) {
-        ResuableComponents.shared.slideView(messgae: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", controller: self)
+        ResuableComponents.shared.slideView(messgae: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", controller: self)
     }
     
     @IBAction func loadingButtonPressed(_ sender: UIButton) {
         ResuableComponents.shared.presentLoadingIndicator(steps: .start(animate: true))
         DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-            ResuableComponents.shared.presentLoadingIndicator(steps: .success(animate: true, color: .systemGreen))
+            ResuableComponents.shared.dismissLoadingIndicator(steps: .success(animate: true, color: .systemGreen))
         }
     }
 }

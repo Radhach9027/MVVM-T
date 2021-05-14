@@ -4,10 +4,10 @@ import UIKit
 class ResuableComponents {
     
     static let shared = ResuableComponents()
+    private var loadingIndicator: LoadingIndicator?
+    private var customPopup: CustomPopup?
     
-    private init() {
-        //LoadingIndicator.shared.config(window: UIWindow.window!)
-    }
+    private init() {}
     
     func presentAlert(title: String, message: String, controller: UIViewController) {
         Alert.presentAlert(withTitle: title, message: message, controller: controller)
@@ -20,7 +20,8 @@ class ResuableComponents {
     }
     
     func presentCustomPopup(message: String, animate: CustomPopupAnimateOptions) {
-        CustomPopup.shared.present(message: message, animate: animate)
+        customPopup = CustomPopup(window: UIWindow.window!)
+        customPopup?.present(message: message, animate: animate)
     }
     
     func slideView(messgae: String, position: AnimatePosition = .top, controller: UIViewController) {
@@ -28,7 +29,11 @@ class ResuableComponents {
     }
     
     func presentLoadingIndicator(steps: LoadingSteps) {
-        LoadingIndicator.shared.config(window: UIWindow.window!)
-        LoadingIndicator.shared.loading(step: steps)
+         loadingIndicator = LoadingIndicator(window: UIWindow.window!)
+         loadingIndicator?.loading(step: steps)
+    }
+    
+    func dismissLoadingIndicator(steps: LoadingSteps) {
+        loadingIndicator?.loading(step: steps)
     }
 }

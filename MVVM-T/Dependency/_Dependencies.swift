@@ -22,6 +22,5 @@ struct _Dependencies: DependencyProtocol {
     }
     
     static func clearDependencies() {
-        //_Dependencies.dependcies.remove()
     }
 }
