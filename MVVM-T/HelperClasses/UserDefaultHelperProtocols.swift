@@ -3,6 +3,8 @@ import Foundation
 protocol UserDefaultsHelperProtocol {
     func set<T : Codable>(for type : T, using key : UserDefaultsKeys)
     func get<T : Codable>(for type : T.Type, using key : UserDefaultsKeys) -> T?
+    func setAny(for value: Any, using key: UserDefaultsKeys)
+    func getAny<T>(using key: UserDefaultsKeys) -> T?
     func clear(forKey key: UserDefaultsKeys)
     func dataSynchronize()
 }

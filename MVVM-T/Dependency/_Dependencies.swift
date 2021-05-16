@@ -9,7 +9,6 @@ protocol DependencyProtocol {
 struct _Dependencies: DependencyProtocol {
     //***** Add all you'r story dependcies here
 
-    
     private static let dependcies = Dependencies {
         Dependency {FirebaseSignIn() as FirebaseProtocol}
         Dependency {LoginViewModel() as LoginViewModelProtocol}
