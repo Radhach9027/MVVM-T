@@ -1,5 +1,6 @@
 import Firebase
 import UIKit
+import ReusableComponentsSwift
 
 open class FirebaseSignIn {
     

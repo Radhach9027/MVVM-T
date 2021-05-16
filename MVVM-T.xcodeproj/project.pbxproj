@@ -22,7 +22,6 @@
 		5537C184248CBE9C00367F0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5537C183248CBE9C00367F0C /* Assets.xcassets */; };
 		5537C187248CBE9C00367F0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5537C185248CBE9C00367F0C /* LaunchScreen.storyboard */; };
 		5537C1A0248D085D00367F0C /* JailBrokeCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5537C19F248D085D00367F0C /* JailBrokeCheck.swift */; };
-		5537C1A2248D088900367F0C /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5537C1A1248D088900367F0C /* Keychain.swift */; };
 		5537C1A4248D092A00367F0C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5537C1A3248D092A00367F0C /* Configuration.swift */; };
 		554482A924AEF96F0032E210 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554482A824AEF96F0032E210 /* SectionHeaderView.swift */; };
 		554482AB24AEF9880032E210 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 554482AA24AEF9880032E210 /* SectionHeaderView.xib */; };
@@ -38,6 +37,7 @@
 		7CEA7B33A17E0AA8D1A03F42 /* Pods_MVVM_TTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 622409390331086E44E5F725 /* Pods_MVVM_TTests.framework */; };
 		925642686C63AB15E571F653 /* Pods_MVVM_T.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBB78B61B259D9E59C9F22B /* Pods_MVVM_T.framework */; };
 		A21244932650DB68004532C9 /* NetworkClientPackage in Frameworks */ = {isa = PBXBuildFile; productRef = A21244922650DB68004532C9 /* NetworkClientPackage */; };
+		A21244962650E784004532C9 /* ReusableComponentsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A21244952650E784004532C9 /* ReusableComponentsSwift */; };
 		A2314C8625B97B88007962C3 /* CoreDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314C8525B97B88007962C3 /* CoreDataProtocols.swift */; };
 		A2314DD425BC8448007962C3 /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314DD325BC8448007962C3 /* LoginViewModelProtocol.swift */; };
 		A231C3F3254FC1DD008CBED9 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3ED254FC1DD008CBED9 /* NetworkEnvironment.swift */; };
@@ -101,7 +101,6 @@
 		A26E1A242598F22F006A7D63 /* AppleSignIn+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E1A232598F22F006A7D63 /* AppleSignIn+Extension.swift */; };
 		A26E1A282599A1DE006A7D63 /* TwitterSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E1A272599A1DE006A7D63 /* TwitterSignIn.swift */; };
 		A26E1A2C2599CCFC006A7D63 /* SocialSignInProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E1A2B2599CCFC006A7D63 /* SocialSignInProtocols.swift */; };
-		A282FA16264CD19C000BE398 /* ReusableComponentsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A282FA15264CD19C000BE398 /* ReusableComponentsSwift */; };
 		A282FA19264CD1CD000BE398 /* ReusableComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282FA18264CD1CD000BE398 /* ReusableComponents.swift */; };
 		A283A03F259B3B07003A073B /* FirebaseSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A283A03E259B3B07003A073B /* FirebaseSignIn.swift */; };
 		A283A04A259BA0F8003A073B /* SocialSignInDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A283A049259BA0F8003A073B /* SocialSignInDelegates.swift */; };
@@ -146,7 +145,6 @@
 		5537C186248CBE9C00367F0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5537C188248CBE9C00367F0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5537C19F248D085D00367F0C /* JailBrokeCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailBrokeCheck.swift; sourceTree = "<group>"; };
-		5537C1A1248D088900367F0C /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		5537C1A3248D092A00367F0C /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		5537C1A5248D096300367F0C /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		5537C1A6248D09A300367F0C /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -250,11 +248,11 @@
 				A25745DA2590E77A0009C718 /* AuthenticationServices.framework in Frameworks */,
 				A21244932650DB68004532C9 /* NetworkClientPackage in Frameworks */,
 				A23316D5261207400075B82F /* DependencyContainer in Frameworks */,
+				A21244962650E784004532C9 /* ReusableComponentsSwift in Frameworks */,
 				A2F2383625C2A54C00C27931 /* SwiftTraveller in Frameworks */,
 				A25745D82590E7700009C718 /* SafariServices.framework in Frameworks */,
 				A2604DCC24E58A7200945435 /* LocalAuthentication.framework in Frameworks */,
 				925642686C63AB15E571F653 /* Pods_MVVM_T.framework in Frameworks */,
-				A282FA16264CD19C000BE398 /* ReusableComponentsSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +445,6 @@
 			children = (
 				A231C429254FC89E008CBED9 /* SSLPinningKeys.swift */,
 				5537C19F248D085D00367F0C /* JailBrokeCheck.swift */,
-				5537C1A1248D088900367F0C /* Keychain.swift */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -690,8 +687,8 @@
 				A2F2383525C2A54C00C27931 /* SwiftTraveller */,
 				A23316D4261207400075B82F /* DependencyContainer */,
 				A2A95B982645B927009C8DB4 /* GenericCollectionsPackage */,
-				A282FA15264CD19C000BE398 /* ReusableComponentsSwift */,
 				A21244922650DB68004532C9 /* NetworkClientPackage */,
+				A21244952650E784004532C9 /* ReusableComponentsSwift */,
 			);
 			productName = LasoCare;
 			productReference = 5537C177248CBE9B00367F0C /* MVVM-T.app */;
@@ -748,8 +745,8 @@
 				A2F2383425C2A54C00C27931 /* XCRemoteSwiftPackageReference "SwiftTraveller" */,
 				A23316D3261207400075B82F /* XCRemoteSwiftPackageReference "DependencyContainer" */,
 				A2A95B972645B926009C8DB4 /* XCRemoteSwiftPackageReference "GenericCollectionsPackage" */,
-				A282FA14264CD19C000BE398 /* XCRemoteSwiftPackageReference "ReusableComponentsSwift" */,
 				A21244912650DB68004532C9 /* XCRemoteSwiftPackageReference "NetworkClientPackage" */,
+				A21244942650E784004532C9 /* XCRemoteSwiftPackageReference "ReusableComponentsSwift" */,
 			);
 			productRefGroup = 5537C178248CBE9B00367F0C /* Products */;
 			projectDirPath = "";
@@ -900,7 +897,6 @@
 				A283A03F259B3B07003A073B /* FirebaseSignIn.swift in Sources */,
 				5537C17B248CBE9B00367F0C /* AppDelegate.swift in Sources */,
 				A26519562529B8A60027A085 /* UsersCustomCell.swift in Sources */,
-				5537C1A2248D088900367F0C /* Keychain.swift in Sources */,
 				5514FA8824948CE000AF78B2 /* LoginViewController.swift in Sources */,
 				A26518E12529A0A00027A085 /* UIButtonExtensions.swift in Sources */,
 				A26518E02529A0A00027A085 /* UIColorExtensions.swift in Sources */,
@@ -1248,20 +1244,20 @@
 				minimumVersion = 0.0.1;
 			};
 		};
+		A21244942650E784004532C9 /* XCRemoteSwiftPackageReference "ReusableComponentsSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Radhach9027/ReusableComponentsSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		A23316D3261207400075B82F /* XCRemoteSwiftPackageReference "DependencyContainer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Radhach9027/DependencyContainer.git";
 			requirement = {
 				branch = master;
 				kind = branch;
-			};
-		};
-		A282FA14264CD19C000BE398 /* XCRemoteSwiftPackageReference "ReusableComponentsSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Radhach9027/ReusableComponentsSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
 			};
 		};
 		A2A95B972645B926009C8DB4 /* XCRemoteSwiftPackageReference "GenericCollectionsPackage" */ = {
@@ -1288,15 +1284,15 @@
 			package = A21244912650DB68004532C9 /* XCRemoteSwiftPackageReference "NetworkClientPackage" */;
 			productName = NetworkClientPackage;
 		};
+		A21244952650E784004532C9 /* ReusableComponentsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A21244942650E784004532C9 /* XCRemoteSwiftPackageReference "ReusableComponentsSwift" */;
+			productName = ReusableComponentsSwift;
+		};
 		A23316D4261207400075B82F /* DependencyContainer */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A23316D3261207400075B82F /* XCRemoteSwiftPackageReference "DependencyContainer" */;
 			productName = DependencyContainer;
-		};
-		A282FA15264CD19C000BE398 /* ReusableComponentsSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A282FA14264CD19C000BE398 /* XCRemoteSwiftPackageReference "ReusableComponentsSwift" */;
-			productName = ReusableComponentsSwift;
 		};
 		A2A95B982645B927009C8DB4 /* GenericCollectionsPackage */ = {
 			isa = XCSwiftPackageProductDependency;
