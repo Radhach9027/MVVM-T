@@ -1,4 +1,4 @@
-import NetworkClient
+import NetworkClientPackage
 
 enum NetworkEnvironment: NetworkEnvironmentProtocol {
     

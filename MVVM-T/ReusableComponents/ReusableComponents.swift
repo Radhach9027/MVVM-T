@@ -9,11 +9,11 @@ class ResuableComponents {
     
     private init() {}
     
-    func presentAlert(title: String, message: String, controller: UIViewController) {
+    func presentAlert(title: String = "Alert", message: String, controller: UIViewController) {
         Alert.presentAlert(withTitle: title, message: message, controller: controller)
     }
 
-    func presentAlertAction(title: String, message: String, actionTitle: String? = nil, controller: UIViewController, completion: @escaping((UIAlertAction) -> Void)) {
+    func presentAlertAction(title: String = "Alert", message: String, actionTitle: String? = nil, controller: UIViewController, completion: @escaping((UIAlertAction) -> Void)) {
         Alert.presentAlert(withTitle: title, message: message, actionParameters: [AlertParameters(title: actionTitle ?? "Ok", action: { (action) in
             completion(action)
         }, preferredAction: true, actionStyle: .destructive)], controller: controller, style: .alert)

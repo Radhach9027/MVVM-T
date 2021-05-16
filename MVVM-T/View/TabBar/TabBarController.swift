@@ -30,7 +30,6 @@ extension TabBarController: UITabBarControllerDelegate, TravellerProtocol {
     }
 
     func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        //return TabTransition(viewControllers: tabBarController.viewControllers)
         return TabFadeAnimation()
     }
     

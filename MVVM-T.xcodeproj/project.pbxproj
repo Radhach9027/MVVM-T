@@ -37,6 +37,7 @@
 		55A7F22124D7244A0058629E /* StoryBoardMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7F22024D7244A0058629E /* StoryBoardMock.swift */; };
 		7CEA7B33A17E0AA8D1A03F42 /* Pods_MVVM_TTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 622409390331086E44E5F725 /* Pods_MVVM_TTests.framework */; };
 		925642686C63AB15E571F653 /* Pods_MVVM_T.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBB78B61B259D9E59C9F22B /* Pods_MVVM_T.framework */; };
+		A21244932650DB68004532C9 /* NetworkClientPackage in Frameworks */ = {isa = PBXBuildFile; productRef = A21244922650DB68004532C9 /* NetworkClientPackage */; };
 		A2314C8625B97B88007962C3 /* CoreDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314C8525B97B88007962C3 /* CoreDataProtocols.swift */; };
 		A2314DD425BC8448007962C3 /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2314DD325BC8448007962C3 /* LoginViewModelProtocol.swift */; };
 		A231C3F3254FC1DD008CBED9 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C3ED254FC1DD008CBED9 /* NetworkEnvironment.swift */; };
@@ -45,12 +46,6 @@
 		A231C42A254FC89E008CBED9 /* SSLPinningKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231C429254FC89E008CBED9 /* SSLPinningKeys.swift */; };
 		A23316D5261207400075B82F /* DependencyContainer in Frameworks */ = {isa = PBXBuildFile; productRef = A23316D4261207400075B82F /* DependencyContainer */; };
 		A23316DA261207BB0075B82F /* _Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23316D9261207BB0075B82F /* _Dependencies.swift */; };
-		A233170E26203C7B0075B82F /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = A233170D26203C7B0075B82F /* Reachability */; };
-		A233172C262043B00075B82F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A233172B262043B00075B82F /* FirebaseAnalytics */; };
-		A233172E262043B00075B82F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A233172D262043B00075B82F /* FirebaseAuth */; };
-		A2331741262045200075B82F /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = A2331740262045200075B82F /* SwiftKeychainWrapper */; };
-		A233175326207D600075B82F /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = A233175226207D600075B82F /* FacebookCore */; };
-		A233175526207D600075B82F /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = A233175426207D600075B82F /* FacebookLogin */; };
 		A246E61024E161D800D4289F /* UserDefaultHelperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E60F24E161D800D4289F /* UserDefaultHelperProtocols.swift */; };
 		A246E61324E1627700D4289F /* UserDefaultsHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E61224E1627700D4289F /* UserDefaultsHelperTests.swift */; };
 		A246E61524E16C6B00D4289F /* UserDefaultsMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E61424E16C6B00D4289F /* UserDefaultsMocks.swift */; };
@@ -119,8 +114,6 @@
 		A2F2383625C2A54C00C27931 /* SwiftTraveller in Frameworks */ = {isa = PBXBuildFile; productRef = A2F2383525C2A54C00C27931 /* SwiftTraveller */; };
 		A2FB6470264A49FB00ED0084 /* SharedNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB646F264A49FB00ED0084 /* SharedNetworkClient.swift */; };
 		A2FB6474264A6C2F00ED0084 /* UINotifications+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB6473264A6C2F00ED0084 /* UINotifications+Extensions.swift */; };
-		A2FB6482264AA16C00ED0084 /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FB6480264AA16500ED0084 /* NetworkClient.framework */; };
-		A2FB6483264AA16C00ED0084 /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A2FB6480264AA16500ED0084 /* NetworkClient.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,20 +125,6 @@
 			remoteInfo = LasoCare;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		A2FB6477264A6F2300ED0084 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A2FB6483264AA16C00ED0084 /* NetworkClient.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		354D7D0A6BFBFCFB871C03AD /* Pods-MVVM-T.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-T.release.xcconfig"; path = "Target Support Files/Pods-MVVM-T/Pods-MVVM-T.release.xcconfig"; sourceTree = "<group>"; };
@@ -261,7 +240,6 @@
 		A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		A2FB646F264A49FB00ED0084 /* SharedNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedNetworkClient.swift; sourceTree = "<group>"; };
 		A2FB6473264A6C2F00ED0084 /* UINotifications+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINotifications+Extensions.swift"; sourceTree = "<group>"; };
-		A2FB6480264AA16500ED0084 /* NetworkClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkClient.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,20 +249,14 @@
 			files = (
 				A25745DC2590E7830009C718 /* SystemConfiguration.framework in Frameworks */,
 				A2A95B992645B927009C8DB4 /* GenericCollectionsPackage in Frameworks */,
-				A2FB6482264AA16C00ED0084 /* NetworkClient.framework in Frameworks */,
-				A233172E262043B00075B82F /* FirebaseAuth in Frameworks */,
 				A25745DA2590E77A0009C718 /* AuthenticationServices.framework in Frameworks */,
+				A21244932650DB68004532C9 /* NetworkClientPackage in Frameworks */,
 				A23316D5261207400075B82F /* DependencyContainer in Frameworks */,
 				A2F2383625C2A54C00C27931 /* SwiftTraveller in Frameworks */,
 				A25745D82590E7700009C718 /* SafariServices.framework in Frameworks */,
-				A233170E26203C7B0075B82F /* Reachability in Frameworks */,
-				A233175526207D600075B82F /* FacebookLogin in Frameworks */,
-				A233175326207D600075B82F /* FacebookCore in Frameworks */,
 				A2604DCC24E58A7200945435 /* LocalAuthentication.framework in Frameworks */,
 				925642686C63AB15E571F653 /* Pods_MVVM_T.framework in Frameworks */,
 				A282FA16264CD19C000BE398 /* ReusableComponentsSwift in Frameworks */,
-				A2331741262045200075B82F /* SwiftKeychainWrapper in Frameworks */,
-				A233172C262043B00075B82F /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +369,6 @@
 			isa = PBXGroup;
 			children = (
 				A26E1A202598CB95006A7D63 /* MVVM-T.entitlements */,
-				A2FB6480264AA16500ED0084 /* NetworkClient.framework */,
 				A282FA17264CD1B1000BE398 /* ReusableComponents */,
 				A294FC502646C8E60011F0D8 /* Traveller */,
 				A23316D8261207AA0075B82F /* Dependency */,
@@ -712,7 +683,6 @@
 				5537C175248CBE9B00367F0C /* Resources */,
 				65392F31385850EB87D239DE /* [CP] Embed Pods Frameworks */,
 				C02B48B78A562F4C7B3FFE16 /* [CP] Copy Pods Resources */,
-				A2FB6477264A6F2300ED0084 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -722,14 +692,9 @@
 			packageProductDependencies = (
 				A2F2383525C2A54C00C27931 /* SwiftTraveller */,
 				A23316D4261207400075B82F /* DependencyContainer */,
-				A233170D26203C7B0075B82F /* Reachability */,
-				A233172B262043B00075B82F /* FirebaseAnalytics */,
-				A233172D262043B00075B82F /* FirebaseAuth */,
-				A2331740262045200075B82F /* SwiftKeychainWrapper */,
-				A233175226207D600075B82F /* FacebookCore */,
-				A233175426207D600075B82F /* FacebookLogin */,
 				A2A95B982645B927009C8DB4 /* GenericCollectionsPackage */,
 				A282FA15264CD19C000BE398 /* ReusableComponentsSwift */,
+				A21244922650DB68004532C9 /* NetworkClientPackage */,
 			);
 			productName = LasoCare;
 			productReference = 5537C177248CBE9B00367F0C /* MVVM-T.app */;
@@ -785,12 +750,9 @@
 			packageReferences = (
 				A2F2383425C2A54C00C27931 /* XCRemoteSwiftPackageReference "SwiftTraveller" */,
 				A23316D3261207400075B82F /* XCRemoteSwiftPackageReference "DependencyContainer" */,
-				A233170C26203C7B0075B82F /* XCRemoteSwiftPackageReference "Reachability" */,
-				A233172A262043B00075B82F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				A233173F262045200075B82F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
-				A233175126207D5F0075B82F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				A2A95B972645B926009C8DB4 /* XCRemoteSwiftPackageReference "GenericCollectionsPackage" */,
 				A282FA14264CD19C000BE398 /* XCRemoteSwiftPackageReference "ReusableComponentsSwift" */,
+				A21244912650DB68004532C9 /* XCRemoteSwiftPackageReference "NetworkClientPackage" */,
 			);
 			productRefGroup = 5537C178248CBE9B00367F0C /* Products */;
 			projectDirPath = "";
@@ -1282,44 +1244,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A21244912650DB68004532C9 /* XCRemoteSwiftPackageReference "NetworkClientPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Radhach9027/NetworkClientPackage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
 		A23316D3261207400075B82F /* XCRemoteSwiftPackageReference "DependencyContainer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Radhach9027/DependencyContainer.git";
 			requirement = {
 				branch = master;
 				kind = branch;
-			};
-		};
-		A233170C26203C7B0075B82F /* XCRemoteSwiftPackageReference "Reachability" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.0;
-			};
-		};
-		A233172A262043B00075B82F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.10.0;
-			};
-		};
-		A233173F262045200075B82F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.1;
-			};
-		};
-		A233175126207D5F0075B82F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.1.0;
 			};
 		};
 		A282FA14264CD19C000BE398 /* XCRemoteSwiftPackageReference "ReusableComponentsSwift" */ = {
@@ -1349,40 +1287,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A21244922650DB68004532C9 /* NetworkClientPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A21244912650DB68004532C9 /* XCRemoteSwiftPackageReference "NetworkClientPackage" */;
+			productName = NetworkClientPackage;
+		};
 		A23316D4261207400075B82F /* DependencyContainer */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A23316D3261207400075B82F /* XCRemoteSwiftPackageReference "DependencyContainer" */;
 			productName = DependencyContainer;
-		};
-		A233170D26203C7B0075B82F /* Reachability */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A233170C26203C7B0075B82F /* XCRemoteSwiftPackageReference "Reachability" */;
-			productName = Reachability;
-		};
-		A233172B262043B00075B82F /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A233172A262043B00075B82F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		A233172D262043B00075B82F /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A233172A262043B00075B82F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		A2331740262045200075B82F /* SwiftKeychainWrapper */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A233173F262045200075B82F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
-			productName = SwiftKeychainWrapper;
-		};
-		A233175226207D600075B82F /* FacebookCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A233175126207D5F0075B82F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookCore;
-		};
-		A233175426207D600075B82F /* FacebookLogin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A233175126207D5F0075B82F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookLogin;
 		};
 		A282FA15264CD19C000BE398 /* ReusableComponentsSwift */ = {
 			isa = XCSwiftPackageProductDependency;

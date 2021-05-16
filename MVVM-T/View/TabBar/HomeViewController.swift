@@ -8,7 +8,7 @@ extension HomeViewController: TravellerProtocol {
     }
     
     @IBAction func alertButtonPressed(_ sender: UIButton) {
-        ResuableComponents.shared.presentAlert(title: "Hey Alert..!", message: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", controller: self)
+        ResuableComponents.shared.presentAlert(message: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", controller: self)
     }
     
     @IBAction func popUpButtonPressed(_ sender: UIButton) {

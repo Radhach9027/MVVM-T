@@ -1,5 +1,5 @@
 import Foundation
-import NetworkClient
+import NetworkClientPackage
 
 enum UserServiceEndPoint {
     case all

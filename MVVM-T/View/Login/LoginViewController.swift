@@ -7,12 +7,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let letters = "abracadabra"
-        let letterCount = letters.reduce(into: [:]) { counts, letter in
-            counts[letter, default: 0] += 1
-        }
-        print(letterCount)
     }
     
     deinit {
@@ -34,7 +28,7 @@ extension LoginViewController: TravellerProtocol {
                 self?.storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: false, hidesBottomBar: false)
             } else {
                 guard let errorMessage = error?.localizedDescription else { return }
-                ResuableComponents.shared.presentAlert(title: "Alert", message: errorMessage, controller: self!)
+                ResuableComponents.shared.presentAlert(message: errorMessage, controller: self!)
             }
         })
     }
@@ -72,7 +66,7 @@ extension LoginViewController: LoginViewModelDelegate {
     }
     
     func signInFailure(_ error: String) {
-        ResuableComponents.shared.presentAlert(title: "Alert", message: error, controller: self)
+        ResuableComponents.shared.presentAlert(message: error, controller: self)
     }
 }
 

@@ -5,11 +5,24 @@ target 'MVVM-T' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   
+  # Pods for Keychain
+  pod 'SwiftKeychainWrapper', '~> 3.4'
+  
+  # Pods for Firebase
+  pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
+  
   # Pods for Google
   pod 'GoogleSignIn'
   
   # Pods for Twitter
   pod 'TwitterKit'
+  
+  
+  # Pods for Facebook
+  pod 'Bolts'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
 
 
   target 'MVVM-TTests' do
