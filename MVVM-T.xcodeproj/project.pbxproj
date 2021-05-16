@@ -49,7 +49,6 @@
 		A246E61024E161D800D4289F /* UserDefaultHelperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E60F24E161D800D4289F /* UserDefaultHelperProtocols.swift */; };
 		A246E61324E1627700D4289F /* UserDefaultsHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E61224E1627700D4289F /* UserDefaultsHelperTests.swift */; };
 		A246E61524E16C6B00D4289F /* UserDefaultsMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E61424E16C6B00D4289F /* UserDefaultsMocks.swift */; };
-		A246E61824E1BC3800D4289F /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E61724E1BC3800D4289F /* Authentication.swift */; };
 		A246E61A24E1BC5400D4289F /* AutoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E61924E1BC5400D4289F /* AutoLogin.swift */; };
 		A25745D82590E7700009C718 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25745D72590E7700009C718 /* SafariServices.framework */; };
 		A25745DA2590E77A0009C718 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25745D92590E77A0009C718 /* AuthenticationServices.framework */; };
@@ -177,7 +176,6 @@
 		A246E60F24E161D800D4289F /* UserDefaultHelperProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelperProtocols.swift; sourceTree = "<group>"; };
 		A246E61224E1627700D4289F /* UserDefaultsHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelperTests.swift; sourceTree = "<group>"; };
 		A246E61424E16C6B00D4289F /* UserDefaultsMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMocks.swift; sourceTree = "<group>"; };
-		A246E61724E1BC3800D4289F /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		A246E61924E1BC5400D4289F /* AutoLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLogin.swift; sourceTree = "<group>"; };
 		A25745D72590E7700009C718 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		A25745D92590E77A0009C718 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
@@ -557,7 +555,6 @@
 		A246E61624E1BC1E00D4289F /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				A246E61724E1BC3800D4289F /* Authentication.swift */,
 				A246E61924E1BC5400D4289F /* AutoLogin.swift */,
 				A2604DC924E58A5300945435 /* BioMetricAuthentication.swift */,
 			);
@@ -893,7 +890,6 @@
 				A265190C2529A8C60027A085 /* SomeX.xcdatamodeld in Sources */,
 				A246E61A24E1BC5400D4289F /* AutoLogin.swift in Sources */,
 				A26E1A242598F22F006A7D63 /* AppleSignIn+Extension.swift in Sources */,
-				A246E61824E1BC3800D4289F /* Authentication.swift in Sources */,
 				A231C3F3254FC1DD008CBED9 /* NetworkEnvironment.swift in Sources */,
 				A294FC532646C8F50011F0D8 /* TravellerEnums.swift in Sources */,
 				A2FB6474264A6C2F00ED0084 /* UINotifications+Extensions.swift in Sources */,
