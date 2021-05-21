@@ -3,22 +3,4 @@
    uuid = "BE8AB7E3-D730-4EEE-ABDE-21968F486B8B"
    type = "0"
    version = "2.0">
-   <Breakpoints>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "60C7CF3F-1F72-45A0-A6FD-17EFBC552C98"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/MVVM-T-bsdwjukvoqgeyxglillvfntmiyoq/SourcePackages/checkouts/ReusableComponentsSwift/Sources/ReusableComponentsSwift/LoadingIndicator/LoadingIndicator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "init(window:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-   </Breakpoints>
 </Bucket>

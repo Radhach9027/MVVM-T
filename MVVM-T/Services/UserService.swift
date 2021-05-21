@@ -16,7 +16,6 @@ extension UserService: UserServiceProtocol {
     func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?)-> Void) {
         
         SharedNetworkClient.shared.injectRequest(request: requestType)
-        
         SharedNetworkClient.shared.networkAction?.fetch(in: SharedNetworkClient.shared.networkRequest, completion: { result in
             
             switch result {
@@ -42,7 +41,6 @@ extension UserService: UserServiceProtocol {
     func dowloadFile(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?) -> Void) {
         
         SharedNetworkClient.shared.injectRequest(request: requestType)
-        
         SharedNetworkClient.shared.networkAction?.fetch(in: SharedNetworkClient.shared.networkRequest, completion: { result in
             switch result {
                 case let .file(file, response):

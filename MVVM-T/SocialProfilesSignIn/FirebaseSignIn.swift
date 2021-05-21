@@ -23,7 +23,6 @@ open class FirebaseSignIn {
 extension FirebaseSignIn: FirebaseProtocol {
     
     func signIn(signInType: SocialSignInType, delgate: FireBaseSignInDelegate) {
-        
         self.delegate = delgate
         
         switch signInType {

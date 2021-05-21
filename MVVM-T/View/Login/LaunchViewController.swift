@@ -5,6 +5,10 @@ class LaunchViewController: UIViewController {
     deinit {
         print("LaunchViewController de-init")
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
 
 extension LaunchViewController: TravellerProtocol {

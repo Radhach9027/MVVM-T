@@ -1,26 +1,12 @@
 import Foundation
 import CoreData
 
-final class PersistentStorage {
-    private init(){}
+public final class PersistentStorage {
     
-    private static var sharedInstance: PersistentStorage?
+    public static let shared = PersistentStorage()
+    
+    private init() {}
 
-    class var shared : PersistentStorage {
-        guard let instance = self.sharedInstance else {
-            let strongInstance = PersistentStorage()
-            self.sharedInstance = strongInstance
-            return strongInstance
-        }
-        return instance
-    }
-    
-    class func destroy() {
-        DispatchQueue.main.async() {
-            sharedInstance = nil
-        }
-    }
-    
     lazy var context = persistentContainer.viewContext
     
     lazy var persistentContainer: NSPersistentContainer = {
