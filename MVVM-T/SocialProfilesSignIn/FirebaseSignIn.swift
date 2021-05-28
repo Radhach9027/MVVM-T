@@ -104,9 +104,9 @@ private extension FirebaseSignIn {
 extension FirebaseSignIn: SocialProfilesSignInDelegate {
     
     func signInSuccess(credential: AuthCredential, signInType: SocialSignInType) {
-        ResuableComponents.shared.presentLoadingIndicator(steps: .start(animate: true))
+        UIWindow.showLoading(steps: .start(animate: true))
         Auth.auth().signIn(with: credential) { [weak self] (result, error) in
-            ResuableComponents.shared.presentLoadingIndicator(steps: .end)
+            UIWindow.showLoading(steps: .end)
             if error == nil {
                 Keychain.storeData(value: signInType, key: FirebaseKeys.signInType.rawValue)
                 self?.delegate?.signInSuccess()

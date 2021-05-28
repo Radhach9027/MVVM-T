@@ -101,7 +101,6 @@
 		A26E1A242598F22F006A7D63 /* AppleSignIn+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E1A232598F22F006A7D63 /* AppleSignIn+Extension.swift */; };
 		A26E1A282599A1DE006A7D63 /* TwitterSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E1A272599A1DE006A7D63 /* TwitterSignIn.swift */; };
 		A26E1A2C2599CCFC006A7D63 /* SocialSignInProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E1A2B2599CCFC006A7D63 /* SocialSignInProtocols.swift */; };
-		A282FA19264CD1CD000BE398 /* ReusableComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282FA18264CD1CD000BE398 /* ReusableComponents.swift */; };
 		A283A03F259B3B07003A073B /* FirebaseSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A283A03E259B3B07003A073B /* FirebaseSignIn.swift */; };
 		A283A04A259BA0F8003A073B /* SocialSignInDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A283A049259BA0F8003A073B /* SocialSignInDelegates.swift */; };
 		A294FC25264643B30011F0D8 /* DummyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294FC24264643B30011F0D8 /* DummyModel.swift */; };
@@ -227,7 +226,6 @@
 		A26E1A232598F22F006A7D63 /* AppleSignIn+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppleSignIn+Extension.swift"; sourceTree = "<group>"; };
 		A26E1A272599A1DE006A7D63 /* TwitterSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterSignIn.swift; sourceTree = "<group>"; };
 		A26E1A2B2599CCFC006A7D63 /* SocialSignInProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignInProtocols.swift; sourceTree = "<group>"; };
-		A282FA18264CD1CD000BE398 /* ReusableComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableComponents.swift; sourceTree = "<group>"; };
 		A283A03E259B3B07003A073B /* FirebaseSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSignIn.swift; sourceTree = "<group>"; };
 		A283A049259BA0F8003A073B /* SocialSignInDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignInDelegates.swift; sourceTree = "<group>"; };
 		A294FC24264643B30011F0D8 /* DummyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyModel.swift; sourceTree = "<group>"; };
@@ -365,7 +363,6 @@
 			isa = PBXGroup;
 			children = (
 				A26E1A202598CB95006A7D63 /* MVVM-T.entitlements */,
-				A282FA17264CD1B1000BE398 /* ReusableComponents */,
 				A294FC502646C8E60011F0D8 /* Traveller */,
 				A23316D8261207AA0075B82F /* Dependency */,
 				A25745E12591C12C0009C718 /* SocialProfilesSignIn */,
@@ -638,14 +635,6 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		A282FA17264CD1B1000BE398 /* ReusableComponents */ = {
-			isa = PBXGroup;
-			children = (
-				A282FA18264CD1CD000BE398 /* ReusableComponents.swift */,
-			);
-			path = ReusableComponents;
-			sourceTree = "<group>";
-		};
 		A294FC502646C8E60011F0D8 /* Traveller */ = {
 			isa = PBXGroup;
 			children = (
@@ -912,7 +901,6 @@
 				A26E19D125986BFD006A7D63 /* FacebookSignIn.swift in Sources */,
 				A26E1A2C2599CCFC006A7D63 /* SocialSignInProtocols.swift in Sources */,
 				A26518DE2529A0A00027A085 /* ArrayExtensions.swift in Sources */,
-				A282FA19264CD1CD000BE398 /* ReusableComponents.swift in Sources */,
 				A231C422254FC3F1008CBED9 /* UserServiceEndPoint.swift in Sources */,
 				A26518D92529A0A00027A085 /* UIViewControllerExtensions.swift in Sources */,
 				5537C1A4248D092A00367F0C /* Configuration.swift in Sources */,

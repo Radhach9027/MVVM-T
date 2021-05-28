@@ -14,21 +14,22 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController: TravellerProtocol {
+extension LoginViewController {
     
     @IBAction func popBackButtonPressed(_ sender: UIButton) {
         pop(type: .launch, root: false)
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        ResuableComponents.shared.presentLoadingIndicator(steps: .start(animate: true))
+        UIWindow.showLoading(steps: .start(animate: true))
+        
         self.viewModel.fetchUser(requestType: .all, completion: { [weak self] (status, error) in
-            ResuableComponents.shared.presentLoadingIndicator(steps: .end)
+            UIWindow.showLoading(steps: .end)
             if status == true {
                 self?.storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: false, hidesBottomBar: false)
             } else {
                 guard let errorMessage = error?.localizedDescription else { return }
-                ResuableComponents.shared.presentAlert(message: errorMessage, controller: self!)
+                UIWindow.showAlert(message: errorMessage)
             }
         })
     }
@@ -66,7 +67,7 @@ extension LoginViewController: LoginViewModelDelegate {
     }
     
     func signInFailure(_ error: String) {
-        ResuableComponents.shared.presentAlert(message: error, controller: self)
+        UIWindow.showAlert(message: error)
     }
 }
 

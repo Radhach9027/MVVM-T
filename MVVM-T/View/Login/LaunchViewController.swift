@@ -11,7 +11,7 @@ class LaunchViewController: UIViewController {
     }
 }
 
-extension LaunchViewController: TravellerProtocol {
+extension LaunchViewController {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         push(type: .login, animated: true, hidesTopBar: true, hidesBottomBar: false)

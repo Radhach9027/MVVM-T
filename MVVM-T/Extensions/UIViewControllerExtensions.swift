@@ -1,5 +1,6 @@
 import UIKit
 
+// MARK: ADDING CHILDS & CONSTRAINTS
 extension UIViewController {
     
     func add(_ child: UIViewController) {
@@ -44,11 +45,18 @@ extension UIViewController {
     }
 }
 
+
+// MARK: TEXTFIELD LISTERNERS
 protocol TextFieldViewTouchabilityDelegates: AnyObject {
     func rightViewTapped()
 }
 
+// MARK: KEYPAD LISTERNERS
 protocol KeyBoardListenerDelegates: AnyObject {
     func keyBoardShow(_ notification: Notification)
     func keyBoardHide(_ notification: Notification)
 }
+
+
+// MARK: NAVIGATION
+extension UIViewController: TravellerProtocol {}

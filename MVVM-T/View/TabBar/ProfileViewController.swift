@@ -8,7 +8,7 @@ class ProfileViewController: UIViewController, BarButtonItemConfiguration {
     }
 }
 
-extension ProfileViewController: BarButtonActions, TravellerProtocol {
+extension ProfileViewController: BarButtonActions {
     
     func showNotification(_ sender: AnyObject) {
         present(type: .detail, animated: true, hidesTopBar: false, hidesBottomBar: false)
@@ -16,7 +16,7 @@ extension ProfileViewController: BarButtonActions, TravellerProtocol {
     
     @IBAction func logOutBackButtonPressed(_ sender: UIButton) {
         if let error = AutoLogin().logOut() {
-            ResuableComponents.shared.presentAlert(title: "Error", message: error, controller: self)
+            UIWindow.showAlert(message: error, title: "Error")
         }
     }
 }

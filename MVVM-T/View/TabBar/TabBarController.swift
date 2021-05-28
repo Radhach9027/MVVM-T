@@ -22,7 +22,7 @@ extension TabBarController {
     }
 }
 
-extension TabBarController: UITabBarControllerDelegate, TravellerProtocol {
+extension TabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if let navigation = tabBarController.selectedViewController as? UINavigationController {
            config(navigation: navigation)

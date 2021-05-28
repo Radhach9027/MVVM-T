@@ -11,7 +11,7 @@ class SignupViewController: UIViewController {
     }
 }
 
-extension SignupViewController: TravellerProtocol {
+extension SignupViewController {
     
     @IBAction func popBackButtonPressed(_ sender: UIButton) {
         dismiss()
