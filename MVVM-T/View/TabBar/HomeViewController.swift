@@ -3,6 +3,7 @@ import UIKit
 class HomeViewController: UIViewController {}
 
 extension HomeViewController {
+    
     @IBAction func homeDetailsButtonPressed(_ sender: UIButton) {
         push(type: .detail, animated: true, hidesTopBar: false, hidesBottomBar: false)
     }

@@ -2,7 +2,7 @@ import UIKit
 import DependencyContainer
 
 class LoginViewController: UIViewController {
-                
+    
     @Inject private var viewModel: LoginViewModelProtocol
     
     override func viewDidLoad() {
@@ -22,40 +22,40 @@ extension LoginViewController {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         UIWindow.showLoading(steps: .start(animate: true))
-        
-        self.viewModel.fetchUser(requestType: .all, completion: { [weak self] (status, error) in
+                
+        viewModel.fetchUser(requestType: .all, completion: { [weak self] (status, error) in
             UIWindow.showLoading(steps: .end)
+            
             if status == true {
                 self?.storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: false, hidesBottomBar: false)
             } else {
-                guard let errorMessage = error?.localizedDescription else { return }
-                UIWindow.showAlert(message: errorMessage)
+                UIWindow.showAlert(message: error.debugDescription)
             }
         })
     }
     
     @IBAction func singInWithGoogle(_ sender: UIButton) {
-        self.viewModel.socialProfileSignIn(signInType: .google, delegate: self)
+        viewModel.socialProfileSignIn(signInType: .google, delegate: self)
     }
     
     @IBAction func facebookSignInButtonPressed(_ sender: UIButton) {
-        self.viewModel.socialProfileSignIn(signInType: .facebook, delegate: self)
+        viewModel.socialProfileSignIn(signInType: .facebook, delegate: self)
     }
     
     @IBAction func appleSignInButtonPressed(_ sender: UIButton) {
-        self.viewModel.socialProfileSignIn(signInType: .apple, delegate: self)
+        viewModel.socialProfileSignIn(signInType: .apple, delegate: self)
     }
     
     @IBAction func twitterSignInButtonPressed(_ sender: UIButton) {
-        self.viewModel.socialProfileSignIn(signInType: .twitter, delegate: self)
+        viewModel.socialProfileSignIn(signInType: .twitter, delegate: self)
     }
     
     @IBAction func microsoftSignInButtonPressed(_ sender: UIButton) {
-        self.viewModel.socialProfileSignIn(signInType: .microsoft, delegate: self)
+        viewModel.socialProfileSignIn(signInType: .microsoft, delegate: self)
     }
     
     @IBAction func githubSignInButtonPressed(_ sender: UIButton) {
-        self.viewModel.socialProfileSignIn(signInType: .github, delegate: self)
+        viewModel.socialProfileSignIn(signInType: .github, delegate: self)
     }
 }
 
@@ -63,7 +63,7 @@ extension LoginViewController: LoginViewModelDelegate {
     
     func signInSuccess() {
         print("Current User = \(String(describing: FirebaseSignIn.currentUser?.displayName))")
-        self.storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: false, hidesBottomBar: false)
+        storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: false, hidesBottomBar: false)
     }
     
     func signInFailure(_ error: String) {

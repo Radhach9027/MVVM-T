@@ -24,7 +24,15 @@ class HomeDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addTableView()
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.addTableView()
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        tableView = nil
     }
 }
 

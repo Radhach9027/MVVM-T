@@ -21,8 +21,8 @@ protocol TravellerProtocol {
     func unWind(story: Stories, type: Destinations)
 }
 
-//mark: Traveller Config
-//Note: Especially when re-route is required for instance., like TabBar
+//MARK: Traveller Config
+//MARK: Especially when re-route is required for instance., like TabBar
 
 extension TravellerProtocol {
     
@@ -32,7 +32,7 @@ extension TravellerProtocol {
     }
 }
 
-//mark: Story Switching
+//MARK: Story Switching
 
 extension TravellerProtocol {
     
@@ -42,7 +42,7 @@ extension TravellerProtocol {
     }
 }
 
-//mark: Push&Pop
+//MARK: Push&Pop
 
 extension TravellerProtocol {
     
@@ -60,7 +60,7 @@ extension TravellerProtocol {
     }
 }
 
-//mark: Present&Dismiss
+//MARK: Present&Dismiss
 
 extension TravellerProtocol {
     
@@ -73,7 +73,7 @@ extension TravellerProtocol {
     }
 }
 
-//mark: Add Child&Remove Child
+//MARK: Add Child&Remove Child
 
 extension TravellerProtocol {
     
@@ -86,7 +86,7 @@ extension TravellerProtocol {
     }
 }
 
-//mark: Perform Segue&Unwind
+//MARK: Perform Segue&Unwind
 
 extension TravellerProtocol {
     

@@ -44,17 +44,6 @@ enum Transform {
     case hide
 }
 
-enum GenderSpecification: String {
-    case gender = "Gender Specifications"
-    case male = "Male"
-    case female = "Female"
-    case donotSpecify = "I prefer not to say"
-}
-
-enum ProfileServiceCases {
-    case create
-}
-
 enum GoogleSignInMessages: String {
     case noUserExists = "The user has not signed in before or they have since signed out."
     case userFailure = "Authentication Success, but unable to fetch user..!"
