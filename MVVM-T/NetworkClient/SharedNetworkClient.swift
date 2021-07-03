@@ -1,10 +1,10 @@
 import NetworkClientPackage
 
-class SharedNetworkClient {
+class NetworkClient {
     
     #if TEST // use just for mocking purpose when doing unit_testing the app
     
-    static var shared: SharedNetworkClient!
+    static var shared: NetworkClient!
     
     override init() {
         super.init()
@@ -12,20 +12,16 @@ class SharedNetworkClient {
     
     #else
     
-    static let shared = SharedNetworkClient()
+    static let shared = NetworkClient()
     private init() {
-        networkRequest = NetworkRequestDispatcher(environment: NetworkEnvironment.dev, networkSession: NetworkSession().session!)
+        requestDispatcher = NetworkRequestDispatcher(environment: NetworkEnvironment.dev, networkSession: NetworkSession().session!)
     }
     
     #endif
 
-    public var networkRequest: NetworkRequestDispatcher
-    public var networkAction: NetworkAction?
-    public var isNetworkReachable = NetworkReachability.shared.isReachable
-    
-    func injectRequest(request: NetworkRequestProtocol) {
-        networkAction = NetworkAction(request: request)
-    }
+    public var requestDispatcher: NetworkRequestDispatcher
+    public lazy var networkAction = NetworkAction()
+    public lazy var isNetworkReachable = NetworkReachability.shared.isReachable
 }
 
-extension SharedNetworkClient: NetworkParserProtocol {}
+extension NetworkClient: NetworkParserProtocol {}
