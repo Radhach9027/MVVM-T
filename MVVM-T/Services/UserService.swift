@@ -4,12 +4,7 @@ protocol UserServiceProtocol {
     func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (ServiceResult)-> Void)
 }
 
-class UserService {
-    init() { print("UserService init") }
-    deinit { print("UserService de-init") }
-}
-
-extension UserService: UserServiceProtocol {
+struct UserService: UserServiceProtocol {
     
     func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (ServiceResult)-> Void) {
         
