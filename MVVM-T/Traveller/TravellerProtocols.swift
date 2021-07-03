@@ -13,7 +13,6 @@ protocol TravellerProtocol {
     func present(type: Destinations, animated: Bool, hidesTopBar: Bool, hidesBottomBar: Bool)
     func dismiss()
     
-    
     func addChild(type: Destinations)
     func removeChild()
     
