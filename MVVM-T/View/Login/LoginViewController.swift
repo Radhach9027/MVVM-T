@@ -22,14 +22,15 @@ extension LoginViewController {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         UIWindow.showLoading(steps: .start(animate: true))
-                
-        viewModel.fetchUser(requestType: .all, completion: { [weak self] (status, error) in
+        
+        viewModel.fetchUser(requestType: .all, completion: { [weak self] result in
             UIWindow.showLoading(steps: .end)
             
-            if status == true {
-                self?.storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: false, hidesBottomBar: false)
-            } else {
-                UIWindow.showAlert(message: error.debugDescription)
+            switch result {
+                case .success(_):
+                    self?.storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: false, hidesBottomBar: false)
+                case let .error(error):
+                    UIWindow.showAlert(message: error.debugDescription)
             }
         })
     }

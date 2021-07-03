@@ -15,22 +15,8 @@ class LoginViewModel {
 
 extension LoginViewModel: LoginViewModelProtocol {
     
-    func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?)-> Void) {
-        
-        userService.fetchUser(requestType: requestType, completion: { [weak self] (success, error, model) in
-            
-            if let error = error, model == nil {
-                completion(false, error)
-                
-            } else {
-                
-                if let userModel = model as? Users {
-                    print("Modify the data accordingly")
-                    self?.userManager.createUser(endUser: userModel)
-                }
-                completion(true, nil)
-            }
-        })
+    func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (ServiceResult)-> Void) {
+        userService.fetchUser(requestType: requestType, completion: completion) // if you want to perform any storage operations or response manipluations, open the block
     }
     
     func socialProfileSignIn(signInType: SocialSignInType, delegate: LoginViewModelDelegate) {

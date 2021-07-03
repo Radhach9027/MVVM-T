@@ -1,9 +1,7 @@
 import Foundation
-import DependencyContainer
 
 protocol UserServiceProtocol {
-    func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?)-> Void)
-    func dowloadFile(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?)-> Void)
+    func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (ServiceResult)-> Void)
 }
 
 class UserService {
@@ -13,38 +11,28 @@ class UserService {
 
 extension UserService: UserServiceProtocol {
     
-    func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?)-> Void) {
+    func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (ServiceResult)-> Void) {
         
+        //TODO: Move this line to functional
         SharedNetworkClient.shared.injectRequest(request: requestType)
         SharedNetworkClient.shared.networkAction?.fetch(in: SharedNetworkClient.shared.networkRequest, completion: { result in
             
             switch result {
+                case .noInterNet(let message):
+                    completion(.error(message?.rawValue))
                 case  .json(_, let data):
                     
                     if let data = data {
                         let result = SharedNetworkClient.shared.convertDataToModel(data: data, decodingType: LoginModel.self)
                         switch result {
                             case let .success(model):
-                                completion(true, nil, model)
+                                completion(.success(model))
                             case let .failure(error):
-                                completion(false, error, nil)
+                                completion(.error(error.localizedDescription))
                         }
                     }
-                case let .error(error, _, noNetwork):
-                    completion(false, error, noNetwork)
-                default:
-                    break
-            }
-        })
-    }
-    
-    func dowloadFile(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?) -> Void) {
-        
-        SharedNetworkClient.shared.injectRequest(request: requestType)
-        SharedNetworkClient.shared.networkAction?.fetch(in: SharedNetworkClient.shared.networkRequest, completion: { result in
-            switch result {
-                case let .file(file, response):
-                    print("File = \(String(describing: file)), response = \(String(describing: response))")
+                case let .error(error, _):
+                    completion(.error(error.debugDescription))
                 default:
                     break
             }

@@ -1,5 +1,5 @@
 protocol LoginViewModelProtocol {
-    func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?)-> Void)
+    func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (ServiceResult)-> Void)
     func socialProfileSignIn(signInType: SocialSignInType, delegate: LoginViewModelDelegate)
 }
 

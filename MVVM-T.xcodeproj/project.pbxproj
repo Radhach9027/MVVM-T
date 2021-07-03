@@ -50,6 +50,7 @@
 		A246E61324E1627700D4289F /* UserDefaultsHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E61224E1627700D4289F /* UserDefaultsHelperTests.swift */; };
 		A246E61524E16C6B00D4289F /* UserDefaultsMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E61424E16C6B00D4289F /* UserDefaultsMocks.swift */; };
 		A246E61A24E1BC5400D4289F /* AutoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246E61924E1BC5400D4289F /* AutoLogin.swift */; };
+		A24B071726901E8100119B72 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B071626901E8100119B72 /* ServiceResult.swift */; };
 		A25745D82590E7700009C718 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25745D72590E7700009C718 /* SafariServices.framework */; };
 		A25745DA2590E77A0009C718 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25745D92590E77A0009C718 /* AuthenticationServices.framework */; };
 		A25745DC2590E7830009C718 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25745DB2590E7830009C718 /* SystemConfiguration.framework */; };
@@ -174,6 +175,7 @@
 		A246E61224E1627700D4289F /* UserDefaultsHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelperTests.swift; sourceTree = "<group>"; };
 		A246E61424E16C6B00D4289F /* UserDefaultsMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMocks.swift; sourceTree = "<group>"; };
 		A246E61924E1BC5400D4289F /* AutoLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLogin.swift; sourceTree = "<group>"; };
+		A24B071626901E8100119B72 /* ServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
 		A25745D72590E7700009C718 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		A25745D92590E77A0009C718 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		A25745DB2590E7830009C718 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -584,6 +586,7 @@
 			children = (
 				A231C41F254FC3F0008CBED9 /* UserService.swift */,
 				A231C420254FC3F1008CBED9 /* UserServiceEndPoint.swift */,
+				A24B071626901E8100119B72 /* ServiceResult.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -861,6 +864,7 @@
 			files = (
 				A26E1A1D2598BE92006A7D63 /* AppleSignIn.swift in Sources */,
 				5537C1A0248D085D00367F0C /* JailBrokeCheck.swift in Sources */,
+				A24B071726901E8100119B72 /* ServiceResult.swift in Sources */,
 				5548F86D24D7C856009BFCFB /* UISegmentControlExtensions.swift in Sources */,
 				A25C0EF424DED62100E13292 /* ForgotPasswordViewController.swift in Sources */,
 				A26518B325299FA10027A085 /* CustomButton.swift in Sources */,
