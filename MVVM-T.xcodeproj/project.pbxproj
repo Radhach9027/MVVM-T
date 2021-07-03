@@ -110,7 +110,7 @@
 		A2A95B992645B927009C8DB4 /* GenericCollectionsPackage in Frameworks */ = {isa = PBXBuildFile; productRef = A2A95B982645B927009C8DB4 /* GenericCollectionsPackage */; };
 		A2AF841E24DFE64700BA174F /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */; };
 		A2F2383625C2A54C00C27931 /* SwiftTraveller in Frameworks */ = {isa = PBXBuildFile; productRef = A2F2383525C2A54C00C27931 /* SwiftTraveller */; };
-		A2FB6470264A49FB00ED0084 /* SharedNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB646F264A49FB00ED0084 /* SharedNetworkClient.swift */; };
+		A2FB6470264A49FB00ED0084 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB646F264A49FB00ED0084 /* NetworkClient.swift */; };
 		A2FB6474264A6C2F00ED0084 /* UINotifications+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB6473264A6C2F00ED0084 /* UINotifications+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -234,7 +234,7 @@
 		A294FC512646C8F50011F0D8 /* TravellerEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravellerEnums.swift; sourceTree = "<group>"; };
 		A294FC522646C8F50011F0D8 /* TravellerProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravellerProtocols.swift; sourceTree = "<group>"; };
 		A2AF841D24DFE64700BA174F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
-		A2FB646F264A49FB00ED0084 /* SharedNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedNetworkClient.swift; sourceTree = "<group>"; };
+		A2FB646F264A49FB00ED0084 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		A2FB6473264A6C2F00ED0084 /* UINotifications+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINotifications+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -434,7 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				A231C3ED254FC1DD008CBED9 /* NetworkEnvironment.swift */,
-				A2FB646F264A49FB00ED0084 /* SharedNetworkClient.swift */,
+				A2FB646F264A49FB00ED0084 /* NetworkClient.swift */,
 			);
 			path = NetworkClient;
 			sourceTree = "<group>";
@@ -896,7 +896,7 @@
 				A283A04A259BA0F8003A073B /* SocialSignInDelegates.swift in Sources */,
 				5514FA912495FBC100AF78B2 /* LoginViewModel.swift in Sources */,
 				5548F86F24D7C88A009BFCFB /* UITabBarExtensions.swift in Sources */,
-				A2FB6470264A49FB00ED0084 /* SharedNetworkClient.swift in Sources */,
+				A2FB6470264A49FB00ED0084 /* NetworkClient.swift in Sources */,
 				A231C421254FC3F1008CBED9 /* UserService.swift in Sources */,
 				A294FC25264643B30011F0D8 /* DummyModel.swift in Sources */,
 				5537C17D248CBE9B00367F0C /* SceneDelegate.swift in Sources */,
