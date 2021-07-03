@@ -10,8 +10,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UIDevice().isJailBroken {
             exit(0)
         } else {
-            NetworkReachability.shared.startNotifier()
-            reachabilityObserver()
             GoogleSingIn.config()
             FacebookSignIn.config(application: application, launchOptions: launchOptions)
             TwitterSignIn.config()
@@ -33,20 +31,6 @@ extension AppDelegate {
         let twitterUrl = TwitterSignIn.handleUrl(app: app, url: url, options: options)
         
         return googleUrl || facebookUrl || twitterUrl
-    }
-}
-
-extension AppDelegate {
-    func reachabilityObserver() {
-        NetworkReachability.shared.reachabilityObserver = { status in
-            switch status {
-            case .connected:
-                 print("Internet Connected")
-                AnimatedView.shared.present(message: .internet, postion: .top, bgColor: .indigoColor())
-            case .disconnected:
-                AnimatedView.shared.present(message: .noInternet, postion: .top, bgColor: .red())
-            }
-        }
     }
 }
 

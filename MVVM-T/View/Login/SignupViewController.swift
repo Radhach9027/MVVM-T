@@ -11,26 +11,25 @@ class SignupViewController: UIViewController {
     }
 }
 
-extension SignupViewController: LaunchScreenNavigationProtocol, StorySwitchProtocol {
+extension SignupViewController {
     
     @IBAction func popBackButtonPressed(_ sender: UIButton) {
-        dismissController(animated: true, dismissed: {_ in})
+        dismiss()
     }
     
     @IBAction func pushDetailButtonPressed(_ sender: UIButton) {
-        pushToForgotpassword()
+        push(type: .forgotPassword, animated: true, hidesTopBar: false, hidesBottomBar: false)
     }
 }
 
 extension SignupViewController: FireBaseSignInDelegate {
     
     func signInSuccess() {
-        dismissController(animated: true, dismissed: { [weak self] dismissed  in
-            self?.switchToHome()
-        })
+        dismiss()
+        storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: false, hidesBottomBar: false)
     }
     
     func signInFailure(_ error: String) {
-        presentAlert(error)
+        print("Error")
     }
 }

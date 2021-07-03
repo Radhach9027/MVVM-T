@@ -5,15 +5,19 @@ class LaunchViewController: UIViewController {
     deinit {
         print("LaunchViewController de-init")
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
 
-extension LaunchViewController: StorySwitchProtocol, LaunchScreenNavigationProtocol {
+extension LaunchViewController {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        pushToLogin()
+        push(type: .login, animated: true, hidesTopBar: true, hidesBottomBar: false)
     }
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
-        presentSignUp()
+        present(type: .signup, animated: true, hidesTopBar: false, hidesBottomBar: false)
     }
 }

@@ -12,7 +12,7 @@
         <!--Launch View Controller-->
         <scene sceneID="ukE-gi-axa">
             <objects>
-                <viewController storyboardIdentifier="LaunchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ibU-hb-lij" customClass="LaunchViewController" customModule="MVVM_C" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LaunchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ibU-hb-lij" customClass="LaunchViewController" customModule="MVVM_T" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uu8-9j-v7l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,7 +66,7 @@
         <!--Login View Controller-->
         <scene sceneID="nGT-tf-4Rf">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lh6-tY-dhd" customClass="LoginViewController" customModule="MVVM_C" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lh6-tY-dhd" customClass="LoginViewController" customModule="MVVM_T" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="STV-Yc-hhq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,7 +109,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="6OC-dt-nn5">
                                 <rect key="frame" x="10.5" y="544.5" width="393" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXI-n0-JO1" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXI-n0-JO1" customClass="CustomButton" customModule="MVVM_T" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="127" height="50"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -127,7 +127,7 @@
                                             <action selector="singInWithGoogle:" destination="lh6-tY-dhd" eventType="touchUpInside" id="Mde-mb-zVy"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-wb-2Hl" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-wb-2Hl" customClass="CustomButton" customModule="MVVM_T" customModuleProvider="target">
                                         <rect key="frame" x="133" y="0.0" width="127" height="50"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -145,7 +145,7 @@
                                             <action selector="facebookSignInButtonPressed:" destination="lh6-tY-dhd" eventType="touchUpInside" id="9Jx-jD-gTt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0N3-vn-iJQ" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0N3-vn-iJQ" customClass="CustomButton" customModule="MVVM_T" customModuleProvider="target">
                                         <rect key="frame" x="266" y="0.0" width="127" height="50"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -171,7 +171,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="h3B-K8-eGT">
                                 <rect key="frame" x="10.5" y="599.5" width="393" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cp-4k-9Ue" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cp-4k-9Ue" customClass="CustomButton" customModule="MVVM_T" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="127" height="50"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -189,7 +189,7 @@
                                             <action selector="twitterSignInButtonPressed:" destination="lh6-tY-dhd" eventType="touchUpInside" id="jKv-9F-cQZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qW-a5-gIH" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qW-a5-gIH" customClass="CustomButton" customModule="MVVM_T" customModuleProvider="target">
                                         <rect key="frame" x="133" y="0.0" width="127" height="50"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -207,7 +207,7 @@
                                             <action selector="microsoftSignInButtonPressed:" destination="lh6-tY-dhd" eventType="touchUpInside" id="9bF-iP-bTq"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ai-9u-jkA" customClass="CustomButton" customModule="MVVM_C" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ai-9u-jkA" customClass="CustomButton" customModule="MVVM_T" customModuleProvider="target">
                                         <rect key="frame" x="266" y="0.0" width="127" height="50"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -271,7 +271,7 @@
         <!--Signup View Controller-->
         <scene sceneID="Lxd-aM-fYf">
             <objects>
-                <viewController storyboardIdentifier="SignupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gx2-KC-2o0" customClass="SignupViewController" customModule="MVVM_C" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gx2-KC-2o0" customClass="SignupViewController" customModule="MVVM_T" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MW2-Ik-tmy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -323,7 +323,7 @@
         <!--Forgot Password View Controller-->
         <scene sceneID="S26-1O-9bK">
             <objects>
-                <viewController storyboardIdentifier="ForgotPasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sWD-pN-eJ8" customClass="ForgotPasswordViewController" customModule="MVVM_C" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sWD-pN-eJ8" customClass="ForgotPasswordViewController" customModule="MVVM_T" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aOh-Tf-o7G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

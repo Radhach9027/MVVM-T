@@ -1,12 +1,12 @@
 import UIKit
+import DependencyContainer
 
 class LoginViewController: UIViewController {
-                
+    
     @Inject private var viewModel: LoginViewModelProtocol
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel._delgate = self
     }
     
     deinit {
@@ -14,48 +14,49 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController: StorySwitchProtocol, LaunchScreenNavigationProtocol {
+extension LoginViewController {
     
     @IBAction func popBackButtonPressed(_ sender: UIButton) {
-        popToRoot(to: false)
+        pop(type: .launch, root: false)
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        self.startLoading(show: true, animate: true, message: "Fetching...")
-        self.viewModel.fetchUser(requestType: .all, completion: { [weak self] (status, error) in
-            self?.startLoading(show: false, animate: false)
+        UIWindow.showLoading(steps: .start(animate: true))
+        
+        viewModel.fetchUser(requestType: .all, completion: { [weak self] result in
+            UIWindow.showLoading(steps: .end)
             
-            if status == true {
-                self?.switchToHome()
-            } else {
-                guard let errorMessage = error?.localizedDescription else { return }
-                self?.presentAlert(errorMessage)
+            switch result {
+                case .success(_):
+                    self?.storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: false, hidesBottomBar: false)
+                case let .error(error):
+                    UIWindow.showAlert(message: error.debugDescription)
             }
         })
     }
     
     @IBAction func singInWithGoogle(_ sender: UIButton) {
-        self.viewModel.socialProfileSignIn(signInType: .google)
+        viewModel.socialProfileSignIn(signInType: .google, delegate: self)
     }
     
     @IBAction func facebookSignInButtonPressed(_ sender: UIButton) {
-        self.viewModel.socialProfileSignIn(signInType: .facebook)
+        viewModel.socialProfileSignIn(signInType: .facebook, delegate: self)
     }
     
     @IBAction func appleSignInButtonPressed(_ sender: UIButton) {
-        self.viewModel.socialProfileSignIn(signInType: .apple)
+        viewModel.socialProfileSignIn(signInType: .apple, delegate: self)
     }
     
     @IBAction func twitterSignInButtonPressed(_ sender: UIButton) {
-        self.viewModel.socialProfileSignIn(signInType: .twitter)
+        viewModel.socialProfileSignIn(signInType: .twitter, delegate: self)
     }
     
     @IBAction func microsoftSignInButtonPressed(_ sender: UIButton) {
-        self.viewModel.socialProfileSignIn(signInType: .microsoft)
+        viewModel.socialProfileSignIn(signInType: .microsoft, delegate: self)
     }
     
     @IBAction func githubSignInButtonPressed(_ sender: UIButton) {
-        self.viewModel.socialProfileSignIn(signInType: .github)
+        viewModel.socialProfileSignIn(signInType: .github, delegate: self)
     }
 }
 
@@ -63,11 +64,11 @@ extension LoginViewController: LoginViewModelDelegate {
     
     func signInSuccess() {
         print("Current User = \(String(describing: FirebaseSignIn.currentUser?.displayName))")
-        switchToHome()
+        storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: false, hidesBottomBar: false)
     }
     
     func signInFailure(_ error: String) {
-        presentAlert(error)
+        UIWindow.showAlert(message: error)
     }
 }
 

@@ -11,20 +11,13 @@ class ProfileViewController: UIViewController, BarButtonItemConfiguration {
 extension ProfileViewController: BarButtonActions {
     
     func showNotification(_ sender: AnyObject) {
-        Traveller.route.present(story: .tab, controller: .detail, animated: true, modelTransistion: .crossDissolve, modelPresentation: .fullScreen).perform { (controller) in
-            controller.title = "Settings"
+        present(type: .detail, animated: true, hidesTopBar: false, hidesBottomBar: false)
+    }
+    
+    @IBAction func logOutBackButtonPressed(_ sender: UIButton) {
+        if let error = AutoLogin().logOut() {
+            UIWindow.showAlert(message: error, title: "Error")
         }
     }
 }
 
-extension ProfileViewController: StorySwitchProtocol {
-    
-    @IBAction func logOutBackButtonPressed(_ sender: UIButton) {
-        do {
-            try FirebaseSignIn.signOut()
-            switchToLaunch()
-        } catch let signOutError as NSError {
-            presentAlert("Error signing out from FirebaseSignIn: %@ \(signOutError)")
-        }
-    }
-}

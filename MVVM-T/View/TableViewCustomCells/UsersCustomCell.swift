@@ -1,4 +1,5 @@
 import UIKit
+import GenericCollectionsPackage
 
 class UsersCustomCell: UITableViewCell {
     @IBOutlet fileprivate weak var userImage: UIImageView!
@@ -11,6 +12,11 @@ class UsersCustomCell: UITableViewCell {
 }
 
 extension UsersCustomCell: ModelUpdateProtocol {
-    typealias ModelData = ExpressibleByNilLiteral // pass ur model object when ever required
-    func update(modelData: ExpressibleByNilLiteral, indexPath: IndexPath) {}
+    typealias ModelData = DummyModel 
+    
+    func update(modelData: DummyModel, indexPath: IndexPath) {
+        self.name.text = modelData.title
+        self.email.text = modelData.description
+        self.userImage.image = modelData.image != nil ? UIImage(named: modelData.image!) : nil
+    }
 }

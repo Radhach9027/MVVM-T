@@ -6,3 +6,5 @@ struct Users: Codable, Equatable {
 struct LoginModel: Codable {
     var data: [Users]
 }
+
+

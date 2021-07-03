@@ -6,9 +6,9 @@ import FBSDKLoginKit
 struct FacebookSignIn {
     
     private var viewController: UIViewController?
-    private weak var delegate: SocialSignInDelegate?
+    private weak var delegate: SocialProfilesSignInDelegate?
 
-    init(viewController: UIViewController? = nil, delegate: SocialSignInDelegate?) {
+    init(viewController: UIViewController? = nil, delegate: SocialProfilesSignInDelegate?) {
         print("FacebookSignIn InIt")
         self.viewController = viewController
         self.delegate = delegate
@@ -43,19 +43,21 @@ extension FacebookSignIn: FacebookSignInProtocol {
     }
 }
 
+
 private extension FacebookSignIn {
     
     func logIn() {
         let loginManager = LoginManager()
-        loginManager.logIn(permissions: [.publicProfile, .email], viewController: viewController) { (result) in
-            switch result {
-                case .success(_, _, token: let token):
-                    let credential = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
-                    delegate?.signInSuccess(credential: credential, signInType: .facebook)
-                case .cancelled:
-                    self.delegate?.signInFailure("User cancelled..")
-                case .failed(let error):
-                    self.delegate?.signInFailure(error.localizedDescription)
+        loginManager.logIn(permissions: ["public_profile", "email"], from: viewController) { (result, error) in
+            if let error = error {
+                self.delegate?.signInFailure(error.localizedDescription)
+            } else {
+                guard let token = result?.token?.tokenString else {
+                  self.delegate?.signInFailure("Token nil from facebook loginManager")
+                  return
+                }
+                let credential = FacebookAuthProvider.credential(withAccessToken: token)
+                delegate?.signInSuccess(credential: credential, signInType: .facebook)
             }
         }
     }

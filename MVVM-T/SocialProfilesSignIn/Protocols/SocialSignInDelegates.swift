@@ -1,11 +1,11 @@
 import Firebase
 
-protocol FireBaseSignInDelegate: class {
+protocol FireBaseSignInDelegate: AnyObject {
     func signInSuccess()
     func signInFailure(_ error: String)
 }
 
-protocol SocialSignInDelegate: class {
+protocol SocialProfilesSignInDelegate: AnyObject {
     func signInSuccess(credential: AuthCredential, signInType: SocialSignInType)
     func signInFailure(_ error: String)
 }

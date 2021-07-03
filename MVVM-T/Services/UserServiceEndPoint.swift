@@ -1,4 +1,5 @@
 import Foundation
+import NetworkClientPackage
 
 enum UserServiceEndPoint {
     case all
@@ -6,6 +7,10 @@ enum UserServiceEndPoint {
 }
 
 extension UserServiceEndPoint: NetworkRequestProtocol {
+    
+    var headers: ReaquestHeaders? { nil }
+    var parameters: RequestParameters? { nil }
+    var progressHandler: ProgressHandler? { nil }
     
     var path: String {
         switch self {

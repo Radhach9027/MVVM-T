@@ -1,6 +1,6 @@
 import Foundation
 
-class UserDefaultsHelper: NSObject, UserDefaultsHelperProtocol {
+final class UserDefaultsHelper: NSObject, UserDefaultsHelperProtocol {
     var userDefaults: UserDefaultsProtocol?
     var encoder: PropertListEncoderProtocol?
     var decoder: PropertyListDecoderProtocol?
@@ -21,6 +21,18 @@ class UserDefaultsHelper: NSObject, UserDefaultsHelperProtocol {
         guard let data = self.userDefaults?.object(forKey: key.rawValue) as? Data else {return nil}
         let decodedObject = try? self.decoder?.decode(type, from: data)
         return decodedObject
+    }
+    
+    func setAny(for value: Any, using key: UserDefaultsKeys) {
+        self.userDefaults?.set(value, forKey: key.rawValue)
+        dataSynchronize()
+    }
+    
+    func getAny<T>(using key: UserDefaultsKeys) -> T? {
+        if let value = self.userDefaults?.object(forKey: key.rawValue) as? T {
+            return value
+        }
+        return nil
     }
     
     func dataSynchronize() {

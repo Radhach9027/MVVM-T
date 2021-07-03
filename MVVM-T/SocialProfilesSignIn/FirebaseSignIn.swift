@@ -1,6 +1,8 @@
 import Firebase
+import UIKit
+import ReusableComponentsSwift
 
-class FirebaseSignIn {
+open class FirebaseSignIn {
     
     private var googleSignIn: GoogleSingIn?
     private var facebookSignIn: FacebookSignIn?
@@ -15,21 +17,13 @@ class FirebaseSignIn {
 
     init() { print("FirebaseSignIn InIt") }
     
-    deinit {
-        print("FirebaseSignIn De-InIt")
-        _delgate = nil
-    }
+    deinit { print("FirebaseSignIn De-InIt") }
 }
 
 extension FirebaseSignIn: FirebaseProtocol {
     
-    var _delgate: FireBaseSignInDelegate? {
-        
-        set { self.delegate = newValue }
-        get { return self.delegate }
-    }
-    
-    func signIn(signInType: SocialSignInType) {
+    func signIn(signInType: SocialSignInType, delgate: FireBaseSignInDelegate) {
+        self.delegate = delgate
         
         switch signInType {
             case .google:
@@ -107,12 +101,12 @@ private extension FirebaseSignIn {
     }
 }
 
-extension FirebaseSignIn: SocialSignInDelegate {
+extension FirebaseSignIn: SocialProfilesSignInDelegate {
     
     func signInSuccess(credential: AuthCredential, signInType: SocialSignInType) {
-        LoadingIndicator.shared.loading(step: .start(animate: true))
+        UIWindow.showLoading(steps: .start(animate: true))
         Auth.auth().signIn(with: credential) { [weak self] (result, error) in
-            LoadingIndicator.shared.loading(step: .end)
+            UIWindow.showLoading(steps: .end)
             if error == nil {
                 Keychain.storeData(value: signInType, key: FirebaseKeys.signInType.rawValue)
                 self?.delegate?.signInSuccess()

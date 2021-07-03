@@ -1,16 +1,6 @@
 import UIKit
 
-
 extension Date {
-    
-    enum DateFormats: String {
-        case yyyyMMdd = "yyyy-MM-dd"
-        case yyyyMMddHHmmssZ = "yyyy-MM-dd HH:mm:ssZ"
-        case yyyyMMddHHmm = "yyyy-MM-dd HH:mm"
-        case yyyyMMddHHmmss = "yyyy-MM-dd HH:mm:ss"
-        case MMMddyyyy = "MMMM dd, yyyy"
-        case EdMMMyyyyHHmmssZ = "E, d MMM yyyy HH:mm:ss Z"
-    }
     
     func toString(format: DateFormats) -> String {
         let formatter = DateFormatter()

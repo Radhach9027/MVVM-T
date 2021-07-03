@@ -1,6 +1,7 @@
 import UIKit
 
 class TabBarController: UITabBarController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyling()
@@ -24,13 +25,11 @@ extension TabBarController {
 extension TabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if let navigation = tabBarController.selectedViewController as? UINavigationController {
-            let wayFinding = WayFinding(navigation: navigation, viewController: navigation.topViewController, storyBoard: tabBarController.storyboard)
-            Traveller.shared.config(wayFinding: wayFinding)
+           config(navigation: navigation)
         }
     }
 
     func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        //return TabTransition(viewControllers: tabBarController.viewControllers)
         return TabFadeAnimation()
     }
     

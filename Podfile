@@ -5,10 +5,6 @@ target 'MVVM-T' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for MVVM-T
-  pod 'ReachabilitySwift', '~> 5.0'
-  pod 'SwiftKeychainWrapper', '~> 3.4'
-  
   # Pods for Firebase
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
@@ -18,12 +14,13 @@ target 'MVVM-T' do
   
   # Pods for Twitter
   pod 'TwitterKit'
-
+  
   
   # Pods for Facebook
   pod 'Bolts'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
+
 
   target 'MVVM-TTests' do
     inherit! :search_paths

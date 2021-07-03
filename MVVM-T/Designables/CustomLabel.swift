@@ -1,4 +1,5 @@
 import UIKit
+import ReusableComponentsSwift
 
 @IBDesignable
 class CustomLabel: UILabel {

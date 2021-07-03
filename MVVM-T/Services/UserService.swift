@@ -1,61 +1,35 @@
 import Foundation
 
 protocol UserServiceProtocol {
-    func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?)-> Void)
-    func dowloadFile(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?)-> Void)
+    func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (ServiceResult)-> Void)
 }
 
-class UserService {
+struct UserService: UserServiceProtocol {
     
-    @Inject private var requestDispatcher: NetworkRequestDispatcher
-    
-    deinit {
-        print("UserService de-init")
-    }
-}
-
-extension UserService: UserServiceProtocol, NetworkParserProtocol {
-    
-    func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?)-> Void) {
+    func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (ServiceResult)-> Void) {
         
-        let networkAction = NetworkAction(request: requestType)
-        
-        networkAction.fetch(in: requestDispatcher) { [weak self] result in
-            switch result {
-                case  .json(_, let data):
-                    
-                    if let data = data {
-                        
-                        let result = self?.convertDataToModel(data: data, decodingType: LoginModel.self)
-                        
-                        switch result {
-                            case let .success(model):
-                                completion(true, nil, model)
-                            case let .failure(error):
-                                completion(false, error, nil)
-                            case .none:
-                                break
-                        }
-                    }
-                case let .error(error, _, noNetwork):
-                    completion(false, error, noNetwork)
-                default:
-                    break
-            }
-        }
-    }
-    
-    func dowloadFile(requestType: UserServiceEndPoint, completion: @escaping (Bool, Error?, Any?)-> Void) {
-        let networkAction = NetworkAction(request: requestType)
-        
-        networkAction.fetch(in: requestDispatcher) { result in
+        NetworkClient.shared.networkAction.fetch(request: requestType, in: NetworkClient.shared.requestDispatcher, completion: { result in
             
             switch result {
-                case let .file(file, response):
-                    print("File = \(String(describing: file)), response = \(String(describing: response))")
+                case .noInternet(let message):
+                    completion(.error(message?.rawValue))
+                    
+                case  .json(_, let data):
+                    if let data = data {
+                        let result = NetworkClient.shared.convertDataToModel(data: data, decodingType: LoginModel.self)
+                        switch result {
+                            case let .success(model):
+                                completion(.success(model))
+                            case let .failure(error):
+                                completion(.error(error.localizedDescription))
+                        }
+                    }
+                    
+                case let .error(error, _):
+                    completion(.error(error.debugDescription))
                 default:
                     break
             }
-        }
+        })
     }
 }

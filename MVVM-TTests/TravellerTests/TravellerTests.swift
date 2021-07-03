@@ -81,7 +81,7 @@ class TravellerTests: XCTestCase {
         let mockChildControllers = [controllerOne, controllerTwo]
         self.mockNavigation.setViewControllers(mockChildControllers, animated: false)
         XCTAssertEqual(mockChildControllers, self.mockNavigation.viewControllers)
-        let controller = Traveller.route.popToViewController(destination: UIViewController.self, animated: false, modelTransistionStyle: .crossDissolve).perform { _ in
+        let controller = Traveller.route.popToViewController(destination: .signup, animated: false, modelTransistionStyle: .crossDissolve).perform { _ in
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1.0)

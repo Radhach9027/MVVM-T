@@ -7,7 +7,7 @@ extension UITabBarItem {
     }
 }
 
-protocol BarButtonItemConfiguration: class {
+protocol BarButtonItemConfiguration: AnyObject {
     func addBarButtonItem(ofType type: BarButtonItemType, imageType: BarButtonImageType)
 }
 
