@@ -12,6 +12,7 @@ extension UserServiceEndPoint: NetworkRequestProtocol {
     var parameters: RequestParameters? { nil }
     var progressHandler: ProgressHandler? { nil }
     
+    
     var path: String {
         switch self {
             case .all:
@@ -29,12 +30,7 @@ extension UserServiceEndPoint: NetworkRequestProtocol {
     }
     
     var requestType: NetworkRequestType {
-        switch self {
-            case .all:
-                return .data
-            case .download(_):
-                return .download
-        }
+        return .data
     }
     
     var responseType: NetworkResponseType {
