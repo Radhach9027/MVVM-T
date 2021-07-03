@@ -11,7 +11,7 @@ struct UserService: UserServiceProtocol {
         NetworkClient.shared.networkAction.fetch(request: requestType, in: NetworkClient.shared.requestDispatcher, completion: { result in
             
             switch result {
-                case .noInterNet(let message):
+                case .noInternet(let message):
                     completion(.error(message?.rawValue))
                     
                 case  .json(_, let data):
