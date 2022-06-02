@@ -18,7 +18,10 @@ extension SignupViewController {
     }
     
     @IBAction func pushDetailButtonPressed(_ sender: UIButton) {
-        push(type: .forgotPassword, animated: true, hidesTopBar: false, hidesBottomBar: false)
+        push(type: .forgotPassword,
+             animated: true,
+             hidesTopBar: false,
+             hidesBottomBar: false)
     }
 }
 
@@ -26,7 +29,11 @@ extension SignupViewController: FireBaseSignInDelegate {
     
     func signInSuccess() {
         dismiss()
-        storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: false, hidesBottomBar: false)
+        storySwitch(story: .tab,
+                    destination: .home,
+                    animated: true,
+                    hidesTopBar: false,
+                    hidesBottomBar: false)
     }
     
     func signInFailure(_ error: String) {

@@ -43,7 +43,11 @@ extension HomeDetailsViewController {
         //Prepare Generic custom cell with model
         let tableModel = tableSectionedGroup(DummyModel.users)
         
-        tableView = GenericTableViewController(grouped: tableModel, attributes: GenericTableViewAttributes(separatorLine: .singleLine, refreshMessage: .config(messgae: "Hey..was up!", tint: .blue)), cellForRow: { (cell, indexPath) in
+        tableView = GenericTableViewController(grouped: tableModel,
+                                               attributes: GenericTableViewAttributes(separatorLine: .singleLine,
+                                                                                      refreshMessage: .config(messgae: "Hey..was up!",
+                                                                                                              tint: .blue)),
+                                               cellForRow: { (cell, indexPath) in
             print("Cell rolling")
         }, didSelectRow: { (cell, indexPath) in
             print("Cell tapped")

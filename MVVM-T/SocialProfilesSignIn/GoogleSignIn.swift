@@ -64,7 +64,8 @@ extension GoogleSingIn: GIDSignInDelegate {
         }
         
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-        delegate?.signInSuccess(credential: credential, signInType: .google)
+        delegate?.signInSuccess(credential: credential,
+                                signInType: .google)
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {

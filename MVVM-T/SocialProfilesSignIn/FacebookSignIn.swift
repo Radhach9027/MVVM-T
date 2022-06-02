@@ -8,7 +8,8 @@ struct FacebookSignIn {
     private var viewController: UIViewController?
     private weak var delegate: SocialProfilesSignInDelegate?
 
-    init(viewController: UIViewController? = nil, delegate: SocialProfilesSignInDelegate?) {
+    init(viewController: UIViewController? = nil,
+         delegate: SocialProfilesSignInDelegate?) {
         print("FacebookSignIn InIt")
         self.viewController = viewController
         self.delegate = delegate
@@ -17,12 +18,18 @@ struct FacebookSignIn {
 
 extension FacebookSignIn: FacebookSignInProtocol {
 
-    static func config(application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+    static func config(application: UIApplication,
+                       launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        ApplicationDelegate.shared.application(application,
+                                               didFinishLaunchingWithOptions: launchOptions)
     }
     
-    static func handleUrl(app: UIApplication, url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-        ApplicationDelegate.shared.application(app, open: url, options: options)
+    static func handleUrl(app: UIApplication,
+                          url: URL,
+                          options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        ApplicationDelegate.shared.application(app,
+                                               open: url,
+                                               options: options)
     }
     
     func signIn() {
@@ -32,7 +39,8 @@ extension FacebookSignIn: FacebookSignInProtocol {
                 return
             }
             let credential = FacebookAuthProvider.credential(withAccessToken: token)
-            self.delegate?.signInSuccess(credential: credential, signInType: .facebook)
+            self.delegate?.signInSuccess(credential: credential,
+                                         signInType: .facebook)
         } else {
             logIn()
         }
@@ -57,7 +65,8 @@ private extension FacebookSignIn {
                   return
                 }
                 let credential = FacebookAuthProvider.credential(withAccessToken: token)
-                delegate?.signInSuccess(credential: credential, signInType: .facebook)
+                delegate?.signInSuccess(credential: credential,
+                                        signInType: .facebook)
             }
         }
     }

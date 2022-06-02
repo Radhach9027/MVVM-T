@@ -15,9 +15,11 @@ class BioMetricAuthentication {
         let context = LAContext()
         context.localizedFallbackTitle = BioMetric.passCode.rawValue
         var authorizationError: NSError?
-        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authorizationError) {
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication,
+                                     error: &authorizationError) {
             let reason = BioMetric.authReason.rawValue
-            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, evaluateError in
+            context.evaluatePolicy(.deviceOwnerAuthentication,
+                                   localizedReason: reason) { success, evaluateError in
                 if success {
                     DispatchQueue.main.async() {
                         completionHandler(true, nil)

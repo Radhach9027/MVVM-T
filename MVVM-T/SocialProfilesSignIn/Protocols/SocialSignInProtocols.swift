@@ -7,7 +7,8 @@ protocol FirebaseProtocol {
     static var userExists: Bool {get}
     static var currentUser: Firebase.User? {get}
     static func signOut() throws
-    func signIn(signInType: SocialSignInType, delgate: FireBaseSignInDelegate)
+    func signIn(signInType: SocialSignInType,
+                delgate: FireBaseSignInDelegate)
 }
 
 //  GoogleSignIn.
@@ -28,8 +29,11 @@ protocol AppleSignInProtocol {
 protocol FacebookSignInProtocol {
     func signIn()
     static func signOut()
-    static func config(application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
-    static func handleUrl(app: UIApplication, url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool
+    static func config(application: UIApplication,
+                       launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
+    static func handleUrl(app: UIApplication,
+                          url: URL,
+                          options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool
 }
 
 //  Twitter.
@@ -38,6 +42,8 @@ protocol TwitterSignInProtocol {
     func signIn()
     static func signOut()
     @discardableResult
-    static func handleUrl(app: UIApplication, url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool
+    static func handleUrl(app: UIApplication,
+                          url: URL,
+                          options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool
 }
 

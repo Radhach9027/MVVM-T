@@ -28,8 +28,10 @@ struct TwitterSignIn: TwitterSignInProtocol {
                         delegate?.signInFailure("Failed to retrive Twitter session tokens")
                         return
                     }
-                    let credential = TwitterAuthProvider.credential(withToken: token, secret: secret)
-                    delegate?.signInSuccess(credential: credential, signInType: .twitter)
+                    let credential = TwitterAuthProvider.credential(withToken: token,
+                                                                    secret: secret)
+                    delegate?.signInSuccess(credential: credential,
+                                            signInType: .twitter)
                 }
             }
             
@@ -39,8 +41,10 @@ struct TwitterSignIn: TwitterSignInProtocol {
                 delegate?.signInFailure("Failed to retrive Twitter session tokens")
                 return
             }
-            let credential = TwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
-            delegate?.signInSuccess(credential: credential, signInType: .twitter)
+            let credential = TwitterAuthProvider.credential(withToken: session.authToken,
+                                                            secret: session.authTokenSecret)
+            delegate?.signInSuccess(credential: credential,
+                                    signInType: .twitter)
         }
     }
     
@@ -53,6 +57,8 @@ struct TwitterSignIn: TwitterSignInProtocol {
     
     @discardableResult
     static func handleUrl(app: UIApplication, url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-        TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+        TWTRTwitter.sharedInstance().application(app,
+                                                 open: url,
+                                                 options: options)
     }
 }

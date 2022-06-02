@@ -8,7 +8,8 @@ class AppleSignIn: NSObject {
     private var currentNonce: String?
     private weak var delegate: SocialProfilesSignInDelegate?
     
-    init(viewController: UIViewController? = nil, delegate: SocialProfilesSignInDelegate?) {
+    init(viewController: UIViewController? = nil,
+         delegate: SocialProfilesSignInDelegate?) {
         print("FacebookSignIn InIt")
         self.viewController = viewController
         self.delegate = delegate
@@ -37,7 +38,8 @@ extension AppleSignIn: AppleSignInProtocol {
 
 extension AppleSignIn: ASAuthorizationControllerDelegate {
     
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+    func authorizationController(controller: ASAuthorizationController,
+                                 didCompleteWithAuthorization authorization: ASAuthorization) {
         
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
             guard let nonce = currentNonce else {
@@ -53,12 +55,16 @@ extension AppleSignIn: ASAuthorizationControllerDelegate {
                 return
             }
 
-            let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
-            delegate?.signInSuccess(credential: credential, signInType: .apple)
+            let credential = OAuthProvider.credential(withProviderID: "apple.com",
+                                                      idToken: idTokenString,
+                                                      rawNonce: nonce)
+            delegate?.signInSuccess(credential: credential,
+                                    signInType: .apple)
         }
     }
     
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+    func authorizationController(controller: ASAuthorizationController,
+                                 didCompleteWithError error: Error) {
         self.delegate?.signInFailure("Sign in with Apple errored: \(error)")
     }
 }

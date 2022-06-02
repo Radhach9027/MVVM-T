@@ -22,7 +22,8 @@ open class FirebaseSignIn {
 
 extension FirebaseSignIn: FirebaseProtocol {
     
-    func signIn(signInType: SocialSignInType, delgate: FireBaseSignInDelegate) {
+    func signIn(signInType: SocialSignInType,
+                delgate: FireBaseSignInDelegate) {
         self.delegate = delgate
         
         switch signInType {
@@ -51,7 +52,9 @@ extension FirebaseSignIn: FirebaseProtocol {
     }
     
     private static func socialProfileLogout() {
-        if let signInData = Keychain<Data>.retriveData(key: FirebaseKeys.signInType.rawValue), let signInType = try? JSONDecoder().decode(SocialSignInType.self, from: signInData) {
+        if let signInData = Keychain<Data>.retriveData(key: FirebaseKeys.signInType.rawValue),
+           let signInType = try? JSONDecoder().decode(SocialSignInType.self,
+                                                      from: signInData) {
             switch signInType {
                 case .google:
                     GoogleSingIn.signOut()
@@ -77,22 +80,26 @@ extension FirebaseSignIn: FirebaseProtocol {
 private extension FirebaseSignIn {
     
     func singInWithGoogle() {
-        googleSignIn = GoogleSingIn(viewController: self.viewController, delegate: self)
+        googleSignIn = GoogleSingIn(viewController: self.viewController,
+                                    delegate: self)
         googleSignIn?.signIn()
     }
     
     func singInWithApple() {
-        appleSignIn = AppleSignIn(viewController: self.viewController, delegate: self)
+        appleSignIn = AppleSignIn(viewController: self.viewController,
+                                  delegate: self)
         appleSignIn?.signIn()
     }
     
     func singInWithFacebook() {
-        facebookSignIn = FacebookSignIn(viewController: self.viewController, delegate: self)
+        facebookSignIn = FacebookSignIn(viewController: self.viewController,
+                                        delegate: self)
         facebookSignIn?.signIn()
     }
     
     func singInWithTwitter() {
-        twitterSignIn = TwitterSignIn(viewController: self.viewController, delegate: self)
+        twitterSignIn = TwitterSignIn(viewController: self.viewController,
+                                      delegate: self)
         twitterSignIn?.signIn()
     }
     
@@ -103,12 +110,15 @@ private extension FirebaseSignIn {
 
 extension FirebaseSignIn: SocialProfilesSignInDelegate {
     
-    func signInSuccess(credential: AuthCredential, signInType: SocialSignInType) {
+    func signInSuccess(credential: AuthCredential,
+                       signInType: SocialSignInType) {
+        
         UIWindow.showLoading(steps: .start(animate: true))
         Auth.auth().signIn(with: credential) { [weak self] (result, error) in
             UIWindow.showLoading(steps: .end)
             if error == nil {
-                Keychain.storeData(value: signInType, key: FirebaseKeys.signInType.rawValue)
+                Keychain.storeData(value: signInType,
+                                   key: FirebaseKeys.signInType.rawValue)
                 self?.delegate?.signInSuccess()
             } else {
                 self?.delegate?.signInFailure(error?.localizedDescription ?? "Something went wrong with social signIn = \(signInType.rawValue)")

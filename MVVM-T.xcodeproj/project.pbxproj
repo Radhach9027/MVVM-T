@@ -364,7 +364,6 @@
 		5537C179248CBE9B00367F0C /* MVVM-T */ = {
 			isa = PBXGroup;
 			children = (
-				A26E1A202598CB95006A7D63 /* MVVM-T.entitlements */,
 				A294FC502646C8E60011F0D8 /* Traveller */,
 				A23316D8261207AA0075B82F /* Dependency */,
 				A25745E12591C12C0009C718 /* SocialProfilesSignIn */,
@@ -584,6 +583,7 @@
 		A265189C25299D290027A085 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A26E1A202598CB95006A7D63 /* MVVM-T.entitlements */,
 				A231C41F254FC3F0008CBED9 /* UserService.swift */,
 				A231C420254FC3F1008CBED9 /* UserServiceEndPoint.swift */,
 				A24B071626901E8100119B72 /* ServiceResult.swift */,

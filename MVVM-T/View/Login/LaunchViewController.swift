@@ -14,10 +14,16 @@ class LaunchViewController: UIViewController {
 extension LaunchViewController {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        push(type: .login, animated: true, hidesTopBar: true, hidesBottomBar: false)
+        push(type: .login,
+             animated: true,
+             hidesTopBar: true,
+             hidesBottomBar: false)
     }
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
-        present(type: .signup, animated: true, hidesTopBar: false, hidesBottomBar: false)
+        present(type: .signup,
+                animated: true,
+                hidesTopBar: false,
+                hidesBottomBar: false)
     }
 }

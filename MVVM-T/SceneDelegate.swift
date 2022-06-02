@@ -5,7 +5,9 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(_ scene: UIScene,
+               willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
         guard let winScene = (scene as? UIWindowScene) else { fatalError("WindowScene is nil in SceneDelegate") }
         window = UIWindow(windowScene: winScene)
         if !SceneDelegate.isUnitTestsLaunched {
@@ -14,7 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 }
 
-func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+func scene(_ scene: UIScene,
+           openURLContexts URLContexts: Set<UIOpenURLContext>) {
     if let openURLContext = URLContexts.first{
         let url = openURLContext.url
         let options: [UIApplication.OpenURLOptionsKey : Any] = [

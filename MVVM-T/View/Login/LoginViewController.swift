@@ -17,18 +17,24 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     
     @IBAction func popBackButtonPressed(_ sender: UIButton) {
-        pop(type: .launch, root: false)
+        pop(type: .launch,
+            root: false)
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         UIWindow.showLoading(steps: .start(animate: true))
         
-        viewModel.fetchUser(requestType: .all, completion: { [weak self] result in
+        viewModel.fetchUser(requestType: .all,
+                            completion: { [weak self] result in
             UIWindow.showLoading(steps: .end)
             
             switch result {
                 case .success(_):
-                    self?.storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: false, hidesBottomBar: false)
+                    self?.storySwitch(story: .tab,
+                                      destination: .home,
+                                      animated: true,
+                                      hidesTopBar: false,
+                                      hidesBottomBar: false)
                 case let .error(error):
                     UIWindow.showAlert(message: error.debugDescription)
             }
@@ -64,7 +70,11 @@ extension LoginViewController: LoginViewModelDelegate {
     
     func signInSuccess() {
         print("Current User = \(String(describing: FirebaseSignIn.currentUser?.displayName))")
-        storySwitch(story: .tab, destination: .home, animated: true, hidesTopBar: false, hidesBottomBar: false)
+        storySwitch(story: .tab,
+                    destination: .home,
+                    animated: true,
+                    hidesTopBar: false,
+                    hidesBottomBar: false)
     }
     
     func signInFailure(_ error: String) {

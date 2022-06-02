@@ -8,7 +8,8 @@ struct UserService: UserServiceProtocol {
     
     func fetchUser(requestType: UserServiceEndPoint, completion: @escaping (ServiceResult)-> Void) {
         
-        NetworkClient.shared.networkAction.fetch(request: requestType, in: NetworkClient.shared.requestDispatcher, completion: { result in
+        NetworkClient.shared.networkAction.fetch(request: requestType,
+                                                 in: NetworkClient.shared.requestDispatcher, completion: { result in
             
             switch result {
                 case .noInternet(let message):
@@ -16,7 +17,8 @@ struct UserService: UserServiceProtocol {
                     
                 case  .json(_, let data):
                     if let data = data {
-                        let result = NetworkClient.shared.convertDataToModel(data: data, decodingType: LoginModel.self)
+                        let result = NetworkClient.shared.convertDataToModel(data: data,
+                                                                             decodingType: LoginModel.self)
                         switch result {
                             case let .success(model):
                                 completion(.success(model))
